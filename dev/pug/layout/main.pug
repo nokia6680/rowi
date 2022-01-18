@@ -18,35 +18,9 @@ html(lang="ru-RU")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
-    body.body.newUser
+    body.body
         include ../modules/header/header
         main.main
-            +introBlock('index-intro', 'intro-index', 'Готовим правильную еду на каждый день', '', 'От 700 руб. в день', 'Ежедневная доставка', 'Бесплатная доставка в любой день')
-            
-            include ../modules/blocks/how
-            article.select
-                .select__wrapper
-                    h2.select__title Выберите своё меню
-                    include ../modules/blocks/select
-                    
-            include ../modules/blocks/individual
-            include ../modules/blocks/delivery
-            include ../modules/blocks/choose
-            include ../modules/blocks/faq
-            include ../modules/blocks/reviews
-            section.reasons
-                .reasons__wrapper
-                    ul.reasons__list
-                        +reasonItem('Еда на неделю – это выгодно!', 'Заказать еду на неделю или на месяц с доставкой на дом, значит сэкономить свое время, ведь Вам больше не нужно готовить и мыть посуду! Выгодное предложение для занятых людей, ценящих своё время и предпочитающих следить за своим здоровьем. Рацион на неделю обеспечивает организм всеми необходимыми минералами и микроэлементами, сохраняет фигуру, способствует достижению поставленных целей.', 'reason-1')
-                        +reasonItem('Правильное питание с пользой для здоровья', 'ПП еда с строгим разделением меню дня на пять приёмов пищи способствует правильному усвоению потребляемых продуктов, с учетом распределения КБЖУ в течение дня. Мы разработали рационы, качество которых проверяется ежедневно, совместно с роспотребнадзором, институтом питания Москвы и лучшими нутрициологами и диетологами столицы. Все блюда в рационах сбалансированы по КБЖУ и полностью соответствуют целям достигаемым при выборе линеек питания.', 'reason-2')
-                        +reasonItem('Качество и вкус блюд', 'Рецептура блюд в рационах – наша гордость! Мы смогли сделать доставку правильного питания с вкусовыми характеристиками, не уступающими ресторанному меню. Линейки без целевого питания Daily, Premium и Sea полностью обеспечивают клиентов разных вкусовых предпочтений едой на день.', 'reason-3')
-            include ../modules/blocks/consult
-        include ../modules/footer/footer
-        include ../modules/popup/popup-ask
-        include ../modules/popup/popup-callback
-        include ../modules/popup/change-meal
-        include ../modules/popup/fast-order
-        include ../modules/popup/form-reaction
 
         include ../modules/loader/loader
 
