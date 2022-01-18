@@ -1,0 +1,171 @@
+.personal {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 0 1.25rem;
+
+    margin-bottom: 7.5rem;
+
+    &__wrapper {
+        width: 100%;
+
+        display: grid;
+        grid-template-areas:
+            'about'
+            'frame'
+            'info'
+        ;
+
+        grid-row-gap: 1.875rem;
+        justify-content: start;
+        align-items: start;
+    }
+
+    &__frame {
+        grid-area: frame;
+
+        width: 100%;
+        height: 0;
+        position: relative;
+        padding-bottom: 116.41791044776119%;
+
+        overflow: hidden;
+
+        &-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+    }
+
+    &__about {
+        grid-area: about;
+
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__title {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+        text-transform: uppercase;
+        text-align: left;
+        margin-bottom: 0.625rem;
+    }
+
+    &__exp {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $green);
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    &__info {
+        grid-area: info;
+
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__description {
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        text-align: left;
+        margin-bottom: 1.25rem;
+
+        &:last-of-type {
+            margin-bottom: 1.875rem;
+        }
+    }
+
+    &__sert {
+        @include font-setting($primary-font, 1.125rem, 1.875rem, 500, $green);
+        border-bottom: 1px dashed $green;
+        text-decoration: none;
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $black;
+            border-color: $black;
+            transition: 0.4s $cubic;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .personal {
+        padding: 0 2.5rem;
+
+        margin-bottom: 12.5rem;
+
+        &__wrapper {
+            grid-template-areas:
+                'frame about'
+                'frame info'
+            ;
+            grid-template-columns: 1fr 49.30555555555556%;
+            grid-column-gap: 2.5rem;
+            grid-row-gap: 2.125rem;
+            justify-content: space-between;
+        }
+
+        &__frame {
+            padding-bottom: 120.74829931972789%;
+        }
+
+        &__title {
+            font-size: 1.75rem;
+            line-height: 2rem;
+            margin-bottom: 1.25rem;
+        }
+
+        &__exp {
+            font-size: 1.75rem;
+            line-height: 2rem;
+        }
+
+        &__description {
+            font-size: 1rem;
+            line-height: 1.875rem;
+            margin-bottom: 1.875rem;
+
+            &:last-of-type {
+                margin-bottom: 1.875rem;
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .personal {
+        margin-left: auto;
+        margin-right: auto;
+
+        max-width: 1520px;
+        margin-bottom: 15.625rem;
+
+        &__wrapper {
+            grid-column-gap: 8.875rem;
+            grid-row-gap: 3.125rem;
+        }
+
+        &__title {
+            font-size: 2.875rem;
+            line-height: 3.75rem;
+        }
+
+        &__exp {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+        }
+    }
+}

@@ -1,0 +1,76 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main.main--login
+            .register
+                h1.register__title Создать личный кабинет
+                form(method="" action="" name="register-form").register__form
+                    ul.register__list
+                        li.register__item
+                            label(for="register-login").register__label Логин
+                            input(type="text" name="register-login" id="register-login" placeholder="Логин").register__input
+                            span.register__input-error.register__input-label--login 
+                        li.register__item.register__item--mail
+                            label(for="register-mail").register__label E-mail
+                            input(type="email" name="register-email" id="register-email" required onkeydown="validationMail()" placeholder="e-mail" ).register__input
+                            span.register__input-error.register__input-label--mail 
+                        li.register__item
+                            label(for="register-pass").register__label Пароль
+                            input(type="password" name="register-pass" id="register-pass" required placeholder="Пароль").register__input
+                            span.register__input-error.register__input-label--pass
+                        li.register__item
+                            label(for="register-pass-conf").register__label Подтверждение пароля
+                            input(type="password" name="register-pass-conf" id="register-pass-conf" required placeholder="Подтверждение пароля").register__input
+                            span.register__input-error.register__input-label--passC
+                        li.register__item.register__item--tel
+                            label(for="register-tel").register__label Телефон
+                            input(type="tel" name="register-tel" id="register-tel" required placeholder="Телефон").register__input.js-phone-input
+                        li.register__item.register__item--code
+                            label(for="register-code").register__label Введите слово на картинке
+                            input(type="text" name="register-code" id="register-code" required placeholder="Символы с изображения").register__input
+                            .register__code
+                                img(src="static/images/content/code.png" alt="security-code").register__code-img
+                                button(type="reset").register__code-reset
+                                
+                    ul.register__checkbox
+                        li.register__checkbox-item
+                            input(type="checkbox" id="reg-subscribe" name="reg-subscribe").register__checkbox-input
+                            label(for="reg-subscribe").register__checkbox-label Я хочу получать смс рассылки о скидках и акциях на свой номер
+                        li.register__checkbox-item
+                            input(type="checkbox" id="reg-agree" name="reg-agree").register__checkbox-input
+                            label(for="reg-agree").register__checkbox-label Я согласен с условиями 
+                                a(href="#" target="_blank") оферты
+                                |  и даю своё согласие на 
+                                a(href="#" target="_blank") обработку персональных данных
+                                | .
+                    button(type="submit").register__submit Регистрация
+                    
+                .login__controls
+                    a(href="login.html" target="_self").register__link Войти
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/mask.js")
+        script(src="static/js/validation.js")
+
+        block script

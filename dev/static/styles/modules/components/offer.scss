@@ -1,0 +1,209 @@
+.offer {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 0 1.25rem;
+    margin-bottom: 6.25rem;
+
+    &__wrapper {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        border: 6px solid $thingray;
+        padding: 2.25rem 2.25rem;
+    }
+
+    &__info {
+        width: 100%;
+
+        padding-bottom: 2.5rem;
+        margin-bottom: 2.5rem;
+
+        border-bottom: 1px dashed $lightgray;
+    }
+
+    &__title {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 1.875rem;
+    }
+
+    &__description {
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 300, $gray);
+        text-align: center;
+        margin-bottom: 1.25rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__contacts {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        .faq__subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 1.875rem;
+        }
+
+        .faq__description {
+            font-size: 0.875rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .faq__callback {
+            height: 60px;
+            width: 100%;
+            font-size: 0.875rem;
+            border-radius: 2.5rem;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .offer {
+        padding: 0 2.5rem;
+        margin-bottom: 9.375rem;
+
+        &__wrapper {
+
+            padding: 2.75rem 2.75rem;
+        }
+
+        &__title {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 2.5rem;
+            margin-bottom: 3.125rem;
+        }
+
+        &__description {
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__contacts {
+            align-items: center;
+            width: 100%;
+
+            .faq__subtitle {
+                font-size: 2rem;
+                margin-bottom: 2.5rem;
+                text-align: center;
+            }
+
+            .faq__description {
+                font-size: 1.125rem;
+                margin-bottom: 1.875rem;
+                text-align: center;
+            }
+
+            .faq__contacts-list {
+                justify-content: center;
+            }
+
+            .faq__callback {
+                align-self: center;
+                height: 60px;
+                width: 100%;
+                max-width: 289px;
+                font-size: 1.125rem;
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .offer {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1520px;
+
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 370px;
+            padding: 3.75rem 3.75rem;
+        }
+
+        &__info {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        &__title {
+            font-size: 2.875rem;
+            line-height: 3.75rem;
+            margin-bottom: 4.375rem;
+            text-align: left;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            margin-bottom: 1.875rem;
+            text-align: left;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__contacts {
+            align-items: flex-start;
+
+            .faq__subtitle {
+                font-size: 2.25rem;
+                text-align: left;
+            }
+
+            .faq__description {
+                text-align: left;
+            }
+
+            .faq__contacts-list {
+                justify-content: start;
+                margin-bottom: 3.75rem;
+            }
+
+            .faq__callback {
+                align-self: flex-start;
+            }
+        }
+    }
+}
+
+@include min-screen(1680px) {
+    .offer {
+        &__wrapper {
+            border-width: 15px;
+            grid-column-gap: 19.125rem;
+            padding: 5.3125rem 5.3125rem;
+        }
+
+        &__contacts {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 1px;
+                height: 100%;
+
+                border-left: 1px dashed $lightgray;
+
+                top: 0;
+                left: -9.5625rem;
+            }
+        }
+    }
+}

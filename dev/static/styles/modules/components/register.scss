@@ -1,0 +1,370 @@
+.register {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 5rem 1.25rem;
+    margin-bottom: 3.75rem;
+
+    &__title {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+        text-align: center;
+        text-transform: uppercase;
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__description {
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        text-align: center;
+        margin-bottom: 1.875rem;
+    }
+
+    &__form {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 3.125rem;
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 1.875rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &--code {
+            .register__input {
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+
+    &__label {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+        margin-bottom: 0.625rem;
+    }
+
+    &__input {
+        width: 100%;
+        @include font-setting($secondary-font, 1.125rem, 1.25rem, 400, $darkgray);
+        text-align: center;
+        border: 2px solid $lightgray;
+        border-radius: 10px;
+        height: 50px;
+        padding: 0 1.5625rem;
+        transition: 0.4s $cubic;
+        cursor: text;
+
+        &:active,
+        &:focus,
+        &:hover {
+            border-color: $green;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__code {
+        width: 100%;
+
+        @include flex-setting(row, center, center);
+
+        &-img {
+            border: 1px solid $black;
+            width: 180px;
+            height: 40px;
+            object-fit: contain;
+
+            margin-right: 1.25rem;
+        }
+
+        &-reset {
+            width: 40px;
+            height: 40px;
+
+            background-color: transparent;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.9938 8.74999V0L17.0563 2.93748C15.25 1.125 12.7563 0 9.99376 0C4.46878 0 0.00627136 4.47499 0.00627136 10C0.00627136 15.5251 4.46878 20.0001 9.99376 20.0001C14.65 20.0001 18.55 16.8126 19.6563 12.5001H17.0563C16.0251 15.4126 13.2625 17.5 9.99382 17.5C5.85007 17.5 2.49381 14.1438 2.49381 10C2.49381 5.85628 5.85007 2.50002 9.99382 2.50002C12.0626 2.50002 13.9188 3.36252 15.2751 4.71879L11.2438 8.75005H19.9938V8.74999Z' fill='%23575757'/%3E%3C/svg%3E");
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: 60%;
+
+            border: none;
+
+            cursor: pointer;
+            transition: 0.4s $cubic;
+
+            &:hover,
+            &:active {
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.9938 8.74999V0L17.0563 2.93748C15.25 1.125 12.7563 0 9.99376 0C4.46878 0 0.00627136 4.47499 0.00627136 10C0.00627136 15.5251 4.46878 20.0001 9.99376 20.0001C14.65 20.0001 18.55 16.8126 19.6563 12.5001H17.0563C16.0251 15.4126 13.2625 17.5 9.99382 17.5C5.85007 17.5 2.49381 14.1438 2.49381 10C2.49381 5.85628 5.85007 2.50002 9.99382 2.50002C12.0626 2.50002 13.9188 3.36252 15.2751 4.71879L11.2438 8.75005H19.9938V8.74999Z' fill='%2392C64E'/%3E%3C/svg%3E");
+                transition: 0.4s $cubic;
+            }
+        }
+    }
+
+
+    &__submit {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 800, $white);
+        text-transform: uppercase;
+        text-align: center;
+        border: none;
+        border-radius: 40px;
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+        cursor: pointer;
+        padding: 1.25rem 0;
+
+        &:active,
+        &:hover {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
+    }
+
+    &__controls {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__link {
+        @include font-setting($primary-font, 1rem, 1.5rem, 700, $green);
+        text-decoration: none;
+        border-bottom: 1px dashed $green;
+
+        cursor: pointer;
+
+        margin-bottom: 0.625rem;
+        transition: 0.4s $cubic;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $black;
+            border-color: $black;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__checkbox {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: 1.875rem;
+
+        &-item {
+            @include flex-setting(column, center, flex-start);
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.625rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &-input {
+            display: none;
+        }
+
+        &-label {
+            @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+            cursor: pointer;
+
+            a {
+                color: $green;
+                text-decoration: none;
+                transition: 0.4s $cubic;
+
+                &:hover,
+                &:active,
+                &:focus {
+                    color: $black;
+                    transition: 0.4s $cubic;
+                }
+            }
+        }
+
+        &-input + label::before {
+            position: absolute;
+            content: '';
+
+            width: 12px;
+            height: 12px;
+            background-color: transparent;
+            border: 1px solid $lightgray;
+            border-radius: 2px;
+            transition: 0.4s $cubic;
+            left: 0;
+            top: 0.125rem;
+        }
+
+        &-input + label:hover::before,
+        &-input + label:active::before {
+            border-color: $green;
+            transition: 0.4s $cubic;
+        }
+
+        &-input:checked + label::after {
+            position: absolute;
+            content: '';
+
+            width: 12px;
+            height: 12px;
+
+            background-color: $green;
+            border: 1px soild $green;
+            border-radius: 2px;
+            box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
+
+            left: 0;
+            top: 0.125rem;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .register {
+        max-width: 688px;
+        margin: 5rem auto;
+        padding: 0;
+
+        &__title {
+            margin-bottom: 2.5rem;
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 4rem;
+            grid-row-gap: 2rem;
+            justify-content: center;
+            align-items: start;
+
+        }
+
+        &__item {
+            margin: 0;
+
+            &--tel {
+                grid-row-start: 1;
+                grid-row-end: 2;
+                grid-column-start: 2;
+                grid-column-end: 3;
+            }
+
+            &--mail {
+                grid-row-start: 3;
+                grid-row-end: 4;
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+
+            &--code {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+
+        &__input {
+            height: 60px;
+        }
+
+        &__code {
+            &-img {
+                width: 220px;
+                height: 60px;
+
+                margin-right: 2rem;
+            }
+        }
+
+
+        &__submit {
+            max-width: 272px;
+        }
+
+        &__checkbox {
+            &-label {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .register {
+        &__item {
+            align-items: flex-start;
+            
+            &--code {
+                display: grid;
+                grid-template-areas:
+                    'title title'
+                    'input code'
+                ;
+
+                grid-template-columns: 1fr 230px;
+                grid-column-gap: 3.125rem;
+
+                justify-content: space-between;
+                align-items: center;
+
+                .register__label {
+                    grid-area: title;
+                    text-align: left;
+                }
+
+                .register__input {
+                    grid-area: input;
+                    margin-bottom: 0;
+                }
+
+                .register__code {
+                    grid-area: code;
+                }
+            }
+        }
+
+        &__input {
+            height: 60px;
+            text-align: left;
+        }
+
+        &__code {
+            &-img {
+                width: 220px;
+                height: 60px;
+
+                margin-right: 2rem;
+            }
+        }
+
+
+        &__submit {
+            max-width: 272px;
+        }
+
+        &__checkbox {
+            &-label {
+                font-size: 1rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,127 @@
+.recovery {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 5rem 1.25rem;
+    margin-bottom: 3.75rem;
+
+    &__title {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+        text-align: center;
+        text-transform: uppercase;
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__description {
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        text-align: center;
+        margin-bottom: 1.875rem;
+    }
+
+    &__form {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__list {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 3.125rem;
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 1.875rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__label {
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 700, $black);
+        margin-bottom: 0.625rem;
+    }
+
+    &__input {
+        width: 100%;
+        @include font-setting($secondary-font, 1.125rem, 1.25rem, 400, $darkgray);
+        text-align: center;
+        border: 2px solid $lightgray;
+        border-radius: 10px;
+        height: 50px;
+        padding: 0 1.5625rem;
+        transition: 0.4s $cubic;
+        cursor: text;
+
+        &:active,
+        &:focus,
+        &:hover {
+            border-color: $green;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &__submit {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 1.125rem, 1.25rem, 800, $white);
+        text-transform: uppercase;
+        text-align: center;
+        border: none;
+        border-radius: 40px;
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+        cursor: pointer;
+        padding: 1.25rem 0;
+
+        &:active,
+        &:hover {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .recovery {
+        width: 100%;
+        max-width: 460px;
+        margin: 5rem auto;
+        padding: 0;
+
+        &__title {
+            margin-bottom: 2.5rem;
+        }
+
+        &__item {
+            margin-bottom: 1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__input {
+            height: 60px;
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .recovery {
+        &__item {
+            align-items: flex-start;
+        }
+
+        &__input {
+            text-align: left;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'contacts-bg', 'Контакты')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.contacts
+                h2.contacts__title ООО «Правильный рацион»
+                .contacts__wrapper
+                    .contacts__map
+                        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.1212133518793!2d37.72975981639905!3d55.791133096501866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b53510bcf32981%3A0x2c7059d805a4d3f0!2z0JzQuNGA0L7QvdC-0LLRgdC60LDRjyDRg9C7LiwgMzMg0YHRgtGA0L7QtdC90LjQtSAxLCDQnNC-0YHQutCy0LAsIE1vc2NvdyBPYmxhc3QsIDEwNTMxOA!5e0!3m2!1sru!2sru!4v1637536380205!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy").contacts__map-frame
+                    
+                    ul.contacts__list
+                        li.contacts__item.contacts__item--address
+                            b.contacts__name Адрес:
+                            span.contacts__data Россия, 105318, г.Москва, ул. Мироновская, д.33, стр.1
+                        li.contacts__item.contacts__item--phone
+                            b.contacts__name Телефоны:
+                            a(href="tel:+78007874244" target="_self").contacts__data 8 800 787 42 44
+                        li.contacts__item.contacts__item--email
+                            b.contacts__name E-mail:
+                            a(href="mailto:web@general-food.ru" target="_self").contacts__data web@general-food.ru
+                            
+                    .contacts__social
+                        b.contacts__name Мы в соцсетях:
+                        ul.contacts__social-list
+                            li.contacts__social-item
+                                a(href="#" target="_blank").contacts__social-link
+                                    i.fab.fa-vk
+                            li.contacts__social-item
+                                a(href="#" target="_blank").contacts__social-link
+                                    i.fab.fa-facebook-f
+                            li.contacts__social-item
+                                a(href="#" target="_blank").contacts__social-link
+                                    i.fab.fa-instagram
+            section.feedback
+                .feedback__wrapper
+                    h2.feedback__title Обратная связь
+                    
+                    form(method="get" action="#").feedback__form
+                        ul.feedback__list
+                            li.feedback__item
+                                label(for="feedback-name").feedback__label Имя
+                                input(type="text" name="feedback-name" id="feedback-name" placeholder="Ваше имя").feedback__input
+                            li.feedback__item
+                                label(for="feedback-tel").feedback__label Телефон
+                                input(type="tel" name="feedback-tel" id="feedback-tel" placeholder="+7 (___) ___-__-__").feedback__input.js-phone-input
+                            li.feedback__item
+                                label(for="feedback-text").feedback__label Сообщение
+                                textarea(id="feedback-text" name="feedback-text" placeholder="Введите Ваше сообщение").feedback__textarea
+                            li.feedback__item.feedback__item--code
+                                label(for="feedback-code").feedback__label Введите символы, изображённые на картинке: *
+                                input(type="text" name="feedback-code" id="feedback-code" placeholder="Введите символы").feedback__input
+                                .feedback__code
+                                    img(src="static/images/content/code.png" alt="secure-code").feedback__code-img
+                                    button(type="reset").feedback__code-reset
+                        .feedback__bottom
+                            button(type="submit").feedback__submit Отправить
+                            span.feedback__agreement Нажимая кнопку, Вы соглашаетесь с условиями 
+                                a(href="#" target="_blank") оферты
+                                |  и даёте своё согласие на 
+                                a(href="#" target="_blank") обработку персональных данных
+                                | .
+                    .feedback__reaction
+                        h3.feedback__subtitle Ваша заявка успешно отправлена
+                        img(src="static/images/content/smile.svg" alt="Ваша заявка успешно отправлена").feedback__icon
+                        p.feedback__description Мы свяжемся с Вами в ближайшее время
+                .feedback__faq.faq__contacts
+                    h3.faq__subtitle Остались вопросы?
+                    p.faq__description Вы можете задать их нашему специалисту, воспользовавшись любым удобным для Вас способом
+                    p.faq__description Также с нами в любой момент Вы можете связаться по данной почте: web@general-food.ru
+                    ul.faq__contacts-list
+                        li.faq__contacts-item
+                            a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--wa
+                        li.faq__contacts-item
+                            a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--tg
+                        li.faq__contacts-item
+                            a(href="tel:+78007874244" target="_self").faq__contacts-link 8 800 787 42 44
+                    button(type="button" data-modal="#js-popup-callback").faq__callback.js-popup-opener Перезвоните мне
+                    
+        include ../modules/footer/footer
+
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/mask.js")
+        block script

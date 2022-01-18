@@ -1,0 +1,73 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'sales-bg', 'О компании')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.about
+                .about__wrapper
+                    h2.about__title Цель компании
+                    p.about__description Мы хотим, чтобы именно вы питались правильно и вкусно! Ежедневно мы помогаем сотням наших клиентов избавиться от мытья посуды, готовки у плиты и изнурительного хождения по магазинам. Ежедневное правильное питание позволит Вам освободить много времени, которое Вы с удовольствием посвятите себе!
+
+            section.reasons.reasons--about
+                .reasons__wrapper
+                    h2.reasons__name Наше производство
+                    ul.reasons__list
+                        +reasonItem('Высокотехнологичное оборудование', 'Высокотехнологичное оборудование на производстве позволяет нам готовить более 1000 блюд ежедневно. Все блюда нашего меню составлены и приготовлены под чутким наблюдением диетологов и фитнес тренеров, в строгом соответствие с Государственным стандартом (ГОСТ).', 'about-1')
+                        +reasonItem('Гарантия качества', 'Помимо вкуснейших блюд, качество которых не уступает, а в большинстве и превосходят блюда, которые подаются в крупных ресторанах Москвы, мы предоставляем своим клиентам гарантии качества производимой продукции, работая напрямую с Институтом питания, мы каждый месяц улучшаем наш сервис.', 'about-2')
+                        +reasonItem('Уникальный сервис доставки', 'Мы стараемся сделать наш сервис по доставке здорового питания еще более уникальным! Перед тем как отправить заказ, все блюда проходят обязательную пастеризацию, и упаковываются с применением вакуумирования — это дает всем нашим блюдам максимальное увеличение срока хранения и сохранения вкусовых качеств.', 'about-3')
+            include ../modules/blocks/reviews
+            
+            section.about-bottom
+                .about-bottom__wrapper
+                    h2.about-bottom__title Блог о правильном питании
+                    
+                    ul.about-bottom__list
+                        li.about-bottom__item
+                            b.about-bottom__name Привычки здорового образа жизни
+                            a(href="" target="_self").about-bottom__link Читать полностью
+                        li.about-bottom__item
+                            b.about-bottom__name Здоровый образ жизни. Рациональное питание
+                            a(href="" target="_self").about-bottom__link Читать полностью
+                        li.about-bottom__item
+                            b.about-bottom__name Влияние правильного питания на здоровье человека
+                            a(href="" target="_self").about-bottom__link Читать полностью
+                        li.about-bottom__item
+                            b.about-bottom__name Роль правильного питания в здоровом образе жизни
+                            a(href="" target="_self").about-bottom__link Читать полностью
+                .about-bottom__video
+                    h2.about-bottom__title Видеопрезентация
+                    .about-bottom__player
+                        iframe(src="https://www.youtube.com/embed/szF1iHvgRBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen).about-bottom__player-frame
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/main.js")
+        script(src="static/js/slider.js")
+
+        block script

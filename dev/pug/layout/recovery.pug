@@ -1,0 +1,44 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body.body-form
+        include ../modules/header/header
+        main.main.main--login
+            .recovery
+                h1.recovery__title Забыли пароль?
+                p.recovery__description Если вы забыли пароль, введите логин или E-Mail. Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.
+                form(method="" action="" name="recovery-form").recovery__form
+                    ul.recovery__list
+                        li.recovery__item
+                            label(for="recovery-login").recovery__label Ваш логин
+                            input(type="text" name="recovery-login" id="recovery-login" required).recovery__input
+                            span.recovery__input-error.recovery__input-label--login
+                        li.recovery__item
+                            label(for="recovery-mail").recovery__label Ваш e-mail
+                            input(type="email" name="recovery-email" id="recovery-email" required onkeydown="validationMail()" placeholder="e-mail" ).recovery__input
+                            span.recovery__input-error.recovery__input-label--mail
+                    button(type="submit").recovery__submit Выслать
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/validation.js")
+
+        block script

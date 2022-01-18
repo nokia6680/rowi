@@ -1,0 +1,47 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body.body-form
+        include ../modules/header/header
+        main.main.main--login
+            .login
+                h1.login__title Вход в личный кабинет
+                form(method="" action="" name="login-form").login__form
+                    ul.login__list
+                        li.login__item
+                            label(for="login-mail").login__label Ваш e-mail
+                            input(type="email" name="login-email" id="login-email" required onkeydown="validationMail()" placeholder="e-mail" ).login__input
+                            span.login__input-error.login__input-label--mail
+                        li.login__item
+                            label(for="login-pass").login__label Ваш пароль
+                            input(type="password" name="login-pass" id="login-pass" required placeholder="Пароль").login__input
+                            span.login__input-error.login__input-label--password
+                    button(type="submit").login__submit Войти
+                    
+                .login__controls
+                    a(href="recovery.html" target="_self").login__link Восстановить пароль
+                    a(href="register.html" target="_self").login__link Регистрация
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/validation.js")
+
+        block script

@@ -1,0 +1,336 @@
+.filter {
+    position: relative;
+
+    &.is-collapsed {
+        .filter-dropdown {
+            @include flex-setting(column, flex-start, flex-start);
+            width: 200%;
+            max-width: 283px;
+            left: 0;
+            top: 40px;
+            position: absolute;
+            height: 0;
+            overflow: hidden;
+            max-height: 0;
+            transition: 0.4s linear;
+
+            background-color: $white;
+
+            padding-left: 1.875rem;
+            padding-right: 1.875rem;
+
+            border-radius: 0 25px 25px 25px;
+        }
+    }
+
+    &.is-expanded {
+        .filter-head {
+            font-size: 0.875rem;
+            background-position: left 10px center;
+            width: auto;
+            overflow: visible;
+            max-width: 160px;
+            padding-left: 3.125rem;
+            border-radius: 20px 20px 0 0;
+            background-color: $white;
+            transition: max-width 0.2s $cubic;
+            color: rgba(34, 34, 34, 1);
+            transition: color 0.2s linear 0.2s, background-color 0.2s linear 0.2s;
+            box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .filter-dropdown {
+            height: auto;
+            max-height: 1000px;
+            top: 39px;
+            transition: 0.4s linear;
+            z-index: 1;
+            overflow: visible;
+
+            padding: 1.875rem 1.875rem;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+            .filter-dropdown__block {
+                opacity: 1;
+
+                transition: opacity 0.8s linear;
+            }
+        }
+    }
+
+    &.is-inactive {
+        opacity: 0.1;
+    }
+
+    &.is-inactive {
+        .is-expanded {
+            opacity: 1;
+        }
+    }
+
+    &-head {
+        cursor: pointer;
+    }
+
+    &-dropdown {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 200%;
+        max-width: 283px;
+        left: 0;
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: 0.4s linear;
+
+        background-color: $white;
+
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+
+        border-radius: 0 25px 25px 25px;
+    }
+
+    &-dropdown__block {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        position: relative;
+        opacity: 0;
+        margin-bottom: 1.25rem;
+        background-color: $white;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .subfilter-item {
+        position: relative;
+        cursor: pointer;
+        transition: none;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: 12px;
+            height: 20px;
+
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6018 9.36567L1.5935 0.245066C1.26508 -0.0816885 0.732451 -0.0816885 0.40403 0.245066C0.0756097 0.571794 0.0756097 1.10195 0.40403 1.4287L9.80886 10L0.404863 18.5713C0.0764427 18.898 0.0764427 19.4282 0.404863 19.7549C0.733284 20.0817 1.26591 20.0817 1.59431 19.7549L11.6026 10.6343C11.7777 10.4601 11.8527 10.2292 11.841 10.0008C11.8519 9.77161 11.7769 9.54071 11.6018 9.36567Z' fill='%2392C64E'/%3E%3C/svg%3E");
+
+            top: 0;
+            right: 0.25rem;
+            transition: 0.1s linear;
+        }
+
+        &.is-collapsed {
+            max-height: 20px;
+            overflow: hidden;
+            transition: 0.1s linear;
+            transition-delay: 0;
+        }
+
+        &.is-expanded {
+            max-height: 100px;
+            transition: 0.1s linear;
+
+            transition-delay: 0;
+
+            &::after {
+                transform: rotate(90deg);
+                transition: 0.1s linear;
+            }
+        }
+    }
+
+    &-dropdown__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &-dropdown__item {
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+        margin-bottom: 0.625rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &-dropdown__name {
+
+        @include font-setting($primary-font, 1rem, 1.25rem, 700, $black);
+        margin-bottom: 1.25rem;
+    }
+
+    &-dropdown__checkbox {
+        display: none;
+    }
+
+    &-dropdown__label {
+        @include font-setting($secondary-font, 1rem, 1.25rem, 400, $darkgray);
+
+        margin-right: 0.9375rem;
+    }
+
+    &-dropdown__counter {
+        @include font-setting($secondary-font, 1rem, 1.25rem, 400, $gray);
+    }
+
+    &-dropdown__checkbox + label {
+        @include checkbox-default;
+    }
+
+    &-dropdown__checkbox + label::before {
+        @include custom-checkbox;
+    }
+
+    &-dropdown__checkbox:checked + label::after {
+        @include checkbox-checked;
+    }
+
+    &-dropdown__controls {
+        width: 100%;
+
+        @include flex-setting(row, space-between, center);
+
+        .js-input-to,
+        .js-input-from {
+            text-align: center;
+            width: 102px;
+            height: 30px;
+            border: 1px solid $lightgray;
+            border-radius: 5px;
+            background-color: $white;
+
+            @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgreen);
+
+            margin-bottom: 0.625rem;
+
+            &:focus {
+                border-color: $green;
+            }
+        }
+    }
+
+    &-dropdown__submit {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.875rem, 1.875rem, 800, $green);
+
+        background-color: $white;
+        border: 2px solid $green;
+        border-radius: 2.5rem;
+        white-space: nowrap;
+        padding: 0 1.5rem;
+
+        cursor: pointer;
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active {
+            background-color: $green;
+            color: $white;
+            transition: 0.4s $cubic;
+        }
+    }
+
+    &-dropdown__range,
+    .irs,
+    .irs--flat {
+        width: 100%;
+    }
+
+    .irs {
+        height: 20px;
+    }
+
+    .irs-line {
+        height: 2px;
+        left: 0 !important;
+        border-radius: 0;
+        grid-area: line;
+        position: relative;
+        top: 50%;
+        background-color: $green;
+    }
+
+    .irs-min,
+    .irs-max {
+        display: none;
+    }
+
+    .irs-from {
+        display: none;
+    }
+
+    .irs-to {
+        display: none;
+    }
+
+    .irs-single {
+        display: none;
+    }
+
+    .irs-bar {
+        display: none;
+    }
+
+    .irs-handle {
+        width: 20px;
+        height: 20px;
+        background-color: $white;
+        border: 1px solid $green;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+        top: 0px;
+
+        i {
+            display: none !important;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .filter {
+        &.is-collapsed {
+            .filter-dropdown {
+                top: 49px;
+            }
+        }
+        &.is-expanded {
+            .filter-head {
+                background-position: left 15px center;
+                border-radius: 25px 25px 0 0;
+                box-shadow: none;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-bottom-color: $white;
+            }
+
+            .filter-dropdown {
+                top: 49px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .filter {
+        &.is-expanded {
+            z-index: 10;
+
+            .filter-head {
+                background-position: left 15px center;
+                border-radius: 25px 25px 0 0;
+            }
+        }
+    }
+}

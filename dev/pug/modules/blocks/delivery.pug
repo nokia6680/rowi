@@ -1,0 +1,50 @@
+article.delivery
+    .delivery__wrapper
+        .delivery__info
+            h2.delivery__title Выберите регион доставки
+            
+            ul.delivery__list
+                li(onclick="openZone(event, 'inMcad')" id="defaultZone").delivery__item
+                    span.delivery__item-name Москва (до 5 км от МКАД)
+                li(onclick="openZone(event, 'outMcad')").delivery__item
+                    span.delivery__item-name От 5 до 15 км за МКАД
+                li(onclick="openZone(event, 'outA107')").delivery__item
+                    span.delivery__item-name От 15 км до А-107
+            .delivery__details
+                .delivery__details-item#inMcad
+                    ul.delivery__times
+                        li.delivery__times-item.delivery__times-item--morning
+                            b.delivery__times-name Утро
+                            span.delivery__times-nr с 8.00 до 14.00
+                        li.delivery__times-item.delivery__times-item--evening
+                            b.delivery__times-name Вечер
+                            span.delivery__times-nr с 18.00 до 23.00
+                    b.delivery__price Бесплатно
+                .delivery__details-item#outMcad
+                    ul.delivery__times
+                        li.delivery__times-item.delivery__times-item--morning
+                            b.delivery__times-name Утро и день
+                            span.delivery__times-nr с 9.00 до 18.00
+                    b.delivery__price 350 рублей
+                .delivery__details-item#outA107
+                    ul.delivery__times
+                        li.delivery__times-item.delivery__times-item--morning
+                            b.delivery__times-name Утро и день
+                            span.delivery__times-nr с 9.00 до 18.00
+                    b.delivery__price Тариф рассчитывается индивидуально логистом, при звонке оператору
+
+            .delivery__contacts
+                p.delivery__description Экспресс доставка осуществляется на следующий день после заказа при условии подтверждения заказа до 11 утра у оператора.
+                p.delivery__description Для подтверждения заказа пожалуйста  позвоните оператору, сообщите номер заказа и подтвердите заказ.
+                
+                ul.delivery__contacts-list
+                    li.delivery__contacts-item
+                        a(href="#" target="_blank").delivery__contacts-link.delivery__contacts-link--wa
+                    li.delivery__contacts-item
+                        a(href="#" target="_blank").delivery__contacts-link.delivery__contacts-link--tg
+                    li.delivery__contacts-item
+                        a(href="tel:+78007874244" target="_self").delivery__contacts-link 8 800 787 42 44
+                button(type="button" data-modal="#js-popup-callback").delivery__callback.js-popup-opener Перезвоните мне
+        .delivery__map
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.1212133518793!2d37.72975981639905!3d55.791133096501866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b53510bcf32981%3A0x2c7059d805a4d3f0!2z0JzQuNGA0L7QvdC-0LLRgdC60LDRjyDRg9C7LiwgMzMg0YHRgtGA0L7QtdC90LjQtSAxLCDQnNC-0YHQutCy0LAsIE1vc2NvdyBPYmxhc3QsIDEwNTMxOA!5e0!3m2!1sru!2sru!4v1637536380205!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy").delivery__map-frame
+            

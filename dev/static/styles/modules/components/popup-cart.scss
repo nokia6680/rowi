@@ -1,0 +1,111 @@
+.popup-cart {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+
+    @include flex-setting(column, center, center);
+    background-color: rgba(0, 0, 0, 0.7);
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    &.active {
+        display: flex;
+    }
+
+    &__wrapper {
+        @include flex-setting(column, center, center);
+        width: 100%;
+        height: 100%;
+        padding: 1.875rem 1.875rem;
+        background-color: $white;
+
+        animation: fadeIn 2s $cubic 1 forwards;
+        z-index: 2;
+    }
+
+    &__title {
+        @include font-setting($primary-font, 1.25rem, 1.875rem, 800, $black);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__controls {
+        width: 100%;
+        max-width: 260px;
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__closer {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, 0.875rem, 1.875rem, 800, $white);
+
+        text-transform: uppercase;
+
+        width: 100%;
+        padding: 0.9375rem 0;
+        margin-bottom: 1.25rem;
+
+        background: linear-gradient(93.13deg, #92C64E 0%, #4BAF50 100%);
+        border: none;
+        border-radius: 40px;
+
+        cursor: pointer;
+        outline: none;
+
+        &:hover,
+        &:active {
+            background: linear-gradient(93.13deg, #4BAF50 0%, #92C64E 100%);
+        }
+    }
+
+    &__checkout {
+        @include font-setting($primary-font, 1rem, 1.5rem, 700, $green);
+        text-decoration: none;
+        border-bottom: 1px dashed $green;
+
+        cursor: pointer;
+
+        transition: 0.4s $cubic;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $black;
+            border-color: $black;
+            transition: 0.4s $cubic;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .popup-cart {
+        &__wrapper {
+            max-width: 420px;
+            height: auto;
+            padding: 4rem 2.5rem;
+        }
+
+        &__title {
+            text-align: center;
+            font-size: 1.875rem;
+            line-height: 2.5rem;
+        }
+
+        &__controls {
+            max-width: 300px;
+        }
+
+        &__closer {
+            font-size: 1rem;
+        }
+    }
+}

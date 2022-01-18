@@ -1,0 +1,112 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body.body--personal
+        include ../modules/header/header
+        main.main
+            +introBlock('personal-intro', 'personal-bg', 'Индивидуальный рацион', 'Наш диетолог составит для Вас индивидуальный рацион с учетом Ваших особенностей', '', '', 'От 700 руб. в день Бесплатная доставка')
+            
+            section.personal
+                .personal__wrapper
+                    picture.personal__frame
+                        source(media="(min-width: 768px)" srcset="static/images/content/doctor.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/doctor.jpg")
+                        source(srcset="static/images/content/doctor-mb.webp" type="image/webp")
+                        img(src="static/images/content/doctor-mb.jpg" alt="Пугачева Наталья Владимировна").picture__frame-image
+                    .personal__about
+                        h2.personal__title Пугачева Наталья Владимировна
+                        b.personal__exp Стаж: 20 лет
+                    .personal__info
+                        p.personal__description Опыт работы в клинике НИИ питания, в частной клинике и Клинике управления здоровьем ПМГМУ им. Сеченова. Несколько лет является экспертом СМИ, преподавателем в программах по Нутрициологии и диетологии. Опыт совместной работы с врачами-генетиками, составления индивидуальной программы питания с учетом результатов генетического теста.
+                        p.personal__description Консультирование и ведение пациентов как с избытком, так и недостатком массы тела, наличием заболеваний, людей, активно занимающихся спортом. 
+                        p.personal__description При составлении рациона учитываются привычки, наличие непереносимости продуктов. Меню составляется обязательно с учетом принципов рационального питания, соблюдением баланса макронутриентов и соответствия калорийности рациона потребностям человека.
+                        a(href="" target="_blank").personal__sert Посмотреть сертификат
+            section.consult.consult--personal
+                .consult__wrapper.consult__wrapper--personal
+                    h2.consult__title Связаться с диетологом
+                    p.consult__description Заполни форму и получи консультацию нашего диетолога в течение 15 минут!
+
+                    form(method="" action="").consult__form
+                        ul.consult__list
+                            li.consult__item
+                                label(for="cons-name").consult__label
+                                input(type="text" name="cons-name" id="cons-name" placeholder="Имя").consult__input
+                            li.consult__item
+                                label(for="cons-tel").consult__label
+                                input(type="tel" name="cons-tel" id="cons-tel" placeholder="Телефон" required).consult__input.js-phone-input
+                        button(type="submit").consult__callback Подобрать рацион
+                        span.consult__note Нажимая кнопку, Вы соглашаетесь с условиями оферты и даёте своё согласие на обработку персональных данных.
+                    // Успещная реакция на отправку данных
+                    .consult__reaction
+                        ul.consult__reaction-social
+                            li.consult__reaction-item
+                                a(href="#" target="_blank")
+                                    i.fab.fa-vk
+                            li.consult__reaction-item
+                                a(href="#" target="_blank")
+                                    i.fab.fa-facebook-f
+                            li.consult__reaction-item
+                                a(href="#" target="_blank")
+                                    i.fab.fa-instagram
+                        a(href="blog.html" target="_blank").consult__reaction-link Блог General Food
+            section.choose.choose--personal
+                .choose__wrapper
+                    picture.choose__frame
+                        source(srcset="static/images/content/choose-bg-2.webp" type="image/webp")
+                        img(src="static/images/content/choose-bg-2.jpg" alt="Выберите то, что подходит именно вам").choose__frame-image
+                    .choose__info
+                        h2.choose__title Почему стоит выбрать индивидуальный рацион?
+                        p.choose__description Диетолог может составить индивидуальный рацион с учетом особенностей клиента - вкусовых предпочтение, отказа от какой-то группы продуктов с соблюдением баланса макронутриентов и адекватной суточной калорийности. В отличие от самостоятельного выбора меню от специалиста составлено с учетом основных принципов диетологии, подтверждённых опытом и наукой.
+                    .choose__contacts
+                        ul.faq__contacts-list
+                            li.faq__contacts-item
+                                a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--wa
+                            li.faq__contacts-item
+                                a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--tg
+                            li.faq__contacts-item
+                                a(href="tel:+78007874244" target="_self").faq__contacts-link 8 800 787 42 44
+                        button(type="button" data-modal="#js-popup-callback").faq__callback.js-popup-opener Подобрать рацион
+            section.offer
+                .offer__wrapper
+                    .offer__info
+                        h2.offer__title Предлагаем сотрудничество
+                        p.offer__description General Food предлагает сотрудничество для диетологов и нутрициологов на лучших условиях. 
+                        p.offer__description Собственное производство в Москве.
+                    .offer__contacts
+                        h3.faq__subtitle Свяжитесь с нами
+                        p.faq__description Вы можете задать их нашему специалисту, воспользовавшись любым удобным для Вас способом
+
+                        ul.faq__contacts-list
+                            li.faq__contacts-item
+                                a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--wa
+                            li.faq__contacts-item
+                                a(href="#" target="_blank").faq__contacts-link.faq__contacts-link--tg
+                            li.faq__contacts-item
+                                a(href="tel:+78007874244" target="_self").faq__contacts-link 8 800 787 42 44
+                        button(type="button" data-modal="#js-popup-callback").faq__callback.js-popup-opener Перезвоните мне
+                    
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/change-meal
+        include ../modules/popup/fast-order
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="static/js/main.js")
+        script(src="static/js/mask.js")
+        block script

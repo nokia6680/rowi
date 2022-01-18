@@ -1,0 +1,27 @@
+.add-review.js-popup-wrap#js-popup-feedback
+    .add-review__wrapper.js-popup-inner
+        .add-review__head
+            h3.add-review__title Новый отзыв
+            button(type="button").add-review__closer.js-popup-closer
+        form(method="" action="" name="add-review" id="add-review").add-review__form
+            ul.add-review__list
+                li.add-review__item
+                    label(for="review-name").add-review__label Ваше имя
+                    input(type="text" name="review-name" id="review-name" placeholder="Имя").add-review__input
+                li.add-review__item.add-review__item--rating
+                    p.add-review__label Оцените товар
+                    .add-review__rating
+                        input(type="radio" id="star-5" name="review-rating" value="excellent").add-review__rating-input
+                        label(for="star-5").add-review__rating-label
+                        input(type="radio" id="star-4" name="review-rating" value="good").add-review__rating-input
+                        label(for="star-4").add-review__rating-label
+                        input(type="radio" id="star-3" name="review-rating" value="medium").add-review__rating-input
+                        label(for="star-3").add-review__rating-label
+                        input(type="radio" id="star-2" name="review-rating" value="bad").add-review__rating-input
+                        label(for="star-2").add-review__rating-label
+                        input(type="radio" id="star-1" name="review-rating" value="poor").add-review__rating-input
+                        label(for="star-1").add-review__rating-label
+                li.add-review__item
+                    label(for="review-textarea").add-review__label Ваш отзыв
+                    textarea(name="review-textarea" id="review-textarea" placeholder="Введите текст отзыва").add-review__textarea
+            button(type="submit").add-review__submit Отправить

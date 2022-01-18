@@ -1,0 +1,23 @@
+<svg width="60" height="52" viewBox="0 0 60 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M54.5 42.875L53.429 39.628C53.148 38.774 53 37.888 53 37C53 36.098 53.109 35.217 53.374 34.355C53.789 33.001 54.001 31.593 54 30.177V24" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M43 45L41.504 42.849C40.326 41.154 39.58 40.358 37.671 39C34.951 37.066 34.148 34.941 33.406 32.358L30.136 20.98C30.048 20.673 30 20.343 30 20C30 18.343 31.119 17 32.5 17C33.363 17 34.124 17.525 34.573 18.323L38.909 26.053C39.257 26.673 39.764 27.19 40.378 27.549L43.765 29.53" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M30.142 19H25L22.5 21.5L25 24H31.004" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M37.7579 24H56.4999C57.8809 24 58.9999 22.881 58.9999 21.5C58.9999 20.119 57.8809 19 56.4999 19H34.9529" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M39.9059 50.8569L39.0249 46.9549C38.9029 46.4159 39.2409 45.8809 39.7799 45.7589L56.3169 42.0239C56.8559 41.9019 57.3909 42.2399 57.5129 42.7789L58.4249 46.8179" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M45 48H43V50H45V48Z" fill="black"/>
+<path d="M6 25H4V27H6V25Z" fill="black"/>
+<path d="M6 21H4V23H6V21Z" fill="black"/>
+<path d="M6 17H4V19H6V17Z" fill="black"/>
+<path d="M1 49V30H7V49" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M11 46V19H17V46" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M27 27V43" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M21 17V7H27V11" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M21 43V25" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M16 11H14V13H16V11Z" fill="black"/>
+<path d="M16 7H14V9H16V7Z" fill="black"/>
+<path d="M16 3H14V5H16V3Z" fill="black"/>
+<path d="M36 8H34V10H36V8Z" fill="black"/>
+<path d="M36 4H34V6H36V4Z" fill="black"/>
+<path d="M36 0H34V2H36V0Z" fill="black"/>
+<path d="M27.764 19C27.289 18.47 27 17.769 27 17C27 15.479 28.132 14.222 29.599 14.027L44.275 12.035C44.441 12.012 44.609 12 44.776 12C45.897 12.001 46.957 12.511 47.657 13.386L52.156 19" stroke="black" stroke-width="2" stroke-miterlimit="10"/>
+</svg>

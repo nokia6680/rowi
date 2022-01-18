@@ -1,0 +1,45 @@
+.meal-order.js-popup-wrap#js-popup-meal
+    .meal-order__wrapper.js-popup-inner
+        .meal-order__head
+            h3(data-sort="fit").meal-order__title Fit
+            button(type="button").meal-order__closer.js-popup-closer
+        .meal-order__content
+            // Фильтр по датам
+            .s-content__filter
+                button(type="button").s-content__filter-prev
+                .s-content__filter-list.s-content-cabinet-swiper
+                    .swiper-wrapper
+                        +dateBtn('29.11 Пн', 'monday', '2021-11-29')
+                        +dateBtn('30.11 Вт', 'tuesday', '2021-11-30')
+                        +dateBtn('01.12 Ср', 'wednesday', '2021-12-01')
+                        +dateBtn('02.12 Чт', 'thursday', '2021-12-02')
+                        +dateBtn('03.12 Пт', 'friday', '2021-12-03')
+                        +dateBtn('04.12 Сб', 'saturday', '2021-12-04')
+                        +dateBtn('05.12 Вс', 'sunday', '2021-12-05')
+                button(type="button").s-content__filter-next
+            .s-content__item#fit
+                <!--Итоговая информация по энергии за день-->
+                .s-content__summary
+                    b.s-content__summary-title Итого за день:
+                    ul.s-content__summary-list
+                        li.s-content__summary-item#calories
+                            span.s-content__summary-name Калорийность: 
+                            span.s-content__summary-nr 1316 Ккал
+                        li.s-content__summary-item#protein
+                            span.s-content__summary-name Белки: 
+                            span.s-content__summary-nr 73.6 г.
+                        li.s-content__summary-item#fats
+                            span.s-content__summary-name Жиры: 
+                            span.s-content__summary-nr 53 г.
+                        li.s-content__summary-item#carbohydrates
+                            span.s-content__summary-name Углеводы: 
+                            span.s-content__summary-nr 135 г.
+                <!--Наборы для приемов пищи-->
+                .s-content__grid
+                    ul.s-content__grid-list
+                        +gridItem('s-content__grid-item noCatalog', '', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '', '', '', '', '', '')
+                        +gridItem('s-content__grid-item noCatalog', '', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей и с разными разностями на добавку', '', '', '', '', '', '')
+                        +gridItem('s-content__grid-item noCatalog', '', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '', '', '', '', '', '')
+                        +gridItem('s-content__grid-item noCatalog', '', 'supper-1', 'Ужин', 'Томлёные телячьи щёчки с соусом Наршараб', '', '', '', '', '', '')
+                        +gridItem('s-content__grid-item noCatalog', '', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '', '', '', '', '', '')
+                        +gridItem('s-content__grid-item noCatalog', '', 'supper-1', 'Ужин', 'Томлёные телячьи щёчки с соусом Наршараб', '', '', '', '', '', '')

@@ -1,0 +1,126 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'blog-bg', 'Блог о правильном и здоровом питании')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.blog__part
+                .blog-item
+                    .blog-item__body
+                        h2.blog-item__title Особенности питания при похудении
+                        .blog-item__start
+                            picture.blog-item__frame
+                                source(media="(min-width: 1366px)" srcset="static/images/content/blog-item-1.webp" type="image/webp")
+                                source(media="(min-width: 1366px)" srcset="static/images/content/blog-item-1.jpg")
+                                source(srcset="static/images/content/blog-item-1-mb.webp" type="image/webp")
+                                img(src="static/images/content/blog-item-1-mb.jpg" alt="article-title").blog-item__frame-image
+                            p.blog-item__description Опасность лишнего веса заключается в том, что он набирается постепенно. Если бы мы встали утром и увидели в зеркале +20 кг, меры были бы приняты мгновенно. Но килограммы появляются по чуть-чуть, объемы растут медленно, привычная одежда сидит немного плотнее, разве это повод менять рацион питания и ограничивать себя? Если почитать истории худеющих, почти все говорят, что не обращали внимания на +1-2-5 кг, а потом обнаруживали, что появилась одышка, боли в суставах, а вещи можно найти только в магазинах plus size.
+                            p.blog-item__description Чтобы добиться стабильного снижения массы тела, нужно полностью сменить рацион, создать дефицит калорий, убрать быстрые углеводы, сбалансировать меню по КБЖУ, есть только полезные продукты.
+                            p.blog-item__description Сразу о модных экспресс-диетах. Резкое сокращение калорий, голодание дают сброс до 2-3 кг в день, но, во-первых, это уходит вода, а во-вторых, как только вы вернетесь к привычной еде, вернутся и все килограммы. Для победы над лишним весом придется ломать весь образ жизни.
+                            p.blog-item__description Нет проблем в том, чтобы составить новое меню для запуска процесса похудения. Вопрос в другом: как справиться с самим собой?
+                            <!--List example-->
+                            .blog-item__block
+                                h4.blog-item__block-title Топ-3 причины, по которым бросают диеты:
+                                ul.blog-item__block-list
+                                    li.blog-item__block-line
+                                        p.blog-item__description – Надо внимательно выбирать продукты, читать состав.
+                                    li.blog-item__block-line
+                                        p.blog-item__description – Надо считать калории
+                                    li.blog-item__block-line
+                                        p.blog-item__description – На готовку уходит больше времени.
+                                
+                            p.blog-item__description Действительно, если обычно при чувстве голода вы могли перекусить плюшками из пекарни по дороге или забежать в «Макдональдс», то сейчас придется брать с собой контейнеры с обедами, каждый день готовить по три-четыре здоровых блюда для себя и для остальных членов семьи. Для похудения нужно четко следовать графику приема пищи. Неудобства и ограничения заставляют быстро потерять мотивацию — правильное питание кажется слишком сложным, дорогим и вообще… жили без него, нечего и начинать.
+                            b.blog-item__note Мы докажем, что все не так страшно!
+                        .blog-item__chapter
+                            picture.blog-item__frame
+                                source(media="(min-width: 768px)" srcset="static/images/content/blog-item-1.webp" type="image/webp")
+                                source(media="(min-width: 768px)" srcset="static/images/content/blog-item-1.jpg")
+                                source(srcset="static/images/content/blog-item-1-mb.webp" type="image/webp")
+                                img(src="static/images/content/blog-item-1-mb.jpg" alt="article-title").blog-item__frame-image
+                            h3.blog-item__subtitle Принципы правильного питания для похудения:
+                            p.blog-item__description Тратим больше калорий, чем съедаем. Если цель — не похудение, а поддержка, допускается баланс, тратим столько же, сколько потребляем. Вредные продукты заменяем диетическими аналогами. Например, вместо сладкого йогурта с крахмалом, стабилизаторами, красителями и тонной сахара берем биойогурт и ложечку джема. Составляем разнообразное меню. Конечно, можно есть один рис с куриной грудкой, но такая диета, несмотря на несомненную пользу в похудении, быстро заставит взвыть, да и здоровой ее не назовешь.
+                            p.blog-item__description Едим примерно в одно и то же время. Так организм привыкает переваривать еду по часам, легче расстается с жировыми запасами. Много пьем — минимум 1,5 литра воды в сутки. Вода выводит шлаки и токсины, нормализует пищеварение, уменьшает чувство голода.
+                        .blog-item__chapter    
+                            h3.blog-item__subtitle Что есть, чтобы похудеть?
+                            p.blog-item__description Для нормальной работы организму нужны БЖУ, клетчатка, витамины, микроэлементы. Меню для похудения состоит из свежих овощей и фруктов, диетической рыбы, мяса и птицы, злаков, орехов, зелени. Под запретом полуфабрикаты, готовые копчености, соления, сладости, алкоголь. Соль задерживает воду, появляются отеки, алкоголь провоцирует аппетит, вредные жиры откладываются на стенках внутренних органов.
+                        .blog-item__chapter    
+                            h3.blog-item__subtitle Сколько раз есть?
+                            p.blog-item__description Для плавного, долгосрочного снижения веса нужно есть 4-5 раз небольшими порциями. Еду удобно готовить сразу на пару суток, фасовать в контейнеры и хранить в холодильнике.
+                    .blog-item__bottom
+                        h3.blog-item__bottom-title Читайте также
+                        ul.blog-item__bottom-list
+                            li.blog-item__bottom-line
+                                a(href="#" target="_self").blog-item__bottom-link Примерное меню для сушки тела
+                            li.blog-item__bottom-line
+                                a(href="#" target="_self").blog-item__bottom-link Особенности питания при похудении
+                            li.blog-item__bottom-line
+                                a(href="#" target="_self").blog-item__bottom-link Нормы, принципы, правила рационального питания
+                            li.blog-item__bottom-line
+                                a(href="#" target="_self").blog-item__bottom-link Как правильно сочетать питание и тренировки
+                        a(href="blog.html" target="_self").blog-item__bottom-return К списку статей
+                .blog__aside
+                    .blog__block
+                        h3.blog__subtitle Подписаться на новости
+                        form(method="get" action="" id="subscribe-blog").blog__form.blog__form--subscribe
+                            input(type="email" name="subscribe-email" id="subscribe" placeholder="Введите ваш e-mail").blog__form-input
+                            button(type="submit").blog__form-submit
+                    .blog__block
+                        h3.blog__subtitle Подписаться на новости
+                        form(method="get" action="" id="search-blog").blog__form.blog__form--search
+                            input(type="search" name="search-blog" id="search" placeholder="Введите название").blog__form-input
+                            button(type="submit").blog__form-submit
+                    .blog__block
+                        h3.blog__subtitle Следи за нами в социальных сетях
+                        ul.blog__follow
+                            li.blog__follow-item
+                                a(href="#" target="_blank").blog__follow-link
+                                    i.fab.fa-vk
+                            li.blog__follow-item
+                                a(href="#" target="_blank").blog__follow-link
+                                    i.fab.fa-facebook-f
+                            li.blog__follow-item
+                                a(href="#" target="_blank").blog__follow-link
+                                    i.fab.fa-instagram
+
+                    .blog__nav
+                        h3.blog__subtitle Разделы
+                        ul.blog__filter
+                            for i in filters
+                                li.blog__filter-item
+                                    button(data-sort="" +i.sort type="button").blog__filter-btn=i.name
+        include ../modules/footer/footer
+
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/main.js")
+        script(src="static/js/menu.js")
+        //script(src="static/js/select.js")
+        script(src="static/js/slider.js")
+        //script(src="static/js/tabs-review.js")
+        //script(src="static/js/filter-meal.js")
+        block script

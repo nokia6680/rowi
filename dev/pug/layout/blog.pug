@@ -1,0 +1,103 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'blog-bg', 'Блог о правильном и здоровом питании')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.blog
+                .blog__wrapper
+                    <!--Blog list-->
+                    ul.blog__list
+                        +blogItem('blog-1', 'Особенности питания при похудении', 'Одна из основных причин лишнего веса – это неправильные пищевые привычки. Добиться снижения веса можно, только лишь сменив рацион своего питания. Чтобы это осуществить, нужно снизить дневную калорийность, а быстрые и вредные углеводы заменить полезными продуктами.', 'blog-item.html', '', '', '')
+                        +blogItem('blog-1', 'Особенности питания при похудении', 'Одна из основных причин лишнего веса – это неправильные пищевые привычки. Добиться снижения веса можно, только лишь сменив рацион своего питания. Чтобы это осуществить, нужно снизить дневную калорийность, а быстрые и вредные углеводы заменить полезными продуктами.', '', '', '', '')
+                        +blogItem('blog-1', 'Особенности питания при похудении', 'Одна из основных причин лишнего веса – это неправильные пищевые привычки. Добиться снижения веса можно, только лишь сменив рацион своего питания. Чтобы это осуществить, нужно снизить дневную калорийность, а быстрые и вредные углеводы заменить полезными продуктами.', '', '', '', '')
+                        +blogItem('blog-1', 'Особенности питания при похудении', 'Одна из основных причин лишнего веса – это неправильные пищевые привычки. Добиться снижения веса можно, только лишь сменив рацион своего питания. Чтобы это осуществить, нужно снизить дневную калорийность, а быстрые и вредные углеводы заменить полезными продуктами.', '', '', '', '')
+                        +blogItem('blog-1', 'Особенности питания при похудении', 'Одна из основных причин лишнего веса – это неправильные пищевые привычки. Добиться снижения веса можно, только лишь сменив рацион своего питания. Чтобы это осуществить, нужно снизить дневную калорийность, а быстрые и вредные углеводы заменить полезными продуктами.', '', '', '', '')
+                        +blogItem('blog-1', 'Особенности питания при похудении', 'Одна из основных причин лишнего веса – это неправильные пищевые привычки. Добиться снижения веса можно, только лишь сменив рацион своего питания. Чтобы это осуществить, нужно снизить дневную калорийность, а быстрые и вредные углеводы заменить полезными продуктами.', '', '', '', '')
+                    <!--Pagination-->
+                    .blog__pagination
+                        ul.blog__pagination-list
+                            li.blog__pagination-item
+                                button(type="button").blog__pagination-prev
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link.active 1
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link 2 
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link 3
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link 4
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link 5
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link 6
+                            li.blog__pagination-item
+                                a(href="#" target="_self").blog__pagination-link 7
+                            li.blog__pagination-item
+                                button(type="button").blog__pagination-next
+                .blog__aside
+                    .blog__block
+                        h3.blog__subtitle Подписаться на новости
+                        form(method="get" action="" id="subscribe-blog").blog__form.blog__form--subscribe
+                            input(type="email" name="subscribe-email" id="subscribe" placeholder="Введите ваш e-mail").blog__form-input
+                            button(type="submit").blog__form-submit
+                    .blog__block
+                        h3.blog__subtitle Искать по названию
+                        form(method="get" action="" id="search-blog").blog__form.blog__form--search
+                            input(type="search" name="search-blog" id="search" placeholder="Введите название").blog__form-input
+                            button(type="submit").blog__form-submit
+                    .blog__block.blog__block--social
+                        h3.blog__subtitle Следи за нами в социальных сетях
+                        ul.blog__follow
+                            li.blog__follow-item
+                                a(href="#" target="_blank").blog__follow-link
+                                    i.fab.fa-vk
+                            li.blog__follow-item
+                                a(href="#" target="_blank").blog__follow-link
+                                    i.fab.fa-facebook-f
+                            li.blog__follow-item
+                                a(href="#" target="_blank").blog__follow-link
+                                    i.fab.fa-instagram
+                                        
+                    .blog__nav
+                        h3.blog__subtitle Разделы
+                        ul.blog__filter
+                            for i in filters
+                                li.blog__filter-item
+                                    button(data-sort="" +i.sort type="button").blog__filter-btn=i.name
+        include ../modules/footer/footer
+
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/main.js")
+        script(src="static/js/menu.js")
+        //script(src="static/js/select.js")
+        script(src="static/js/slider.js")
+        //script(src="static/js/tabs-review.js")
+        //script(src="static/js/filter-meal.js")
+        block script

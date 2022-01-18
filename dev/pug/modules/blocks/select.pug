@@ -1,0 +1,118 @@
+.select__body
+    // Выбор типа рациона, описание
+    .select__filter.s-filter
+        h3.s-filter__subtitle Выберите рацион:
+
+        ul.s-filter__list
+            li(data-sort="fit" onclick="openMeal(event, 'fit')" id="defaultMealOpen").s-filter__item
+                b.s-filter__name Fit
+                span.s-filter__type 1300 Ккал
+                p.s-filter__description Рацион правильного питания для похудения без диет и интенсивных изнурительных тренировок. Сбалансированные блюда, с учетом рекомендаций фитнес тренеров и диетологов. Соблюдение правильного распределения приемов пищи и соотношений калорий, белков, жиров и углеводов (КБЖУ) в течение дня.
+            li(data-sort="balance" onclick="openMeal(event, 'balance')").s-filter__item
+                b.s-filter__name Balance
+                span.s-filter__type 1800 Ккал
+                p.s-filter__description Сбалансированный рацион (1800 калорий) – недельная программа питания, нацеленная на сохранение веса и полностью сбалансированного питания с соблюдением рекомендуемого количество дневного потребления КБЖУ. Подходит каждому человеку, который хочет питаться правильно, не переедать и быть сытым всегда.
+            li(data-sort="power" onclick="openMeal(event, 'power')").s-filter__item
+                b.s-filter__name Power
+                span.s-filter__type 2500 Ккал
+                p.s-filter__description Правильный рацион для роста качественной мышечной массы. Сбалансированное спортивное питание на каждый день – обогащенное всеми необходимыми минералами и микроэлементами. Программа питания «на массу» служит для поддержания спортсмена в момент интенсивных тренировок или перед подготовкой к соревнованиям
+            li(data-sort="daily" onclick="openMeal(event, 'daily')").s-filter__item
+                b.s-filter__name Daily
+                span.s-filter__type 1250 Ккал
+                p.s-filter__description Правильный рацион для роста качественной мышечной массы. Сбалансированное спортивное питание на каждый день – обогащенное всеми необходимыми минералами и микроэлементами. Программа питания «на массу» служит для поддержания спортсмена в момент интенсивных тренировок или перед подготовкой к соревнованиям
+            li(data-sort="vegan" onclick="openMeal(event, 'vegan')").s-filter__item
+                b.s-filter__name Vegan
+                span.s-filter__type 1350 Ккал
+                p.s-filter__description Постный рацион, приготавливается без использования белка животного происхождения. Вегетарианский рацион предназначен для людей, которые хотят похудеть или сбалансировать своё питание и при этом не употребляют мясо, птицу или рыбу.
+            li(data-sort="sea" onclick="openMeal(event, 'sea')").s-filter__item
+                b.s-filter__name Sea
+                span.s-filter__type 1350 Ккал
+                p.s-filter__description Постный рацион, приготавливается без использования белка животного происхождения. Вегетарианский рацион предназначен для людей, которые хотят похудеть или сбалансировать своё питание и при этом не употребляют мясо, птицу или рыбу.
+
+    .select__content.s-content
+        // Фильтр по датам
+        .s-content__filter
+            button(type="button").s-content__filter-prev
+            .s-content__filter-list.s-content-filter-swiper
+                .swiper-wrapper
+                    +dateBtn('29.11 Пн', 'monday', '2021-11-29')
+                    +dateBtn('30.11 Вт', 'tuesday', '2021-11-30')
+                    +dateBtn('01.12 Ср', 'wednesday', '2021-12-01')
+                    +dateBtn('02.12 Чт', 'thursday', '2021-12-02')
+                    +dateBtn('03.12 Пт', 'friday', '2021-12-03')
+                    +dateBtn('04.12 Сб', 'saturday', '2021-12-04')
+                    +dateBtn('05.12 Вс', 'sunday', '2021-12-05')
+            button(type="button").s-content__filter-next
+        <!--Блок контента при выборе FIT-->
+        .s-content__item#fit
+            <!--Итоговая информация по энергии за день-->
+            .s-content__summary
+                b.s-content__summary-title Итого за год:
+                ul.s-content__summary-list
+                    li.s-content__summary-item#calories
+                        span.s-content__summary-name Калорийность: 
+                        span.s-content__summary-nr 1316 Ккал
+                    li.s-content__summary-item#protein
+                        span.s-content__summary-name Белки: 
+                        span.s-content__summary-nr 73.6 г.
+                    li.s-content__summary-item#fats
+                        span.s-content__summary-name Жиры: 
+                        span.s-content__summary-nr 53 г.
+                    li.s-content__summary-item#carbohydrates
+                        span.s-content__summary-name Углеводы: 
+                        span.s-content__summary-nr 135 г.
+                a(href="#" target="_self").s-content__choose Подобрать рацион
+            <!--Наборы для приемов пищи-->
+            .s-content__grid
+                ul.s-content__grid-list
+                    +gridItem('s-content__grid-item noCatalog', '', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '', '', '', '', '', '')
+                    // Блок добавления второго завтрака
+                    +gridItem('s-content__grid-item addBreakfast', 'Добавить 2ой завтрак', '', '', '', '', '', '', '', '', '')
+                    +gridItem('s-content__grid-item noCatalog', '', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей и с разными разностями на добавку', '', '', '', '', '', '')
+                    +gridItem('s-content__grid-item noCatalog', '', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '', '', '', '', '', '')
+                    +gridItem('s-content__grid-item noCatalog', '', 'supper-1', 'Ужин', 'Томлёные телячьи щёчки с соусом Наршараб', '', '', '', '', '', '')
+                    // Блок перехода на конструктор рациона
+                    +gridItem('s-content__grid-item makeOwnMeal', '', '', '', '', '', '', '', '', '', '')
+            <!--Блок выбора дней и финальной стоимости, кешбека-->
+            .s-content__checkout
+                a(href="#" target="_self").s-content__checkout-link Подобрать рацион
+                <!--Выбор дней-->
+                .s-content__days#selectDays
+                    h3.s-content__days-title Количество дней:
+                    ul.s-content__days-list
+                        li.s-content__days-item
+                            button(type="button" data-value="try").s-content__days-btn Попробовать
+                        li.s-content__days-item
+                            button(type="button" data-value="5").s-content__days-btn 5
+                        li.s-content__days-item
+                            button(type="button" data-value="10").s-content__days-btn 10
+                        li.s-content__days-item
+                            button(type="button" data-value="15").s-content__days-btn 15
+                        li.s-content__days-item
+                            button(type="button" data-value="30").s-content__days-btn 30
+                    span.s-content__days-start Выберите больше дней
+                .s-content__pricing
+                    b.s-content__pricing-title Стоимость:
+                    ul.s-content__pricing-list
+                        li.s-content__pricing-item
+                            b.s-content__pricing-total 6 900 ₽
+                        li.s-content__pricing-item
+                            b.s-content__pricing-cashback 
+                                span +690 ₽
+                                span кэшбэк на баланс
+                .s-content__delivery
+                    b.s-content__delivery-title Бесплатная доставка
+                    span.s-content__delivery-about 2-3 раза в неделю
+                button(type="button" data-modal="#js-popup-order").s-content__order.js-popup-opener Заказать
+        <!--Блок контента при выборе Balance-->
+        .s-content__item#balance
+        <!--Блок контента при выборе POWER-->
+        .s-content__item#power
+        <!--Блок контента при выборе DAILY-->
+        .s-content__item#daily
+        <!--Блок контента при выборе VEGAN-->
+        .s-content__item#vegan
+        <!--Блок контента при выборе SEA-->
+        .s-content__item#sea
+
+    span.s-content__note * Фотографии блюд на сайте являются вариантом сервировки блюда. Внешний вид блюда может отличаться от фотографии на сайте.

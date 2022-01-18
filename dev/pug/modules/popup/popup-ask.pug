@@ -1,0 +1,22 @@
+.popup-ask.js-popup-wrap#js-popup-ask
+    .popup-ask__wrapper.js-popup-inner
+        .popup-ask__head
+            h3.popup-ask__title Задать вопрос
+            button(type="button").popup-ask__closer.js-popup-closer
+        form(method="" action="").popup-ask__form.form-ask
+            ul.form-ask__list
+                li.form-ask__item
+                    label(for="name").form-ask__label Имя
+                    input(type="text" name="name" id="name" placeholder="Ваше имя" required).form-ask__input
+                li.form-ask__item
+                    label(for="tel").form-ask__label Телефон
+                    input(type="tel" name="tel" id="tel" placeholder="Номер телефона" required).form-ask__input.js-phone-input
+                li.form-ask__item
+                    label(for="question").form-ask__label Сообщение
+                    textarea(id="question" name="question" placeholder="Введите Ваше сообщение").form-ask__textarea
+            button(type="submit").form-ask__submit Отправить
+            
+            span.form-ask__agreement Нажимая кнопку, Вы соглашаетесь с условиями 
+                a(href="#" target="_blank") оферты 
+                | и даёте своё согласие на 
+                a(href="#" target="_blank") обработку персональных данных.

@@ -1,0 +1,95 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'cabinet-bg', 'Личный кабинет')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.cabinet
+                .cabinet__wrapper.cabinet__wrapper--edit
+                    include ../modules/blocks/bio
+                    
+                    .cabinet__content
+                        h2.cabinet__title Редактирование профиля
+                        
+                        .cabinet__edit.edit.tabs-container
+                            ul.edit__filter
+                                li.edit__filter-item.tab-title.inactive
+                                    button(type="button").edit__filter-btn Адрес доставки
+                                li.edit__filter-item.tab-title.active
+                                    button(type="button").edit__filter-btn Личные данные
+                                li.edit__filter-item.tab-title
+                                    button(type="button").edit__filter-btn Сменить пароль
+                            .edit__forms
+                                form(name="edit-cabinet-address" method="get" action="#" id="edit-cabinet-address").edit__form.tab-content
+                                    ul.edit__form-list
+                                        li.edit__form-item
+                                            label(for="edit-street").edit__form-label Улица
+                                            input(type="text" name="edit-street" id="edit-street" placeholder="Название улицы").edit__form-input
+                                        li.edit__form-item
+                                            label(for="edit-house").edit__form-label Дом/Корпус
+                                            input(type="text" name="edit-house" id="edit-house" placeholder="Номер").edit__form-input
+                                        li.edit__form-item
+                                            label(for="edit-office").edit__form-label Квартира/Офис
+                                            input(type="text" name="edit-office" id="edit-office" placeholder="Номер").edit__form-input
+                                    button(type="submit").edit__submit Сохранить
+                                form(name="edit-cabinet-address" method="get" action="#" id="edit-cabinet-address").edit__form.tab-content.active
+                                    ul.edit__form-list
+                                        li.edit__form-item
+                                            label(for="edit-name").edit__form-label Имя
+                                            input(type="text" name="edit-name" id="edit-name" placeholder="Ваше имя").edit__form-input
+                                        li.edit__form-item
+                                            label(for="edit-surname").edit__form-label Фамилия
+                                            input(type="text" name="edit-surname" id="edit-surname" placeholder="Ваша фамилия").edit__form-input
+                                        li.edit__form-item
+                                            label(for="edit-tel").edit__form-label Телефон
+                                            input(type="tel" name="edit-tel" id="edit-tel" placeholder="+7 (___) ___-__-__").edit__form-input.js-phone-input
+                                        li.edit__form-item
+                                            label(for="edit-email").edit__form-label E-mail
+                                            input(type="email" name="edit-email" id="edit-email" placeholder="___@___").edit__form-input
+                                    button(type="submit").edit__submit Сохранить
+                                form(name="edit-cabinet-address" method="get" action="#" id="edit-cabinet-address").edit__form.tab-content
+                                    ul.edit__form-list
+                                        li.edit__form-item
+                                            label(for="edit-old-pass").edit__form-label Старый пароль
+                                            input(type="password" name="edit-old-pass" id="edit-old-pass").edit__form-input
+                                        li.edit__form-item
+                                            label(for="edit-new-pass").edit__form-label Новый пароль
+                                            input(type="password" name="edit-new-pass" id="edit-new-pass").edit__form-input
+                                        li.edit__form-item
+                                            label(for="edit-repeat-pass").edit__form-label Повторите пароль
+                                            input(type="password" name="edit-repeat-pass" id="edit-repeat-pass").edit__form-input
+                                    button(type="submit").edit__submit Сохранить
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://code.jquery.com/ui/1.13.0/jquery-ui.js")
+        script(src="static/js/main.js")
+        script(src="static/js/tabs.js")
+        script(src="static/js/mask.js")
+        block script

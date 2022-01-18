@@ -1,0 +1,352 @@
+.blog-item {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    margin-bottom: 6.25rem;
+
+    &__body {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        padding-bottom: 6.25rem;
+        margin-bottom: 3.125rem;
+
+        border-bottom: 1px dashed $lightgray;
+    }
+
+    &__title,
+    h2 {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 800, $black);
+        text-align: center;
+        text-transform: uppercase;
+
+        margin-bottom: 1.875rem;
+    }
+
+    &__start {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: 3.75rem;
+    }
+
+    &__frame,
+    picture {
+        width: 100%;
+        height: 0;
+        position: relative;
+
+        margin-bottom: 1.875rem;
+        padding-bottom: 59.701492537313435%;
+
+        &-image,
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            object-fit: cover;
+        }
+    }
+
+    &__description,
+    p {
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        text-align: left;
+
+        margin-bottom: 1.25rem;
+    }
+
+    &__block {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: 1.25rem;
+
+        &-title,
+        h4 {
+            @include font-setting($secondary-font, 0.875rem, 1.25rem, 400, $darkgray);
+        }
+
+        &-list,
+        ul,
+        ol {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
+        }
+
+        &-line,
+        li {
+            width: 100%;
+
+            .blog-item__description {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__note,
+    b {
+        @include font-setting($secondary-font, 0.875rem, 1.25rem, 800, $darkgray);
+    }
+
+    &__chapter {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        margin-bottom: 3.75rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .blog-item__frame {
+            margin-bottom: 3.75rem;
+        }
+
+        .blog-item__description:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subtitle,
+    h3 {
+        @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $black);
+        text-align: center;
+        margin-bottom: 1.875rem;
+        align-self: center;
+    }
+
+    &__bottom {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+
+        &-title,
+        h3 {
+            @include font-setting($primary-font, 1.5rem, 1.875rem, 700, $black);
+            margin-bottom: 1.25rem;
+        }
+
+        &-list,
+        ul,
+        ol {
+            width: 100%;
+            @include flex-setting(column, flex-start, center);
+
+            margin-bottom: 2.5rem;
+
+            a {
+                @include font-setting($primary-font, 1rem, 1.25rem, 400, $darkgray);
+                text-decoration: underline;
+                text-decoration-style: dashed;
+                text-decoration-thickness: 1px;
+                text-align: center;
+                transition: 0.4s $cubic;
+
+                &:hover,
+                &:active {
+                    color: $lightgreen;
+                    transition: 0.4s $cubic;
+                }
+            }
+        }
+
+        &-line,
+        li {
+            @include flex-setting(column, center, center);
+            width: 100%;
+            height: auto;
+
+            margin-bottom: 1.25rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &-return {
+            @include font-setting($primary-font, 1.125rem, 1.875rem, 700, $black);
+            text-decoration: none;
+            padding-left: 2.8125rem;
+            position: relative;
+            transition: 0.4s $cubic;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: 30px;
+                height: 30px;
+
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url("data:image/svg+xml,%3Csvg width='30' height='18' viewBox='0 0 30 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.22785 0.771973L9.56414 2.10833L3.61767 8.05487H30V9.94478H3.61767L9.56414 15.8913L8.22785 17.2276L-1.05697e-06 8.99976L8.22785 0.771973Z' fill='%23C4C4C4'/%3E%3C/svg%3E");
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: 0.4s $cubic;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+
+                width: 157px;
+                height: 1px;
+
+                border-bottom: 1px dashed $black;
+                bottom: 0;
+                right: 0;
+                transition: 0.4s $cubic;
+            }
+
+            &:hover,
+            &:active {
+                color: $lightgreen;
+                transition: 0.4s $cubic;
+
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='18' viewBox='0 0 30 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.22785 0.771973L9.56414 2.10833L3.61767 8.05487H30V9.94478H3.61767L9.56414 15.8913L8.22785 17.2276L-1.05697e-06 8.99976L8.22785 0.771973Z' fill='%2392C64E'/%3E%3C/svg%3E");
+                    transition: 0.4s $cubic;
+                }
+
+                &::before {
+                    border-color: $lightgreen;
+                    transition: 0.4s $cubic;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .blog-item {
+        margin-bottom: 9.875rem;
+
+        &__body {
+            padding-bottom: 5rem;
+        }
+
+        &__title,
+        h2 {
+            font-size: 2.875rem;
+            line-height: 3.75rem;
+            margin-bottom: 2.5rem;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        &__start {
+            margin-bottom: 5rem;
+        }
+
+        &__frame,
+        picture {
+            margin-bottom: 5rem;
+            padding-bottom: 38.78406708595388%;
+        }
+
+        &__description,
+        p {
+            font-size: 1rem;
+            line-height: 1.875rem;
+            margin-bottom: 1.875rem;
+        }
+
+        &__block {
+            margin-bottom: 1.875rem;
+
+            &-title,
+            h4 {
+                font-size: 1rem;
+                line-height: 1.875rem;
+            }
+        }
+
+        &__note,
+        b {
+            font-size: 1rem;
+            line-height: 1.875rem;
+        }
+
+        &__chapter {
+            margin-bottom: 5rem;
+
+            .blog-item__frame,
+            picture {
+                margin-bottom: 5rem;
+                padding-bottom: 62.89308176100629%;
+            }
+        }
+
+        &__subtitle,
+        h3 {
+            font-size: 2.25rem;
+            line-height: 2.5rem;
+            margin-bottom: 1.875rem;
+            align-items: flex-start;
+            align-self: flex-start;
+            text-align: left;
+        }
+
+        &__bottom {
+            display: grid;
+            grid-template-areas:
+                'title ...'
+                'list link'
+            ;
+
+            justify-content: space-between;
+            align-items: end;
+
+            &-title,
+            h3 {
+                grid-area: title;
+            }
+
+            &-list,
+            ul,
+            ol {
+                grid-area: list;
+                width: 100%;
+                align-items: flex-start;
+                margin-bottom: 0;
+
+                a {
+                    font-size: 1.125rem;
+                    text-align: left;
+                }
+            }
+
+            &-line,
+            li {
+                align-items: flex-start;
+            }
+
+            &-return {
+                grid-area: link;
+                font-size: 1.5rem;
+
+                &::before {
+                    width: 209px;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1366px) {
+    .blog-item {
+        width: 100%;
+    }
+}

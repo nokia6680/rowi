@@ -1,0 +1,152 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
+    body.body
+        include ../modules/header/header
+        main.main.main--meals
+            +introBlockMeal('meal-type-intro', 'fit-intro-image', 'fit', 'Рацион для снижения веса', 'Меню на 1300 кКал в день')
+            <!--Ссылки на просмотр рационов-->
+            section.meals-list
+                .meals-list__wrapper
+                    ul.meals-list__content
+                        +mealsListItem('active', 'fit', '~ 1300 кКал', '#')
+                        +mealsListItem('', 'balance', '~ 1800 кКал', 'meals-balance.html')
+                        +mealsListItem('', 'power', '~ 2500 кКал', 'meals-power.html')
+                        +mealsListItem('', 'daily', '~ 1250 кКал', 'meals-daily.html')
+                        +mealsListItem('', 'vegan', '~ 1350 кКал', 'meals-vegan.html')
+                        +mealsListItem('', 'sea', '~ 1350 кКал', 'meals-sea.html')
+            <!--Информация о рационах-->
+            section.meals-about
+                .meals-about__wrapper
+                    picture.meals-about__frame
+                        source(srcset="static/images/content/choose-bg.webp" type="image/webp")
+                        img(src="static/images/content/choose-bg.png" alt="meals").meals-about__frame-image
+                    +mealsTypeItem('Рацион Fit', 'Что можно съесть на 1300 калорий? Наши диетологи и фитнес-инструкторы включают в меню даже картофельные дольки и салат оливье! Первый завтрак, второй завтрак, полезные десерты — забудьте о чувстве голода и наблюдайте, как уходят лишние килограммы. Если предложенный рацион не устраивает, соберите свой в конструкторе. Готовые блюда не содержат пустых ккал, консервантов, усилителей вкуса, химических ароматизаторов и красителей. Еда ресторанного уровня, приготовленная по ГОСТу, будет у вас дома уже на следующий день после заказа. Попробуйте наши фирменные рецепты: блюда пастеризованы, упакованы под вакуумом, остаются свежими до пяти дней в закрытой упаковке.', '')
+
+            article.select.select--meal
+                .select__wrapper
+                    h2.select__title Выберите своё меню
+                    .select__body
+                        .select__content.s-content.s-content--meal
+                            <!--Фильтр по датам-->
+                            .s-content__filter
+                                button(type="button").s-content__filter-prev
+                                .s-content__filter-list.s-content-filter-swiper
+                                    .swiper-wrapper
+                                        +dateBtn('29.11 Пн', 'monday', '2021-11-29')
+                                        +dateBtn('30.11 Вт', 'tuesday', '2021-11-30')
+                                        +dateBtn('01.12 Ср', 'wednesday', '2021-12-01')
+                                        +dateBtn('02.12 Чт', 'thursday', '2021-12-02')
+                                        +dateBtn('03.12 Пт', 'friday', '2021-12-03')
+                                        +dateBtn('04.12 Сб', 'saturday', '2021-12-04')
+                                        +dateBtn('05.12 Вс', 'sunday', '2021-12-05')
+                                button(type="button").s-content__filter-next
+                            <!--Блок контента при выборе FIT-->
+                            .s-content__item
+                                .s-content__info
+                                    h3.s-content__info-title Рацион для похудения
+                                    p.s-content__info-description Рацион правильного питания для похудения без диет и интенсивных изнурительных тренировок. Сбалансированные блюда, с учетом рекомендаций фитнес тренеров и диетологов. Соблюдение правильного распределения приемов пищи и соотношений калорий, белков, жиров и углеводов (КБЖУ) в течение дня.
+                                    a(href="#" target="_self").s-content__info-link Подобрать рацион
+                                <!--Итоговая информация по энергии за день-->
+                                .s-content__summary
+                                    b.s-content__summary-title Итого за год:
+                                    ul.s-content__summary-list
+                                        li.s-content__summary-item#calories
+                                            span.s-content__summary-name Калорийность: 
+                                            span.s-content__summary-nr 1316 Ккал
+                                        li.s-content__summary-item#protein
+                                            span.s-content__summary-name Белки: 
+                                            span.s-content__summary-nr 73.6 г.
+                                        li.s-content__summary-item#fats
+                                            span.s-content__summary-name Жиры: 
+                                            span.s-content__summary-nr 53 г.
+                                        li.s-content__summary-item#carbohydrates
+                                            span.s-content__summary-name Углеводы: 
+                                            span.s-content__summary-nr 135 г.
+                                <!--Наборы для приемов пищи-->
+                                .s-content__grid
+                                    ul.s-content__grid-list
+                                        +gridItem('s-content__grid-item noCatalog', '', 'breakfast-1', 'Завтрак', 'Холодная овсянка с фруктами и орехами', '', '', '', '', '', '')
+                                        // Блок добавления второго завтрака
+                                        +gridItem('s-content__grid-item addBreakfast', 'Добавить 2ой завтрак', '', '', '', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'dinner-1', 'Обед', 'Курица в соусе Терияки с овощами и розовой чечевицей', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'lunch-1', 'Полдник', 'Смузи боул из облепихи с клубникой', '', '', '', '', '', '')
+                                        +gridItem('s-content__grid-item noCatalog', '', 'supper-1', 'Ужин', 'Томлёные телячьи щёчки с соусом Наршараб', '', '', '', '', '', '')
+                                        // Блок перехода на конструктор рациона
+                                        +gridItem('s-content__grid-item makeOwnMeal', '', '', '', '', '', '', '', '', '', '')
+                                <!--Блок выбора дней и финальной стоимости, кешбека-->
+                                .s-content__checkout
+                                    <!--Выбор дней-->
+                                    .s-content__days#selectDays
+                                        h3.s-content__days-title Количество дней:
+                                        ul.s-content__days-list
+                                            li.s-content__days-item
+                                                button(type="button" data-value="try").s-content__days-btn Попробовать
+                                            li.s-content__days-item
+                                                button(type="button" data-value="5").s-content__days-btn 5
+                                            li.s-content__days-item
+                                                button(type="button" data-value="10").s-content__days-btn 10
+                                            li.s-content__days-item
+                                                button(type="button" data-value="15").s-content__days-btn 15
+                                            li.s-content__days-item
+                                                button(type="button" data-value="30").s-content__days-btn 30
+                                        span.s-content__days-start Выберите больше дней
+                                    .s-content__pricing
+                                        b.s-content__pricing-title Стоимость:
+                                        ul.s-content__pricing-list
+                                            li.s-content__pricing-item
+                                                b.s-content__pricing-total 6 900 ₽
+                                            li.s-content__pricing-item
+                                                b.s-content__pricing-cashback 
+                                                    span +690 ₽
+                                                    span кэшбэк на баланс
+                                    .s-content__delivery
+                                        b.s-content__delivery-title Бесплатная доставка
+                                        span.s-content__delivery-about 2-3 раза в неделю
+                                    button(type="button" data-modal="#js-popup-order").s-content__order.js-popup-opener Заказать
+                            span.s-content__note * Фотографии блюд на сайте являются вариантом сервировки блюда. Внешний вид блюда может отличаться от фотографии на сайте.
+
+            include ../modules/blocks/delivery
+            include ../modules/blocks/reviews
+            include ../modules/blocks/faq
+
+            section.reasons
+                .reasons__wrapper
+                    ul.reasons__list
+                        +reasonItem('Минимум калорий', 'Один из наиболее востребованных рационов питания с минимальным содержанием калорий и правильному распределению приемов пищи. Все блюда рациона FIT нацелены на быстрое насыщения организма и безвредному похудению. Благодаря совместной работе специалистов Института Питания, ведущих диетологов и фитнес тренеров Москвы мы создали целевой рацион с максимальным процентом положительного результата. По опросам наших постоянных клиентов, рацион FIT находится на первом месте среди худеющих и людей находящихся на «Сушке» перед соревнованиями.', 'reason-7')
+                        +reasonItem('Вкусная диета', 'Теперь похудение и диета это вкусно! Ресторанное качество в каждом блюде – мы понимаем как сложно «худеть» ограничивая себя в потреблении любимой и привычной еды. Поддерживая Ваше стремление добиться результата и похудеть, мы разработали рецептуру, которая удивит Вас разнообразием блюд, вкусовых ощущений и результативностью.', 'reason-8')
+                        +reasonItem('Быстрый результат', 'Совмещая тренировки и рацион FIT добиться результата очень просто. Каждый день питания содержит все необходимое для сжигания жира и выводу воды из организма. Потребление калорий распределено таким образом, что Ваш организм нацеливается на максимально быстрое сжигание жировой массы для насыщения себя энергией, в результате организм не откладывает жир в «запас» а тратит его, переводя в энергию.', 'reason-9')
+            include ../modules/blocks/consult
+        include ../modules/footer/footer
+
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/change-meal
+        include ../modules/popup/fast-order
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/main.js")
+        script(src="static/js/slider.js")
+        script(src="static/js/tabs.js")
+        script(src="static/js/tabs-delivery.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js")
+        script(src="static/js/range.js")
+        block script

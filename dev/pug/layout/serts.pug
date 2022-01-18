@@ -1,0 +1,123 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@300;400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'sales-bg', 'Подарочный сертификат')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.serts
+                <!---->
+                .serts__intro
+                    .serts__info
+                        h2.serts__title Что подарить?
+                        p.serts__description Подарочный сертификат - отличный подарок, ведь Вы дарите возможность выбора!
+                        p.serts__description На этой странице, а так же в нашем 
+                            a(href="shop.html" target="_self") интернет-магазине 
+                            | Вы можете приобрести сертификаты следующих номиналов: 
+                        b.serts__nr 3.000 ₽, 5.000 ₽, 10.000 ₽, 15.000 ₽.
+                    picture.serts__frame
+                        source(srcset="static/images/content/sert.webp" type="image/webp")
+                        img(src="static/images/content/sert.png" alt="Подарочный сертификат")
+                <!---->
+                .serts__shop
+                    h2.serts__title Приобрести подарочный сертификат
+                    ul.serts__buy
+                        li.serts__buy-item
+                            .serts__buy-info
+                                b.serts__buy-price 3000
+                                span.serts__buy-text Подарочный сертификат на 3000руб
+                                button(type="button").serts__buy-btn В корзину
+                        li.serts__buy-item
+                            .serts__buy-info
+                                b.serts__buy-price 5000
+                                span.serts__buy-text Подарочный сертификат на 5000руб
+                                button(type="button").serts__buy-btn В корзину
+                        li.serts__buy-item
+                            .serts__buy-info
+                                b.serts__buy-price 10000
+                                span.serts__buy-text Подарочный сертификат на 10000руб
+                                button(type="button").serts__buy-btn В корзину
+                        li.serts__buy-item
+                            .serts__buy-info
+                                b.serts__buy-price 15000
+                                span.serts__buy-text Подарочный сертификат на 15000руб
+                                button(type="button").serts__buy-btn В корзину
+                <!---->
+                .serts__rules
+                    h2.serts__title Условия использования подарочного сертификата:
+                    ul.serts__rules-list
+                        li.serts__rules-item
+                            span Подарочным сертификатом можно оплатить любые рационы и товары с сайта 
+                                a(href="https://general-food.ru") https://general-food.ru
+                                | , кроме рационов «Домашний» и «Vegan».
+                        li.serts__rules-item
+                            span Сертификат используется только для приобретения продукции Правильного рациона на сайте 
+                                a(href="https://general-food.ru") https://general-food.ru
+                        li.serts__rules-item
+                            span Срок действия Подарочного сертификата - 6 месяцев со дня покупки.
+                        li.serts__rules-item
+                            span Заказ может быть оформлен на сайте 
+                                a(href="https://general-food.ru") https://general-food.ru
+                                | , или по телефону 
+                                a(href="tel:+74957674244" target="_blank") +7 (495) 787-42-44
+                                | .
+                        li.serts__rules-item
+                            span В случае, если стоимость оплачиваемого по сертификату товара меньше номинала сертификата, разница между номиналом сертификата и стоимостью покупки не компенсируется в денежном эквивалентe.
+                        li.serts__rules-item
+                            span Сертификат дает право на единовременную оплату приобретенного заказа.
+                        li.serts__rules-item
+                            span В случае, если стоимость покупаемого по сертификату товара больше номинала сертификата, необходимо оплатить остаток суммы.
+                        li.serts__rules-item
+                            span Несовершение действий по оформлению заказа с использованием Подарочного сертификата, в течение срока его действия, признается отказом Держателя Подарочного сертификата от своих прав по осуществлению выбора товара в магазине и не влечет обязанности ООО "Правильный рацион" произвести обмен Подарочного сертификата или возвратить Держателю уплаченные за Сертификат денежные средства.
+                        li.serts__rules-item
+                            span При покупке Сертификата не действуют накопительные и иные скидки. На товары, приобретаемые с использованием Подарочного сертификата, распространяется система скидок, предоставляемых клиентам ООО "Правильный рацион".
+                        li.serts__rules-item
+                            span Обмен и возврат некачественных товаров, приобретённых с использованием Подарочного сертификата, осуществляется в общем порядке, предусмотренном действующим законодательством РФ.
+                        li.serts__rules-item
+                            span  случае аннулирования заказа, либо в случае возврата товара, для оплаты которого использовался сертификат, оплаченная стоимость возвращается на Пользовательский счет в Личный Кабинет и может быть использована только для приобретения товаров и услуг в ООО "Правильный рацион".
+                        li.serts__rules-item
+                            span ООО "Правильный рацион" не несет ответственности за несанкционированное использование Подарочного сертификата, поскольку он является предъявительским и не требует удостоверения личности Держателя Подарочного сертификата.
+                        li.serts__rules-item
+                            span Подарочный сертификат не подлежит возврату, обмену на денежные средства, либо размену на карты меньшего номинала.
+                        li.serts__rules-item
+                            span В случае утери, подарочный сертификат восстановлению не подлежит, выплата его стоимости не производится.
+                        li.serts__rules-item
+                            span ООО «Правильный рацион» вправе вносить изменения в настоящие Правила в одностороннем порядке. Ознакомиться с правилами можно на сайте - 
+                                a(href="https://general-food.ru/pserts/") https://general-food.ru/pserts/
+                        li.serts__rules-item
+                            span Приобрести подарочные сертификаты можно в нашем 
+                                a(href="shop.html" target="_self") интернет-магазине
+                                | .
+                    button(type="button").serts__rules-expand Развернуть
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/main.js")
+        script(src="static/js/slider.js")
+        script(src="static/js/expand.js")
+
+        block script

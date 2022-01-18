@@ -1,0 +1,75 @@
+include ../helpers/mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        title #{title}
+        <!--[if IE]>
+        meta(http-equiv='X-UA-Compatible', content="IE = edge")
+        <![endif]-->
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
+        link(rel="stylesheet" type='text/css' href="static/css/styles.css")
+        link(rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css")
+    body.body
+        include ../modules/header/header
+        main.main
+            +introShort('short', 'cabinet-bg', 'Личный кабинет')
+            .breadcrumbs
+                ul.breadcrumbs__list
+                    for i in breadCrumbs
+                        li.breadcrumbs__item
+                            a(href="" +i.link target="_self").breadcrumbs__link=i.name
+            section.cabinet
+                .cabinet__wrapper.cabinet__wrapper--points
+                    include ../modules/blocks/bio
+                    
+                    .cabinet__content
+                        h2.cabinet__title История баллов
+                        
+                        .cabinet__point.point
+                            ul.point__table
+                                li.point__item.point__item--heading
+                                    .point__heading
+                                        span.point__heading-nr № заказа
+                                        span.point__heading-date Дата заказа
+                                        span.point__heading-price Сумма заказа
+                                        span.point__heading-income Начислено бонусов
+                                        span.point__heading-outcome Списано бонусов
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '+106', '0', '', 'noPoints')
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '0', '-24', 'noPoints', '')
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '+106', '0', '', 'noPoints')
+                                +cabPoiItem('№ 1171', '01.07.2021', '2021-07-01', '6 960 руб.', '0', '-24', 'noPoints', '')
+                                
+                        .cabinet__faq        
+                            .point__faq
+                                ul.point__faq-list
+                                    li.point__faq-item
+                                        h3.point__faq-name Как получить баллы?
+                                        p.point__faq-description Получайте бонусы с каждого заказа (*в зачёт идут только рационы от 6 дней)
+                                    li.point__faq-item
+                                        h3.point__faq-name Можно больше?
+                                        p.point__faq-description Повысить размер кешбэка можно, заказывая более продолжительные рационы.
+                                h2.point__faq-title Как потратить баллы?
+                                p.point__faq-note Баллами кешбэка можно оплатить до 30% стоимости следующих заказов.
+                                b.point__faq-eq 1 балл = 1 рубль
+        include ../modules/footer/footer
+        include ../modules/popup/popup-ask
+        include ../modules/popup/popup-callback
+        include ../modules/popup/form-reaction
+        include ../modules/popup/meal-order
+        script(src="static/js/vendor/jquery-3.3.1.min.js")
+        script(src="https://code.jquery.com/ui/1.13.0/jquery-ui.js")
+        script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/slider.js")
+        script(src="static/js/main.js")
+        script(src="static/js/cabinet-points.js")
+        block script
