@@ -1,31 +1,16 @@
 // Colors
 $white: #fff;
-$black: #222222;
-$lightgray: #c4c4c4;
-$thingray: #f2f2f2;
-$gray: #828282;
-$darkgray: #575757;
-$red: #FF2424;
-$darkgreen: #144E3D;
-$green: #4BAF50;
-$lightgreen: #92C64E;
-$orange: #FF9900;
-$gold: #FDB600;
-$yellow: #FDD400;
+$dark: #14004B;
+$blue: #4164EE;
+$pink: #F5AABE;
+$green: #00AAAA;
+$yellow: #FFE100;
 // Sizes
 $base-font-size: 16px;
-
-$tablet: 768px;
-$large: 1024px;
-$desktop: 1280px;
-
-$content: 1000px;
-
 // Fonts
-$primary-font: 'Montserrat', sans-serif;
-$secondary-font: 'Nunito Sans', sans-serif;
+$primary-font: 'Stolzl', sans-serif;
 
-$text-black: $black;
+$text-black: $dark;
 $text-white: $white;
 
 $cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
