@@ -1,0 +1,48 @@
+.header {
+    width: 100%;
+
+    @include flex-setting(row, space-between, center);
+
+    padding: toRem(2) toRem(16);
+    margin-bottom: toRem(24);
+
+    position: relative;
+
+    &__logo {
+        @include flex-setting(column, center, center);
+
+        width: 98px;
+        height: 24px;
+    }
+
+    &__toggle {
+        @include flex-setting(column, center, center);
+        background-color: transparent;
+        border: none;
+        position: relative;
+
+        padding: toRem(16) toRem(16);
+
+        span {
+            @include font-setting($primary-font, toRem(14), toRem(22), 500, $blue);
+        }
+
+        svg {
+            position: absolute;
+            bottom: toRem(2);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.opened {
+            svg {
+                display: none;
+            }
+
+            span {
+                color: $dark;
+                font-weight: 400;
+            }
+        }
+    }
+}

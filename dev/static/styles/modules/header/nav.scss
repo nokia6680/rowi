@@ -1,0 +1,110 @@
+.nav {
+    position: absolute;
+
+    top: toRem(58);
+    left: 0;
+    right: 0;
+
+    @include flex-setting(column, space-between, flex-start);
+
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+
+    padding: 0 toRem(48) 0 toRem(16);
+
+    background-color: $white;
+
+    z-index: 2;
+
+    transition: max-height 0.4s $cubic 0.55s;
+
+    &.opened {
+        max-height: 100vh;
+        overflow-y: auto;
+        transition: max-height 0.4s $cubic;
+
+        .nav__item {
+            pointer-events: auto;
+            transform: scale(1) translateY(0px);
+            will-change: transform;
+            opacity: 1;
+
+            @for $i from 1 through $menuItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.06 * $i+0.2}s;
+                }
+            }
+        }
+
+        .nav__jobs {
+            pointer-events: auto;
+            transform: scale(1) translateY(0px);
+            will-change: transform;
+            opacity: 1;
+            transition-delay: 0.55s;
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        padding: toRem(40) 0 0;
+        margin-bottom: toRem(138);
+    }
+
+    &__item {
+        width: 100%;
+        @include flex-setting(row, flex-start, center);
+
+        padding: toRem(12) 0;
+        margin-bottom: toRem(32);
+
+        transform: scale(1.15) translateY(-30px);
+        opacity: 0;
+        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+
+        @for $i from 1 through $menuItems {
+            &:nth-child(#{$i}) {
+                transition-delay: #{0.56 - ($i * 0.07)}s;
+            }
+        }
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        @include font-setting($primary-font, toRem(28), toRem(39), 400, $dark);
+        text-align: left;
+        text-decoration: none;
+        letter-spacing: -0.015em;
+    }
+
+    &__jobs {
+        @include flex-setting(column, flex-start, center);
+        text-decoration: none;
+        align-self: center;
+        margin-top: auto;
+        margin-bottom: toRem(26);
+
+        transform: scale(1.15) translateY(-30px);
+        opacity: 0;
+        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+
+        span {
+            @include font-setting($primary-font, toRem(28), toRem(39), 400, $blue);
+            padding: toRem(12) 0;
+
+            letter-spacing: -0.015em;
+        }
+
+        &-underline-tb,
+        &-underline-1440 {
+            display: none;
+        }
+    }
+}

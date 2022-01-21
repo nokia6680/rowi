@@ -1,1 +1,25 @@
 footer.footer
+    .footer__wrapper
+        .footer__logo
+            a(href="index.html" target="_self" title="ROWI").footer__logo-link
+                picture.footer__frame
+                    source(media="(min-width: 768px)" srcset="static/images/content/foo-logo-desktop.svg" width="172" height="42")
+                    img(src="static/images/content/foo-logo-mobile.svg" alt="ROWI logo" width="98" height="24").footer__frame-image
+        .footer__contacts
+            h3.footer__title Наши офисы
+            
+            ul.footer__list
+                li.footer__item
+                    b.footer__name Москва
+                    p.footer__description Серебряническая наб., д. 29 БЦ «Silver City»
+                li.footer__item
+                    b.footer__name Саратов
+                    p.footer__description ул. Вавилова, д. 28 / 34 БЦ «Атлант»
+                    p.footer__description ул. Вавилова, д. 38 / 114 БЦ «Ковчег»
+        .footer__join
+            h3.footer__title Присоединяйся к нам в 
+                a(href="" target="_blank" title="ROWI в Instagram").footer__join-link Инстаграм
+        .footer__rules
+            a(href="" target="_blank" title="Политика обработки персональных данных").footer__link Политика обработки персональных данных
+            p.footer__copyright © 2022, ООО «РОВИ Технологии»
+        a(href="#" target="_self" title="Вверх").footer__top Наверх

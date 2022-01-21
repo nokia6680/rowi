@@ -21,15 +21,19 @@ html(lang="ru-RU")
     body.body
         include ../modules/header/header
         main.main
-            a(href="#").link
-                span я ссылка
-                svg(width="93" height="8" viewBox="0 0 93 8" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(class="underlinePath" d="M0.581055 0.642578L92.4157 1.95027L1.74355 4.10719C14.8855 5.50719 18.3645 5.95335 31.5149 7.35643" stroke="#4164EE" stroke-linecap="round" stroke-linejoin="round")
-            svg(viewBox="0 0 128 176" fill="none" xmlns="http://www.w3.org/2000/svg")
-                path(class="arrow" d="M27.2979 1.88477C19.335 7.46938 11.8773 14.1168 6.93917 22.5377C2.00107 30.9586 -0.0604079 41.3832 2.89707 50.6706C5.41664 58.55 11.3114 64.9537 18.0347 69.726C27.399 76.3666 38.7573 80.2995 50.2166 80.1642C61.676 80.0288 73.1556 75.6965 81.4217 67.7155C86.2857 63.0177 90.1392 56.6208 89.6811 49.8515C89.068 40.686 80.4044 33.5648 71.3636 32.2515C62.3227 30.9383 53.1741 34.2146 45.191 38.6485C36.1703 43.6442 27.8234 50.366 22.5417 59.2878C17.26 68.2097 13.0023 76.5832 19.436 89.1266C24.1518 98.2854 32.5055 105.373 41.4655 110.788C54.8314 118.844 70.3463 125.768 85.5851 122.479C92.0457 121.084 98.9577 116.515 98.8971 109.874C98.8432 104.371 93.8848 100.072 88.7177 98.2583C84.5504 96.8008 80.0781 96.4545 75.7378 97.2533C71.3974 98.0521 67.3376 99.9687 63.955 102.816C60.5724 105.663 57.9827 109.343 56.4391 113.497C54.8954 117.65 54.4506 122.135 55.148 126.513C57.3914 140.566 70.5754 150.131 83.6179 155.702C96.0681 161.013 109.317 164.187 122.813 165.091M115.523 157.029C118.167 160.818 122.035 163.569 126.471 164.814C122.013 166.786 118.221 170.017 115.557 174.115" stroke="#14004B" stroke-linecap="round" stroke-linejoin="round" stroke-width: "2px" stroke-miterlimit="0" fill="none")
-        
+            include ../modules/blocks/intro
+            include ../modules/blocks/stack
+            include ../modules/blocks/freedom
+            include ../modules/blocks/how
+            include ../modules/blocks/benefits
+            include ../modules/blocks/about
+            include ../modules/blocks/numbers
+            include ../modules/blocks/job
+            include ../modules/blocks/cta
+            include ../modules/blocks/apply
+        include ../modules/footer/footer
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
-        //script(src="static/js/main.js")
-        script(src="static/js/svg.js")
+        script(src="static/js/main.js")
+        //script(src="static/js/svg.js")
         block script

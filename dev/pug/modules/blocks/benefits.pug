@@ -1,0 +1,50 @@
+section.benefits
+    .benefits__wrapper
+        h2.benefits__title
+            span Комфортная атмосфера 
+            span Дружелюбная среда
+        ul.benefits__list
+            li.benefits__item
+                span Современные офисы в Москве и Саратове
+            li.benefits__item
+                span Гибридный график или удаленка. Распределенные команды
+            li.benefits__item
+                span Открытая среда без бюрократии и сложных процессов
+        .benefits__images.swiper-benefits-container
+            .swiper-wrapper
+                .benefits__slide.benefits__slide--first.swiper-slide
+                    video(poster="static/images/content/benefits-poster.jpg")
+                        source(src="static/videos/benefits-video.mp4" type="video/mp4")
+                        source(src="static/videos/benefits-video.ogv" type="video/ogg")
+                        source(src="static/videos/benefits-video.webm" type="video/webm")
+                    picture.benefits__frame
+                        source(srcset="static/images/content/benefits-1.webp" type="image/webp")
+                        img(src="static/images/content/benefits-1.jpg" alt="Современные офисы в Москве и Саратове").benefits__frame-image
+                        
+                .benefits__slide.benefits__slide--second.swiper-slide
+                    picture.benefits__frame
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
+                        source(srcset="static/images/content/benefits-2.webp" type="image/webp")
+                        img(src="static/images/content/benefits-2.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
+                    picture.benefits__frame
+                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-3-lg.webp" type="image/webp")
+                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-3-lg.jpg")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-3-tb.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-3-tb.jpg")
+                        source(srcset="static/images/content/benefits-3.webp" type="image/webp")
+                        img(src="static/images/content/benefits-3.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
+                
+                .benefits__slide.benefits__slide--third.swiper-slide
+                    picture.benefits__frame
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-lg.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-lg.jpg")
+                        source(srcset="static/images/content/benefits-4.webp" type="image/webp")
+                        img(src="static/images/content/benefits-4.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image
+                    picture.benefits__frame
+                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-5-lg.webp" type="image/webp")
+                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-5-lg.jpg")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-5-tb.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-5-tb.jpg")
+                        source(srcset="static/images/content/benefits-5.webp" type="image/webp")
+                        img(src="static/images/content/benefits-5.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image

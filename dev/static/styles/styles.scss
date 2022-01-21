@@ -17,8 +17,7 @@
 }
 
 .arrow {
-
-    animation: dash 2.55s $cubic forwards infinite alternate;
+    animation: dash 10.55s $cubic forwards;
 }
 
 .link {
@@ -109,6 +108,9 @@ button { outline: none; }
 
 .main {
 
+}
+
+.hidden {
 }
 
 //Модули
