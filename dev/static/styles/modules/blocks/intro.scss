@@ -1,0 +1,49 @@
+.intro {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: 0 toRem(16) toRem(94) toRem(16);
+    margin-bottom: toRem(24);
+
+    &__title {
+        @include flex-setting(column, flex-start, flex-start);
+        margin-bottom: toRem(40);
+
+        span {
+            @include font-setting($primary-font, toRem(28), toRem(39), 400, $dark);
+            letter-spacing: -0.015em;
+        }
+    }
+
+    &__frame {
+        align-self: flex-end;
+        @include flex-setting(column, center, center);
+        @include box(toRem(200));
+        margin-bottom: toRem(40);
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &--second {
+            display: none;
+        }
+    }
+
+    &__subtitle {
+        display: inline;
+        margin-bottom: toRem(40);
+
+        span {
+            @include font-setting($primary-font, toRem(28), toRem(39), 400, $dark);
+            letter-spacing: -0.015em;
+        }
+    }
+
+    &__jobs {
+        display: none;
+    }
+}

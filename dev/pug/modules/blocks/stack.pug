@@ -1,20 +1,18 @@
 - var stackItem = [{title: 'Бэкенд', description: 'Net Core, EF Core, MS SQL, RabbitMQ, NServiceBus, HangFire, микросервисы, Java 11-17, Spring, PostgreSQL, Kafka, Elasticsearch, Redis, Liquibase'}, {title: 'Фронтенд', description: 'VueJS, ES6, Webpack, Rollup, cвой StoryBook и npm'}, {title: 'Тесты', description: 'TestLink, Selenium, Selenoid, Allure, Cucumber'}, {title: 'Инфраструктура', description: 'MS ServiceFabric, Docker, TeamCity, Git, Octopus, ELK, ЭЦП, Kubernetes, Prometheus, Grafana, Zabbix, Nginx, HAProxy'}, {title: 'А еще...', description: 'Работа с кодом по Git flow, есть CI/CD, релизимся каждый день'}]
 
 section.stack#stack
-    .stack__wrapper
-        h2.stack__title Актуальный стек
-        
-        ul.stack__list
-            for i in stackItem
-                li.stack__item
-                    h3.stack__name=i.title
-                    p.stack__desctription=i.description
-        picture.stack__frame
-            source(media="(min-width: 1440px)" srcset="static/images/content/stack-lg.webp" type="image/webp")
-            source(media="(min-width: 1440px)" srcset="static/images/content/stack-lg.jpg")
-            source(media="(min-width: 1024px)" srcset="static/images/content/stack-md.webp" type="image/webp")
-            source(media="(min-width: 1024px)" srcset="static/images/content/stack-md.jpg")
-            source(media="(min-width: 768px)" srcset="static/images/content/stack-tb.webp" type="image/webp")
-            source(media="(min-width: 768px)" srcset="static/images/content/stack-tb.jpg")
-            source(srcset="static/images/content/stack-mb.webp" type="image/webp")
-            img(src="static/images/content/stack-mb.jpg" alt="Наш стек технологий").stack__frame-image
+    h2.stack__title Актуальный стек    
+    ul.stack__list
+        for i in stackItem
+            li.stack__item
+                h3.stack__name=i.title
+                p.stack__desctription=i.description
+    picture.stack__frame
+        source(media="(min-width: 1440px)" srcset="static/images/content/stack-lg.webp" type="image/webp")
+        source(media="(min-width: 1440px)" srcset="static/images/content/stack-lg.jpg")
+        source(media="(min-width: 1024px)" srcset="static/images/content/stack-md.webp" type="image/webp")
+        source(media="(min-width: 1024px)" srcset="static/images/content/stack-md.jpg")
+        source(media="(min-width: 768px)" srcset="static/images/content/stack-tb.webp" type="image/webp")
+        source(media="(min-width: 768px)" srcset="static/images/content/stack-tb.jpg")
+        source(srcset="static/images/content/stack-mb.webp" type="image/webp")
+        img(src="static/images/content/stack-mb.jpg" alt="Наш стек технологий").stack__frame-image

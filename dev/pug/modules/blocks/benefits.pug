@@ -4,7 +4,7 @@ section.benefits
             span Комфортная атмосфера 
             span Дружелюбная среда
         ul.benefits__list
-            li.benefits__item
+            li.benefits__item.active
                 span Современные офисы в Москве и Саратове
             li.benefits__item
                 span Гибридный график или удаленка. Распределенные команды
@@ -13,10 +13,13 @@ section.benefits
         .benefits__images.swiper-benefits-container
             .swiper-wrapper
                 .benefits__slide.benefits__slide--first.swiper-slide
-                    video(poster="static/images/content/benefits-poster.jpg")
-                        source(src="static/videos/benefits-video.mp4" type="video/mp4")
-                        source(src="static/videos/benefits-video.ogv" type="video/ogg")
-                        source(src="static/videos/benefits-video.webm" type="video/webm")
+                    .benefits__player
+                        video(poster="static/images/content/benefits-poster-mb.jpg").benefits__video
+                            source(src="static/videos/benefits-video.mp4" type="video/mp4")
+                            source(src="static/videos/benefits-video.ogv" type="video/ogg")
+                            source(src="static/videos/benefits-video.webm" type="video/webm")
+                        button(type="button").benefits__play
+                            
                     picture.benefits__frame
                         source(srcset="static/images/content/benefits-1.webp" type="image/webp")
                         img(src="static/images/content/benefits-1.jpg" alt="Современные офисы в Москве и Саратове").benefits__frame-image

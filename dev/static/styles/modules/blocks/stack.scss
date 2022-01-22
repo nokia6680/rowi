@@ -1,0 +1,66 @@
+.stack {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, flex-start);
+
+    padding: toRem(24) toRem(16);
+    margin-bottom: toRem(24);
+
+    &__title {
+        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        letter-spacing: -0.015em;
+        text-align: left;
+        margin-bottom: toRem(24);
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: toRem(40);
+    }
+
+    &__item {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+        margin-bottom: toRem(40);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+        &:nth-of-type(even) {
+            padding-left: toRem(64);
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, toRem(18), toRem(25), 500, $dark);
+        margin-bottom: toRem(8);
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+        text-align: left;
+    }
+
+    &__frame {
+        width: 100%;
+        height: 0;
+        position: relative;
+
+        padding-bottom: 58.309037900874635%;
+
+        &-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            object-fit: cover;
+        }
+    }
+}

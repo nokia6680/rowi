@@ -1,0 +1,106 @@
+.how {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, flex-start);
+
+    padding: toRem(24) toRem(16) toRem(38) toRem(16);
+    margin-bottom: toRem(24);
+
+    &__title {
+        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        letter-spacing: -0.015em;
+        text-align: left;
+        margin-bottom: toRem(24);
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__item:not(:last-of-type) {
+        width: 100%;
+
+        @include flex-setting(column-reverse, flex-start, flex-start);
+    }
+
+    &__item {
+        &--first {
+            margin-bottom: toRem(72);
+
+            .how__info {
+                margin-bottom: toRem(24);
+            }
+
+            .how__frame {
+                width: toRem(272);
+                height: toRem(232);
+                margin-left: toRem(4);
+            }
+        }
+
+        &--second {
+            z-index: 2;
+
+            .how__info {
+                padding-left: toRem(64);
+                margin-bottom: toRem(24);
+            }
+
+            .how__frame {
+                width: toRem(182);
+                height: toRem(254);
+            }
+        }
+
+        &--third {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
+            margin-top: toRem(-94);
+
+            .how__frame {
+                align-self: flex-end;
+                margin-bottom: toRem(24);
+
+                width: toRem(182);
+                height: toRem(254);
+            }
+
+            .how__info {
+                max-width: toRem(280);
+            }
+        }
+    }
+
+    &__info {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+
+        .how__description:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__name {
+        @include font-setting($primary-font, toRem(18), toRem(25), 500, $dark);
+        margin-bottom: toRem(16);
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+        text-align: left;
+        margin-bottom: toRem(8);
+    }
+
+    &__frame {
+        width: 100%;
+        @include flex-setting(column, center, center);
+
+        &-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+}

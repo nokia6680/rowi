@@ -1,0 +1,144 @@
+.about {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, flex-start);
+
+    padding: toRem(24) toRem(16);
+    margin-bottom: toRem(24);
+
+    &__title {
+        display: inline;
+        margin-bottom: toRem(16);
+
+        span {
+            @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+            letter-spacing: -0.015em;
+            text-align: left;
+        }
+
+        &--overline {
+            position: relative;
+        }
+    }
+
+    &__overline {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &--tb,
+        &--md,
+        &--lg {
+            display: none;
+        }
+    }
+
+    &__subtitle {
+        @include font-setting($primary-font, toRem(18), toRem(28), 400, $dark);
+        text-align: left;
+        margin-bottom: toRem(24);
+
+        max-width: toRem(280);
+    }
+
+    &__player {
+        width: 100%;
+        height: 0;
+        position: relative;
+        padding-bottom: 63.55685131195335%;
+        margin-bottom: toRem(24);
+    }
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        object-fit: cover;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        lefT: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 64px;
+        height: 50px;
+
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg width='64' height='50' viewBox='0 0 64 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.9753 26.691C36.7272 30.1322 32.7287 32.1587 25.3423 34.3822C25.2055 34.4225 25.0613 34.4302 24.921 34.4048C24.7808 34.3794 24.6484 34.3216 24.5344 34.2359C24.4203 34.1502 24.3278 34.0391 24.2642 33.9113C24.2006 33.7835 24.1677 33.6426 24.168 33.4998V18.0822C24.168 17.9451 24.1987 17.8098 24.2576 17.6861C24.3166 17.5624 24.4024 17.4534 24.5087 17.3672C24.615 17.2809 24.7393 17.2196 24.8723 17.1876C25.0054 17.1555 25.1439 17.1537 25.2777 17.1822C31.2432 18.4528 35.2593 20.6439 40.9782 25.2528C41.0848 25.3399 41.1707 25.4497 41.2295 25.5742C41.2884 25.6987 41.3188 25.8348 41.3185 25.9726C41.3182 26.1104 41.2872 26.2463 41.2279 26.3706C41.1685 26.4949 41.0822 26.6044 40.9753 26.691Z' fill='white'/%3E%3Cpath d='M9.98193 8.23263L9.34706 7.46002L9.34702 7.46005L9.98193 8.23263ZM1.86156 32.0062L0.930213 32.3703L0.93025 32.3704L1.86156 32.0062ZM23.7243 48.5826L23.8771 47.5944L23.8769 47.5943L23.7243 48.5826ZM59.2472 35.9356L60.0798 36.4896L60.0798 36.4894L59.2472 35.9356ZM62.4766 19.1709L63.4151 18.8255L63.4148 18.8247L62.4766 19.1709ZM52.2014 7.9944L52.6699 7.11097L52.6698 7.11091L52.2014 7.9944ZM31.9445 0.935577L32.0477 -0.0590837L32.0458 -0.0592809L31.9445 0.935577ZM9.34702 7.46005C2.17956 13.3502 -2.57648 23.401 0.930213 32.3703L2.79291 31.642C-0.282414 23.7761 3.83348 14.5797 10.6168 9.00522L9.34702 7.46005ZM0.93025 32.3704C4.50395 41.5083 14.0026 48.0935 23.5717 49.5709L23.8769 47.5943C14.8919 46.2071 6.06542 40.0099 2.79288 31.6419L0.93025 32.3704ZM23.5715 49.5709C37.4305 51.7141 51.5502 49.3074 60.0798 36.4896L58.4147 35.3816C50.5039 47.2696 37.3679 49.6806 23.8771 47.5944L23.5715 49.5709ZM60.0798 36.4894C63.3061 31.6396 65.5344 24.585 63.4151 18.8255L61.5381 19.5162C63.341 24.4156 61.4768 30.7786 58.4147 35.3817L60.0798 36.4894ZM63.4148 18.8247C61.4196 13.4169 57.8319 9.84881 52.6699 7.11097L51.7328 8.87783C56.5525 11.4341 59.7465 14.6601 61.5384 19.517L63.4148 18.8247ZM52.6698 7.11091C46.3606 3.76565 39.0431 0.666851 32.0477 -0.0590818L31.8413 1.93024C38.4503 2.61607 45.4946 5.57021 51.7329 8.87789L52.6698 7.11091ZM32.0458 -0.0592809C28.0571 -0.465348 24.4643 -0.320986 20.8033 0.815459C17.1484 1.95 13.4949 4.05164 9.34706 7.46002L10.6168 9.00525C14.6333 5.70481 18.061 3.76086 21.3962 2.72555C24.7253 1.69214 28.0315 1.54238 31.8432 1.93043L32.0458 -0.0592809Z' fill='white'/%3E%3C/svg%3E");
+        background-color: transparent;
+
+        border: none;
+        cursor: pointer;
+    }
+
+    &__show {
+        position: relative;
+        align-self: flex-end;
+        max-width: toRem(92);
+        margin-right: toRem(24);
+        margin-bottom: toRem(36);
+
+        @include font-setting($primary-font, toRem(14), toRem(22), 500, $blue);
+        text-align: left;
+
+        a {
+            color: $blue;
+            text-decoration: none;
+        }
+
+        svg {
+            position: absolute;
+            bottom: toRem(-11);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__item {
+        width: 100%;
+        max-width: toRem(280);
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: toRem(72);
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__item:nth-of-type(even) {
+        align-self: flex-end;
+    }
+
+    &__link {
+        display: block;
+        text-decoration: none;
+        margin-bottom: toRem(8);
+
+        span {
+            @include font-setting($primary-font, toRem(18), toRem(25), 500, $dark);
+        }
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+        text-align: left;
+    }
+}
