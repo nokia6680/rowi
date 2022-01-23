@@ -31,6 +31,17 @@ function changeText() {
     }
 };
 
+var jobs = document.getElementsByClassName('job__name');
+var elNodes = document.querySelectorAll(".job__name");
+
+for (var i = 0; i < jobs.length; i++) {
+    var elem = jobs[i];
+    elem.addEventListener("click", function() {
+        event.preventDefault();
+        this.classList.toggle("active");
+    });
+}
+
 //$('.js-popup-opener').on('click', function() {
 //     const popupId = $(this).attr('data-modal');
 //     $(popupId).addClass('active');

@@ -9,9 +9,10 @@
   background-position: center;
 }
 
-@mixin gapFallback($gap) {
+@mixin gapFallbackTwo($gap) {
     @supports not (aspect-ratio: 1 / 1) {
         margin-right: $gap;
+        margin-bottom: $gap;
 
         &:last-child {
             margin-right: 0;

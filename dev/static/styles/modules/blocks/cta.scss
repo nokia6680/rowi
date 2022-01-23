@@ -1,0 +1,105 @@
+.cta {
+    width: 100%;
+    height: 100vh;
+
+    @include flex-setting(column, center, center);
+
+    position: relative;
+
+    .cta-bg-round-mb {
+        position: absolute;
+        filter: blur(40px);
+
+        z-index: 0;
+
+        top: 15vh;
+        left: 30%;
+    }
+
+    &__wrapper {
+        width: 100%;
+        @include flex-setting(column, center, center);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        padding: 0 toRem(32);
+        transform: translate(-50%, -50%);
+    }
+
+    // book
+    &__title {
+        width: 100%;
+        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        letter-spacing: -0.015em;
+        text-align: left;
+        margin-bottom: toRem(8);
+
+        z-index: 1;
+    }
+
+    &__block {
+        width: 100%;
+
+        @include flex-setting(row, flex-start, center);
+
+        z-index: 1;
+    }
+    // book
+    &__description {
+        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        letter-spacing: -0.015em;
+        margin-right: toRem(8);
+        text-align: left;
+    }
+
+    &__button {
+        text-decoration: none;
+        position: relative;
+
+        // book
+        span {
+            @include font-setting($primary-font, toRem(24), toRem(43), 400, $blue);
+        }
+
+        &[data-type="firstLine"] {
+            .cta-first {
+                display: block;
+            }
+        }
+
+        &[data-type="secondLine"] {
+            .cta-second {
+                display: block;
+            }
+        }
+
+        &[data-type="thirdLine"] {
+            .cta-third {
+                display: block;
+            }
+        }
+
+        &[data-type="fourthLine"] {
+            .cta-fourth {
+                display: block;
+            }
+        }
+    }
+
+    &__underline {
+        position: absolute;
+        bottom: toRem(-12);
+        left: 50%;
+        transform: translateX(-50%);
+
+        &--desktop,
+        &--laptop,
+        &--tablet {
+            display: none;
+        }
+
+        svg {
+            display: none;
+        }
+    }
+}

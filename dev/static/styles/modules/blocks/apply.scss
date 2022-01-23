@@ -1,0 +1,43 @@
+.apply {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(24) toRem(16);
+    margin-bottom: toRem(24);
+
+    &__title {
+        align-self: flex-start;
+        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        letter-spacing: -0.015em;
+        text-align: left;
+        margin-bottom: toRem(24);
+    }
+
+    &__form {
+        margin-bottom: toRem(32);
+    }
+
+    &__images {
+        width: 100%;
+        @include flex-setting(column, flex-start, flex-start);
+    }
+
+    &__frame {
+        @include flex-setting(column, center, center);
+
+        &:first-of-type {
+            width: toRem(316);
+            height: toRem(254);
+        }
+
+        &:last-of-type {
+            width: toRem(182);
+            height: toRem(254);
+
+            align-self: flex-end;
+
+            margin-top: toRem(-128);
+        }
+    }
+}

@@ -1,145 +1,144 @@
 section.job#jobs
-    .job__wrapper
-        h2.job__title Ждём в команду
-        
-        .job__filter
-            h3.job__filter-title Категории
-            
-            ul.job__filter-list
-                li.job__filter-item
-                    button(type="button" onclick="filterSelection('development')").job__filter-btn
-                        span.job__filter-name Разработка
-                        span.job__filter-nr (11)
-                li.job__filter-item
-                    button(type="button" onclick="filterSelection('analysis')").job__filter-btn
-                        span.job__filter-name Аналитика
-                        span.job__filter-nr (6)
-                li.job__filter-item
-                    button(type="button" onclick="filterSelection('design')").job__filter-btn
-                        span.job__filter-name Дизайн
-                        span.job__filter-nr (4)
-                li.job__filter-item
-                    button(type="button" onclick="filterSelection('testing')").job__filter-btn
-                        span.job__filter-name Тестирование
-                        span.job__filter-nr (3)
-        ul.job__list
-            li.job__item.development
-                h3.job__name FullStack разработчик
-                .job__body
-                    ul.job__content
-                        li.job__content-item
-                            b.job__content-name Современный стек
-                            p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
-                        li.job__content-item
-                            b.job__content-name Интересные задачи
-                            p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
-                            p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
-                            p.job__content-description Разработка логики автоматизации бизнес-процессов;
-                            p.job__content-description Доработка микросервисов и создание новых;
-                            p.job__content-description Написание Unit тестов;
-                            p.job__content-description Верстка страниц из компонентов библиотеки.
-                        li.job__content-item
-                            b.job__content-name Ожидания
-                            p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
-                            p.job__content-description Знание Vue.js, Angular или React;
-                            p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
-                        li.job__content-item
-                            b.job__content-name Хорошо бы иметь
-                            p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
-                            p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
-                        li.job__content-item
-                            b.job__content-name А еще...
-                            p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
-                    .job__controls
-                        button(type="button").job__share Поделиться
-                        a(href="#apply-form" target="_self").job__apply Откликнуться
-            li.job__item.analysis
-                h3.job__name Продуктовый аналитик
-                .job__body
-                    ul.job__content
-                        li.job__content-item
-                            b.job__content-name Современный стек
-                            p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
-                        li.job__content-item
-                            b.job__content-name Интересные задачи
-                            p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
-                            p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
-                            p.job__content-description Разработка логики автоматизации бизнес-процессов;
-                            p.job__content-description Доработка микросервисов и создание новых;
-                            p.job__content-description Написание Unit тестов;
-                            p.job__content-description Верстка страниц из компонентов библиотеки.
-                        li.job__content-item
-                            b.job__content-name Ожидания
-                            p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
-                            p.job__content-description Знание Vue.js, Angular или React;
-                            p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
-                        li.job__content-item
-                            b.job__content-name Хорошо бы иметь
-                            p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
-                            p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
-                        li.job__content-item
-                            b.job__content-name А еще...
-                            p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
-                    .job__controls
-                        button(type="button").job__share Поделиться
-                        a(href="#apply-form" target="_self").job__apply Откликнуться
-            li.job__item.design
-                h3.job__name Дизайнер
-                .job__body
-                    ul.job__content
-                        li.job__content-item
-                            b.job__content-name Современный стек
-                            p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
-                        li.job__content-item
-                            b.job__content-name Интересные задачи
-                            p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
-                            p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
-                            p.job__content-description Разработка логики автоматизации бизнес-процессов;
-                            p.job__content-description Доработка микросервисов и создание новых;
-                            p.job__content-description Написание Unit тестов;
-                            p.job__content-description Верстка страниц из компонентов библиотеки.
-                        li.job__content-item
-                            b.job__content-name Ожидания
-                            p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
-                            p.job__content-description Знание Vue.js, Angular или React;
-                            p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
-                        li.job__content-item
-                            b.job__content-name Хорошо бы иметь
-                            p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
-                            p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
-                        li.job__content-item
-                            b.job__content-name А еще...
-                            p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
-                    .job__controls
-                        button(type="button").job__share Поделиться
-                        a(href="#apply-form" target="_self").job__apply Откликнуться
-            li.job__item.testing
-                h3.job__name Тестировщик
-                .job__body
-                    ul.job__content
-                        li.job__content-item
-                            b.job__content-name Современный стек
-                            p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
-                        li.job__content-item
-                            b.job__content-name Интересные задачи
-                            p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
-                            p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
-                            p.job__content-description Разработка логики автоматизации бизнес-процессов;
-                            p.job__content-description Доработка микросервисов и создание новых;
-                            p.job__content-description Написание Unit тестов;
-                            p.job__content-description Верстка страниц из компонентов библиотеки.
-                        li.job__content-item
-                            b.job__content-name Ожидания
-                            p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
-                            p.job__content-description Знание Vue.js, Angular или React;
-                            p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
-                        li.job__content-item
-                            b.job__content-name Хорошо бы иметь
-                            p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
-                            p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
-                        li.job__content-item
-                            b.job__content-name А еще...
-                            p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
-                    .job__controls
-                        button(type="button").job__share Поделиться
-                        a(href="#apply-form" target="_self").job__apply Откликнуться
+    h2.job__title Ждём в команду
+
+    .job__filter
+        h3.job__filter-title Категории
+
+        ul.job__filter-list
+            li.job__filter-item
+                button(type="button" onclick="filterSelection('development')").job__filter-btn.active
+                    span.job__filter-name Разработка
+                    span.job__filter-nr (11)
+            li.job__filter-item
+                button(type="button" onclick="filterSelection('analysis')").job__filter-btn
+                    span.job__filter-name Аналитика
+                    span.job__filter-nr (6)
+            li.job__filter-item
+                button(type="button" onclick="filterSelection('design')").job__filter-btn
+                    span.job__filter-name Дизайн
+                    span.job__filter-nr (4)
+            li.job__filter-item
+                button(type="button" onclick="filterSelection('testing')").job__filter-btn
+                    span.job__filter-name Тестирование
+                    span.job__filter-nr (3)
+    ul.job__list
+        li.job__item.development
+            h3.job__name FullStack разработчик
+            .job__body
+                ul.job__content
+                    li.job__content-item
+                        b.job__content-name Современный стек
+                        p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
+                    li.job__content-item
+                        b.job__content-name Интересные задачи
+                        p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
+                        p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
+                        p.job__content-description Разработка логики автоматизации бизнес-процессов;
+                        p.job__content-description Доработка микросервисов и создание новых;
+                        p.job__content-description Написание Unit тестов;
+                        p.job__content-description Верстка страниц из компонентов библиотеки.
+                    li.job__content-item
+                        b.job__content-name Ожидания
+                        p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
+                        p.job__content-description Знание Vue.js, Angular или React;
+                        p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
+                    li.job__content-item
+                        b.job__content-name Хорошо бы иметь
+                        p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
+                        p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
+                    li.job__content-item
+                        b.job__content-name А еще...
+                        p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
+                .job__controls
+                    button(type="button").job__share Поделиться
+                    a(href="#apply-form" target="_self").job__apply Откликнуться
+        li.job__item.analysis
+            h3.job__name Продуктовый аналитик
+            .job__body
+                ul.job__content
+                    li.job__content-item
+                        b.job__content-name Современный стек
+                        p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
+                    li.job__content-item
+                        b.job__content-name Интересные задачи
+                        p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
+                        p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
+                        p.job__content-description Разработка логики автоматизации бизнес-процессов;
+                        p.job__content-description Доработка микросервисов и создание новых;
+                        p.job__content-description Написание Unit тестов;
+                        p.job__content-description Верстка страниц из компонентов библиотеки.
+                    li.job__content-item
+                        b.job__content-name Ожидания
+                        p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
+                        p.job__content-description Знание Vue.js, Angular или React;
+                        p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
+                    li.job__content-item
+                        b.job__content-name Хорошо бы иметь
+                        p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
+                        p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
+                    li.job__content-item
+                        b.job__content-name А еще...
+                        p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
+                .job__controls
+                    button(type="button").job__share Поделиться
+                    a(href="#apply-form" target="_self").job__apply Откликнуться
+        li.job__item.design
+            h3.job__name Дизайнер
+            .job__body
+                ul.job__content
+                    li.job__content-item
+                        b.job__content-name Современный стек
+                        p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
+                    li.job__content-item
+                        b.job__content-name Интересные задачи
+                        p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
+                        p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
+                        p.job__content-description Разработка логики автоматизации бизнес-процессов;
+                        p.job__content-description Доработка микросервисов и создание новых;
+                        p.job__content-description Написание Unit тестов;
+                        p.job__content-description Верстка страниц из компонентов библиотеки.
+                    li.job__content-item
+                        b.job__content-name Ожидания
+                        p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
+                        p.job__content-description Знание Vue.js, Angular или React;
+                        p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
+                    li.job__content-item
+                        b.job__content-name Хорошо бы иметь
+                        p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
+                        p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
+                    li.job__content-item
+                        b.job__content-name А еще...
+                        p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
+                .job__controls
+                    button(type="button").job__share Поделиться
+                    a(href="#apply-form" target="_self").job__apply Откликнуться
+        li.job__item.testing
+            h3.job__name Тестировщик
+            .job__body
+                ul.job__content
+                    li.job__content-item
+                        b.job__content-name Современный стек
+                        p.job__content-description ASP.NET.MVC, ASP.NET.Core, Vue.js, npm, Webpack, MS SQL, Rabbit MQ, NServiceBus, Service Fabric, Docker, Team City, Octupus, Git.
+                    li.job__content-item
+                        b.job__content-name Интересные задачи
+                        p.job__content-description Участие в улучшении существующих и создании новых продуктов компании;
+                        p.job__content-description Разработка бизнес логики личных кабинетов по ТЗ от аналитика;
+                        p.job__content-description Разработка логики автоматизации бизнес-процессов;
+                        p.job__content-description Доработка микросервисов и создание новых;
+                        p.job__content-description Написание Unit тестов;
+                        p.job__content-description Верстка страниц из компонентов библиотеки.
+                    li.job__content-item
+                        b.job__content-name Ожидания
+                        p.job__content-description Опыт работы в C#, ASP.Net MVC\Core;
+                        p.job__content-description Знание Vue.js, Angular или React;
+                        p.job__content-description Опыт работы с базами данных: MS SQL, MySQL и др.
+                    li.job__content-item
+                        b.job__content-name Хорошо бы иметь
+                        p.job__content-description Опыт разработки или развития любой финансово-учётной или кадровой системы;
+                        p.job__content-description Опыт работы в bitBucket, youTrack или альтернативах.
+                    li.job__content-item
+                        b.job__content-name А еще...
+                        p.job__content-description Расширенный ДМС со стоматологией и доступом в лучшие клиники города, отпуска, больничный, праздники.
+                .job__controls
+                    button(type="button").job__share Поделиться
+                    a(href="#apply-form" target="_self").job__apply Откликнуться

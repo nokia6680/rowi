@@ -1,0 +1,273 @@
+.job {
+    width: 100%;
+
+    @include flex-setting(column, flex-start, center);
+
+    padding: toRem(24) toRem(16);
+    margin-bottom: toRem(24);
+
+    &__title {
+        align-self: flex-start;
+        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        letter-spacing: -0.015em;
+        text-align: left;
+        margin-bottom: toRem(32);
+    }
+
+    &__filter {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        margin-bottom: toRem(40);
+
+        &-title {
+            @include font-setting($primary-font, toRem(18), toRem(25), 500, $dark);
+            margin-bottom: toRem(24);
+            text-align: left;
+        }
+
+        &-list {
+            width: 100%;
+
+            @include flex-setting(row, flex-start, center);
+            flex-wrap: wrap;
+
+            gap: toRem(24) toRem(24);
+        }
+
+        &-item {
+            @include flex-setting(column, center, center);
+            width: auto;
+
+            @include gapFallbackTwo(toRem(24));
+        }
+
+        &-btn {
+            width: auto;
+            @include flex-setting(row, center, center);
+            background: rgba(65, 100, 238, 0.08);
+            padding: toRem(12) toRem(12);
+            border: none;
+
+            transition: 0.35s $cubic;
+
+            &:active {
+                background: rgba(65, 100, 238, 0.24);
+                transition: 0.35s $cubic;
+
+                .job__filter-nr {
+                    opacity: 0.4;
+                    transition: 0.35s $cubic;
+                }
+            }
+
+            &.active {
+                background: $blue;
+                transition: 0.35s $cubic;
+
+                .job__filter-name {
+                    color: $white;
+                    font-weight: 500;
+                    transition: 0.35s $cubic;
+                }
+
+                .job__filter-nr {
+                    color: $white;
+                    font-weight: 500;
+                    opacity: 1;
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+
+        &-name {
+            @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+            margin-right: toRem(4);
+        }
+
+        &-nr {
+            @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+            opacity: 0.24;
+
+            transition: 0.35s $cubic;
+        }
+    }
+
+    &__list {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+    }
+
+    &__item {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, flex-start);
+
+        padding: toRem(13) toRem(8);
+
+        border-bottom: 1px solid rgba(20, 0, 75, 0.24);
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+    }
+
+    &__name {
+        width: 100%;
+        @include font-setting($primary-font, toRem(18), toRem(28), 400, $dark);
+
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+
+            width: toRem(16);
+            height: toRem(16);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13 1L7 7L1 1' stroke='%2314004B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+            right: 0;
+            top: toRem(8);
+
+            transition: 0.35s $cubic;
+        }
+
+        &.active + .job__body {
+            max-height: toRem(3000);
+            padding-top: toRem(37);
+            padding-bottom: toRem(11);
+
+            transition: max-height 0.55s $cubic, padding-top 0.2s linear 0.35s, padding-bottom 0.2s linear 0.35s;
+
+            .job__content-item {
+                pointer-events: auto;
+                transform: scale(1) translateY(0px);
+                will-change: transform;
+                opacity: 1;
+
+                @for $i from 1 through $jobItems {
+                    &:nth-child(#{$i}) {
+                        transition-delay: #{0.06 * $i+0.2}s;
+                    }
+                }
+            }
+
+            .job__controls {
+                pointer-events: auto;
+                transform: scale(1) translateY(0px);
+                will-change: transform;
+                opacity: 1;
+                transition-delay: 0.55s;
+            }
+        }
+
+        &.active {
+            &::after {
+                transform: rotate(180deg);
+                transition: 0.35s $cubic;
+            }
+        }
+    }
+
+    &__body {
+        width: 100%;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.55s $cubic, padding-top 0.2s linear 0.35s, padding-bottom 0.2s linear 0.35s;
+
+        @include flex-setting(column, flex-start, flex-start);
+        padding: 0 toRem(16);
+    }
+
+    &__content {
+        width: 100%;
+
+        @include flex-setting(column, flex-start, center);
+        margin-bottom: toRem(24);
+
+        &-item {
+            width: 100%;
+            @include flex-setting(column, flex-start, flex-start);
+
+            transform: scale(1.15) translateY(-30px);
+            margin-bottom: toRem(24);
+            opacity: 0;
+            transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+
+            @for $i from 1 through $jobItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.56 - ($i * 0.07)}s;
+                }
+            }
+
+            .job__content-description:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &-name {
+            @include font-setting($primary-font, toRem(14), toRem(22), 500, $dark);
+            margin-bottom: toRem(8);
+        }
+        //book
+        &-description {
+            @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+            margin-bottom: toRem(8);
+        }
+    }
+
+    &__controls {
+        width: 100%;
+        @include flex-setting(row, space-between, center);
+
+        transform: scale(1.15) translateY(-30px);
+        opacity: 0;
+        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+    }
+    //book
+    &__share {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+
+        padding: toRem(12) toRem(24);
+        background-color: transparent;
+        border: none;
+        opacity: 0.4;
+        transition: 0.35s $cubic;
+
+        &:active {
+            opacity: 1;
+            transition: 0.35s $cubic;
+        }
+
+        &.disabled {
+            opacity: 0.24;
+            pointer-events: none;
+        }
+    }
+
+    &__apply {
+        @include flex-setting(column, center, center);
+        @include font-setting($primary-font, toRem(14), toRem(22), 500, $blue);
+        text-decoration: none;
+        padding: toRem(12) toRem(24);
+        background-color: transparent;
+        border: none;
+
+        &.disabled {
+            color: $dark;
+            pointer-events: none;
+        }
+    }
+}

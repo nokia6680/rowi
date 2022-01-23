@@ -8,8 +8,20 @@
     from {
         stroke-dashoffset: 0;
     }
-    
+
     to {
         stroke-dashoffset: var(--pathLength);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translate(0, 10%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
     }
 }
