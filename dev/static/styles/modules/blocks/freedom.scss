@@ -5,8 +5,24 @@
 
     padding: toRem(282) toRem(16);
 
+    position: relative;
+
+    margin-bottom: toRem(24);
+
+    &-round-tb {
+        display: none;
+    }
+
+    &-round-mb {
+        position: absolute;
+        filter: blur(30px);
+
+        z-index: 0;
+    }
+
     &__title {
-        @include font-setting($primary-font, toRem(40), toRem(56), 400, $dark);
+        z-index: 1;
+        @include font-setting($book-font, toRem(40), toRem(56), 400, $dark);
         margin-bottom: toRem(40);
 
         &:last-of-type {
@@ -19,6 +35,80 @@
 
         &--third {
             align-self: flex-end;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .freedom {
+        height: 100vh;
+        padding: toRem(0) toRem(40);
+
+        justify-content: center;
+        margin-bottom: toRem(80);
+
+        &-round-tb {
+            display: block;
+            position: absolute;
+            filter: blur(70px);
+
+            z-index: 0;
+        }
+
+        &-round-mb {
+            display: none;
+        }
+
+        &__title {
+            font-family: $primary-font;
+            font-weight: 300;
+            font-size: toRem(100);
+            line-height: toRem(120);
+            letter-spacing: -0.015em;
+
+            margin-bottom: toRem(140);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            &--second {
+                align-self: center;
+                padding-left: toRem(0);
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .freedom {
+        padding-left: toRem(80);
+        padding-right: toRem(80);
+
+        &__title {
+            margin-bottom: toRem(80);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .freedom {
+        --wrapWidth: calc(100% - 1220px);
+        padding: 0 calc((var(--wrapWidth) / 2));
+        margin-bottom: toRem(100);
+
+        &__title {
+            font-size: toRem(130);
+            line-height: toRem(156);
+            margin-bottom: toRem(81);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
 }

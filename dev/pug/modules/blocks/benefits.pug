@@ -1,7 +1,7 @@
 section.benefits
     .benefits__wrapper
         h2.benefits__title
-            span Комфортная атмосфера 
+            span Комфортная атмосфера. 
             span Дружелюбная среда
         ul.benefits__list
             li.benefits__item.active
@@ -14,7 +14,7 @@ section.benefits
             .swiper-wrapper
                 .benefits__slide.benefits__slide--first.swiper-slide
                     .benefits__player
-                        video(poster="static/images/content/benefits-poster-mb.jpg").benefits__video
+                        video(poster="static/images/content/benefits-poster.jpg").benefits__video
                             source(src="static/videos/benefits-video.mp4" type="video/mp4")
                             source(src="static/videos/benefits-video.ogv" type="video/ogg")
                             source(src="static/videos/benefits-video.webm" type="video/webm")
@@ -26,6 +26,8 @@ section.benefits
                         
                 .benefits__slide.benefits__slide--second.swiper-slide
                     picture.benefits__frame
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
                         source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
                         source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
                         source(srcset="static/images/content/benefits-2.webp" type="image/webp")
@@ -40,8 +42,10 @@ section.benefits
                 
                 .benefits__slide.benefits__slide--third.swiper-slide
                     picture.benefits__frame
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-lg.webp" type="image/webp")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-lg.jpg")
+                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.webp" type="image/webp")
+                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.jpg")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-md.webp" type="image/webp")
+                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-md.jpg")
                         source(srcset="static/images/content/benefits-4.webp" type="image/webp")
                         img(src="static/images/content/benefits-4.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image
                     picture.benefits__frame

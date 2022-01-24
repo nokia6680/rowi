@@ -10,7 +10,7 @@
 }
 
 @include font-face('Stolzl', '../fonts/Stolzl/Stolzl-Light', 300, 'normal');
-@include font-face('Stolzl', '../fonts/Stolzl/Stolzl-Regular', 400, 'normal');
-@include font-face('Stolzl', '../fonts/Stolzl/Stolzl-Book', 400, 'normal');
+@include font-face('Stolzl', '../fonts/Stolzl/Stolzl-Regular', normal, 'normal');
+@include font-face('Stolzl Book', '../fonts/Stolzl/Stolzl-Book', 400, 'normal');
 @include font-face('Stolzl', '../fonts/Stolzl/Stolzl-Medium', 500, 'normal');
 @include font-face('Stolzl', '../fonts/Stolzl/Stolzl-Bold', 700, 'normal');

@@ -11,7 +11,7 @@
         margin-bottom: toRem(40);
 
         span {
-            @include font-setting($primary-font, toRem(28), toRem(39), 400, $dark);
+            @include font-setting($book-font, toRem(28), toRem(39), 400, $dark);
             letter-spacing: -0.015em;
         }
     }
@@ -38,12 +38,233 @@
         margin-bottom: toRem(40);
 
         span {
-            @include font-setting($primary-font, toRem(28), toRem(39), 400, $dark);
+            @include font-setting($book-font, toRem(28), toRem(39), 400, $dark);
             letter-spacing: -0.015em;
         }
     }
 
     &__jobs {
         display: none;
+    }
+}
+
+@include min-screen(768px) {
+    .intro {
+        align-items: flex-start;
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'photo-2 photo-1'
+            'subt subt'
+            '... link'
+        ;
+
+        grid-template-columns: 50% 50%;
+
+        padding: 0 toRem(40) toRem(20) toRem(40);
+        margin-bottom: toRem(80);
+
+        &__title {
+            grid-area: title;
+            margin-bottom: toRem(0);
+
+            span {
+                max-width: toRem(482);
+                font-size: toRem(32);
+                line-height: toRem(58);
+            }
+        }
+
+        &__frame {
+            margin-bottom: toRem(40);
+
+            &-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            &--first {
+                grid-area: photo-1;
+                @include box(toRem(264));
+
+                justify-self: start;
+                margin-left: toRem(8);
+            }
+
+            &--second {
+                grid-area: photo-2;
+                display: flex;
+
+                width: toRem(129);
+                height: toRem(182);
+
+                margin-bottom: toRem(52);
+            }
+        }
+
+        &__subtitle {
+            justify-self: end;
+            grid-area: subt;
+            max-width: toRem(490);
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: toRem(60);
+
+            span {
+                font-size: toRem(32);
+                line-height: toRem(58);
+            }
+        }
+
+        &__jobs {
+            grid-area: link;
+            @include flex-setting(column, center, center);
+            justify-self: end;
+
+            width: toRem(216);
+            height: toRem(146);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='211' height='142' viewBox='0 0 211 142' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M46.503 6.16605C72.7864 -1.40855 104.652 -0.446221 126.095 2.44975C152.12 5.94374 178.254 16.7535 194.962 37.1233C211.667 57.489 216.708 88.4592 202.318 110.744C193.309 124.707 178.002 133.719 162.027 137.976C146.054 142.232 129.271 142.157 112.906 141.037C87.8807 139.329 62.2072 134.973 40.4133 122.235C18.6177 109.497 1.17237 86.937 0.287586 61.6485L0.287582 61.6484C-0.261629 45.9066 4.67525 33.9026 13.1127 24.8895C21.5255 15.9027 33.355 9.95514 46.503 6.16605ZM14.5728 26.2563C6.51715 34.8615 1.75473 46.3408 2.28637 61.5787C3.14046 85.9901 20.032 108.007 41.4225 120.509C62.8146 133.011 88.1162 137.341 113.042 139.041L113.042 139.041C129.346 140.157 145.864 140.213 161.512 136.043C177.158 131.875 191.972 123.09 200.638 109.659L200.638 109.659C214.452 88.2664 209.702 58.2475 193.416 38.3917C177.133 18.54 151.542 7.88414 125.829 4.43197L125.828 4.43186C104.514 1.55325 72.9616 0.622357 47.0568 8.08784C34.1105 11.8188 22.6531 17.6247 14.5728 26.2563Z' fill='%2314004B'/%3E%3C/svg%3E");
+
+            margin-right: toRem(5.64);
+
+            cursor: pointer;
+
+            &-link {
+                @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+                letter-spacing: -0.02em;
+                text-decoration: none;
+
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    content: '';
+
+                    width: toRem(24);
+                    height: toRem(24);
+
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: toRem(-28);
+
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: toRem(11.5) toRem(15.5);
+                    background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.75098 0.942383C6.75098 0.528169 6.41519 0.192383 6.00098 0.192383C5.58676 0.192383 5.25098 0.528169 5.25098 0.942383V13.1317L1.53033 9.41105C1.23744 9.11816 0.762563 9.11816 0.46967 9.41105C0.176777 9.70395 0.176777 10.1788 0.46967 10.4717L5.46719 15.4692C5.47869 15.4809 5.49057 15.4922 5.5028 15.503C5.56388 15.5574 5.63171 15.6001 5.70338 15.631C5.79461 15.6705 5.89524 15.6924 6.00098 15.6924C6.09863 15.6924 6.19192 15.6737 6.27749 15.6398C6.36992 15.6032 6.45656 15.5475 6.53133 15.4727L11.5323 10.4717C11.8252 10.1788 11.8252 9.70395 11.5323 9.41105C11.2394 9.11816 10.7646 9.11816 10.4717 9.41105L6.75098 13.1317V0.942383Z' fill='%2314004B'/%3E%3C/svg%3E");
+                    transition: 0.35s $cubic;
+                }
+            }
+
+            &:hover,
+            &:active {
+                .intro__jobs-link::after {
+                    bottom: toRem(-40);
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .intro {
+        grid-template-areas:
+            'title title photo-1'
+            'photo-2 subt subt'
+            '... ... link'
+        ;
+
+        grid-template-columns: toRem(182) 1fr toRem(264);
+        grid-column-gap: toRem(64);
+        padding: 0 toRem(80) toRem(32) toRem(80);
+
+        &__title {
+            max-width: toRem(536);
+
+            span {
+                max-width: toRem(536);
+            }
+        }
+
+        &__frame {
+            &--first {
+                margin-left: toRem(0);
+            }
+
+            &--second {
+                width: toRem(182);
+                height: toRem(254);
+                margin-bottom: toRem(0);
+                margin-top: toRem(-48);
+            }
+        }
+
+        &__subtitle {
+            justify-self: start;
+            margin-bottom: toRem(0);
+            max-width: toRem(598);
+        }
+
+        &__jobs {
+            width: toRem(210.51);
+            height: toRem(141.38);
+            margin-top: toRem(-56);
+
+            background-image: url("data:image/svg+xml,%3Csvg width='211' height='142' viewBox='0 0 211 142' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M46.503 6.16605C72.7864 -1.40855 104.652 -0.446221 126.095 2.44975C152.12 5.94374 178.254 16.7535 194.962 37.1233C211.667 57.489 216.708 88.4592 202.318 110.744C193.309 124.707 178.002 133.719 162.027 137.976C146.054 142.232 129.271 142.157 112.906 141.037C87.8807 139.329 62.2072 134.973 40.4133 122.235C18.6177 109.497 1.17237 86.937 0.287586 61.6485L0.287582 61.6484C-0.261629 45.9066 4.67525 33.9026 13.1127 24.8895C21.5255 15.9027 33.355 9.95514 46.503 6.16605ZM14.5728 26.2563C6.51715 34.8615 1.75473 46.3408 2.28637 61.5787C3.14046 85.9901 20.032 108.007 41.4225 120.509C62.8146 133.011 88.1162 137.341 113.042 139.041L113.042 139.041C129.346 140.157 145.864 140.213 161.512 136.043C177.158 131.875 191.972 123.09 200.638 109.659L200.638 109.659C214.452 88.2664 209.702 58.2475 193.416 38.3917C177.133 18.54 151.542 7.88414 125.829 4.43197L125.828 4.43186C104.514 1.55325 72.9616 0.622357 47.0568 8.08784C34.1105 11.8188 22.6531 17.6247 14.5728 26.2563Z' fill='%2314004B'/%3E%3C/svg%3E");
+            margin-right: toRem(4);
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .intro {
+        grid-template-columns: toRem(414) 1fr toRem(290);
+        grid-column-gap: toRem(72);
+
+        --wrapWidth: calc(100% - 1220px);
+        padding: toRem(0) calc((var(--wrapWidth) / 2)) toRem(34) calc((var(--wrapWidth) / 2));
+
+        &__title {
+            max-width: toRem(814);
+
+            span {
+                max-width: 100%;
+                font-size: toRem(48);
+                line-height: toRem(86);
+            }
+        }
+
+        &__frame {
+            &--first {
+                margin-left: toRem(0);
+                margin-bottom: toRem(16);
+                width: toRem(290);
+                height: toRem(248);
+            }
+
+            &--second {
+                justify-self: end;
+                margin-right: toRem(62);
+                margin-top: toRem(64);
+            }
+        }
+
+        &__subtitle {
+            max-width: toRem(734);
+
+            span {
+                font-size: toRem(48);
+                line-height: toRem(86);
+            }
+        }
+
+        &__jobs {
+            margin-right: 0;
+        }
     }
 }

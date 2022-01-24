@@ -7,7 +7,7 @@
     margin-bottom: toRem(24);
 
     &__title {
-        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        @include font-setting($book-font, toRem(24), toRem(43), 400, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(24);
@@ -19,15 +19,14 @@
         @include flex-setting(column, flex-start, flex-start);
     }
 
-    &__item:not(:last-of-type) {
+    &__item {
         width: 100%;
 
-        @include flex-setting(column-reverse, flex-start, flex-start);
-    }
+        @include flex-setting(column, flex-start, flex-start);
 
-    &__item {
         &--first {
             margin-bottom: toRem(72);
+            flex-direction: column-reverse;
 
             .how__info {
                 margin-bottom: toRem(24);
@@ -42,6 +41,7 @@
 
         &--second {
             z-index: 2;
+            flex-direction: column-reverse;
 
             .how__info {
                 padding-left: toRem(64);
@@ -75,6 +75,7 @@
 
     &__info {
         width: 100%;
+        max-width: toRem(280);
         @include flex-setting(column, flex-start, flex-start);
 
         .how__description:last-of-type {
@@ -88,7 +89,7 @@
     }
 
     &__description {
-        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+        @include font-setting($book-font, toRem(14), toRem(22), 400, $dark);
         text-align: left;
         margin-bottom: toRem(8);
     }
@@ -99,8 +100,196 @@
 
         &-image {
             width: 100%;
-            height: auto;
+            height: 100%;
             object-fit: cover;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .how {
+        align-items: center;
+
+        padding: toRem(40) toRem(40);
+        margin-bottom: toRem(80);
+
+        &__title {
+            align-self: flex-end;
+            font-size: toRem(40);
+            line-height: toRem(72);
+            margin-bottom: toRem(60);
+        }
+
+        &__list {
+            align-items: center;
+        }
+
+        &__item {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            &--first {
+                margin-bottom: toRem(60);
+
+                .how__info {
+                    margin-bottom: toRem(0);
+                }
+
+                .how__frame {
+                    width: toRem(254);
+                    height: toRem(232);
+                    margin-left: toRem(0);
+                    margin-right: toRem(42);
+                }
+            }
+
+            &--second {
+                flex-direction: row-reverse;
+                margin-bottom: toRem(60);
+
+                .how__info {
+                    padding-left: toRem(0);
+                    margin-bottom: toRem(0);
+                    margin-right: toRem(60);
+                }
+
+                .how__description {
+                    margin-bottom: toRem(44);
+                }
+
+                .how__frame {
+                    margin-right: toRem(14);
+                }
+            }
+
+            &--third {
+                width: 100%;
+                margin-top: toRem(0);
+
+                .how__frame {
+                    align-self: center;
+                    margin-bottom: toRem(0);
+                    margin-left: toRem(14);
+                    margin-right: toRem(60);
+                }
+
+                .how__info {
+                    max-width: toRem(392);
+                }
+            }
+        }
+
+        &__info {
+            max-width: toRem(392);
+
+            .how__description:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__name {
+            font-size: toRem(24);
+            line-height: toRem(29);
+            margin-bottom: toRem(24);
+        }
+
+        &__description {
+            font-size: toRem(18);
+            line-height: toRem(28);
+            margin-bottom: toRem(16);
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .how {
+        padding-left: toRem(80);
+        padding-right: toRem(80);
+
+        &__item {
+            &--first {
+                .how__frame {
+                    width: toRem(275);
+                }
+            }
+
+            &--second {
+                .how__frame {
+                    margin-right: toRem(105);
+                }
+            }
+
+            &--third {
+                .how__frame {
+                    margin-left: toRem(105);
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .how {
+        --wrapWidth: calc(100% - 1220px);
+        padding: toRem(77) calc((var(--wrapWidth) / 2)) toRem(40) calc((var(--wrapWidth) / 2));
+
+        &__title {
+            font-size: toRem(48);
+            line-height: toRem(72);
+            margin-bottom: toRem(40);
+        }
+
+        &__list {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__item {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            max-width: toRem(326);
+
+            &--first {
+                flex-direction: column-reverse;
+                margin-bottom: 0;
+
+                .how__frame {
+                    width: toRem(299);
+                    height: toRem(271);
+                    margin-right: 0;
+                }
+
+                .how__info {
+                    margin-bottom: toRem(24);
+                }
+            }
+
+            &--second {
+                margin-top: toRem(-204);
+
+                .how__frame {
+                    margin-right: 0;
+                    margin-bottom: toRem(40);
+                }
+            }
+
+            &--third {
+                margin-top: toRem(-54);
+
+                .how__frame {
+                    margin-right: 0;
+                    margin-left: 0;
+                    margin-bottom: toRem(140);
+                }
+            }
+        }
+
+        &__info {
+            max-width: toRem(326);
         }
     }
 }

@@ -21,7 +21,6 @@
 
     &.opened {
         max-height: 100vh;
-        overflow-y: auto;
         transition: max-height 0.4s $cubic;
 
         .nav__item {
@@ -62,7 +61,7 @@
         padding: toRem(12) 0;
         margin-bottom: toRem(32);
 
-        transform: scale(1.15) translateY(-30px);
+        transform: scale(1.15) translateX(-20px) translateY(0);
         opacity: 0;
         transition: transform 0.5s $cubic, opacity 0.6s $cubic;
 
@@ -78,7 +77,7 @@
     }
 
     &__link {
-        @include font-setting($primary-font, toRem(28), toRem(39), 400, $dark);
+        @include font-setting($book-font, toRem(28), toRem(39), 400, $dark);
         text-align: left;
         text-decoration: none;
         letter-spacing: -0.015em;
@@ -96,7 +95,7 @@
         transition: transform 0.5s $cubic, opacity 0.6s $cubic;
 
         span {
-            @include font-setting($primary-font, toRem(28), toRem(39), 400, $blue);
+            @include font-setting($book-font, toRem(28), toRem(39), 400, $blue);
             padding: toRem(12) 0;
 
             letter-spacing: -0.015em;
@@ -104,6 +103,165 @@
 
         &-underline-tb,
         &-underline-1440 {
+            display: none;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .nav {
+        top: toRem(98);
+        padding: 0;
+
+        &__list {
+            align-items: center;
+            padding-top: toRem(80);
+            margin-bottom: toRem(102);
+        }
+
+        &__item {
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: toRem(64);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__link {
+            font-size: toRem(32);
+            line-height: toRem(58);
+            text-align: center;
+        }
+
+        &__jobs {
+            margin-bottom: toRem(74);
+
+            span {
+                font-size: toRem(32);
+                line-height: toRem(58);
+            }
+
+            &-underline-mobile {
+                display: none;
+            }
+
+            &-underline-tb {
+                display: block;
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .nav {
+        padding: 0 toRem(80);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &__list {
+            align-items: flex-start;
+            padding-top: toRem(40);
+            margin-bottom: toRem(0);
+        }
+
+        &__item {
+            align-items: flex-start;
+            margin-bottom: toRem(40);
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__link {
+            text-align: left;
+        }
+
+        &__jobs {
+            margin-bottom: toRem(0);
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .nav {
+        width: auto;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        max-height: 100%;
+        overflow: visible;
+        background-color: transparent;
+        padding: 0;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        transition: none;
+
+        &__list {
+            width: auto;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: toRem(0);
+            gap: toRem(24);
+        }
+
+        &__item {
+            width: auto;
+            opacity: 1;
+            pointer-events: auto;
+            transform: scale(1) translateY(0px);
+            will-change: transform;
+            align-items: flex-start;
+            margin-bottom: 0;
+
+            padding: toRem(20) toRem(40);
+
+            @for $i from 1 through $menuItems {
+                &:nth-child(#{$i}) {
+                    transition-delay: #{0.06 * $i+0.2}s;
+                }
+            }
+
+            &:first-of-type {
+                display: none;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+
+            @include gapFallback(toRem(24));
+        }
+
+        &__link {
+            text-align: center;
+            font-size: toRem(14);
+            line-height: toRem(22);
+            font-family: $primary-font;
+            letter-spacing: -0.02em;
+            transition: 0.35s $cubic;
+
+            &:hover,
+            &:active {
+                color: $blue;
+                transition: 0.35s $cubic;
+            }
+
+            &:disabled {
+                opacity: 0.24;
+                pointer-events: none;
+            }
+        }
+
+        &__jobs {
             display: none;
         }
     }

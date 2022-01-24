@@ -7,7 +7,7 @@
     margin-bottom: toRem(24);
 
     &__title {
-        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        @include font-setting($book-font, toRem(24), toRem(43), 400, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(24);
@@ -41,7 +41,7 @@
     }
 
     &__description {
-        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+        @include font-setting($book-font, toRem(14), toRem(22), 400, $dark);
         text-align: left;
     }
 
@@ -61,6 +61,104 @@
             bottom: 0;
             right: 0;
             object-fit: cover;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .stack {
+        padding: toRem(40) toRem(40);
+        margin-bottom: toRem(80);
+
+        &__title {
+            font-size: toRem(40);
+            line-height: toRem(72);
+            margin-bottom: toRem(40);
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: toRem(40);
+            grid-row-gap: toRem(40);
+        }
+
+        &__item {
+            margin-bottom: toRem(0);
+
+            &:nth-of-type(even) {
+                padding-left: toRem(0);
+            }
+
+            &:last-of-type {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+
+        &__name {
+            font-size: toRem(24);
+            line-height: toRem(29);
+            margin-bottom: toRem(24);
+        }
+
+        &__description {
+            font-size: toRem(18);
+            line-height: toRem(28);
+        }
+
+        &__frame {
+            padding-bottom: 58.139534883720934%;
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .stack {
+        padding-left: toRem(80);
+        padding-right: toRem(80);
+
+        &__list {
+            grid-column-gap: toRem(80);
+        }
+
+        &__frame {
+            padding-bottom: 46.29629629629629%;
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .stack {
+        --wrapWidth: calc(100% - 1220px);
+        padding: toRem(40) calc((var(--wrapWidth) / 2));
+
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'list photo'
+        ;
+
+        grid-template-columns: 1fr toRem(372);
+        grid-column-gap: toRem(168);
+        grid-row-gap: toRem(40);
+
+        &__title {
+            grid-area: title;
+            font-size: toRem(48);
+            line-height: toRem(86);
+        }
+
+        &__list {
+            grid-area: list;
+            grid-row-gap: toRem(60);
+        }
+
+        &__frame {
+            align-self: start;
+            margin-top: toRem(24);
+            grid-area: photo;
+            padding-bottom: 121.50537634408602%;
         }
     }
 }
