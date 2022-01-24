@@ -35,7 +35,7 @@
     }
 
     &__subtitle {
-        @include font-setting($book-font, toRem(18), toRem(28), 400, $dark);
+        @include font-setting($primary-font, toRem(18), toRem(28), 350, $dark);
         text-align: left;
         margin-bottom: toRem(24);
 
@@ -144,7 +144,7 @@
     }
 
     &__description {
-        @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+        @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
         text-align: left;
     }
 }
