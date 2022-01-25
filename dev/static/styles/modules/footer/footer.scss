@@ -7,7 +7,7 @@
 
     padding: toRem(32) toRem(16) toRem(40) toRem(16);
 
-    background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%);
+    background: linear-gradient(53.94deg, rgba(246, 180, 198, 0.8) -10.9%, rgba(205, 164, 207, 0.8) 12.13%, rgba(96, 121, 234, 0.8) 38.27%, rgba(70, 136, 219, 0.8) 61.04%, rgba(31, 180, 180, 0.8) 86.67%, rgba(164, 213, 213, 0.8) 121.69%, rgba(0, 170, 170, 0) 135.74%);
 
     &__wrapper {
         width: 100%;
@@ -45,7 +45,7 @@
 
     //book
     &__title {
-        @include font-setting($primary-font, toRem(12), toRem(19), 400, $white);
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, $white);
         margin-bottom: toRem(16);
         text-align: left;
     }
@@ -79,7 +79,7 @@
     }
     //book
     &__description {
-        @include font-setting($primary-font, toRem(12), toRem(19), 400, $white);
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, $white);
         margin-bottom: 0;
         text-align: left;
     }
@@ -105,7 +105,7 @@
     }
     //book
     &__link {
-        @include font-setting($primary-font, toRem(12), toRem(19), 400, rgba(255, 255, 255, 0.64));
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
         text-decoration: none;
         transition: 0.35s $cubic;
 
@@ -118,7 +118,7 @@
     }
 
     &__copyright {
-        @include font-setting($primary-font, toRem(12), toRem(19), 400, rgba(255, 255, 255, 0.64));
+        @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
     }
 
     &__top {
@@ -154,6 +154,246 @@
             top: toRem(24);
             left: 50%;
             transform: translateX(-50%);
+            transition: 0.35s $cubic;
+        }
+
+        &:active {
+            &::after {
+                top: toRem(12);
+                transition: 0.35s $cubic;
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .footer {
+        padding: toRem(72) toRem(40) toRem(40) toRem(40);
+        background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%);
+
+        &__wrapper {
+            display: grid;
+            grid-template-areas:
+                'logo join ...'
+                'list list list'
+                'legal legal legal'
+            ;
+
+            grid-template-columns: 1fr 28.34302325581395% 1fr;
+            grid-row-gap: toRem(61);
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        &__logo {
+            grid-area: logo;
+            width: toRem(172);
+            height: toRem(42);
+            margin-bottom: 0;
+        }
+
+        &__contacts {
+            grid-area: list;
+            margin-bottom: 0;
+        }
+
+        &__title {
+            font-size: toRem(16);
+            line-height: toRem(23);
+            margin-bottom: toRem(24);
+        }
+
+        &__list {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        &__item {
+            width: fit-content;
+
+            margin-bottom: 0;
+
+            &:first-of-type {
+                max-width: toRem(252);
+            }
+        }
+
+        &__name {
+            font-size: toRem(20);
+            line-height: toRem(34);
+            margin-bottom: toRem(8);
+        }
+
+        &__description {
+            font-size: toRem(16);
+            line-height: toRem(23);
+            margin-bottom: toRem(2);
+        }
+
+        &__join {
+            grid-area: join;
+            margin-bottom: toRem(0);
+
+            .footer__title {
+                margin-bottom: 0;
+                text-align: center;
+                font-weight: 350;
+                opacity: 1;
+            }
+
+            &-link {
+                font-size: toRem(16);
+                line-height: toRem(23);
+            }
+        }
+
+        &__rules {
+            grid-area: legal;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__link {
+            margin-bottom: 0;
+        }
+
+        &__top {
+            align-items: center;
+            justify-content: flex-end;
+
+            width: toRem(160);
+            height: toRem(106);
+
+            top: toRem(42);
+            right: toRem(42);
+
+            font-size: toRem(18);
+            line-height: toRem(28);
+
+            padding-bottom: toRem(22);
+
+            background-image: url("data:image/svg+xml,%3Csvg width='163' height='108' viewBox='0 0 163 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100.204 2.73706C80.5786 1.29972 48.3099 -1.88881 25.3915 12.9248C5.4566 25.8099 -1.80023 44.8147 1.95375 61.2372C4.96325 74.4029 17.3558 90.6001 40.4538 98.4872C66.0788 107.237 97.1029 111.227 124.454 97.8622C147.61 86.5474 163.891 63.5497 160.704 41.7372C158.782 28.5826 146.128 17.2149 129.391 15.1122C116.954 13.5497 107.766 15.4872 90.3601 19.5497' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .footer {
+        padding-left: toRem(80);
+        padding-right: toRem(80);
+
+        &__wrapper {
+            grid-template-columns: 1fr 35.76388888888889% 1fr;
+        }
+
+        &__list {
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        &__item {
+            &:first-of-type {
+                margin-right: toRem(105)
+            }
+        }
+
+        &__join {
+            @include flex-setting(column, center, center);
+            height: 100%;
+        }
+
+        &__link {
+            font-size: toRem(16);
+            line-height: toRem(23);
+        }
+
+        &__copyright {
+            font-size: toRem(16);
+            line-height: toRem(23);
+        }
+
+        &__top {
+            right: toRem(80);        }
+    }
+}
+
+@include min-screen(1440px) {
+    .footer {
+        --wrapWidth: calc(100% - 1220px);
+        padding-top: toRem(40);
+        padding-left: calc((var(--wrapWidth) / 2));
+        padding-right: calc((var(--wrapWidth) / 2));
+
+        &__wrapper {
+            grid-template-areas:
+                'logo join'
+                'list ...'
+                'legal legal'
+            ;
+            grid-template-columns: 62.29508196721311% 1fr;
+            grid-column-gap: toRem(124);
+            grid-row-gap: toRem(40);
+        }
+
+        &__contacts {
+            margin-bottom: toRem(64);
+        }
+
+        &__title {
+            font-size: toRem(18);
+            line-height: toRem(28);
+            opacity: 1;
+            white-space: nowrap;
+        }
+
+        &__item {
+            &:first-of-type {
+                max-width: toRem(280);
+                margin-right: toRem(134)
+            }
+        }
+
+        &__join {
+            &__title,
+            &-link {
+                font-size: toRem(18);
+                line-height: toRem(28);
+            }
+
+            &-link {
+                font-weight: 500;
+            }
+        }
+
+        &__link {
+            font-size: toRem(14);
+            line-height: toRem(22);
+
+            &:hover {
+                color: $white;
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &__copyright {
+            font-size: toRem(14);
+            line-height: toRem(22);
+        }
+
+        &__top {
+            top: 50%;
+            transform: translateY(-50%);
+            right: calc((var(--wrapWidth) / 2));
+
+            &:hover {
+                &::after {
+                    top: toRem(16);
+                    transition: 0.35s $cubic;
+                }
+            }
         }
     }
 }

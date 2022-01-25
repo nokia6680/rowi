@@ -16,6 +16,10 @@
         left: 30%;
     }
 
+    .cta-bg-round-tb {
+        display: none;
+    }
+
     &__wrapper {
         width: 100%;
         @include flex-setting(column, center, center);
@@ -29,7 +33,7 @@
     // book
     &__title {
         width: 100%;
-        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(8);
@@ -46,7 +50,7 @@
     }
     // book
     &__description {
-        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         margin-right: toRem(8);
         text-align: left;
@@ -58,7 +62,7 @@
 
         // book
         span {
-            @include font-setting($primary-font, toRem(24), toRem(43), 400, $blue);
+            @include font-setting($primary-font, toRem(24), toRem(43), 350, $blue);
         }
 
         &[data-type="firstLine"] {
@@ -93,13 +97,98 @@
         transform: translateX(-50%);
 
         &--desktop,
-        &--laptop,
         &--tablet {
             display: none;
         }
 
         svg {
             display: none;
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .cta {
+        .cta-bg-round-mb {
+            display: none;
+        }
+
+        .cta-bg-round-tb {
+            display: block;
+            filter: blur(50px);
+
+            z-index: 0;
+
+            top: 15vh;
+            left: 30%;
+        }
+
+        &__title {
+            text-align: center;
+            font-size: toRem(40);
+            line-height: toRem(72);
+            margin-bottom: 0;
+        }
+
+        &__block {
+            justify-content: center;
+        }
+
+        &__description {
+            font-size: toRem(40);
+            line-height: toRem(72);
+            margin-right: toRem(16);
+        }
+
+        &__button {
+            span {
+                font-size: toRem(40);
+                line-height: toRem(72);
+            }
+        }
+
+        &__underline {
+            bottom: toRem(-24);
+
+            &--mobile {
+                display: none;
+            }
+
+            &--tablet {
+                display: block;
+            }
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .cta {
+        &__title {
+            font-size: toRem(48);
+            line-height: toRem(86);
+        }
+
+        &__description {
+            font-size: toRem(48);
+            line-height: toRem(86);
+            margin-right: toRem(20);
+        }
+
+        &__button {
+            span {
+                font-size: toRem(48);
+                line-height: toRem(86);
+            }
+        }
+
+        &__underline {
+            &--tablet {
+                display: none;
+            }
+
+            &--desktop {
+                display: block;
+            }
         }
     }
 }

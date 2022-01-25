@@ -6,6 +6,8 @@
     padding: toRem(24) 0;
     margin-bottom: toRem(24);
 
+    overflow-x: hidden;
+
     &__wrapper {
         width: 100%;
 
@@ -22,7 +24,7 @@
         margin-bottom: toRem(32);
 
         span {
-            @include font-setting($book-font, toRem(24), toRem(43), 400, $dark);
+            @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
             letter-spacing: -0.015em;
             text-align: left;
         }
@@ -44,7 +46,7 @@
         position: relative;
 
         span {
-            @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
+            @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
             text-align: left;
         }
 

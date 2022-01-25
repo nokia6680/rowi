@@ -11,7 +11,7 @@
         margin-bottom: toRem(40);
 
         span {
-            @include font-setting($book-font, toRem(28), toRem(39), 400, $dark);
+            @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
             letter-spacing: -0.015em;
         }
     }
@@ -38,7 +38,7 @@
         margin-bottom: toRem(40);
 
         span {
-            @include font-setting($book-font, toRem(28), toRem(39), 400, $dark);
+            @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
             letter-spacing: -0.015em;
         }
     }
@@ -223,7 +223,7 @@
 
 @include min-screen(1440px) {
     .intro {
-        grid-template-columns: toRem(414) 1fr toRem(290);
+        grid-template-columns: toRem(414) 1fr toRem(334);
         grid-column-gap: toRem(72);
 
         --wrapWidth: calc(100% - 1220px);

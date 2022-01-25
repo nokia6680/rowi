@@ -8,7 +8,7 @@
 
     &__title {
         align-self: flex-start;
-        @include font-setting($primary-font, toRem(24), toRem(43), 400, $dark);
+        @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(24);
@@ -21,6 +21,27 @@
     &__images {
         width: 100%;
         @include flex-setting(column, flex-start, flex-start);
+        position: relative;
+    }
+
+    &__arrow {
+        width: toRem(102);
+        height: toRem(62);
+
+        position: absolute;
+
+        left: toRem(44);
+        bottom: toRem(46);
+
+        svg:last-child {
+            position: absolute;
+            right: 0;
+            top: toRem(36);
+        }
+
+        &--desktop {
+            display: none;
+        }
     }
 
     &__frame {
@@ -38,6 +59,150 @@
             align-self: flex-end;
 
             margin-top: toRem(-128);
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .apply {
+        padding: toRem(40) toRem(40);
+        margin-bottom: toRem(80);
+
+        &__title {
+            font-size: toRem(40);
+            line-height: toRem(72);
+            margin-bottom: toRem(40);
+        }
+
+        &__form {
+            margin-bottom: toRem(40);
+        }
+
+        &__images {
+            max-width: toRem(436);
+        }
+
+        &__arrow {
+            left: toRem(128);
+            bottom: toRem(40);
+        }
+
+        &__frame {
+            &:first-of-type {
+                width: toRem(404);
+                height: toRem(254);
+            }
+
+            &:last-of-type {
+                margin-top: toRem(-126);
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .apply {
+        padding-left: toRem(80);
+        padding-right: toRem(80);
+
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'form images'
+        ;
+
+        grid-template-columns: 55.55555555555556% 35.18518518518519%;
+        justify-content: space-between;
+        align-items: start;
+        grid-column-gap: toRem(80);
+        grid-row-gap: toRem(40);
+
+        &__title {
+            grid-area: title;
+            margin-bottom: 0;
+        }
+
+        &__form {
+            grid-area: form;
+            margin-bottom: 0;
+        }
+
+        &__images {
+            grid-area: images;
+        }
+
+        &__arrow {
+            left: toRem(9);
+            bottom: toRem(120);
+        }
+
+        &__frame {
+            &:first-of-type {
+                width: toRem(271);
+                height: toRem(254);
+                transition: 0.35s $cubic;
+            }
+
+            &:last-of-type {
+                margin-top: toRem(-46);
+                transition: 0.35s $cubic;
+            }
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .apply {
+        --wrapWidth: calc(100% - 1220px);
+        padding-left: calc((var(--wrapWidth) / 2));
+        padding-right: calc((var(--wrapWidth) / 2));
+
+        grid-template-columns: 61.9672131147541% 30.16393442622951%;
+        grid-column-gap: toRem(96);
+
+        &__title {
+            font-size: toRem(48);
+            line-height: toRem(86);
+        }
+
+        &__form {
+            grid-area: form;
+            margin-bottom: 0;
+        }
+
+        &__images {
+            margin-top: toRem(-88);
+        }
+
+        &__arrow {
+            width: toRem(148);
+            height: toRem(90);
+
+            left: toRem(24);
+            bottom: toRem(94);
+
+            &--mobile {
+                display: none;
+            }
+
+            &--desktop {
+                display: block;
+            }
+
+            svg:last-child {
+                top: toRem(53);
+            }
+        }
+
+        &__frame {
+            &:first-of-type {
+                width: toRem(336);
+                height: toRem(218);
+            }
+
+            &:last-of-type {
+                margin-top: toRem(-26);
+            }
         }
     }
 }

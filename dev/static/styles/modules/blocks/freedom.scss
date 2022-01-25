@@ -22,7 +22,7 @@
 
     &__title {
         z-index: 1;
-        @include font-setting($book-font, toRem(40), toRem(56), 400, $dark);
+        @include font-setting($primary-font, toRem(40), toRem(56), 350, $dark);
         margin-bottom: toRem(40);
 
         &:last-of-type {

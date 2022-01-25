@@ -44,26 +44,18 @@ for (var i = 0; i < jobs.length; i++) {
     });
 }
 
-//$('.js-popup-opener').on('click', function() {
-//     const popupId = $(this).attr('data-modal');
-//     $(popupId).addClass('active');
-//     $('body').addClass('no-scroll');
-//     $('body').removeClass('dimmed');
-// });
-//
-// $('.js-popup-closer').on('click', function() {
-//     $(this).closest('.js-popup-wrap').removeClass('active');
-//     $('body').removeClass('no-scroll');
-//     $('body').removeClass('dimmed');
-// });
-//
-// $('.js-popup-wrap').on('click', function(event) {
-//     if (!$(event.target).closest('.js-popup-inner').length) {
-//         $(this).removeClass('active');
-//         $('body').removeClass('no-scroll');
-//         $('body').removeClass('dimmed');
-//     }
-// });
+$('.js-popup-opener').on('click', function() {
+    const popupId = $(this).attr('data-modal');
+    $(popupId).addClass('active');
+    $('body').addClass('no-scroll');
+});
+
+$('.js-popup-wrap').on('click', function(event) {
+    if (!$(event.target).closest('.js-popup-inner').length) {
+        $(this).removeClass('active');
+        $('body').removeClass('no-scroll');
+    }
+});
 //
 // $('.nav__controls-item--cart').on('click', function() {
 //     $('.nav-cart').toggleClass('cartOpened');

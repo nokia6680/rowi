@@ -11,7 +11,7 @@ section.apply#apply-form
                 .form__drop
                     input(type="file" name="cv-file" id="file-input" accept=".pdf, .doc, docx").form__file
                     label(for="file-input").form__label Есть резюме? Кидай!
-                        span.form__rules PDF или Microsoft Word
+                    span.form__rules PDF или Microsoft Word
                 .form__link
                     label(for="url").form__label
                     input(type="url" name="url" id="url" placeholder="Можно вставить ссылку").form__input
@@ -22,9 +22,11 @@ section.apply#apply-form
 
         button(type="submit").form__submit
             span Отправить
-            svg(class="form__sumit-underline-mb" width="88" height="12" viewBox="0 0 88 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+            
+            svg(class="form__submit-underline-mb" width="88" height="12" viewBox="0 0 88 12" fill="none" xmlns="http://www.w3.org/2000/svg")
                 path(fill-rule="evenodd" clip-rule="evenodd" d="M88.0191 1.20058C88.0358 1.75218 87.7761 2.22149 87.439 2.2488C74.4671 3.29967 59.2346 3.64988 44.0165 3.99975L44.0088 3.99992C33.742 4.23596 23.4819 4.4719 13.918 4.9221C20.5095 5.32157 27.4692 5.54499 34.4894 5.77036C36.8036 5.84466 39.1244 5.91916 41.4407 6.00025C55.7188 6.50011 69.8278 7.25032 81.104 9.75914C81.4384 9.83355 81.6727 10.3375 81.6272 10.8847C81.5818 11.432 81.2738 11.8153 80.9394 11.7409C69.7424 9.24973 55.701 8.49994 41.4145 7.99979C39.1041 7.91891 36.7873 7.84456 34.4755 7.77036C22.5087 7.38632 10.6745 7.00653 0.545282 5.74715C0.223558 5.70715 -0.0237308 5.26477 -0.0194772 4.73684C-0.0152235 4.20891 0.239107 3.77735 0.561363 3.75125C13.5333 2.70037 28.7658 2.35017 43.9839 2.0003L43.9916 2.00012C59.2184 1.65005 74.4305 1.30019 87.3786 0.251246C87.7157 0.223937 88.0025 0.648967 88.0191 1.20058Z" fill="#4164EE")
-        
+            svg(class="form__submit-underline-tb" width="144" height="12" viewBox="0 0 144 12" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M143.143 1.22754C137.06 1.71169 115.327 2.29042 88.2002 2.75879C61.0478 3.2276 28.9716 3.41504 0.814453 4.75879C13.8859 5.72754 35.1859 6.50879 67.4144 7.00879C101.143 7.41504 125.357 9.63379 132.729 10.7588" stroke="#4164EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
     .apply__images
         picture.apply__frame
             source(media="(min-width: 1440px)" srcset="static/images/content/apply-1-lg.webp" type="image/webp")
@@ -35,7 +37,16 @@ section.apply#apply-form
             source(media="(min-width: 768px)" srcset="static/images/content/apply-1-tb.jpg")
             source(srcset="static/images/content/apply-1.webp" type="image/webp")
             img(src="static/images/content/apply-1.jpg" alt="Работай с нами").apply__frame-image
-        // svg    
+        .apply__arrow.apply__arrow--desktop
+            svg(width="145" height="90" viewBox="0 0 145 90" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M29.6247 1.77637C32.5779 3.51074 34.9046 6.71792 34.6873 11.792C33.9372 29.3076 14.2503 29.0577 4.1875 49.5576C-1.03561 60.1981 0.437557 73.9326 10.0002 82.0576C18.3895 89.1857 32.5 89.3076 40.25 85.8076C43.9274 84.1469 50.9475 80.8078 56.2604 75.0812C62.3125 68.5576 68.6152 61.2967 70.375 52.0576C71.2251 47.5947 69.5659 41.3389 64.8125 38.6826C58.4375 35.1201 51.1608 39.1848 45.9375 47.1201C42.6875 52.0576 34.9204 62.3893 37.1875 71.8076C39.4546 81.226 50.427 86.3344 60.5625 87.5576C78.5747 89.7315 88.738 85.1997 99.3125 78.4951C108.276 72.8121 115.068 66.9722 122.062 64.1826C132.562 59.9951 136.938 60.6826 143.125 61.8076" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            svg(width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M2.95312 1.2373C3.42188 4.63574 4.59375 7.02637 7.66406 8.6748C4.70312 10.2607 2.45312 12.667 1.3125 15.9014" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        .apply__arrow.apply__arrow--mobile
+            svg(width="101" height="62" viewBox="0 0 101 62" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M21.1071 1.22363C23.1423 2.41842 24.7459 4.62781 24.5961 8.12329C24.0792 20.1896 10.5112 20.0175 3.57602 34.1396C-0.0236978 41.4697 0.991594 50.9313 7.58207 56.5285C13.3639 61.4389 23.0887 61.5229 28.4299 59.1118C30.9643 57.9677 35.8025 55.6675 39.4641 51.7225C43.6351 47.2285 47.9789 42.2265 49.1917 35.8618C49.7776 32.7873 48.6341 28.4779 45.3581 26.6479C40.9645 24.1938 35.9495 26.9939 32.3497 32.4604C30.1098 35.8618 24.7568 42.9792 26.3193 49.4674C27.8817 55.9556 35.4437 59.4747 42.4291 60.3174C54.8428 61.8149 61.8473 58.6931 69.1351 54.0743C75.3126 50.1593 79.9935 46.1363 84.8142 44.2146C92.0507 41.3299 95.0659 41.8035 99.3302 42.5785" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+            svg(width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M2.1434 1.36328C2.46645 3.70443 3.2741 5.3513 5.39012 6.48689C3.34948 7.57942 1.7988 9.23706 1.0127 11.4652" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
         picture.apply__frame
             source(srcset="static/images/content/apply-2.webp" type="image/webp")
             img(src="static/images/content/apply-2.jpg" alt="Работай с нами").apply__frame-image
