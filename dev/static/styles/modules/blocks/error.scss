@@ -1,0 +1,190 @@
+.error {
+    width: 100%;
+    height: calc(100vh - 98px);
+
+    @include flex-setting(column, flex-start, flex-start);
+
+    padding: toRem(120) toRem(36) toRem(40) toRem(36);
+
+    position: relative;
+
+    &__title {
+        @include flex-setting(column, flex-start, flex-start);
+        z-index: 1;
+        margin-bottom: toRem(40);
+
+        span {
+            @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
+            letter-spacing: -0.015em;
+        }
+
+        span:first-child {
+            margin-bottom: toRem(10);
+        }
+    }
+
+    &__description {
+        @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
+        opacity: 0.4;
+        z-index: 1;
+    }
+
+    &-round-tb {
+        display: none;
+    }
+
+    &-round-mb {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        filter: blur(48px);
+        z-index: 0;
+    }
+
+    &__return {
+        align-self: flex-end;
+        margin-bottom: 0;
+        margin-top: auto;
+
+        z-index: 1;
+        width: toRem(188);
+        height: toRem(126);
+
+        @include flex-setting(column, flex-end, center);
+
+        padding: toRem(74) 0 toRem(34) 0;
+
+        background-image: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='191' height='129' viewBox='0 0 191 129' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M72.9636 1.42258C26.7089 3.68297 5.26564 23.3473 2.34682 45.498C0.999594 53.4843 1.26908 73.7512 14.9209 90.0252C31.9857 110.368 54.6775 120.664 84.9765 124.833C129.322 130.936 155.705 125.851 175.914 106.751C196.981 86.8405 189.824 51.6648 174.342 33.0666C158.261 13.7497 128.318 -1.28248 72.9636 1.42258Z' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+        text-decoration: none;
+        transition: 0.35s $cubic;
+
+        span {
+            @include font-setting($primary-font, toRem(12), toRem(19), 400, $dark);
+            position: relative;
+            transition: 0.35s $cubic;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: toRem(88);
+                height: toRem(24);
+                background-image: 50% 50%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg width='89' height='24' viewBox='0 0 89 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 3.5C7.20647 8.85369 10.369 11.3611 15.7778 15.2778C17.5616 16.5695 20.0568 18.6137 21 20.5' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M5 21.5C9.68876 15.6746 17.6127 9.66176 20 2.5' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M66.75 3.5C71.5688 7.15064 78.4729 18.0743 84.25 20' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M65.25 20.5C72.4708 15.1906 79.1266 7.31171 86.75 3.5' stroke='black' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+
+                top: toRem(-40);
+                left: 50%;
+                transform: translateX(-50%);
+
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &:active {
+            transform: scale(1.16);
+            transition: 0.35s $cubic;
+
+            span {
+                transform: scale(0.84);
+                transition: 0.35s $cubic;
+
+                &::after {
+                    transform: translateX(-50%) scale(0.94);
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .error {
+        height: calc(100vh - 138px);
+        padding: toRem(162) toRem(48) toRem(80) toRem(48);
+
+        &__title {
+            span {
+                font-size: toRem(48);
+                line-height: toRem(86);
+            }
+
+            span:first-child {
+                margin-bottom: toRem(0);
+            }
+        }
+
+        &__description {
+            font-size: toRem(24);
+            line-height: toRem(37);
+        }
+
+        &-round-tb {
+            display: block;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            filter: blur(48px);
+            z-index: 0;
+        }
+
+        &-round-mb {
+            display: none;
+        }
+
+        &__return {
+            width: toRem(211);
+            height: toRem(142);
+            padding: toRem(78) 0 toRem(39) 0;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='211' height='142' viewBox='0 0 211 142' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M80.5781 1.78565C29.0781 4.28577 5.20312 26.0357 1.9533 50.5358C0.453297 59.3691 0.753339 81.7855 15.9533 99.7855C34.9533 122.286 60.2184 133.674 93.9533 138.286C143.328 145.036 172.703 139.411 195.203 118.286C218.659 96.263 210.691 57.3566 193.453 36.7859C175.549 15.4202 142.21 -1.20632 80.5781 1.78565Z' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+            span {
+                font-size: toRem(14);
+                line-height: toRem(22);
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .error {
+        padding: toRem(150) toRem(80) toRem(50) toRem(253);
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+@include min-screen(1440px) {
+    .error {
+        --wrapWidth: calc(100% - 1220px);
+        padding: toRem(180) calc((var(--wrapWidth) / 2)) toRem(55) calc((var(--wrapWidth) / 2));
+
+        &__title {
+            margin-bottom: toRem(24);
+        }
+
+        &__return {
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.16);
+                transition: 0.35s $cubic;
+
+                span {
+                    transform: scale(0.84);
+                    transition: 0.35s $cubic;
+
+                    &::after {
+                        transform: translateX(-50%) scale(0.94);
+                        transition: 0.35s $cubic;
+                    }
+                }
+            }
+        }
+    }
+}

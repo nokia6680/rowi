@@ -89,7 +89,7 @@
         }
 
         &__apply {
-            display: inline-flex;
+            display: none;
 
             @include font-setting($primary-font, toRem(14), toRem(22), 400, $dark);
             letter-spacing: -0.02em;
@@ -162,6 +162,7 @@
         padding: toRem(15) calc((var(--wrapWidth) / 2));
 
         &__apply {
+            display: inline-flex;
             padding-top: toRem(20);
             padding-bottom: toRem(20);
 

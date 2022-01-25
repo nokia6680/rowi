@@ -6,9 +6,25 @@
     padding: 0 toRem(16) toRem(94) toRem(16);
     margin-bottom: toRem(24);
 
+    position: relative;
+
+    &-round-tb {
+        display: none;
+    }
+
+    &-round-mb {
+        position: absolute;
+        filter: blur(30px);
+
+        z-index: 0;
+    }
+
     &__title {
         @include flex-setting(column, flex-start, flex-start);
         margin-bottom: toRem(40);
+
+        z-index: 1;
+        position: relative;
 
         span {
             @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
@@ -16,12 +32,33 @@
         }
     }
 
+    &__arrow {
+        position: absolute;
+
+        width: toRem(52);
+        height: toRem(84);
+        bottom: toRem(-98);
+        left: toRem(67);
+
+        svg:last-of-type {
+            position: absolute;
+            bottom: 0;
+            right: toRem(0);
+        }
+
+        &--tablet,
+        &--desktop {
+            display: none;
+        }
+    }
+
+
     &__frame {
         align-self: flex-end;
         @include flex-setting(column, center, center);
         @include box(toRem(200));
         margin-bottom: toRem(40);
-
+        z-index: 1;
         &-image {
             width: 100%;
             height: 100%;
@@ -36,7 +73,7 @@
     &__subtitle {
         display: inline;
         margin-bottom: toRem(40);
-
+        z-index: 1;
         span {
             @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
             letter-spacing: -0.015em;
@@ -64,6 +101,18 @@
         padding: 0 toRem(40) toRem(20) toRem(40);
         margin-bottom: toRem(80);
 
+        &-round-mb {
+            display: none;
+        }
+
+        &-round-tb {
+            display: block;
+            position: absolute;
+            filter: blur(30px);
+
+            z-index: 0;
+        }
+
         &__title {
             grid-area: title;
             margin-bottom: toRem(0);
@@ -73,6 +122,12 @@
                 font-size: toRem(32);
                 line-height: toRem(58);
             }
+        }
+
+        &__arrow {
+            position: absolute;
+            bottom: toRem(-55);
+            left: toRem(266);
         }
 
         &__frame {
@@ -118,6 +173,7 @@
         }
 
         &__jobs {
+            z-index: 1;
             grid-area: link;
             @include flex-setting(column, center, center);
             justify-self: end;
@@ -191,6 +247,26 @@
             }
         }
 
+        &__arrow {
+            &--mobile {
+                display: none;
+            }
+
+            &--tablet {
+                width: toRem(69);
+                height: toRem(116);
+                display: block;
+                bottom: toRem(-120);
+                left: toRem(53);
+
+                svg:last-of-type {
+                    position: absolute;
+                    bottom: toRem(2);
+                    right: toRem(0);
+                }
+            }
+        }
+
         &__frame {
             &--first {
                 margin-left: toRem(0);
@@ -236,6 +312,13 @@
                 max-width: 100%;
                 font-size: toRem(48);
                 line-height: toRem(86);
+            }
+        }
+
+        &__arrow {
+            &--tablet {
+                bottom: toRem(-140);
+                left: toRem(60);
             }
         }
 

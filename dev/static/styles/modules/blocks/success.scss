@@ -1,0 +1,181 @@
+.success {
+    width: 100%;
+    height: calc(100vh - 98px);
+
+    @include flex-setting(column, flex-start, flex-start);
+
+    padding: toRem(120) toRem(36) toRem(40) toRem(36);
+
+    position: relative;
+
+    &__title {
+        @include flex-setting(column, flex-start, flex-start);
+        z-index: 1;
+
+        span {
+            @include font-setting($primary-font, toRem(28), toRem(39), 350, $dark);
+            letter-spacing: -0.015em;
+        }
+
+        span:first-child {
+            margin-bottom: toRem(16);
+        }
+    }
+
+    &-round-tb {
+        display: none;
+    }
+
+    &-round-mb {
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        filter: blur(48px);
+        z-index: 0;
+    }
+
+    &__return {
+        align-self: flex-end;
+        margin-bottom: 0;
+        margin-top: auto;
+
+        z-index: 1;
+        width: toRem(188);
+        height: toRem(126);
+
+        @include flex-setting(column, flex-start, center);
+
+        padding: toRem(40) 0 toRem(50) 0;
+
+        background-image: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='191' height='129' viewBox='0 0 191 129' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M72.9636 1.42258C26.7089 3.68297 5.26564 23.3473 2.34682 45.498C0.999594 53.4843 1.26908 73.7512 14.9209 90.0252C31.9857 110.368 54.6775 120.664 84.9765 124.833C129.322 130.936 155.705 125.851 175.914 106.751C196.981 86.8405 189.824 51.6648 174.342 33.0666C158.261 13.7497 128.318 -1.28248 72.9636 1.42258Z' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+        text-decoration: none;
+        transition: 0.35s $cubic;
+
+        span {
+            @include font-setting($primary-font, toRem(12), toRem(19), 400, $dark);
+            position: relative;
+            transition: 0.35s $cubic;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: toRem(82);
+                height: toRem(12);
+                background-image: 50% 50%;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url("data:image/svg+xml,%3Csvg width='82' height='12' viewBox='0 0 82 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.08398 4.875C29.1729 9.09375 61.1056 10.3125 79.5359 5.4375' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M75.2734 1.52344C76.4561 3 78.7476 4.40625 80.2999 4.89844C79.7825 5.57812 77.3924 9.53906 77.1214 10.9453' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+                bottom: toRem(-20);
+                left: 50%;
+                transform: translateX(-50%);
+
+                transition: 0.35s $cubic;
+            }
+        }
+
+        &:active {
+            transform: scale(1.16);
+            transition: 0.35s $cubic;
+
+            span {
+                transform: scale(0.84);
+                transition: 0.35s $cubic;
+
+                &::after {
+                    transform: translateX(-50%) scale(0.94);
+                    transition: 0.35s $cubic;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(768px) {
+    .success {
+        height: calc(100vh - 138px);
+        padding: toRem(192) toRem(48) toRem(80) toRem(48);
+
+        &__title {
+            span {
+                font-size: toRem(48);
+                line-height: toRem(86);
+            }
+
+            span:first-child {
+                margin-bottom: toRem(40);
+            }
+        }
+
+        &-round-tb {
+            display: block;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            filter: blur(48px);
+            z-index: 0;
+        }
+
+        &-round-mb {
+            display: none;
+        }
+
+        &__return {
+            width: toRem(211);
+            height: toRem(142);
+            padding: toRem(48) 0 toRem(70) 0;
+
+            background-image: url("data:image/svg+xml,%3Csvg width='211' height='142' viewBox='0 0 211 142' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M80.5781 1.78565C29.0781 4.28577 5.20312 26.0357 1.9533 50.5358C0.453297 59.3691 0.753339 81.7855 15.9533 99.7855C34.9533 122.286 60.2184 133.674 93.9533 138.286C143.328 145.036 172.703 139.411 195.203 118.286C218.659 96.263 210.691 57.3566 193.453 36.7859C175.549 15.4202 142.21 -1.20632 80.5781 1.78565Z' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+            span {
+                font-size: toRem(14);
+                line-height: toRem(22);
+
+                &::after {
+                    width: toRem(103);
+                    height: toRem(15);
+                    background-image: url("data:image/svg+xml,%3Csvg width='103' height='15' viewBox='0 0 103 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.375 5.5C37 11.125 77.5 12.75 100.875 6.25' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M95.4688 1.03125C96.9688 3 99.875 4.875 101.844 5.53125C101.188 6.4375 98.1562 11.7188 97.8125 13.5938' stroke='%2314004B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+                    bottom: toRem(-31);
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1024px) {
+    .success {
+        padding: toRem(140) toRem(176) toRem(40) toRem(176);
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@include min-screen(1440px) {
+    .success {
+        --wrapWidth: calc(100% - 1220px);
+        padding: toRem(200) calc((var(--wrapWidth) / 2)) toRem(40) calc((var(--wrapWidth) / 2));
+
+        &__return {
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.16);
+                transition: 0.35s $cubic;
+
+                span {
+                    transform: scale(0.84);
+                    transition: 0.35s $cubic;
+
+                    &::after {
+                        transform: translateX(-50%) scale(0.94);
+                        transition: 0.35s $cubic;
+                    }
+                }
+            }
+        }
+    }
+}

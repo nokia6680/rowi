@@ -143,12 +143,11 @@
             max-height: toRem(3000);
             padding-top: toRem(37);
             padding-bottom: toRem(11);
-
-            transition: max-height 0.55s $cubic, padding-top 0.2s linear 0.35s, padding-bottom 0.2s linear 0.35s;
+            overflow: visible;
+            transition: max-height 0.55s $cubic, padding-top 0.2s linear, padding-bottom 0.2s linear;
 
             .job__content-item {
                 pointer-events: auto;
-                transform: scale(1) translateY(0px);
                 will-change: transform;
                 opacity: 1;
 
@@ -161,7 +160,6 @@
 
             .job__controls {
                 pointer-events: auto;
-                transform: scale(1) translateY(0px);
                 will-change: transform;
                 opacity: 1;
                 transition-delay: 0.55s;
@@ -181,7 +179,7 @@
 
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.55s $cubic, padding-top 0.2s linear 0.35s, padding-bottom 0.2s linear 0.35s;
+        transition: max-height 0.55s $cubic, padding-top 0.2s linear 0.45s, padding-bottom 0.2s linear 0.45s;
 
         @include flex-setting(column, flex-start, flex-start);
         padding: 0 toRem(16);
@@ -196,11 +194,9 @@
         &-item {
             width: 100%;
             @include flex-setting(column, flex-start, flex-start);
-
-            transform: scale(1.15) translateY(-30px);
             margin-bottom: toRem(24);
             opacity: 0;
-            transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+            transition: opacity 0.6s $cubic;
 
             @for $i from 1 through $jobItems {
                 &:nth-child(#{$i}) {
@@ -231,10 +227,8 @@
     &__controls {
         width: 100%;
         @include flex-setting(row, space-between, center);
-
-        transform: scale(1.15) translateY(-30px);
         opacity: 0;
-        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+        transition: opacity 0.6s $cubic;
     }
     //book
     &__share {
@@ -269,6 +263,13 @@
         padding: toRem(12) toRem(24);
         background-color: transparent;
         border: none;
+
+        position: relative;
+
+        svg {
+            position: absolute;
+            bottom: 0;
+        }
 
         &.disabled {
             color: $dark;
@@ -464,6 +465,8 @@
         padding: toRem(40) toRem(40);
         margin-bottom: toRem(80);
 
+        position: relative;
+
         &__title {
             font-size: toRem(40);
             line-height: toRem(72);
@@ -515,6 +518,7 @@
 
         &__body {
             padding: 0 toRem(80);
+            position: relative;
         }
 
         &__content {
@@ -561,6 +565,96 @@
             line-height: toRem(28);
             padding: toRem(6) 0;
             margin-right: toRem(80);
+
+
+            svg {
+                position: absolute;
+                bottom: toRem(-12);
+            }
+        }
+
+        &__dropdown {
+            position: absolute;
+            bottom: toRem(-420);
+            top: auto;
+            left: auto;
+            right: toRem(26);
+            justify-content: center;
+            width: toRem(300);
+            height: toRem(440);
+            background: transparent;
+
+            &::after {
+                position: absolute;
+                content: '';
+
+                width: toRem(13.86);
+                height: toRem(10);
+
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.19615 0.999999C5.96595 -0.333334 7.89045 -0.333333 8.66025 1L13.8564 10H0L5.19615 0.999999Z' fill='%2314004B' fill-opacity='0.16'/%3E%3C/svg%3E");
+
+                top: toRem(-10);
+                left: toRem(76);
+            }
+
+            &.active {
+                display: block;
+
+                .job__dropdown-wrap {
+                    max-height: toRem(440);
+                }
+            }
+
+            &-wrap {
+                box-shadow: 0px 0px 8px rgba(20, 0, 75, 0.25);
+                border-radius: 2px;
+                padding: 0 toRem(2);
+            }
+
+            &-list {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                grid-column-gap: 0;
+                grid-row-gap: 0;
+                padding: toRem(16) toRem(0) toRem(12) toRem(0);
+                margin-bottom: toRem(12);
+            }
+
+            &-item {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            &-btn {
+                text-align: left;
+                width: 100%;
+                font-size: toRem(14);
+                line-height: toRem(22);
+                padding: toRem(21) 0 toRem(21) toRem(96);
+
+                &::after {
+                    top: 50%;
+                    left: toRem(40);
+                    transform: translateY(-50%);
+                }
+            }
+
+            &-bottom {
+                padding: 0 toRem(2) toRem(16) toRem(2);
+            }
+
+            &-copy {
+                font-size: toRem(14);
+                line-height: toRem(22);
+                text-align: left;
+                padding: toRem(21) toRem(41) toRem(21) toRem(96);
+                white-space: nowrap;
+            }
         }
     }
 }
@@ -572,6 +666,11 @@
 
         &__filter {
             margin-bottom: toRem(80);
+        }
+
+        &__dropdown {
+            right: auto;
+            left: toRem(278);
         }
     }
 }
@@ -657,6 +756,10 @@
 
         &__apply {
             margin-right: toRem(84);
+        }
+
+        &__dropdown {
+            left: toRem(230);
         }
     }
 }

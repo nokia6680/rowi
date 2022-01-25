@@ -288,6 +288,8 @@
 
 @include min-screen(1024px) {
     .benefits {
+        overflow-x: visible;
+        
         &__wrapper {
             padding: 0 toRem(80);
             display: grid;
