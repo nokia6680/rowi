@@ -47,13 +47,11 @@ for (var i = 0; i < jobs.length; i++) {
 $('.js-popup-opener').on('click', function() {
     const popupId = $(this).attr('data-modal');
     $(popupId).toggleClass('active');
-    $('body').toggleClass('no-scroll');
 });
 
 $('.js-popup-wrap').on('click', function(event) {
     if (!$(event.target).closest('.js-popup-inner').length) {
         $(this).removeClass('active');
-        $('body').removeClass('no-scroll');
     }
 });
 //

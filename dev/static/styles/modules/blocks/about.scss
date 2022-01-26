@@ -133,6 +133,24 @@
         align-self: flex-end;
     }
 
+    &__item:last-of-type {
+        .about__link {
+            position: relative;
+        }
+
+        .about__lines {
+            position: absolute;
+            @include flex-setting(column, center, center);
+
+            top: toRem(-13);
+            left: toRem(-17);
+
+            &--tablet {
+                display: none;
+            }
+        }
+    }
+
     &__link {
         display: block;
         text-decoration: none;
@@ -234,6 +252,21 @@
             align-self: flex-start;
         }
 
+
+        &__item:last-of-type {
+            .about__lines {
+                top: toRem(-30);
+                left: toRem(-34);
+
+                &--mobile {
+                    display: none;
+                }
+                &--tablet {
+                    display: flex;
+                }
+            }
+        }
+
         &__link {
             margin-bottom: toRem(24);
 
@@ -319,6 +352,7 @@
 
         &__show {
             margin-right: toRem(256);
+            margin-bottom: toRem(76);
         }
 
         &__list {
@@ -329,6 +363,13 @@
 
         &__item {
             max-width: toRem(392);
+        }
+
+        &__item:last-of-type {
+            .about__lines {
+                top: toRem(-38);
+                left: toRem(-41);
+            }
         }
     }
 }

@@ -20,12 +20,12 @@
     transition: max-height 0.4s $cubic 0.55s;
 
     &.opened {
+        height: calc(100vh - 58px);
         max-height: 100vh;
-        transition: max-height 0.4s $cubic;
+        transition: max-height 0.55s $cubic;
 
         .nav__item {
             pointer-events: auto;
-            transform: scale(1) translateY(0px);
             will-change: transform;
             opacity: 1;
 
@@ -38,8 +38,6 @@
 
         .nav__jobs {
             pointer-events: auto;
-            transform: scale(1) translateY(0px);
-            will-change: transform;
             opacity: 1;
             transition-delay: 0.55s;
         }
@@ -50,7 +48,7 @@
 
         @include flex-setting(column, flex-start, flex-start);
 
-        padding: toRem(40) 0 0;
+        padding: toRem(40) 0 0 0;
         margin-bottom: toRem(138);
     }
 
@@ -60,10 +58,9 @@
 
         padding: toRem(12) 0;
         margin-bottom: toRem(32);
-
-        transform: scale(1.15) translateX(-20px) translateY(0);
+;
         opacity: 0;
-        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+        transition: opacity 0.6s $cubic;
 
         @for $i from 1 through $menuItems {
             &:nth-child(#{$i}) {
@@ -90,14 +87,12 @@
         margin-top: auto;
         margin-bottom: toRem(26);
 
-        transform: scale(1.15) translateY(-30px);
         opacity: 0;
-        transition: transform 0.5s $cubic, opacity 0.6s $cubic;
+        transition: opacity 0.6s $cubic;
 
         span {
             @include font-setting($primary-font, toRem(28), toRem(39), 350, $blue);
             padding: toRem(12) 0;
-
             letter-spacing: -0.015em;
         }
 
@@ -112,6 +107,10 @@
     .nav {
         top: toRem(98);
         padding: 0;
+
+        &.opened {
+            height: calc(100vh - 98px);
+        }
 
         &__list {
             align-items: center;
@@ -137,6 +136,7 @@
 
         &__jobs {
             margin-bottom: toRem(74);
+            margin-top: 0;
 
             span {
                 font-size: toRem(32);
@@ -181,7 +181,8 @@
         }
 
         &__jobs {
-            margin-bottom: toRem(0);
+            margin-top: auto;
+            margin-bottom: toRem(158);
         }
     }
 }

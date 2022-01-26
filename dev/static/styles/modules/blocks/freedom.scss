@@ -29,12 +29,56 @@
             margin-bottom: 0;
         }
 
+        &--first {
+            position: relative;
+        }
+
         &--second {
             padding-left: toRem(30);
         }
 
         &--third {
             align-self: flex-end;
+            position: relative;
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        @include flex-setting(column, flex-start, center);
+
+        width: toRem(40);
+        height: toRem(58);
+
+        bottom: toRem(-46);
+        right: toRem(-50);
+
+        svg:last-of-type {
+            position: absolute;
+
+            bottom: toRem(3);
+            right: toRem(5);
+        }
+
+        &--tablet,
+        &--desktop {
+            display: none;
+        }
+    }
+
+    &__lines {
+        position: absolute;
+        @include flex-setting(column, flex-start, center);
+
+        width: toRem(32);
+        height: toRem(33);
+
+        top: toRem(-21);
+        right: toRem(2);
+
+        &--tablet,
+        &--desktop {
+            display: none;
         }
     }
 }
@@ -77,6 +121,44 @@
                 padding-left: toRem(0);
             }
         }
+
+        &__arrow {
+            width: toRem(82);
+            height: toRem(112);
+
+            bottom: toRem(-132);
+            right: auto;
+            left: toRem(23);
+
+            svg:last-of-type {
+                bottom: toRem(0);
+                right: toRem(0);
+            }
+
+            &--mobile {
+                display: none;
+            }
+
+            &--tablet {
+                display: flex;
+            }
+        }
+
+        &__lines {
+            width: toRem(70);
+            height: toRem(72);
+
+            top: toRem(-42);
+            right: toRem(9);
+
+            &--mobile {
+                display: none;
+            }
+
+            &--tablet {
+                display: flex;
+            }
+        }
     }
 }
 
@@ -108,6 +190,39 @@
 
             &:last-of-type {
                 margin-bottom: 0;
+            }
+        }
+
+        &__arrow {
+            width: toRem(128);
+            height: toRem(176);
+
+            bottom: toRem(-176);
+            right: auto;
+            left: toRem(60);
+
+            &--tablet {
+                display: none;
+            }
+
+            &--desktop {
+                display: flex;
+            }
+        }
+
+        &__lines {
+            width: toRem(80);
+            height: toRem(82);
+
+            top: toRem(-42);
+            right: toRem(9);
+
+            &--tablet {
+                display: none;
+            }
+
+            &--desktop {
+                display: flex;
             }
         }
     }
