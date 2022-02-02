@@ -120,6 +120,7 @@
         @include font-setting($primary-font, toRem(18), toRem(28), 400, $dark);
 
         position: relative;
+        transition: 0.35s $cubic;
 
         &::after {
             position: absolute;
@@ -171,6 +172,11 @@
                 transform: rotate(180deg);
                 transition: 0.35s $cubic;
             }
+        }
+
+        &:hover {
+            color: $blue;
+            transition: 0.35s $cubic;
         }
     }
 

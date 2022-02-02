@@ -1,16 +1,64 @@
 .how {
     width: 100%;
 
-    @include flex-setting(column, flex-start, flex-start);
+    @include flex-setting(column, flex-start, center);
 
     padding: toRem(24) toRem(16) toRem(38) toRem(16);
     margin-bottom: toRem(24);
 
+    &.loaded {
+        //1
+        .how__title {
+            animation: fadeInBottom30 $transition-duration forwards;
+        }
+        //2
+        .how__item--first {
+            .how__info {
+                animation: fadeInBottom30 $transition-duration forwards 0.3333s;
+            }
+        }
+        //3
+        .how__item--second {
+            .how__info {
+
+            }
+        }
+
+        .how__item--first {
+            .how__frame {
+
+            }
+        }
+
+        //4
+        .how__item--third {
+            .how__info {
+
+            }
+        }
+
+        .how__item--second {
+            .how__frame {
+
+            }
+        }
+
+        //5
+        .how__item--third {
+            .how__frame {
+
+            }
+        }
+    }
+
     &__title {
+        align-self: flex-start;
         @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(24);
+
+        opacity: 0;
     }
 
     &__list {

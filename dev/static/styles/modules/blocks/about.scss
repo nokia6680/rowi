@@ -158,6 +158,14 @@
 
         span {
             @include font-setting($primary-font, toRem(18), toRem(25), 500, $dark);
+            transition: 0.35s $cubic;
+        }
+
+        &:hover {
+            span {
+                color: $blue;
+                transition: 0.35s $cubic;
+            }
         }
     }
 
@@ -231,6 +239,14 @@
 
             &-arrow--tb {
                 display: block;
+
+                .show-arrow-body {
+                    animation: dash 0.35s $cubic forwards;
+                }
+
+                .show-arrow-top {
+                    animation: dash 0.35s $cubic forwards 0.35s;
+                }
             }
         }
 
@@ -353,6 +369,24 @@
         &__show {
             margin-right: toRem(256);
             margin-bottom: toRem(76);
+
+            .show-arrow-top {
+                animation: undash 0.35s $cubic forwards;
+            }
+
+            .show-arrow-body {
+                animation: undash 0.35s $cubic backwards 0.35s;
+            }
+
+            &:hover {
+                .show-arrow-body {
+                    animation: dash 0.35s $cubic forwards;
+                }
+
+                .show-arrow-top {
+                    animation: dash 0.35s $cubic forwards 0.35s;
+                }
+            }
         }
 
         &__list {

@@ -47,6 +47,10 @@
             bottom: toRem(2);
             left: 50%;
             transform: translateX(-50%);
+
+            path {
+                animation: undash 0 forwards;
+            }
         }
 
         &.opened {
@@ -181,6 +185,16 @@
                 bottom: toRem(-3);
                 left: 50%;
                 transform: translateX(-50%);
+
+                path {
+                    animation: undash 0.35s $cubic forwards;
+                }
+            }
+
+            &:hover {
+                path {
+                    animation: dash 0.35s $cubic forwards;
+                }
             }
         }
 

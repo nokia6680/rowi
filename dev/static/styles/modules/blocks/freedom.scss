@@ -1,5 +1,7 @@
 .freedom {
     width: 100%;
+    min-height: 100%;
+    //height: calc(var(--vh, 1vh) * 100);
 
     @include flex-setting(column, flex-start, flex-start);
 
@@ -8,6 +10,42 @@
     position: relative;
 
     margin-bottom: toRem(24);
+
+    &.loaded {
+        .freedom__title {
+            &--first {
+                animation: fadeInBottom30 $transition-duration forwards;
+            }
+
+            .freedom__arrow {
+                animation: fadeInStatic 0s linear forwards 0.66667s;
+            }
+
+            .free-arrow-body {
+                animation: dash $transition-duration forwards 0.66667s;
+            }
+
+            .free-arrow-top {
+                animation: dash $transition-duration forwards 1.33334s;
+            }
+
+            &--second {
+                animation: fadeInBottom30 $transition-duration forwards 2.000001s;
+            }
+
+            &--third {
+                animation: fadeInBottom30 $transition-duration forwards 2.66667s;
+            }
+
+            .freedom__lines {
+                animation: fadeInStatic 0s linear forwards 3.33335s;
+
+                .free-iroques {
+                    animation: dash $transition-duration forwards 3.33335s;
+                }
+            }
+        }
+    }
 
     &-round-tb {
         display: none;
@@ -24,6 +62,7 @@
         z-index: 1;
         @include font-setting($primary-font, toRem(40), toRem(56), 350, $dark);
         margin-bottom: toRem(40);
+        opacity: 0;
 
         &:last-of-type {
             margin-bottom: 0;
@@ -52,6 +91,8 @@
 
         bottom: toRem(-46);
         right: toRem(-50);
+
+        opacity: 0;
 
         svg:last-of-type {
             position: absolute;
@@ -85,7 +126,6 @@
 
 @include min-screen(768px) {
     .freedom {
-        height: 100vh;
         padding: toRem(0) toRem(40);
 
         justify-content: center;
@@ -131,7 +171,7 @@
             left: toRem(23);
 
             svg:last-of-type {
-                bottom: toRem(0);
+                bottom: toRem(3);
                 right: toRem(0);
             }
 
@@ -182,6 +222,11 @@
         --wrapWidth: calc(100% - 1220px);
         padding: 0 calc((var(--wrapWidth) / 2));
         margin-bottom: toRem(100);
+
+        .gradient-ball {
+            top: 0;
+            left: 0;
+        }
 
         &__title {
             font-size: toRem(130);

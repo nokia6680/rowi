@@ -287,6 +287,26 @@
 
             &-underline-tb {
                 display: block;
+
+                path {
+                    animation: dash 0.35s $cubic forwards;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1440px) {
+    .form {
+        &__submit {
+            path {
+                animation: undash 0.35s $cubic backwards;
+            }
+
+            &:hover {
+                path {
+                    animation: dash 0.35s $cubic forwards;
+                }
             }
         }
     }

@@ -14,7 +14,9 @@ $book-font: 'Stolzl Book', sans-serif;
 $text-black: $dark;
 $text-white: $white;
 
-$cubic: cubic-bezier(0.4, 0.01, 0.165, 0.99);
+$cubic: cubic-bezier(.33,0,.25,1 );
 $menuItems: 4;
 $filterItems: 5;
 $jobItems: 5;
+
+$transition-duration: 0.66667s;

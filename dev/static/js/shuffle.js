@@ -45,7 +45,7 @@ function reloadText() {
 
     setTimeout(reloadText, 3000);
 
-    console.log(ctaLinksItem);
+    //console.log(ctaLinksItem);
 
     if (ctaLinksItem === 'пиши нам!') {
         ctaBlock.setAttribute('data-type', 'firstLine');
