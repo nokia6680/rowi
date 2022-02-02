@@ -6,6 +6,22 @@
     padding: toRem(24) toRem(16);
     margin-bottom: toRem(24);
 
+    &.loaded {
+        //1
+        .about__title-span--first {
+            animation: fadeInBottom30 $transition-duration forwards;
+        }
+
+        .about-overline {
+            animation: dash 0.66667s $cubic forwards 0.66667s;
+        }
+
+        //2
+        .about__title-span--second {
+            animation: fadeInBottom30 $transition-duration forwards 1.33334;
+        }
+    }
+
     &__title {
         display: inline;
         margin-bottom: toRem(16);

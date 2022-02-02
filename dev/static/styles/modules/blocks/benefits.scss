@@ -8,6 +8,16 @@
 
     overflow-x: hidden;
 
+    &.loaded {
+        .benefits__title {
+            animation: fadeInBottom30 $transition-duration forwards;
+        }
+
+        .benefits__list {
+            animation: fadeInBottom30 $transition-duration forwards 0.66667s;
+        }
+    }
+
     &__wrapper {
         width: 100%;
 
@@ -23,6 +33,8 @@
 
         margin-bottom: toRem(32);
 
+        opacity: 0;
+
         span {
             @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
             letter-spacing: -0.015em;
@@ -36,6 +48,8 @@
         @include flex-setting(column, flex-start, flex-start);
 
         margin-bottom: toRem(32);
+
+        opacity: 0;
     }
 
     &__item {

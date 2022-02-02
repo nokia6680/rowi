@@ -14,39 +14,39 @@
         //2
         .how__item--first {
             .how__info {
-                animation: fadeInBottom30 $transition-duration forwards 0.3333s;
+                animation: fadeInBottom30 $transition-duration forwards 0.66667s;
             }
         }
         //3
         .how__item--second {
             .how__info {
-
+                animation: fadeInBottom30 $transition-duration forwards 1.33334s;
             }
         }
 
         .how__item--first {
             .how__frame {
-
+                animation: fadeInBottom30 $transition-duration forwards 1.33334s;
             }
         }
 
         //4
         .how__item--third {
             .how__info {
-
+                animation: fadeInBottom30 $transition-duration forwards 2.00001s;
             }
         }
 
         .how__item--second {
             .how__frame {
-
+                animation: fadeInBottom30 $transition-duration forwards 2.00001s;
             }
         }
 
         //5
         .how__item--third {
             .how__frame {
-
+                animation: fadeInBottom30 $transition-duration forwards 2.66668s;
             }
         }
     }
@@ -126,6 +126,8 @@
         max-width: toRem(280);
         @include flex-setting(column, flex-start, flex-start);
 
+        opacity: 0;
+
         .how__description:last-of-type {
             margin-bottom: 0;
         }
@@ -145,6 +147,8 @@
     &__frame {
         width: 100%;
         @include flex-setting(column, center, center);
+
+        opacity: 0;
 
         &-image {
             width: 100%;

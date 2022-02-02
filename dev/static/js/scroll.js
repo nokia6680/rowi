@@ -5,13 +5,22 @@ function animateScroll(coords, offset) {
     var stackTop = stackBlock.offsetTop;
     var freedomBlock = document.getElementById("freedom");
     var freedomTop = freedomBlock.offsetTop;
+    var howBlock = document.getElementById("how");
+    var howTop = howBlock.offsetTop;
+    var beneBlock = document.getElementById("benefits");
+    var beneTop = beneBlock.offsetTop;
+    var aboutBlock = document.getElementById("about");
+    var aboutTop = aboutBlock.offsetTop;
 
     var scrollHeight = window.pageYOffset;
 
     var collision = stackTop - scrollHeight;
     var collision2 = freedomTop - scrollHeight;
+    var collision3 = howTop - scrollHeight;
+    var collision4 = beneTop - scrollHeight;
+    var collision5 = aboutTop - scrollHeight;
 
-    if (window.innerWidth >= 1440) {
+    if (window.innerWidth >= 375) {
         //console.log(freedomBlock.getBoundingClientRect(), collision2, freedomTop);
 
         if (collision < 600) {
@@ -20,8 +29,18 @@ function animateScroll(coords, offset) {
 
         if (collision2 < 500) {
             freedomBlock.classList.add('loaded');
-            freedomBlock.scroll({top: 0});
-            console.log('gowno');
+        }
+
+        if (collision3 < 600) {
+            howBlock.classList.add('loaded');
+        }
+
+        if (collision4 < 600) {
+            beneBlock.classList.add('loaded');
+        }
+
+        if (collision5 < 600) {
+            aboutBlock.classList.add('loaded');
         }
 
     } else {
