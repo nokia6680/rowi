@@ -6,12 +6,109 @@
     padding: toRem(24) toRem(16);
     margin-bottom: toRem(24);
 
+    &.loaded {
+        //1
+        .numbers__title {
+            animation: fadeInBottom150 $transition-duration forwards;
+        }
+
+        //2
+        .numbers__item--first {
+            .numbers__icon {
+                animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+            }
+
+            .numbers__name {
+                animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+            }
+
+            .numbers__description {
+                animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+            }
+
+            .numbers__arrow {
+                animation: fadeInStatic 0s linear forwards 1.33334s;
+
+                .num-arrow-body {
+                    animation: dash $transition-duration $cubic forwards 1.33334s;
+                }
+            }
+        }
+
+        //3
+        .numbers__item--second {
+            .numbers__icon {
+                animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+            }
+
+            .numbers__name {
+                animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+            }
+
+            .numbers__description {
+                animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+            }
+
+            .numbers__arrow {
+                animation: fadeInStatic 0s linear forwards 2.33334s;
+
+                .num-arrow-body {
+                    animation: dash $transition-duration $cubic forwards 2.33334s;
+                }
+            }
+        }
+
+        //4
+        .numbers__item--third{
+            .numbers__icon {
+                animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+            }
+
+            .numbers__name {
+                animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+            }
+
+            .numbers__description {
+                animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+            }
+
+            .numbers__arrow {
+                animation: fadeInStatic 0s linear forwards 3.33334s;
+
+                .num-arrow-body {
+                    animation: dash $transition-duration $cubic forwards 3.33334s;
+                }
+
+                .num-arrow-top {
+                    animation: fadeInStatic 0s linear forwards 4.00001s;
+                }
+            }
+        }
+
+        //5
+        .numbers__item--fourth{
+            .numbers__icon {
+                animation: fadeInBottom150 $transition-duration forwards 4s;
+            }
+
+            .numbers__name {
+                animation: fadeInBottom150 $transition-duration forwards 4s;
+            }
+
+            .numbers__description {
+                animation: fadeInBottom150 $transition-duration forwards 4s;
+            }
+        }
+    }
+
     &__title {
         align-self: flex-start;
         @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(32);
+
+        opacity: 0;
     }
 
     &__list {
@@ -96,6 +193,8 @@
         background-repeat: no-repeat;
         background-size: contain;
 
+        opacity: 0;
+
         &--first {
             background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.0316 0.0957033C16.0831 0.0957033 12.2233 1.26308 8.94035 3.4502C5.65735 5.63732 3.09862 8.74594 1.58772 12.3829C0.0768324 16.02 -0.318351 20.022 0.452152 23.8829C1.22265 27.7438 3.12423 31.2903 5.91641 34.0737C8.70858 36.8571 12.2659 38.7525 16.1386 39.5202C20.0113 40.2878 24.0253 39.8933 27.6731 38.3865C31.3208 36.8796 34.4385 34.3282 36.6317 31.0547C38.825 27.7813 39.9954 23.9329 39.9948 19.9963C39.9948 17.3827 39.4785 14.7947 38.4752 12.3801C37.4719 9.96545 36.0014 7.7715 34.1476 5.92352C32.2938 4.07554 30.093 2.60973 27.671 1.60978C25.249 0.609841 22.6531 0.0953539 20.0316 0.0957033ZM4.71961 13.3051C4.73974 12.7212 4.98655 12.168 5.40798 11.762C5.8294 11.356 6.39251 11.1291 6.97851 11.1291C7.56452 11.1291 8.12762 11.356 8.54905 11.762C8.97048 12.168 9.21729 12.7212 9.23742 13.3051C9.22772 13.5664 9.27097 13.827 9.36456 14.0712C9.45816 14.3154 9.60019 14.5383 9.78216 14.7266C9.96413 14.9149 10.1823 15.0646 10.4236 15.1669C10.665 15.2692 10.9245 15.3219 11.1868 15.3219C11.449 15.3219 11.7086 15.2692 11.9499 15.1669C12.1912 15.0646 12.4094 14.9149 12.5914 14.7266C12.7734 14.5383 12.9154 14.3154 13.009 14.0712C13.1026 13.827 13.1458 13.5664 13.1361 13.3051C13.1361 12.7075 13.3743 12.1343 13.7981 11.7117C14.222 11.2891 14.7969 11.0517 15.3964 11.0517C15.9958 11.0517 16.5707 11.2891 16.9946 11.7117C17.4185 12.1343 17.6566 12.7075 17.6566 13.3051C17.6566 15.0155 16.9751 16.6559 15.762 17.8653C14.549 19.0748 12.9037 19.7542 11.1881 19.7542C9.47256 19.7542 7.82727 19.0748 6.61419 17.8653C5.40111 16.6559 4.71961 15.0155 4.71961 13.3051ZM20.0316 36.8693C16.6419 36.8637 13.3926 35.5187 10.9957 33.1289C8.59875 30.7392 7.24968 27.4997 7.24403 24.1201C7.23361 23.8179 7.28433 23.5166 7.39315 23.2343C7.50198 22.952 7.6667 22.6944 7.87749 22.4769C8.08827 22.2594 8.34082 22.0864 8.62008 21.9683C8.89933 21.8501 9.19958 21.7893 9.50294 21.7893C9.8063 21.7893 10.1065 21.8501 10.3858 21.9683C10.6651 22.0864 10.9176 22.2594 11.1284 22.4769C11.3392 22.6944 11.5039 22.952 11.6127 23.2343C11.7216 23.5166 11.7723 23.8179 11.7618 24.1201C11.7618 26.3075 12.6334 28.4053 14.1848 29.952C15.7362 31.4988 17.8403 32.3677 20.0343 32.3677C22.2283 32.3677 24.3324 31.4988 25.8838 29.952C27.4351 28.4053 28.3067 26.3075 28.3067 24.1201C28.3067 23.5225 28.5448 22.9493 28.9687 22.5267C29.3926 22.1041 29.9675 21.8667 30.5669 21.8667C31.1664 21.8667 31.7413 22.1041 32.1652 22.5267C32.5891 22.9493 32.8272 23.5225 32.8272 24.1201C32.8215 27.5011 31.4714 30.7418 29.0727 33.1317C26.6741 35.5217 23.4227 36.8658 20.0316 36.8693ZM28.8911 19.7542C28.0407 19.7553 27.1985 19.5893 26.4125 19.2657C25.6264 18.9422 24.9121 18.4674 24.3101 17.8685C23.7082 17.2696 23.2305 16.5583 22.9044 15.7753C22.5782 14.9924 22.41 14.153 22.4093 13.3051C22.4093 12.7075 22.6474 12.1343 23.0713 11.7117C23.4951 11.2891 24.07 11.0517 24.6695 11.0517C25.269 11.0517 25.8439 11.2891 26.2677 11.7117C26.6916 12.1343 26.9297 12.7075 26.9297 13.3051C26.9297 13.5602 26.9801 13.8127 27.078 14.0484C27.1759 14.284 27.3194 14.4981 27.5003 14.6785C27.6812 14.8588 27.8959 15.0019 28.1323 15.0995C28.3686 15.1971 28.6219 15.2473 28.8778 15.2473C29.1336 15.2473 29.3869 15.1971 29.6232 15.0995C29.8596 15.0019 30.0743 14.8588 30.2552 14.6785C30.4361 14.4981 30.5796 14.284 30.6775 14.0484C30.7754 13.8127 30.8258 13.5602 30.8258 13.3051C30.8258 12.7075 31.0639 12.1343 31.4878 11.7117C31.9117 11.2891 32.4866 11.0517 33.086 11.0517C33.6855 11.0517 34.2604 11.2891 34.6843 11.7117C35.1081 12.1343 35.3463 12.7075 35.3463 13.3051C35.3449 15.0128 34.6647 16.6503 33.4549 17.8591C32.245 19.0678 30.6039 19.7493 28.8911 19.7542Z' fill='%23F5AABE'/%3E%3C/svg%3E");
         }
@@ -114,17 +213,24 @@
     }
 
     &__name {
+        opacity: 0;
         @include font-setting($primary-font, toRem(24), toRem(29), 500, $dark);
         margin-bottom: toRem(16);
     }
 
     &__description {
+        opacity: 0;
         @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
         text-align: left;
     }
 
     &__arrow {
         @include flex-setting(column, flex-start, flex-start);
+        opacity: 0;
+
+        .num-arrow-top {
+            opacity: 0;
+        }
 
         &--desktop,
         &--tablet {
@@ -137,6 +243,73 @@
     .numbers {
         padding: toRem(40) toRem(40);
         margin-bottom: toRem(80);
+
+        &.loaded {
+            //1
+            .numbers__title {
+                animation: fadeInBottom150 $transition-duration forwards;
+            }
+
+            //2
+            .numbers__item--first {
+                .numbers__icon {
+                    animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                }
+
+                .numbers__name {
+                    animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                }
+
+                .numbers__description {
+                    animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                }
+            }
+
+            //3
+            .numbers__item--second {
+                .numbers__icon {
+                    animation: fadeInBottom150 $transition-duration forwards 1.33337s;
+                }
+
+                .numbers__name {
+                    animation: fadeInBottom150 $transition-duration forwards 1.33337s;
+                }
+
+                .numbers__description {
+                    animation: fadeInBottom150 $transition-duration forwards 1.33337s;
+                }
+            }
+
+            //4
+            .numbers__item--third{
+                .numbers__icon {
+                    animation: fadeInBottom150 $transition-duration forwards 2.00001s;
+                }
+
+                .numbers__name {
+                    animation: fadeInBottom150 $transition-duration forwards 2.00001s;
+                }
+
+                .numbers__description {
+                    animation: fadeInBottom150 $transition-duration forwards 2.00001s;
+                }
+            }
+
+            //5
+            .numbers__item--fourth{
+                .numbers__icon {
+                    animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                }
+
+                .numbers__name {
+                    animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                }
+
+                .numbers__description {
+                    animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                }
+            }
+        }
 
         &__title {
             font-size: toRem(40);
@@ -249,6 +422,111 @@
     .numbers {
         padding-left: toRem(80);
         padding-right: toRem(80);
+
+        &.loaded {
+            &.loaded {
+                //1
+                .numbers__title {
+                    animation: fadeInBottom150 $transition-duration forwards;
+                }
+
+                //2
+                .numbers__item--first {
+                    .numbers__icon {
+                        animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                    }
+
+                    .numbers__name {
+                        animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                    }
+
+                    .numbers__description {
+                        animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                    }
+
+                    .numbers__arrow {
+                        animation: fadeInStatic 0s linear forwards 1.33334s;
+
+                        .num-arrow-body {
+                            animation: dash $transition-duration $cubic forwards 1.33334s;
+                        }
+
+                        .num-arrow-top {
+                            animation: fadeInStatic 0s linear forwards 1.99992s;
+                        }
+                    }
+                }
+
+                //3
+                .numbers__item--second {
+                    .numbers__icon {
+                        animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                    }
+
+                    .numbers__name {
+                        animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                    }
+
+                    .numbers__description {
+                        animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                    }
+
+                    .numbers__arrow {
+                        animation: fadeInStatic 0s linear forwards 2.33334s;
+
+                        .num-arrow-body {
+                            animation: dashReverse $transition-duration $cubic forwards 2.33334s;
+                        }
+
+                        .num-arrow-top {
+                            animation: fadeInStatic 0s linear forwards 3.00002s;
+                        }
+                    }
+                }
+
+                //4
+                .numbers__item--third{
+                    .numbers__icon {
+                        animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                    }
+
+                    .numbers__name {
+                        animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                    }
+
+                    .numbers__description {
+                        animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                    }
+
+                    .numbers__arrow {
+                        animation: fadeInStatic 0s linear forwards 3.33334s;
+
+                        .num-arrow-body {
+                            animation: dash $transition-duration $cubic forwards 3.33334s;
+                        }
+
+                        .num-arrow-top {
+                            animation: fadeInStatic 0s linear forwards 4.00001s;
+                        }
+                    }
+                }
+
+                //5
+                .numbers__item--fourth{
+                    .numbers__icon {
+                        animation: fadeInBottom150 $transition-duration forwards 3.77777s;
+                    }
+
+                    .numbers__name {
+                        animation: fadeInBottom150 $transition-duration forwards 3.77777s;
+                    }
+
+                    .numbers__description {
+                        animation: fadeInBottom150 $transition-duration forwards 3.77777s;
+                    }
+                }
+            }
+        }
 
         &__title {
             margin-bottom: toRem(40);

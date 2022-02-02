@@ -4,6 +4,15 @@
     }
 }
 
+@keyframes dashReverse {
+    from {
+        stroke-dashoffset: calc(var(--pathLength) * (-1));
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
 @keyframes undash {
     from {
         stroke-dashoffset: 0;
@@ -77,6 +86,18 @@
     0% {
         opacity: 0;
         transform: translate(0, toRem(30));
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeInBottom150 {
+    0% {
+        opacity: 0;
+        transform: translate(0, toRem(150));
     }
 
     100% {

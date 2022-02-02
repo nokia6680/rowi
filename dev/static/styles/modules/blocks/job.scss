@@ -7,15 +7,31 @@
     margin-bottom: toRem(24);
     position: relative;
 
+    &.loaded {
+        .job__title {
+            animation: fadeInBottom150 $transition-duration forwards;
+        }
+
+        .job__filter {
+            animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+        }
+
+        .job__list {
+            animation: fadeInBottom150 $transition-duration forwards 1.33334s;
+        }
+    }
+
     &__title {
         align-self: flex-start;
         @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(32);
+        opacity: 0;
     }
 
     &__filter {
+        opacity: 0;
         width: 100%;
 
         @include flex-setting(column, flex-start, flex-start);
@@ -96,6 +112,7 @@
     }
 
     &__list {
+        opacity: 0;
         width: 100%;
 
         @include flex-setting(column, flex-start, center);

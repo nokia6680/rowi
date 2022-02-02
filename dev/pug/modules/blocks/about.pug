@@ -1,15 +1,23 @@
 section.about#about
-    h2.about__title
+    h2.about__title.about__title--desktop
         span.about__title-span.about__title-span--first
             span.about__title--overline Rowi.tech 
                 svg(class="about__overline about__overline--lg" width="304" height="119" viewBox="0 0 304 119" fill="none" xmlns="http://www.w3.org/2000/svg")
                     path(class="about-overline" d="M279.34 7.38609C247.652 2.51095 206.527 -0.739107 165.527 4.44849C150.15 6.39414 93.7149 13.8863 63.9649 26.0112C48.0397 32.5017 -2.35664 56.0224 1.46487 80.3862C4.46468 99.5113 43.0898 110.636 76.8397 115.011C93.3859 117.156 125.701 119.013 170.09 114.136C225.84 108.011 259.34 93.8862 268.465 89.5112C286.865 80.6891 303.337 70.3238 302.84 56.8237C302.402 44.9487 289.599 34.6882 280.402 29.8237C268.692 23.6302 255.986 20.7404 247.902 19.3237" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                 svg(class="about__overline about__overline--tb" width="251" height="99" viewBox="0 0 251 99" fill="none" xmlns="http://www.w3.org/2000/svg")
                     path(class="about-overline" d="M229.951 5.99983C203.959 1.9305 170.226 -0.782355 136.595 3.54778C123.982 5.17184 77.6903 11.4256 53.2875 21.5464C40.2246 26.9641 -1.11355 46.5971 2.02109 66.9338C4.48172 82.8978 36.1645 92.1838 63.8482 95.8357C77.4204 97.626 103.927 99.176 140.338 95.1053C186.067 89.9927 213.546 78.2024 221.031 74.5506C236.124 67.1867 249.635 58.5346 249.227 47.266C248.869 37.3538 238.367 28.7892 230.823 24.7288C221.217 19.5589 210.795 17.1468 204.164 15.9643" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(class="about__overline about__overline--mb" width="150" height="61" viewBox="0 0 150 61" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(class="about-overline" d="M137.423 3.71141C108.46 -0.505139 88.6212 -0.706395 49.616 7.81997C34.5133 11.1235 19.2256 17.5882 7.9705 27.7639C-4.14251 38.7151 0.77872 47.3986 14.3044 52.7981C26.063 57.4614 39.0852 59.4297 51.8558 59.7783C66.0184 60.166 85.0253 58.6934 97.8677 56.2391C121.626 51.6986 135.743 44.8804 143.587 38.5679C153.347 30.714 147.851 22.4969 142.046 17.9515C136.241 13.406 129.352 11.2806 122.012 9.83743" stroke="#14004B" stroke-linecap="round" stroke-linejoin="round")
             | — компания разработчик 
         span.about__title-span.about__title-span--second IT решений для финансового сектора
+        
+    h2.about__title.about__title--mobile
+        span.about__title-span.about__title-span--first
+            span.about__title--overline Rowi.tech 
+                svg(class="about__overline about__overline--tb" width="251" height="99" viewBox="0 0 251 99" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(class="about-overline" d="M229.951 5.99983C203.959 1.9305 170.226 -0.782355 136.595 3.54778C123.982 5.17184 77.6903 11.4256 53.2875 21.5464C40.2246 26.9641 -1.11355 46.5971 2.02109 66.9338C4.48172 82.8978 36.1645 92.1838 63.8482 95.8357C77.4204 97.626 103.927 99.176 140.338 95.1053C186.067 89.9927 213.546 78.2024 221.031 74.5506C236.124 67.1867 249.635 58.5346 249.227 47.266C248.869 37.3538 238.367 28.7892 230.823 24.7288C221.217 19.5589 210.795 17.1468 204.164 15.9643" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                svg(class="about__overline about__overline--mb" width="150" height="61" viewBox="0 0 150 61" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(class="about-overline" d="M137.423 3.71141C108.46 -0.505139 88.6212 -0.706395 49.616 7.81997C34.5133 11.1235 19.2256 17.5882 7.9705 27.7639C-4.14251 38.7151 0.77872 47.3986 14.3044 52.7981C26.063 57.4614 39.0852 59.4297 51.8558 59.7783C66.0184 60.166 85.0253 58.6934 97.8677 56.2391C121.626 51.6986 135.743 44.8804 143.587 38.5679C153.347 30.714 147.851 22.4969 142.046 17.9515C136.241 13.406 129.352 11.2806 122.012 9.83743" stroke="#14004B" stroke-linecap="round" stroke-linejoin="round")
+            | — компания разработчик IT решений 
+        span.about__title-span.about__title-span--second для финансового сектора
     p.about__subtitle Сделать быстрее и проще для клиента — наш подход к&nbsp;созданию продукта
         
     .about__player
@@ -43,14 +51,12 @@ section.about#about
         li.about__item
             a(href="https://sellplus.ru/?utm_source=rowitech&utm_medium=direct&utm_campaign=quick_request&utm_content=header&utm_term=pc" target="_blank").about__link
                 span Финансирование продавцов маркетплейсов
-                <svg class="about__lines about__lines--mobile" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.99121 18.7715C4.02693 19.0718 10.3662 20.7851 13.1519 22.1628" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M3.20508 1.70898C7.06222 7.02556 11.9551 12.819 16.4372 16.8639" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M19.2949 1.37305C19.8128 3.05104 20.6164 10.4872 21.9378 13.4369" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <svg class="about__lines about__lines--tablet" width="38" height="40" viewBox="0 0 38 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1.23438 32.5186C4.79688 33.0498 15.8906 36.0811 20.7656 38.5186" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M3.35938 2.33105C10.1094 11.7373 18.6719 21.9873 26.5156 29.1436" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M31.5156 1.7373C32.4219 4.70605 33.8281 17.8623 36.1406 23.0811" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+                svg(class="about__lines about__lines--mobile" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(class="about-line" d="M1.99121 18.7715C4.02693 19.0718 10.3662 20.7851 13.1519 22.1628" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    path(class="about-line" d="M3.20508 1.70898C7.06222 7.02556 11.9551 12.819 16.4372 16.8639" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    path(class="about-line" d="M19.2949 1.37305C19.8128 3.05104 20.6164 10.4872 21.9378 13.4369" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                svg(class="about__lines about__lines--tablet" width="38" height="40" viewBox="0 0 38 40" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(class="about-line" d="M1.23438 32.5186C4.79688 33.0498 15.8906 36.0811 20.7656 38.5186" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    path(class="about-line" d="M3.35938 2.33105C10.1094 11.7373 18.6719 21.9873 26.5156 29.1436" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                    path(class="about-line" d="M31.5156 1.7373C32.4219 4.70605 33.8281 17.8623 36.1406 23.0811" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
             p.about__description Выдаем деньги за товар до того, как со склада будет продана вся партия. Продавец наращивает обороты

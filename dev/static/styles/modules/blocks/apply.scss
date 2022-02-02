@@ -6,16 +6,49 @@
     padding: toRem(24) toRem(16);
     margin-bottom: toRem(24);
 
+    &.loaded {
+        .apply__title {
+            animation: fadeInBottom150 $transition-duration forwards;
+        }
+
+        .form {
+            animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+        }
+
+        .apply__frame--first {
+            animation: fadeInBottom150 $transition-duration forwards 1.33334s;
+        }
+
+        .apply__arrow {
+            animation: fadeInStatic 0s linear forwards calc(1.33334s + 0.66667s);
+
+            .apply-arrow-body {
+                animation: dash 0.66667s $cubic forwards calc(1.33334s + 0.66667s);
+            }
+
+            .apply-arrow-top {
+                animation: dash 0.66667s $cubic forwards calc(1.33334s + 1.33334s);
+            }
+        }
+
+        .apply__frame--second {
+            animation: fadeInBottom150 $transition-duration forwards 2.66664s;
+        }
+    }
+
     &__title {
         align-self: flex-start;
         @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(24);
+
+        opacity: 0;
     }
 
     &__form {
         margin-bottom: toRem(32);
+        opacity: 0;
     }
 
     &__images {
@@ -46,6 +79,8 @@
 
     &__frame {
         @include flex-setting(column, center, center);
+
+        opacity: 0;
 
         &:first-of-type {
             width: toRem(316);
