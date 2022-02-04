@@ -33,7 +33,38 @@ function reloadText() {
     setTimeout(function() {
         return ctaWrapper.classList.remove('loaded');
     }, 6444);
-    //console.log(ctaLinksItem);
+
+    let elements = document.querySelectorAll('.cta__title');
+
+    elements.forEach(element => {
+        let innerText = element.innerText;
+        element.innerHTML = '';
+
+        let textContainer = document.createElement('div');
+        textContainer.classList.add('block');
+
+        for (let letter of innerText) {
+            let span = document.createElement('span');
+            span.innerText = letter.trim() === '' ? '\xa0' : letter;
+            span.classList.add('letter');
+            textContainer.appendChild(span);
+        }
+
+        element.appendChild(textContainer);
+        //element.appendChild(textContainer.cloneNode(true));
+    });
+
+    setTimeout(() => {
+        elements.forEach(element => {
+            element.classList.add('play');
+        })
+    }, 6444);
+
+    setTimeout(() => {
+        elements.forEach(element => {
+            element.classList.remove('play');
+        })
+    }, 600);
 
     if (ctaTitleItem === 'Ещё сомневаешься?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
@@ -88,6 +119,38 @@ function reloadText() {
         ctaDescriptionsWrap.innerHTML = ''
         ctaLinksWrap.innerHTML = 'Напиши нам!';
     }
+
+    let descriptions = document.querySelectorAll('.cta__description');
+
+    descriptions.forEach(element => {
+        let innerText2 = element.innerText;
+        element.innerHTML = '';
+
+        let textContainer2 = document.createElement('div');
+        textContainer2.classList.add('block');
+
+        for (let letter of innerText2) {
+            let span2 = document.createElement('span');
+            span2.innerText = letter.trim() === '' ? '\xa0' : letter;
+            span2.classList.add('letter2');
+            textContainer2.appendChild(span2);
+        }
+
+        element.appendChild(textContainer2);
+        //element.appendChild(textContainer.cloneNode(true));
+    });
+
+    setTimeout(() => {
+        descriptions.forEach(element => {
+            element.classList.add('play');
+        })
+    }, 6444);
+
+    setTimeout(() => {
+        descriptions.forEach(element => {
+            element.classList.remove('play');
+        })
+    }, 600);
 }
 
 reloadText();

@@ -27,26 +27,37 @@
         transform: translate(-50%, -50%);
 
         &.loaded {
-            .cta__title {
-                animation: fadeInTop $transition-duration $cubic forwards;
-            }
 
-            .cta__block {
-                animation: fadeInBottom $transition-duration $cubic forwards;
-            }
         }
     }
 
     // book
     &__title {
+        display: inline-block;
         width: 100%;
         @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
         text-align: left;
         margin-bottom: toRem(8);
-
         z-index: 1;
-        animation: fadeOutTop $transition-duration $cubic forwards;
+        overflow: hidden;
+
+        &.play {
+            .letter{
+                transform: translateY(-100%);
+            }
+        }
+
+        .letter {
+            display: inline-block;
+            transition: transform 0.6s $cubic;
+        }
+
+        @for $i from 0 through 38 {
+            .letter:nth-child(#{$i + 1}) {
+                transition-delay: 0.015s * $i;
+            }
+        }
     }
 
     &__block {
@@ -55,7 +66,6 @@
         @include flex-setting(row, flex-start, center);
 
         z-index: 1;
-        animation: fadeOutBottom $transition-duration $cubic forwards;
     }
     // book
     &__description {
@@ -63,6 +73,25 @@
         letter-spacing: -0.015em;
         margin-right: toRem(8);
         text-align: left;
+
+        overflow: hidden;
+
+        &.play {
+            .letter2 {
+                transform: translateY(-100%);
+            }
+        }
+
+        .letter2 {
+            display: inline-block;
+            transition: transform 0.6s $cubic;
+        }
+
+        @for $i from 0 through 38 {
+            .letter2:nth-child(#{$i + 1}) {
+                transition-delay: 0.015s * $i;
+            }
+        }
     }
 
     &__button {
