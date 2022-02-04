@@ -23,6 +23,7 @@
         height: calc(100vh - 58px);
         max-height: 100vh;
         transition: max-height 0.55s $cubic;
+        padding-bottom: toRem(26);
 
         .nav__item {
             pointer-events: auto;
@@ -49,7 +50,7 @@
         @include flex-setting(column, flex-start, flex-start);
 
         padding: toRem(40) 0 0 0;
-        margin-bottom: toRem(138);
+        margin-bottom: auto;
     }
 
     &__item {

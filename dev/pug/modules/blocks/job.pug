@@ -4,7 +4,7 @@ section.job#jobs
     .job__filter
         h3.job__filter-title Категории
 
-        ul.job__filter-list
+        ul.job__filter-list#filterList
             li.job__filter-item
                 button(type="button" onclick="filterSelection('development')").job__filter-btn.active
                     span.job__filter-name Разработка
@@ -22,7 +22,7 @@ section.job#jobs
                     span.job__filter-name Тестирование
                     span.job__filter-nr (3)
     ul.job__list
-        li.job__item.development
+        li.job__item.development.active
             h3.job__name FullStack разработчик
             .job__body
                 ul.job__content

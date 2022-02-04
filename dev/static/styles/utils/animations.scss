@@ -5,17 +5,27 @@
 }
 
 @keyframes dashReverse {
-    from {
-        stroke-dashoffset: calc(var(--pathLength) * (-1));
-    }
+    //from {
+        //stroke-dashoffset: calc(var(--pathLength) * (-1));
+    //}
     to {
-        stroke-dashoffset: 0;
+        stroke-dashoffset: calc(var(--pathLength) * 2);
     }
 }
 
 @keyframes undash {
     from {
         stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: var(--pathLength);
+    }
+}
+
+@keyframes undashReverse {
+    from {
+        stroke-dashoffset: calc(var(--pathLength) * 2);
     }
 
     to {
@@ -33,6 +43,16 @@
     }
 }
 
+@keyframes fadeOutStatic {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 @keyframes fadeInTop {
     0% {
         opacity: 0;
@@ -42,6 +62,18 @@
     100% {
         opacity: 1;
         transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeOutTop {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0, 7vh);
     }
 }
 
@@ -73,12 +105,24 @@
 @keyframes fadeInBottom {
     0% {
         opacity: 0;
-        transform: translate(0, 8vh);
+        transform: translate(0, 7vh);
     }
 
     100% {
         opacity: 1;
         transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeOutBottom {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(0, -7vh);
     }
 }
 

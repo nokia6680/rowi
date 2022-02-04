@@ -13,7 +13,7 @@
     &__item {
         width: 100%;
 
-        @include flex-setting(column, center, center);
+        @include flex-setting(column, center, flex-start);
 
         margin-bottom: toRem(24);
         position: relative;
@@ -31,14 +31,20 @@
         border-bottom: 1px solid $dark;
         cursor: text;
         padding: toRem(11) toRem(8);
+        margin-bottom: toRem(4);
+
+        &.invalid {
+            .form__error {
+                display: inline-flex;
+            }
+        }
     }
 
     &__error {
-        position: absolute;
-        bottom: toRem(-24);
-        left: toRem(4);
+        align-self: flex-start;
+        padding-left: toRem(4);
         @include font-setting($primary-font, toRem(12), toRem(19), 350, $red);
-
+        display: none;
     }
 
     &__drop {
@@ -138,6 +144,7 @@
             background-color: transparent;
 
             opacity: 0.4;
+            cursor: pointer;
 
             background-position: 50% 50%;
             background-repeat: no-repeat;

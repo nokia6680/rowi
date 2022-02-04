@@ -134,10 +134,23 @@
         text-decoration: none;
         padding-top: toRem(32);
 
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-        background-size: contain;
-        background-image: url("data:image/svg+xml,%3Csvg width='138' height='96' viewBox='0 0 138 96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M85.0152 2.43336C66.9775 1.03877 48.2498 -0.265017 31.3478 6.57174C14.4459 13.4085 -0.0990645 30.8701 1.77554 49.9663C2.83191 60.7728 8.9381 70.522 16.9677 77.2615C24.9974 84.0009 34.7246 88.0096 44.6166 90.7339C61.0362 95.2744 78.6098 96.4226 94.8889 91.3826C111.168 86.3426 125.994 74.5177 132.937 58.0485C136.478 49.655 137.822 39.7371 134.427 31.2788C130.195 20.7771 119.381 14.6344 108.707 13.3242C98.0336 12.0139 87.3355 14.7058 76.8695 17.3653' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        &::before {
+            position: absolute;
+            content: '';
+
+            width: toRem(138);
+            height: toRem(96);
+
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url("data:image/svg+xml,%3Csvg width='138' height='96' viewBox='0 0 138 96' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M85.0152 2.43336C66.9775 1.03877 48.2498 -0.265017 31.3478 6.57174C14.4459 13.4085 -0.0990645 30.8701 1.77554 49.9663C2.83191 60.7728 8.9381 70.522 16.9677 77.2615C24.9974 84.0009 34.7246 88.0096 44.6166 90.7339C61.0362 95.2744 78.6098 96.4226 94.8889 91.3826C111.168 86.3426 125.994 74.5177 132.937 58.0485C136.478 49.655 137.822 39.7371 134.427 31.2788C130.195 20.7771 119.381 14.6344 108.707 13.3242C98.0336 12.0139 87.3355 14.7058 76.8695 17.3653' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            transition: 0.35s $cubic;
+        }
 
         &::after {
             position: absolute;
@@ -158,6 +171,10 @@
         }
 
         &:active {
+            &::before {
+                transform: translate(-50%, -50%) scale(1.16);
+                transition: 0.35s $cubic;
+            }
             &::after {
                 top: toRem(12);
                 transition: 0.35s $cubic;
@@ -274,7 +291,11 @@
 
             padding-bottom: toRem(22);
 
-            background-image: url("data:image/svg+xml,%3Csvg width='163' height='108' viewBox='0 0 163 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100.204 2.73706C80.5786 1.29972 48.3099 -1.88881 25.3915 12.9248C5.4566 25.8099 -1.80023 44.8147 1.95375 61.2372C4.96325 74.4029 17.3558 90.6001 40.4538 98.4872C66.0788 107.237 97.1029 111.227 124.454 97.8622C147.61 86.5474 163.891 63.5497 160.704 41.7372C158.782 28.5826 146.128 17.2149 129.391 15.1122C116.954 13.5497 107.766 15.4872 90.3601 19.5497' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            &::before {
+                background-image: url("data:image/svg+xml,%3Csvg width='163' height='108' viewBox='0 0 163 108' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100.204 2.73706C80.5786 1.29972 48.3099 -1.88881 25.3915 12.9248C5.4566 25.8099 -1.80023 44.8147 1.95375 61.2372C4.96325 74.4029 17.3558 90.6001 40.4538 98.4872C66.0788 107.237 97.1029 111.227 124.454 97.8622C147.61 86.5474 163.891 63.5497 160.704 41.7372C158.782 28.5826 146.128 17.2149 129.391 15.1122C116.954 13.5497 107.766 15.4872 90.3601 19.5497' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                width: toRem(160);
+                height: toRem(106)
+            }
         }
     }
 }
@@ -286,6 +307,7 @@
 
         &__wrapper {
             grid-template-columns: 1fr 35.76388888888889% 1fr;
+            align-items: center;
         }
 
         &__list {
@@ -302,7 +324,6 @@
 
         &__join {
             @include flex-setting(column, center, center);
-            height: 100%;
         }
 
         &__link {
@@ -316,7 +337,8 @@
         }
 
         &__top {
-            right: toRem(80);        }
+            right: toRem(80);
+        }
     }
 }
 
@@ -389,6 +411,11 @@
             right: calc((var(--wrapWidth) / 2));
 
             &:hover {
+                &::before {
+                    transform: translate(-50%, -50%) scale(1.16);
+                    transition: 0.35s $cubic;
+                }
+                
                 &::after {
                     top: toRem(16);
                     transition: 0.35s $cubic;

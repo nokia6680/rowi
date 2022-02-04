@@ -12,27 +12,27 @@
         }
 
         .form {
-            animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+            animation: fadeInBottom150 $transition-duration forwards 0.3333s;
         }
 
         .apply__frame--first {
-            animation: fadeInBottom150 $transition-duration forwards 1.33334s;
+            animation: fadeInBottom150 $transition-duration forwards 0.6666s;
         }
 
         .apply__arrow {
-            animation: fadeInStatic 0s linear forwards calc(1.33334s + 0.66667s);
+            animation: fadeInStatic 0s linear forwards 1.3333s;
 
             .apply-arrow-body {
-                animation: dash 0.66667s $cubic forwards calc(1.33334s + 0.66667s);
+                animation: dash 0.6666s $cubic forwards 1.3333s;
             }
 
             .apply-arrow-top {
-                animation: dash 0.66667s $cubic forwards calc(1.33334s + 1.33334s);
+                animation: dash 0.6666s $cubic forwards 1.9999s;
             }
         }
 
         .apply__frame--second {
-            animation: fadeInBottom150 $transition-duration forwards 2.66664s;
+            animation: fadeInBottom150 $transition-duration forwards 2.2222s;
         }
     }
 

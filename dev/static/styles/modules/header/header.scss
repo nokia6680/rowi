@@ -4,9 +4,28 @@
     @include flex-setting(row, space-between, center);
 
     padding: toRem(2) toRem(16);
-    margin-bottom: toRem(24);
 
-    position: relative;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+
+    background-color: transparent;
+    transition: 0.35s $cubic 0.85s;
+
+    &.opened {
+        background-color: $white;
+        transition: 0.05s $cubic;
+    }
+
+    &.scrolled {
+        background-color: $white;
+        transition: 0.35s $cubic;
+        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+    }
 
     &__logo {
         @include flex-setting(column, center, center);

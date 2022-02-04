@@ -14,39 +14,39 @@
         //2
         .how__item--first {
             .how__info {
-                animation: fadeInBottom30 $transition-duration forwards 0.66667s;
+                animation: fadeInBottom30 $transition-duration forwards 0.3333s;
             }
         }
         //3
         .how__item--second {
             .how__info {
-                animation: fadeInBottom30 $transition-duration forwards 1.33334s;
+                animation: fadeInBottom30 $transition-duration forwards 0.6666s;
             }
         }
 
         .how__item--first {
             .how__frame {
-                animation: fadeInBottom30 $transition-duration forwards 1.33334s;
+                animation: fadeInBottom30 $transition-duration forwards 0.6666s;
             }
         }
 
         //4
         .how__item--third {
             .how__info {
-                animation: fadeInBottom30 $transition-duration forwards 2.00001s;
+                animation: fadeInBottom30 $transition-duration forwards 0.9999s;
             }
         }
 
         .how__item--second {
             .how__frame {
-                animation: fadeInBottom30 $transition-duration forwards 2.00001s;
+                animation: fadeInBottom30 $transition-duration forwards 0.9999s;
             }
         }
 
         //5
         .how__item--third {
             .how__frame {
-                animation: fadeInBottom30 $transition-duration forwards 2.66668s;
+                animation: fadeInBottom30 $transition-duration forwards 1.2222s;
             }
         }
     }

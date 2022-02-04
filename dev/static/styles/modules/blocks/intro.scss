@@ -3,7 +3,7 @@
 
     @include flex-setting(column, flex-start, center);
 
-    padding: 0 toRem(16) toRem(94) toRem(16);
+    padding: toRem(82) toRem(16) toRem(94) toRem(16);
     margin-bottom: toRem(24);
 
     position: relative;
@@ -17,6 +17,9 @@
         filter: blur(45px);
         pointer-events: none;
         z-index: -1;
+
+        top: 50%;
+        left: 5vw;
     }
 
     &.loaded {
@@ -31,44 +34,44 @@
         }
 
         .intro__arrow {
-            animation: fadeInStatic 0s linear forwards calc(0.66667s + 0.2222s);
+            animation: fadeInStatic 0s linear forwards 0.8888s;
 
             .intro-arrow-body {
-                animation: dash 1.3333s $cubic forwards calc(0.66667s + 0.2222s);
+                animation: dash $transition-duration $cubic forwards 0.8888s;
             }
 
             .intro-arrow-top {
-                animation: dash $transition-duration $cubic forwards calc(1.3333s + 0.88887s);
+                animation: dash $transition-duration $cubic forwards calc(0.6666s + 0.8888s);
             }
         }
 
         .intro__subtitle-wrap {
             span:first-of-type {
-                animation: fadeInLeft 0.6667s $cubic forwards calc(0.66667s + 2.2222s);
+                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.5554s);
             }
 
             span:nth-of-type(2) {
-                animation: fadeInLeft 0.6667s $cubic forwards calc(0.66667s + 2.6666s);
+                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.7774s);
             }
 
             span:nth-of-type(3) {
-                animation: fadeInLeft 0.6667s $cubic forwards calc(0.66667s + 2.8888s);
+                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.9994s);
             }
         }
 
         .intro__frame {
             &:first-of-type {
-                animation: fadeInTop 0.6667s $cubic forwards calc(0.66667s + 2.2222s);
+                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 1.5554s);
             }
         }
 
         .intro__lines {
-            animation: fadeInStatic 0s linear forwards 3.55551s;
+            animation: fadeInStatic 0s linear forwards calc(0.6666s + 0.6666s + 1.5554s);
 
             .intro-line-1,
             .intro-line-2,
             .intro-line-3 {
-                animation: dash 0.12s $cubic forwards 3.55551s;
+                animation: dashReverse 0.12s $cubic forwards calc(0.6666s + 0.6666s + 1.5554s);
             }
         }
     }
@@ -193,12 +196,12 @@
 
         grid-template-columns: 50% 50%;
 
-        padding: 0 toRem(40) toRem(20) toRem(40);
+        padding: toRem(138) toRem(40) toRem(20) toRem(40);
         margin-bottom: toRem(80);
 
         &.loaded {
             .intro__jobs {
-                animation: fadeInTop 0.6667s $cubic forwards calc(3.55558s + 0.66667s);
+                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 2.3334s);
             }
         }
 
@@ -211,6 +214,9 @@
             position: absolute;
             filter: blur(90px);
             z-index: -1;
+
+            top: 40%;
+            left: 10vw;
         }
 
         &__title {
@@ -381,12 +387,12 @@
 
         grid-template-columns: toRem(220) 1fr toRem(264);
         grid-column-gap: toRem(64);
-        padding: 0 toRem(80) toRem(32) toRem(80);
+        padding: toRem(138) toRem(80) toRem(32) toRem(80);
 
         &.loaded {
             .intro__frame {
                 &:nth-of-type(2) {
-                    animation: fadeInBottom 0.6667s $cubic forwards calc(0.66667s + 3.00004s);
+                    animation: fadeInBottom $transition-duration $cubic forwards calc(0.6666s + 1.9994s);
                 }
             }
         }
@@ -469,11 +475,7 @@
         grid-column-gap: toRem(72);
 
         --wrapWidth: calc(100% - 1220px);
-        padding: toRem(0) calc((var(--wrapWidth) / 2)) toRem(34) calc((var(--wrapWidth) / 2));
-
-        &.loaded {
-
-        }
+        padding: toRem(138) calc((var(--wrapWidth) / 2)) toRem(34) calc((var(--wrapWidth) / 2));
 
         &__title {
             max-width: toRem(814);
@@ -484,11 +486,6 @@
                 font-size: toRem(48);
                 line-height: toRem(86);
             }
-        }
-
-        .gradient-ball {
-            top: 0;
-            left: 0;
         }
 
         &__arrow {

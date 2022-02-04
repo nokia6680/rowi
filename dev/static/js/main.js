@@ -11,6 +11,7 @@ window.addEventListener('resize', () => {
 });
 
 var body = document.querySelector('.body');
+var header = document.querySelector('.header');
 var menuOpener = document.querySelector('.header__toggle');
 var menu = document.querySelector('.nav');
 var controls = document.querySelector('.header__controls');
@@ -21,6 +22,7 @@ if (menuOpener) {
         menuOpener.classList.toggle('opened');
         menu.classList.toggle('opened');
         controls.classList.toggle('opened');
+        header.classList.toggle('opened');
      });
 };
 

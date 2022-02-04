@@ -18,11 +18,11 @@
             }
 
             .freedom__arrow {
-                animation: fadeInStatic 0s linear forwards 0.66667s;
+                animation: fadeInStatic 0s linear forwards 0.3333s;
             }
 
             .free-arrow-body {
-                animation: dash $transition-duration forwards 0.66667s;
+                animation: dash $transition-duration forwards 0.6666s;
             }
 
             .free-arrow-top {
@@ -30,18 +30,18 @@
             }
 
             &--second {
-                animation: fadeInBottom30 $transition-duration forwards 2.000001s;
+                animation: fadeInBottom30 $transition-duration forwards 2s;
             }
 
             &--third {
-                animation: fadeInBottom30 $transition-duration forwards 2.66667s;
+                animation: fadeInBottom30 $transition-duration forwards 2.3333s;
             }
 
             .freedom__lines {
-                animation: fadeInStatic 0s linear forwards 3.33335s;
+                animation: fadeInStatic 0s linear forwards 3s;
 
                 .free-iroques {
-                    animation: dash $transition-duration forwards 3.33335s;
+                    animation: dash $transition-duration forwards 3s;
                 }
             }
         }

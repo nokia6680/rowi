@@ -12,29 +12,6 @@
     --vh: 1vh;
 }
 
-.underlinePath {
-
-}
-
-.arrow {
-    animation: dash 10.55s $cubic forwards;
-}
-
-.link {
-    text-decoration: none;
-    @include flex-setting(column, center, center);
-
-    .underlinePath {
-        animation: undash 0.55s $cubic forwards;
-    }
-
-    &:hover {
-        .underlinePath {
-            animation: dash 0.55s $cubic forwards;
-        }
-    }
-}
-
 .gradient-ball {
     pointer-events: none;
 }
@@ -96,12 +73,6 @@ input,
 select,
 button { outline: none; }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
 .body {
     width: 100%;
 
@@ -111,10 +82,7 @@ button { outline: none; }
 }
 
 .main {
-
-}
-
-.hidden {
+    overflow: hidden;
 }
 
 //Модули

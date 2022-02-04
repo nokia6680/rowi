@@ -25,6 +25,16 @@
         left: 50%;
         padding: 0 toRem(32);
         transform: translate(-50%, -50%);
+
+        &.loaded {
+            .cta__title {
+                animation: fadeInTop $transition-duration $cubic forwards;
+            }
+
+            .cta__block {
+                animation: fadeInBottom $transition-duration $cubic forwards;
+            }
+        }
     }
 
     // book
@@ -36,6 +46,7 @@
         margin-bottom: toRem(8);
 
         z-index: 1;
+        animation: fadeOutTop $transition-duration $cubic forwards;
     }
 
     &__block {
@@ -44,6 +55,7 @@
         @include flex-setting(row, flex-start, center);
 
         z-index: 1;
+        animation: fadeOutBottom $transition-duration $cubic forwards;
     }
     // book
     &__description {
@@ -75,8 +87,14 @@
         }
 
         &[data-type="thirdLine"] {
-            .cta-third {
-                display: block;
+            .cta__underline--mobile {
+                .cta-third {
+                    display: block;
+
+                    path {
+                        stroke-dashoffset: 0 !important;
+                    }
+                }
             }
         }
 
@@ -140,6 +158,30 @@
                 font-size: toRem(40);
                 line-height: toRem(72);
             }
+
+            &[data-type="secondLine"] {
+                .cta__underline--tablet {
+                    .cta-second {
+                        display: block;
+
+                        path {
+                            stroke-dashoffset: 0 !important;
+                        }
+                    }
+                }
+            }
+
+            &[data-type="thirdLine"] {
+                .cta__underline--tablet {
+                    .cta-third {
+                        display: block;
+
+                        path {
+                            stroke-dashoffset: 0 !important;
+                        }
+                    }
+                }
+            }
         }
 
         &__underline {
@@ -187,15 +229,96 @@
                 font-size: toRem(48);
                 line-height: toRem(86);
             }
+
+            &[data-type="thirdLine"] {
+                .cta-third {
+                    display: block;
+                }
+
+                &:hover,
+                &:active {
+                    .cta__underline {
+                        animation: fadeInStatic 0s $cubic forwards;
+
+                        path {
+                            animation: dash 0.35s $cubic forwards;
+                        }
+                    }
+                }
+            }
+
+            &[data-type="secondLine"] {
+                .cta-second {
+                    display: block;
+                }
+
+                &:hover,
+                &:active {
+                    .cta__underline {
+                        animation: fadeInStatic 0s $cubic forwards;
+
+                        path {
+                            animation: dash 0.35s $cubic forwards;
+                        }
+                    }
+                }
+            }
+
+            &[data-type="firstLine"],
+            &[data-type="fourthLine"] {
+                &:hover,
+                &:active {
+                    .cta__underline {
+                        animation: fadeInStatic 0s $cubic forwards;
+
+                        .line-one {
+                            animation: dash 0.35s $cubic forwards;
+                        }
+
+                        .line-two {
+                            animation: dashReverse 0.35s $cubic forwards 0.35s;
+                        }
+                    }
+                }
+            }
         }
 
         &__underline {
+            animation: fadeOutStatic 0s $cubic forwards 0.7s;
+
             &--tablet {
                 display: none;
             }
 
             &--desktop {
                 display: block;
+            }
+
+            .cta-first {
+                .line-one {
+                    animation: undash 0.35s $cubic forwards;
+                }
+
+                .line-two {
+                    animation: undashReverse 0.35s $cubic backwards 0.35s;
+                }
+            }
+
+            .cta-fourth {
+                .line-one {
+                    animation: undash 0.35s $cubic forwards;
+                }
+
+                .line-two {
+                    animation: undashReverse 0.35s $cubic backwards 0.35s;
+                }
+            }
+
+            .cta-second,
+            .cta-third {
+                path {
+                    animation: undash 0.35s $cubic forwards;
+                }
             }
         }
     }

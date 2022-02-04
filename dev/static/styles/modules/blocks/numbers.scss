@@ -15,22 +15,22 @@
         //2
         .numbers__item--first {
             .numbers__icon {
-                animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                animation: fadeInBottom150 $transition-duration forwards 0.3333s;
             }
 
             .numbers__name {
-                animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                animation: fadeInBottom150 $transition-duration forwards 0.3333s;
             }
 
             .numbers__description {
-                animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                animation: fadeInBottom150 $transition-duration forwards 0.3333s;
             }
 
             .numbers__arrow {
-                animation: fadeInStatic 0s linear forwards 1.33334s;
+                animation: fadeInStatic 0s linear forwards 1s;
 
                 .num-arrow-body {
-                    animation: dash $transition-duration $cubic forwards 1.33334s;
+                    animation: dash $transition-duration $cubic forwards 1s;
                 }
             }
         }
@@ -38,22 +38,22 @@
         //3
         .numbers__item--second {
             .numbers__icon {
-                animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                animation: fadeInBottom150 $transition-duration forwards 1.5555s;
             }
 
             .numbers__name {
-                animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                animation: fadeInBottom150 $transition-duration forwards 1.5555s;
             }
 
             .numbers__description {
-                animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                animation: fadeInBottom150 $transition-duration forwards 1.5555s;
             }
 
             .numbers__arrow {
-                animation: fadeInStatic 0s linear forwards 2.33334s;
+                animation: fadeInStatic 0s linear forwards 2s;
 
                 .num-arrow-body {
-                    animation: dash $transition-duration $cubic forwards 2.33334s;
+                    animation: dash $transition-duration $cubic forwards 2s;
                 }
             }
         }
@@ -61,26 +61,26 @@
         //4
         .numbers__item--third{
             .numbers__icon {
-                animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                animation: fadeInBottom150 $transition-duration forwards 2.5555s;
             }
 
             .numbers__name {
-                animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                animation: fadeInBottom150 $transition-duration forwards 2.5555s;
             }
 
             .numbers__description {
-                animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                animation: fadeInBottom150 $transition-duration forwards 2.5555s;
             }
 
             .numbers__arrow {
-                animation: fadeInStatic 0s linear forwards 3.33334s;
+                animation: fadeInStatic 0s linear forwards 3s;
 
                 .num-arrow-body {
-                    animation: dash $transition-duration $cubic forwards 3.33334s;
+                    animation: dash $transition-duration $cubic forwards 3s;
                 }
 
                 .num-arrow-top {
-                    animation: fadeInStatic 0s linear forwards 4.00001s;
+                    animation: fadeInStatic 0s linear forwards 3.6666s;
                 }
             }
         }
@@ -88,15 +88,15 @@
         //5
         .numbers__item--fourth{
             .numbers__icon {
-                animation: fadeInBottom150 $transition-duration forwards 4s;
+                animation: fadeInBottom150 $transition-duration forwards 3.5555s;
             }
 
             .numbers__name {
-                animation: fadeInBottom150 $transition-duration forwards 4s;
+                animation: fadeInBottom150 $transition-duration forwards 3.5555s;
             }
 
             .numbers__description {
-                animation: fadeInBottom150 $transition-duration forwards 4s;
+                animation: fadeInBottom150 $transition-duration forwards 3.5555s;
             }
         }
     }
@@ -253,60 +253,60 @@
             //2
             .numbers__item--first {
                 .numbers__icon {
-                    animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.3333s;
                 }
 
                 .numbers__name {
-                    animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.3333s;
                 }
 
                 .numbers__description {
-                    animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.3333s;
                 }
             }
 
             //3
             .numbers__item--second {
                 .numbers__icon {
-                    animation: fadeInBottom150 $transition-duration forwards 1.33337s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.6666s;
                 }
 
                 .numbers__name {
-                    animation: fadeInBottom150 $transition-duration forwards 1.33337s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.6666s;
                 }
 
                 .numbers__description {
-                    animation: fadeInBottom150 $transition-duration forwards 1.33337s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.6666s;
                 }
             }
 
             //4
             .numbers__item--third{
                 .numbers__icon {
-                    animation: fadeInBottom150 $transition-duration forwards 2.00001s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.9999s;
                 }
 
                 .numbers__name {
-                    animation: fadeInBottom150 $transition-duration forwards 2.00001s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.9999s;
                 }
 
                 .numbers__description {
-                    animation: fadeInBottom150 $transition-duration forwards 2.00001s;
+                    animation: fadeInBottom150 $transition-duration forwards 0.9999s;
                 }
             }
 
             //5
             .numbers__item--fourth{
                 .numbers__icon {
-                    animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                    animation: fadeInBottom150 $transition-duration forwards 1.2222s;
                 }
 
                 .numbers__name {
-                    animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                    animation: fadeInBottom150 $transition-duration forwards 1.2222s;
                 }
 
                 .numbers__description {
-                    animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                    animation: fadeInBottom150 $transition-duration forwards 1.2222s;
                 }
             }
         }
@@ -433,26 +433,26 @@
                 //2
                 .numbers__item--first {
                     .numbers__icon {
-                        animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                        animation: fadeInBottom150 $transition-duration forwards 0.3333s;
                     }
 
                     .numbers__name {
-                        animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                        animation: fadeInBottom150 $transition-duration forwards 0.3333s;
                     }
 
                     .numbers__description {
-                        animation: fadeInBottom150 $transition-duration forwards 0.66667s;
+                        animation: fadeInBottom150 $transition-duration forwards 0.3333s;
                     }
 
                     .numbers__arrow {
-                        animation: fadeInStatic 0s linear forwards 1.33334s;
+                        animation: fadeInStatic 0s linear forwards 1s;
 
                         .num-arrow-body {
-                            animation: dash $transition-duration $cubic forwards 1.33334s;
+                            animation: dash $transition-duration $cubic forwards 1s;
                         }
 
                         .num-arrow-top {
-                            animation: fadeInStatic 0s linear forwards 1.99992s;
+                            animation: fadeInStatic 0s linear forwards 1.6666s;
                         }
                     }
                 }
@@ -460,26 +460,26 @@
                 //3
                 .numbers__item--second {
                     .numbers__icon {
-                        animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                        animation: fadeInBottom150 $transition-duration forwards 1.5555s;
                     }
 
                     .numbers__name {
-                        animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                        animation: fadeInBottom150 $transition-duration forwards 1.5555s;
                     }
 
                     .numbers__description {
-                        animation: fadeInBottom150 $transition-duration forwards 1.66668s;
+                        animation: fadeInBottom150 $transition-duration forwards 1.5555s;
                     }
 
                     .numbers__arrow {
-                        animation: fadeInStatic 0s linear forwards 2.33334s;
+                        animation: fadeInStatic 0s linear forwards 2s;
 
                         .num-arrow-body {
-                            animation: dashReverse $transition-duration $cubic forwards 2.33334s;
+                            animation: dashReverse $transition-duration $cubic forwards 2s;
                         }
 
                         .num-arrow-top {
-                            animation: fadeInStatic 0s linear forwards 3.00002s;
+                            animation: fadeInStatic 0s linear forwards 2.6666s;
                         }
                     }
                 }
@@ -487,26 +487,26 @@
                 //4
                 .numbers__item--third{
                     .numbers__icon {
-                        animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                        animation: fadeInBottom150 $transition-duration forwards 2.5555s;
                     }
 
                     .numbers__name {
-                        animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                        animation: fadeInBottom150 $transition-duration forwards 2.5555s;
                     }
 
                     .numbers__description {
-                        animation: fadeInBottom150 $transition-duration forwards 2.66668s;
+                        animation: fadeInBottom150 $transition-duration forwards 2.5555s;
                     }
 
                     .numbers__arrow {
-                        animation: fadeInStatic 0s linear forwards 3.33334s;
+                        animation: fadeInStatic 0s linear forwards 3s;
 
                         .num-arrow-body {
-                            animation: dash $transition-duration $cubic forwards 3.33334s;
+                            animation: dash $transition-duration $cubic forwards 3s;
                         }
 
                         .num-arrow-top {
-                            animation: fadeInStatic 0s linear forwards 4.00001s;
+                            animation: fadeInStatic 0s linear forwards 3.6666s;
                         }
                     }
                 }
@@ -514,15 +514,15 @@
                 //5
                 .numbers__item--fourth{
                     .numbers__icon {
-                        animation: fadeInBottom150 $transition-duration forwards 3.77777s;
+                        animation: fadeInBottom150 $transition-duration forwards 3.5555s;
                     }
 
                     .numbers__name {
-                        animation: fadeInBottom150 $transition-duration forwards 3.77777s;
+                        animation: fadeInBottom150 $transition-duration forwards 3.5555s;
                     }
 
                     .numbers__description {
-                        animation: fadeInBottom150 $transition-duration forwards 3.77777s;
+                        animation: fadeInBottom150 $transition-duration forwards 3.5555s;
                     }
                 }
             }

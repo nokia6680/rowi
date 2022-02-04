@@ -1,4 +1,14 @@
 // Расчеты для переползания текста
+$(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 100) {
+            $('header').addClass('scrolled');
+        } else {
+            $('header').removeClass('scrolled');
+        }
+    });
+});
+
 
 function animateScroll(coords, offset) {
     var browserHeight = window.innerHeight;
@@ -34,7 +44,7 @@ function animateScroll(coords, offset) {
     var collision7 = jobTop - scrollHeight;
     var collision9 = applyTop - scrollHeight;
 
-    if (window.innerWidth >= 375) {
+    if (window.innerWidth >= 320) {
         //console.log(freedomBlock.getBoundingClientRect(), collision2, freedomTop);
 
         if (collision < visibleHeight) {

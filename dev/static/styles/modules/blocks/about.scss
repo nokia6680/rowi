@@ -13,51 +13,51 @@
         }
 
         .about-overline {
-            animation: dash 0.66667s $cubic forwards 0.66667s;
+            animation: dash $transition-duration $cubic forwards 0.3333s;
         }
 
         //2
         .about__title-span--second {
-            animation: fadeInBottom30 $transition-duration forwards 1.33334s;
+            animation: fadeInBottom30 $transition-duration forwards 0.6666s;
         }
 
         //3
         .about__subtitle {
-            animation: fadeInBottom30 $transition-duration forwards 2.00001s;
+            animation: fadeInBottom30 $transition-duration forwards 1.3333s;
         }
 
         //4
         .about__player {
-            animation: fadeInBottom30 $transition-duration forwards 2.66667s;
+            animation: fadeInBottom30 $transition-duration forwards 1.6666s;
         }
 
         .about__play {
-            animation: fadeInStatic 0s linear forwards calc(2.66667s + 0.66667s);
+            animation: fadeInStatic 0s linear forwards 1.9999s;
         }
 
         .about__show {
-            animation: fadeInBottom30 $transition-duration forwards 2.99997s;
+            animation: fadeInBottom30 $transition-duration forwards 2.2222s;
         }
 
         //5
         .about__item:first-of-type {
-            animation: fadeInBottom30 $transition-duration forwards 3.55557s;
+            animation: fadeInBottom30 $transition-duration forwards 2.5555s;
         }
 
         .about__item:nth-of-type(2) {
-            animation: fadeInBottom30 $transition-duration forwards 3.88887s;
+            animation: fadeInBottom30 $transition-duration forwards 2.8888s;
         }
 
         .about__item:nth-of-type(3) {
-            animation: fadeInBottom30 $transition-duration forwards 4.11117s;
+            animation: fadeInBottom30 $transition-duration forwards 3.1111s;
         }
 
         .about__item:last-of-type {
-            animation: fadeInBottom30 $transition-duration forwards 4.44447s;
+            animation: fadeInBottom30 $transition-duration forwards 3.4444s;
         }
 
         .about-line {
-            animation: dash 0.33337s $cubic forwards 4.66667s;
+            animation: dashReverse 0.33337s $cubic forwards 3.6666s;
         }
     }
 

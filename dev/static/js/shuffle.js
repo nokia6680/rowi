@@ -10,17 +10,6 @@ var ctaTitles = [
   "Не из IT, но хочешь в команду?"
 ];
 
-var ctaDescriptions = [
-    "Действуй – ",
-    "Все–равно",
-    ""
-];
-
-var ctaLinks = [
-    "пиши!",
-    "пиши нам!"
-];
-
 var ctaLinksClasses = [
     "secondLine",
     "thirdLine",
@@ -32,27 +21,72 @@ function reloadText() {
     var ctaDescriptionsWrap = document.querySelector('.cta__description');
     var ctaLinksWrap = document.querySelector('.cta__link');
     var ctaBlock = document.querySelector('.cta__button');
-
+    var ctaWrapper = document.querySelector('.cta__wrapper');
     var ctaTitleItem = ctaTitles[Math.floor(Math.random()*ctaTitles.length)];
-    var ctaDescriptionsItem = ctaDescriptions[Math.floor(Math.random()*ctaDescriptions.length)];
-    var ctaLinksItem = ctaLinks[Math.floor(Math.random()*ctaLinks.length)]
-
     var ctaLinksDecoration = ctaLinksClasses[Math.floor(Math.random()*ctaLinksClasses.length)];
 
     ctaTitleWrap.innerHTML = ctaTitleItem;
-    ctaDescriptionsWrap.innerHTML = ctaDescriptionsItem;
-    ctaLinksWrap.innerHTML = ctaLinksItem;
 
-    setTimeout(reloadText, 3000);
+    setTimeout(reloadText, 7000);
+    ctaWrapper.classList.add('loaded');
 
+    setTimeout(function() {
+        return ctaWrapper.classList.remove('loaded');
+    }, 6444);
     //console.log(ctaLinksItem);
 
-    if (ctaLinksItem === 'пиши нам!') {
-        ctaBlock.setAttribute('data-type', 'firstLine');
+    if (ctaTitleItem === 'Ещё сомневаешься?') {
+        ctaBlock.setAttribute('data-type', ctaLinksDecoration);
+        ctaDescriptionsWrap.innerHTML = 'Просто '
+        ctaLinksWrap.innerHTML = 'напиши!';
     }
 
-    else {
+    if (ctaTitleItem === 'Не нашел нужную вакансию?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
+        ctaDescriptionsWrap.innerHTML = 'Все равно '
+        ctaLinksWrap.innerHTML = 'пиши!';
+    }
+
+    if (ctaTitleItem === 'Не хватает опыта?') {
+        ctaBlock.setAttribute('data-type', ctaLinksDecoration);
+        ctaDescriptionsWrap.innerHTML = 'Все равно '
+        ctaLinksWrap.innerHTML = 'пиши!';
+    }
+
+    if (ctaTitleItem === 'Живешь в другом городе?') {
+        ctaBlock.setAttribute('data-type', ctaLinksDecoration);
+        ctaDescriptionsWrap.innerHTML = 'Все равно '
+        ctaLinksWrap.innerHTML = 'напиши!';
+    }
+
+    if (ctaTitleItem === 'Остались вопросы?') {
+        ctaBlock.setAttribute('data-type', 'firstLine');
+        ctaDescriptionsWrap.innerHTML = ''
+        ctaLinksWrap.innerHTML = 'Напиши нам!';
+    }
+
+    if (ctaTitleItem === 'Хочешь увидеть офис и будущих коллег?') {
+        ctaBlock.setAttribute('data-type', ctaLinksDecoration);
+        ctaDescriptionsWrap.innerHTML = 'Действуй - '
+        ctaLinksWrap.innerHTML = 'пиши!';
+    }
+
+    if (ctaTitleItem === 'Хочешь пообщаться?') {
+        ctaBlock.setAttribute('data-type', 'firstLine');
+        ctaDescriptionsWrap.innerHTML = 'Просто '
+        ctaLinksWrap.innerHTML = 'напиши нам!';
+    }
+
+    if (ctaTitleItem === 'Хочешь узнать больше?') {
+        ctaBlock.setAttribute('data-type', ctaLinksDecoration);
+        ctaDescriptionsWrap.innerHTML = 'Скорее '
+        ctaLinksWrap.innerHTML = 'пиши!';
+    }
+
+    if (ctaTitleItem === 'Не из IT, но хочешь в команду?') {
+        ctaBlock.setAttribute('data-type', 'firstLine');
+        ctaDescriptionsWrap.innerHTML = ''
+        ctaLinksWrap.innerHTML = 'Напиши нам!';
     }
 }
 
