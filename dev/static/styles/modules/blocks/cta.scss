@@ -103,6 +103,29 @@
             @include font-setting($primary-font, toRem(24), toRem(43), 350, $blue);
         }
 
+        .cta__link {
+            display: inline-block;
+            overflow: hidden;
+
+            &.play {
+                .letter3 {
+                    transform: translateY(-100%);
+                }
+
+            }
+
+            .letter3 {
+                display: inline-block;
+                transition: transform 0.6s $cubic;
+            }
+
+            @for $i from 0 through 16 {
+                .letter3:nth-child(#{$i + 1}) {
+                    transition-delay: 0.015s * $i;
+                }
+            }
+        }
+
         &[data-type="firstLine"] {
             .cta-first {
                 display: block;
@@ -307,6 +330,14 @@
                         .line-two {
                             animation: dashReverse 0.35s $cubic forwards 0.35s;
                         }
+                    }
+                }
+            }
+
+            .cta__link {
+                &.play {
+                    & + .cta__underline {
+                        display: none;
                     }
                 }
             }

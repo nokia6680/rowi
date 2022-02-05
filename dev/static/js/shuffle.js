@@ -121,6 +121,7 @@ function reloadText() {
     }
 
     let descriptions = document.querySelectorAll('.cta__description');
+    let links = document.querySelectorAll('.cta__link');
 
     descriptions.forEach(element => {
         let innerText2 = element.innerText;
@@ -144,13 +145,43 @@ function reloadText() {
         descriptions.forEach(element => {
             element.classList.add('play');
         })
-    }, 6444);
+    }, 6000);
 
     setTimeout(() => {
         descriptions.forEach(element => {
             element.classList.remove('play');
         })
-    }, 600);
+    }, 1100);
+
+    links.forEach(element => {
+        let innerText3 = element.innerText;
+        element.innerHTML = '';
+
+        let textContainer3 = document.createElement('div');
+        textContainer3.classList.add('block');
+
+        for (let letter of innerText3) {
+            let span3 = document.createElement('span');
+            span3.innerText = letter.trim() === '' ? '\xa0' : letter;
+            span3.classList.add('letter3');
+            textContainer3.appendChild(span3);
+        }
+
+        element.appendChild(textContainer3);
+        //element.appendChild(textContainer.cloneNode(true));
+    });
+
+    setTimeout(() => {
+        links.forEach(element => {
+            element.classList.add('play');
+        })
+    }, 6000);
+
+    setTimeout(() => {
+        links.forEach(element => {
+            element.classList.remove('play');
+        })
+    }, 1100);
 }
 
 reloadText();
