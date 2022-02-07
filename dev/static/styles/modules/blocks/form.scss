@@ -209,34 +209,47 @@
             justify-content: center;
             align-items: center;
 
-            padding: toRem(48) 0;
             position: relative;
 
             top: auto;
             right: auto;
-            background: rgba(20, 0, 75, 0.02);
-            border: toRem(2) dashed rgba(20, 0, 75, 0.24);
-            border-radius: toRem(8);
-            transition: 0.35s $cubic;
 
-            cursor: pointer;
+            padding-left: 0;
+            padding-right: 0;
 
-            &:hover,
-            &:active {
-                background: rgba(65, 100, 238, 0.02);
-                border: 2px dashed #4164EE;
-                border-radius: 8px;
+            .form__label {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                @include font-setting($primary-font, toRem(24), toRem(37), 350, rgba(20, 0, 75, 1));
+                opacity: 1;
+                transition: 0.35s $cubic;
+                padding: toRem(48) 0 toRem(78) 0;
+                margin-bottom: 0;
+                position: relative;
+
+                top: auto;
+                right: auto;
+                background: rgba(20, 0, 75, 0.02);
+                border: toRem(2) dashed rgba(20, 0, 75, 0.24);
+                border-radius: toRem(8);
                 transition: 0.35s $cubic;
 
+                cursor: pointer;
 
-                .form__label,
-                .form__rules {
-                    color: $blue;
+                &:hover,
+                &:active {
+                    background: rgba(65, 100, 238, 0.02);
+                    border: 2px dashed #4164EE;
                     transition: 0.35s $cubic;
-                }
+                    color: $blue;
 
-                .form__label {
-                    opacity: 1;
+                    & + .form__rules {
+                        color: rgba(65, 100, 238, 1);
+                        transition: 0.35s $cubic;
+                    }
                 }
             }
         }
@@ -249,8 +262,6 @@
             display: block;
             @include font-setting($primary-font, toRem(24), toRem(37), 350, $dark);
             margin-bottom: toRem(8);
-            opacity: 0.3;
-            transition: 0.35s $cubic;
         }
 
         &__rules {
@@ -259,11 +270,22 @@
             @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
             opacity: 0.3;
             transition: 0.35s $cubic;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: toRem(48);
+
+            pointer-events: none;
         }
 
         &__link {
             order: 3;
             margin-bottom: 0;
+            margin-top: toRem(40);
+
+            .form__label {
+                margin-bottom: 0;
+            }
         }
 
         &__upload {

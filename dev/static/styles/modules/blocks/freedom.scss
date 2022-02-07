@@ -60,8 +60,8 @@
 
     &__title {
         z-index: 1;
-        @include font-setting($primary-font, toRem(40), toRem(56), 350, $dark);
-        margin-bottom: toRem(40);
+        @include font-setting($primary-font, toRem(46), toRem(64), 350, $dark);
+        margin-bottom: toRem(72);
         opacity: 0;
 
         &:last-of-type {
@@ -73,7 +73,7 @@
         }
 
         &--second {
-            padding-left: toRem(30);
+            align-self: center;
         }
 
         &--third {
@@ -89,8 +89,8 @@
         width: toRem(40);
         height: toRem(58);
 
-        bottom: toRem(-46);
-        right: toRem(-50);
+        bottom: toRem(-58);
+        right: toRem(-49);
 
         opacity: 0;
 

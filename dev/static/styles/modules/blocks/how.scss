@@ -150,10 +150,25 @@
 
         opacity: 0;
 
+        overflow: hidden;
+
+        &:hover,
+        &:active {
+            .how__frame-image {
+                will-change: transform;
+                transform: scale(1.16);
+                transition: 0.35s $cubic;
+                transform-origin: center;
+            }
+        }
+
         &-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            will-change: transform;
+            transition: 0.35s $cubic;
+            transform-origin: center;
         }
     }
 }

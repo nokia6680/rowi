@@ -27,8 +27,8 @@ section.about#about
             source(src="static/videos/about-video.webm" type="video/webm")
         button(type="button").about__play
         
-    p.about__show Посмотреть 
-        a(href="https://www.rowi.com" target="_blank") Rowi.com
+    a(href="https://www.rowi.com" target="_blank").about__show Посмотреть 
+        span Rowi.com
         
         svg(class="about__show-arrow about__show-arrow--tb" width="103" height="15" viewBox="0 0 103 15" fill="none" xmlns="http://www.w3.org/2000/svg")
             path(class="show-arrow-body" d="M1.375 5.5C37 11.125 77.5 12.75 100.875 6.25" stroke="#4164EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
@@ -37,26 +37,18 @@ section.about#about
             path(class="show-arrow-static" d="M1.76667 9.60584C1.22035 9.5249 0.711853 9.90217 0.630914 10.4485C0.549976 10.9948 0.927243 11.5033 1.47357 11.5842L1.76667 9.60584ZM86.6089 7.9463C87.1466 7.81996 87.48 7.28169 87.3537 6.74405C87.2273 6.20641 86.6891 5.87299 86.1514 5.99934L86.6089 7.9463ZM82.2736 1.25104C81.9064 0.838557 81.2743 0.801895 80.8618 1.16915C80.4493 1.53641 80.4127 2.16851 80.7799 2.58099L82.2736 1.25104ZM87.8522 6.11254L88.6806 6.6727C88.8553 6.41444 88.8995 6.08952 88.8001 5.794C88.7008 5.49848 88.4694 5.26618 88.1742 5.1658L87.8522 6.11254ZM84.2585 12.5154L85.1431 12.9819C85.1519 12.9651 85.1603 12.9481 85.1682 12.9308L84.2585 12.5154ZM82.8934 13.5448C82.8181 14.0919 83.2007 14.5965 83.7478 14.6717C84.2949 14.747 84.7995 14.3644 84.8747 13.8173L82.8934 13.5448ZM1.47357 11.5842C29.8414 15.787 58.4476 14.5642 86.6089 7.9463L86.1514 5.99934C58.2338 12.5599 29.8823 13.7712 1.76667 9.60584L1.47357 11.5842ZM80.7799 2.58099C82.6066 4.63257 84.9323 6.17568 87.5302 7.05927L88.1742 5.1658C85.904 4.39363 83.8708 3.04487 82.2736 1.25104L80.7799 2.58099ZM87.0239 5.55238C85.6197 7.62883 84.3905 9.81892 83.3489 12.1001L85.1682 12.9308C86.1638 10.7505 87.3386 8.65726 88.6806 6.6727L87.0239 5.55238ZM83.374 12.049C83.1279 12.5157 82.9653 13.022 82.8934 13.5448L84.8747 13.8173C84.9149 13.525 85.0058 13.2423 85.1431 12.9819L83.374 12.049Z" fill="#4164EE")
     ul.about__list
         li.about__item
-            a(href="https://factoringplus.ru/" target="_blank").about__link
+            b.about__link
                 span Факторинг
             p.about__description Есть контракты, по которым поставщик вынужден ждать оплату. С факторингом он получает деньги сразу и может продолжать работу
         li.about__item
-            a(href="https://rowi.com/garant/" target="_blank").about__link
+            b.about__link
                 span Банковские гарантии
             p.about__description Необходимы для участия в госзакупках. Гарантируют заказчику исполнение обязательств по контракту
         li.about__item
-            a(href="https://rowi.com/contract/" target="_blank").about__link
+            b.about__link
                 span Кредит на исполнение контракта
             p.about__description Выдаем деньги до завершения работ, чтобы обеспечить исполнение госконтракта
         li.about__item
-            a(href="https://sellplus.ru/?utm_source=rowitech&utm_medium=direct&utm_campaign=quick_request&utm_content=header&utm_term=pc" target="_blank").about__link
+            b.about__link
                 span Финансирование продавцов маркетплейсов
-                svg(class="about__lines about__lines--mobile" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(class="about-line" d="M1.99121 18.7715C4.02693 19.0718 10.3662 20.7851 13.1519 22.1628" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                    path(class="about-line" d="M3.20508 1.70898C7.06222 7.02556 11.9551 12.819 16.4372 16.8639" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                    path(class="about-line" d="M19.2949 1.37305C19.8128 3.05104 20.6164 10.4872 21.9378 13.4369" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                svg(class="about__lines about__lines--tablet" width="38" height="40" viewBox="0 0 38 40" fill="none" xmlns="http://www.w3.org/2000/svg")
-                    path(class="about-line" d="M1.23438 32.5186C4.79688 33.0498 15.8906 36.0811 20.7656 38.5186" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                    path(class="about-line" d="M3.35938 2.33105C10.1094 11.7373 18.6719 21.9873 26.5156 29.1436" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-                    path(class="about-line" d="M31.5156 1.7373C32.4219 4.70605 33.8281 17.8623 36.1406 23.0811" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
             p.about__description Выдаем деньги за товар до того, как со склада будет продана вся партия. Продавец наращивает обороты

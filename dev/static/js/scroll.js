@@ -32,7 +32,7 @@ function animateScroll(coords, offset) {
     var scrollHeight = window.pageYOffset;
 
     var heightPercent = browserHeight / 100;
-    var visibleHeight = heightPercent * 50;
+    var visibleHeight = heightPercent * 85;
     console.log(visibleHeight);
 
     var collision = stackTop - scrollHeight;

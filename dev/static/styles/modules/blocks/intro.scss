@@ -47,31 +47,31 @@
 
         .intro__subtitle-wrap {
             span:first-of-type {
-                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.5554s);
+                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 0.8888s);
             }
 
             span:nth-of-type(2) {
-                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.7774s);
+                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1s);
             }
 
             span:nth-of-type(3) {
-                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.9994s);
+                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.2222s);
             }
         }
 
         .intro__frame {
             &:first-of-type {
-                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 1.5554s);
+                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 0.8888s);
             }
         }
 
         .intro__lines {
-            animation: fadeInStatic 0s linear forwards calc(0.6666s + 0.6666s + 1.5554s);
+            animation: fadeInStatic 0s linear forwards calc(0.6666s + 0.6666s + 0.8888s);
 
             .intro-line-1,
             .intro-line-2,
             .intro-line-3 {
-                animation: dashReverse 0.12s $cubic forwards calc(0.6666s + 0.6666s + 1.5554s);
+                animation: dashReverse 0.12s $cubic forwards calc(0.6666s + 0.6666s + 0.8888s);
             }
         }
     }
@@ -127,11 +127,25 @@
         margin-bottom: toRem(40);
         z-index: 1;
         opacity: 0;
+        overflow: hidden;
+
+        &:hover,
+        &:active {
+            .intro__frame-image {
+                will-change: transform;
+                transform: scale(1.16);
+                transition: 0.35s $cubic;
+                transform-origin: center;
+            }
+        }
 
         &-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            will-change: transform;
+            transition: 0.35s $cubic;
+            transform-origin: center;
         }
 
         &--second {
@@ -201,7 +215,7 @@
 
         &.loaded {
             .intro__jobs {
-                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 2.3334s);
+                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 2s);
             }
         }
 
@@ -392,7 +406,7 @@
         &.loaded {
             .intro__frame {
                 &:nth-of-type(2) {
-                    animation: fadeInBottom $transition-duration $cubic forwards calc(0.6666s + 1.9994s);
+                    animation: fadeInBottom $transition-duration $cubic forwards calc(0.6666s + 1.2222s);
                 }
             }
         }

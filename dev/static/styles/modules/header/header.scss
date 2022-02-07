@@ -30,8 +30,27 @@
     &__logo {
         @include flex-setting(column, center, center);
 
-        width: toRem(98);
-        height: toRem(24);
+        width: toRem(130);
+        height: toRem(31);
+    }
+
+    &__link {
+        @include flex-setting(column, center, center);
+
+        width: toRem(130);
+        height: toRem(31);    
+    }
+
+    &__frame {
+        @include flex-setting(column, center, center);
+
+        width: 100%;
+        height: 100%;
+
+        &-image {
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__controls {

@@ -52,6 +52,13 @@ img {
   display: block;
 }
 
+input {
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 input,
 button,
 textarea,

@@ -141,6 +141,26 @@
         }
     }
 
+    &__frame {
+        overflow: hidden;
+
+        &:hover,
+        &:active {
+            .benefits__frame-image {
+                will-change: transform;
+                transform: scale(1.16);
+                transition: 0.35s $cubic;
+                transform-origin: center;
+            }
+        }
+
+        &-image {
+            will-change: transform;
+            transition: 0.35s $cubic;
+            transform-origin: center;
+        }
+    }
+
     &__player {
         @include flex-setting(column, center, center);
         width: 100%;

@@ -27,7 +27,7 @@ function introPositionCircle(e) {
     var introRelX = e.clientX;
     var introRelY = e.clientY;
 
-    TweenMax.to(introCircle, 0.8, {
+    TweenMax.to(introCircle, 3, {
         x: introRelX,
         y: introRelY
     });
@@ -57,7 +57,7 @@ function freedomPositionCircle(e) {
     var freeRelX = e.clientX;
     var freeRelY = e.clientY;
 
-    TweenMax.to(freedomCircle, 0.8, {
+    TweenMax.to(freedomCircle, 3, {
         x: freeRelX,
         y: freeRelY
     });
@@ -86,7 +86,7 @@ function ctaPositionCircle(e) {
     var ctaRelX = e.clientX;
     var ctaRelY = e.clientY;
 
-    TweenMax.to(ctaCircle, 0.8, {
+    TweenMax.to(ctaCircle, 3, {
         x: ctaRelX,
         y: ctaRelY
     });

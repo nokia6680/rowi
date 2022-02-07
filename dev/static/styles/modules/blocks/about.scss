@@ -55,10 +55,6 @@
         .about__item:last-of-type {
             animation: fadeInBottom30 $transition-duration forwards 3.4444s;
         }
-
-        .about-line {
-            animation: dashReverse 0.33337s $cubic forwards 3.6666s;
-        }
     }
 
     &__title {
@@ -168,6 +164,11 @@
                 transition: transform 0.35s $cubic;
             }
         }
+
+        &.playState {
+            visibility: hidden;
+            transition: 0.35s $cubic;
+        }
     }
 
     &__show {
@@ -180,11 +181,7 @@
 
         @include font-setting($primary-font, toRem(14), toRem(22), 500, $blue);
         text-align: left;
-
-        a {
-            color: $blue;
-            text-decoration: none;
-        }
+        text-decoration: none;
 
         svg {
             position: absolute;
@@ -228,18 +225,6 @@
         .about__link {
             position: relative;
         }
-
-        .about__lines {
-            position: absolute;
-            @include flex-setting(column, center, center);
-
-            top: toRem(-13);
-            left: toRem(-17);
-
-            &--tablet {
-                display: none;
-            }
-        }
     }
 
     &__link {
@@ -250,13 +235,6 @@
         span {
             @include font-setting($primary-font, toRem(18), toRem(25), 500, $dark);
             transition: 0.35s $cubic;
-        }
-
-        &:hover {
-            span {
-                color: $blue;
-                transition: 0.35s $cubic;
-            }
         }
     }
 
@@ -362,21 +340,6 @@
 
         &__item:nth-of-type(even) {
             align-self: flex-start;
-        }
-
-
-        &__item:last-of-type {
-            .about__lines {
-                top: toRem(-30);
-                left: toRem(-34);
-
-                &--mobile {
-                    display: none;
-                }
-                &--tablet {
-                    display: flex;
-                }
-            }
         }
 
         &__link {
@@ -510,13 +473,6 @@
 
         &__item {
             max-width: toRem(392);
-        }
-
-        &__item:last-of-type {
-            .about__lines {
-                top: toRem(-38);
-                left: toRem(-41);
-            }
         }
     }
 }
