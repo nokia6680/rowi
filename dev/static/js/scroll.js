@@ -1,15 +1,3 @@
-// Расчеты для переползания текста
-$(function() {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() >= 100) {
-            $('header').addClass('scrolled');
-        } else {
-            $('header').removeClass('scrolled');
-        }
-    });
-});
-
-
 function animateScroll(coords, offset) {
     var browserHeight = window.innerHeight;
     var stackBlock = document.getElementById("stack");
@@ -33,7 +21,7 @@ function animateScroll(coords, offset) {
 
     var heightPercent = browserHeight / 100;
     var visibleHeight = heightPercent * 85;
-    console.log(visibleHeight);
+//    console.log(visibleHeight);
 
     var collision = stackTop - scrollHeight;
     var collision2 = freedomTop - scrollHeight;
@@ -61,6 +49,7 @@ function animateScroll(coords, offset) {
 
         if (collision4 < visibleHeight) {
             beneBlock.classList.add('loaded');
+            //console.log(collision4);
         }
 
         if (collision5 < visibleHeight) {

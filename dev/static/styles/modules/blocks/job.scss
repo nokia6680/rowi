@@ -5,7 +5,6 @@
 
     padding: toRem(24) toRem(16);
     margin-bottom: toRem(24);
-    position: relative;
 
     &.loaded {
         .job__title {
@@ -162,6 +161,7 @@
             padding-top: toRem(37);
             padding-bottom: toRem(11);
             overflow: visible;
+            position: relative;
             transition: max-height 0.55s $cubic, padding-top 0.2s linear, padding-bottom 0.2s linear;
 
             .job__content-item {
@@ -277,6 +277,27 @@
         svg {
             display: none;
         }
+
+        &.active {
+            & ~ .job__dropdown {
+                    display: flex;
+
+                    .job__dropdown-wrap {
+                        max-height: toRem(294);
+                        transition: max-height 1s $cubic;
+                    }
+
+                    .job__dropdown-list {
+                        opacity: 1;
+                        transition: opacity 0.35s $cubic 1s;
+                    }
+
+                    .job__dropdown-bottom {
+                        opacity: 1;
+                        transition: opacity 0.35s $cubic 1.35s;
+                    }
+                }
+        }
     }
 
     &__apply {
@@ -307,30 +328,33 @@
         left: 0;
         right: 0;
         @include flex-setting(column, flex-end, center);
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        min-height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         background: rgba(9, 0, 35, 0.24);
 
-        z-index: 10;
+        z-index: 99;
 
         display: none;
 
-        &.active {
-            display: flex;
+        &--mobile {
+            &.mobileActive {
+                display: flex;
 
-            .job__dropdown-wrap {
-                max-height: toRem(294);
-                transition: max-height 1s $cubic;
-            }
+                .job__dropdown-wrap {
+                    max-height: toRem(294);
+                    transition: max-height 1s $cubic;
+                }
 
-            .job__dropdown-list {
-                opacity: 1;
-                transition: opacity 0.35s $cubic 1s;
-            }
+                .job__dropdown-list {
+                    opacity: 1;
+                    transition: opacity 0.35s $cubic 1s;
+                }
 
-            .job__dropdown-bottom {
-                opacity: 1;
-                transition: opacity 0.35s $cubic 1.35s;
+                .job__dropdown-bottom {
+                    opacity: 1;
+                    transition: opacity 0.35s $cubic 1.35s;
+                }
             }
         }
 
@@ -339,9 +363,9 @@
             width: 100%;
             background-color: $white;
             border-radius: toRem(8) toRem(8) 0 0;
-            transition: max-height 0.35s $cubic 0.7s;
             max-height: 0;
             overflow: hidden;
+            transition: max-height 0.35s $cubic 0.7s;
         }
 
         &-list {
@@ -485,6 +509,7 @@
 
 @include min-screen(768px) {
     .job {
+        z-index: 1;
         padding: toRem(40) toRem(40);
         margin-bottom: toRem(80);
 
@@ -536,6 +561,8 @@
                 max-height: toRem(5000);
                 padding-top: toRem(64);
                 padding-bottom: toRem(30);
+
+                z-index: 2;
             }
         }
 
@@ -573,14 +600,23 @@
         }
 
         &__controls {
-            flex-direction: row-reverse;
-            justify-content: flex-end;
+            justify-content: flex-start;
         }
 
         &__share {
             font-size: toRem(18);
             line-height: toRem(28);
             padding: toRem(6) 0;
+
+            &.active {
+                & ~ .job__dropdown {
+                    display: block;
+
+                    .job__dropdown-wrap {
+                        max-height: toRem(440);
+                    }
+                }
+            }
         }
 
         &__apply {
@@ -598,12 +634,14 @@
 
         &__dropdown {
             position: absolute;
-            bottom: toRem(-420);
+
+            bottom: toRem(-452);
             top: auto;
             left: auto;
-            right: toRem(26);
+            right: toRem(-42);
             justify-content: center;
             width: toRem(300);
+            min-height: 0;
             height: toRem(440);
             background: transparent;
 
@@ -621,14 +659,6 @@
 
                 top: toRem(-10);
                 left: toRem(76);
-            }
-
-            &.active {
-                display: block;
-
-                .job__dropdown-wrap {
-                    max-height: toRem(440);
-                }
             }
 
             &-wrap {
@@ -693,7 +723,7 @@
 
         &__dropdown {
             right: auto;
-            left: toRem(278);
+            left: toRem(188);
         }
     }
 }
@@ -710,8 +740,8 @@
             'filter list'
         ;
 
-        grid-template-columns: 29.01639344262295% 57.54098360655738%;
-        grid-column-gap: toRem(164);
+        grid-template-columns: 34.42622950819672% 65.57377049180328%;
+        grid-column-gap: toRem(0);
         grid-row-gap: toRem(40);
         justify-content: space-between;
         align-items: start;
@@ -727,6 +757,13 @@
             grid-area: filter;
             padding-top: toRem(24);
             margin-bottom: 0;
+
+            &-list {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+            }
+
 
             &-btn {
                 cursor: pointer;
@@ -763,8 +800,8 @@
         }
 
         &__body {
-            padding-left: toRem(40);
-            padding-right: toRem(40);
+            padding-left: toRem(0);
+            padding-right: toRem(0);
         }
 
         &__apply,
@@ -782,7 +819,21 @@
         }
 
         &__dropdown {
-            left: toRem(230);
+            left: toRem(192);
+
+            &-btn {
+                &:hover {
+                    color: $blue;
+                    transition: 0.35s $cubic;
+                }
+            }
+
+            &-copy {
+                &:hover {
+                    color: $blue;
+                    transition: 0.35s $cubic;
+                }
+            }
         }
     }
 }

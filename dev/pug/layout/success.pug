@@ -15,7 +15,7 @@ html(lang="ru-RU")
     body.body
         include ../modules/header/header
         main.main
-            .success
+            .success#success
                 h1.success__title 
                     span Принято!
                     span Скоро вернемся с ответом
@@ -47,7 +47,9 @@ html(lang="ru-RU")
                     // svg
                     span Вернуться на главную
                     // svg
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js")
         script(src="static/js/vendor/jquery-3.3.1.min.js")
-        //script(src="static/js/main.js")
-        //script(src="static/js/svg.js")
+        script(src="static/js/main.js")
+        script(src="static/js/move-success.js")
+        script(src="static/js/svg.js")
         block script

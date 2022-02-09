@@ -12,15 +12,10 @@ html(lang="ru-RU")
         meta(name="viewport" content="width=device-width,initial-scale=1")
         meta(name="keywords" content="")
         link(rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css")
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet")
-        link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous")
-        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css")
         link(rel="stylesheet" type='text/css' href="static/css/styles.css")
     body.body
         include ../modules/header/header
-        main.main
+        main.main#main
             include ../modules/blocks/intro
             include ../modules/blocks/stack
             include ../modules/blocks/freedom
@@ -32,9 +27,26 @@ html(lang="ru-RU")
             include ../modules/blocks/cta
             include ../modules/blocks/apply
         include ../modules/footer/footer
+        
+        .job__dropdown.job__dropdown--mobile
+            .job__dropdown-wrap
+                ul.job__dropdown-list
+                    li.job__dropdown-item
+                        button(type="button" data-value="tg").job__dropdown-btn Telegram
+                    li.job__dropdown-item
+                        button(type="button" data-value="fb").job__dropdown-btn Facebook
+                    li.job__dropdown-item
+                        button(type="button" data-value="tw").job__dropdown-btn Twitter
+                    li.job__dropdown-item
+                        button(type="button" data-value="vk").job__dropdown-btn VK
+                    li.job__dropdown-item
+                        button(type="button" data-value="wa").job__dropdown-btn WhatsApp
+                .job__dropdown-bottom
+                    button(type="button").job__dropdown-copy Скопировать ссылку
         script(src="static/js/vendor/jquery-3.3.1.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js")
         script(src="https://unpkg.com/swiper/swiper-bundle.js")
+        script(src="static/js/header.js")
         script(src="static/js/main.js")
         script(src="static/js/slider.js")
         script(src="static/js/shuffle.js")
@@ -43,4 +55,5 @@ html(lang="ru-RU")
         script(src="static/js/move.js")
         script(src="static/js/scroll.js")
         script(src="static/js/video.js")
+        script(src="static/js/benefits.js")
         block script

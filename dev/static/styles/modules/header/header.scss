@@ -21,10 +21,16 @@
         transition: 0.05s $cubic;
     }
 
-    &.scrolled {
-        background-color: $white;
+    &.header-pin {
+        transform: translateY(0);
         transition: 0.35s $cubic;
-        box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.05);
+        background-color: $white;
+        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    &.header-unpin {
+        transform: translateY(toRem(-58));
+        transition: 0.35s $cubic;
     }
 
     &__logo {
@@ -38,7 +44,7 @@
         @include flex-setting(column, center, center);
 
         width: toRem(130);
-        height: toRem(31);    
+        height: toRem(31);
     }
 
     &__frame {
@@ -109,6 +115,14 @@
     .header {
         padding: toRem(19) toRem(40);
         margin-bottom: toRem(40);
+
+        &.header-pin {
+            transform: translateY(0);
+        }
+
+        &.header-unpin {
+            transform: translateY(toRem(-98));
+        }
 
         &__logo {
             width: toRem(172);

@@ -3,16 +3,16 @@ section.benefits#benefits
         h2.benefits__title
             span Комфортная атмосфера. 
             span Дружелюбная среда
-        ul.benefits__list
-            li.benefits__item.active
+        ul(data-value="1").benefits__list
+            li.benefits__item
                 span Современные офисы в Москве и Саратове
             li.benefits__item
                 span Гибридный график или удаленка. Распределенные команды
             li.benefits__item
                 span Открытая среда без бюрократии и сложных процессов
-        .benefits__images.swiper-benefits-container
+        .benefits__images.swiper-benefits-container#animation
             .swiper-wrapper
-                .benefits__slide.benefits__slide--first.swiper-slide
+                .benefits__slide.benefits__slide--first.swiper-slide(data-value="1")
                     .benefits__player
                         video(poster="static/images/content/benefits-poster.jpg").benefits__video
                             source(src="static/videos/benefits-video.mp4" type="video/mp4")
@@ -24,7 +24,7 @@ section.benefits#benefits
                         source(srcset="static/images/content/benefits-1.webp" type="image/webp")
                         img(src="static/images/content/benefits-1.jpg" alt="Современные офисы в Москве и Саратове").benefits__frame-image
                         
-                .benefits__slide.benefits__slide--second.swiper-slide
+                .benefits__slide.benefits__slide--second.swiper-slide(data-value="2")
                     picture.benefits__frame
                         source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
                         source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
@@ -40,7 +40,7 @@ section.benefits#benefits
                         source(srcset="static/images/content/benefits-3.webp" type="image/webp")
                         img(src="static/images/content/benefits-3.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
                 
-                .benefits__slide.benefits__slide--third.swiper-slide
+                .benefits__slide.benefits__slide--third.swiper-slide(data-value="3")
                     picture.benefits__frame
                         source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.webp" type="image/webp")
                         source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.jpg")

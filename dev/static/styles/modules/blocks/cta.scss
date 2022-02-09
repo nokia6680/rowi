@@ -23,7 +23,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        padding: 0 toRem(32);
+        padding: 0 toRem(20);
         transform: translate(-50%, -50%);
 
         &.loaded {
@@ -33,7 +33,8 @@
 
     // book
     &__title {
-        display: inline-block;
+        @include flex-setting(row, flex-start, center);
+        flex-wrap: wrap;
         width: 100%;
         @include font-setting($primary-font, toRem(24), toRem(43), 350, $dark);
         letter-spacing: -0.015em;
@@ -44,7 +45,7 @@
 
         &.play {
             .letter{
-                transform: translateY(-100%);
+                transform: translateY(-200%);
             }
         }
 
@@ -58,12 +59,29 @@
                 transition-delay: 0.015s * $i;
             }
         }
+
+        &.active {
+            .cta__word span {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    &__word {
+        display: inline-block;
+        margin: 0 5px;
+        overflow: hidden;
+
+        & span {
+            transform: translate3d(0, 1.5em, 0);
+            display: inline-block;
+        }
     }
 
     &__block {
         width: 100%;
 
-        @include flex-setting(row, flex-start, center);
+        @include flex-setting(row, flex-start, flex-start);
 
         z-index: 1;
     }
@@ -76,20 +94,9 @@
 
         overflow: hidden;
 
-        &.play {
-            .letter2 {
-                transform: translateY(-100%);
-            }
-        }
-
-        .letter2 {
-            display: inline-block;
-            transition: transform 0.6s $cubic;
-        }
-
-        @for $i from 0 through 38 {
-            .letter2:nth-child(#{$i + 1}) {
-                transition-delay: 0.015s * $i;
+        &.active {
+            .cta__word span {
+                transform: translate3d(0, 0, 0);
             }
         }
     }
@@ -98,30 +105,18 @@
         text-decoration: none;
         position: relative;
 
-        // book
-        span {
-            @include font-setting($primary-font, toRem(24), toRem(43), 350, $blue);
-        }
-
         .cta__link {
-            display: inline-block;
+            @include font-setting($primary-font, toRem(24), toRem(43), 350, $blue);
+            display: flex;
             overflow: hidden;
 
-            &.play {
-                .letter3 {
-                    transform: translateY(-100%);
+            &.active {
+                .cta__word span {
+                    transform: translate3d(0, 0, 0);
                 }
 
-            }
-
-            .letter3 {
-                display: inline-block;
-                transition: transform 0.6s $cubic;
-            }
-
-            @for $i from 0 through 16 {
-                .letter3:nth-child(#{$i + 1}) {
-                    transition-delay: 0.015s * $i;
+                & ~ .cta__underline--mobile {
+                    display: block;
                 }
             }
         }
@@ -163,8 +158,10 @@
         left: 50%;
         transform: translateX(-50%);
 
-        &--desktop,
-        &--tablet {
+        display: none;
+
+        &--tablet,
+        &--desktop {
             display: none;
         }
 
@@ -176,6 +173,8 @@
 
 @include min-screen(768px) {
     .cta {
+        z-index: 0;
+        
         .cta-bg-round-mb {
             display: none;
         }
@@ -189,6 +188,7 @@
         }
 
         &__title {
+            justify-content: center;
             text-align: center;
             font-size: toRem(40);
             line-height: toRem(72);
@@ -206,9 +206,19 @@
         }
 
         &__button {
-            span {
+            .cta__link {
                 font-size: toRem(40);
                 line-height: toRem(72);
+
+                &.active {
+                    & ~ .cta__underline--mobile {
+                        display: none;
+                    }
+
+                    & ~ .cta__underline--tablet {
+                        display: block;
+                    }
+                }
             }
 
             &[data-type="secondLine"] {
@@ -238,13 +248,12 @@
 
         &__underline {
             bottom: toRem(-24);
-
             &--mobile {
                 display: none;
             }
 
             &--tablet {
-                display: block;
+                display: none;
             }
         }
     }
@@ -277,9 +286,34 @@
         }
 
         &__button {
-            span {
+            .cta__link {
                 font-size: toRem(48);
                 line-height: toRem(86);
+                pointer-events: none;
+
+                & ~ .cta__underline--desktop {
+                    pointer-events: none;
+                }
+
+                & ~ .cta__underline--desktop svg {
+                    pointer-events: none;
+                }
+
+                &.active {
+                    pointer-events: all;
+
+                    & ~ .cta__underline--mobile {
+                        display: none;
+                    }
+
+                    & ~ .cta__underline--tablet {
+                        display: none;
+                    }
+
+                    & ~ .cta__underline--desktop {
+                        pointer-events: all;
+                    }
+                }
             }
 
             &[data-type="thirdLine"] {
@@ -333,18 +367,15 @@
                     }
                 }
             }
-
-            .cta__link {
-                &.play {
-                    & + .cta__underline {
-                        display: none;
-                    }
-                }
-            }
         }
 
         &__underline {
-            animation: fadeOutStatic 0s $cubic forwards 0.7s;
+            animation: fadeOutStatic 0s $cubic forwards;
+            visibility: hidden;
+
+            svg {
+                pointer-events: none;
+            }
 
             &--tablet {
                 display: none;
@@ -352,6 +383,15 @@
 
             &--desktop {
                 display: block;
+            }
+
+            &.visible {
+                animation: fadeOutStatic 0s $cubic forwards 0.7s;
+                visibility: visible;
+
+                svg {
+                    pointer-events: all;
+                }
             }
 
             .cta-first {

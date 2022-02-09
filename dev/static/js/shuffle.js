@@ -1,13 +1,13 @@
 var ctaTitles = [
-  "Ещё сомневаешься?",
-  "Не нашел нужную вакансию?",
-  "Не хватает опыта?",
-  "Живешь в другом городе?",
-  "Остались вопросы?",
-  "Хочешь увидеть офис и будущих коллег?",
-  "Хочешь пообщаться?",
-  "Хочешь узнать больше?",
-  "Не из IT, но хочешь в команду?"
+    "Ещё сомневаешься?",
+    "Не нашел нужную вакансию?",
+    "Не хватает опыта?",
+    "Живешь в другом городе?",
+    "Остались вопросы?",
+    "Хочешь увидеть офис и будущих коллег?",
+    "Хочешь пообщаться?",
+    "Хочешь узнать больше?",
+    "Не из IT, но хочешь в команду?"
 ];
 
 var ctaLinksClasses = [
@@ -22,166 +22,178 @@ function reloadText() {
     var ctaLinksWrap = document.querySelector('.cta__link');
     var ctaBlock = document.querySelector('.cta__button');
     var ctaWrapper = document.querySelector('.cta__wrapper');
-    var ctaTitleItem = ctaTitles[Math.floor(Math.random()*ctaTitles.length)];
-    var ctaLinksDecoration = ctaLinksClasses[Math.floor(Math.random()*ctaLinksClasses.length)];
+    var ctaTitleItem = ctaTitles[Math.floor(Math.random() * ctaTitles.length)];
+    var ctaLinksDecoration = ctaLinksClasses[Math.floor(Math.random() * ctaLinksClasses.length)];
 
     ctaTitleWrap.innerHTML = ctaTitleItem;
 
-    setTimeout(reloadText, 7000);
+    setTimeout(reloadText, 7500);
     ctaWrapper.classList.add('loaded');
 
     setTimeout(function() {
         return ctaWrapper.classList.remove('loaded');
     }, 6444);
 
-    let elements = document.querySelectorAll('.cta__title');
+    class AccentTypographyBuild {
+        constructor(
+            elementSelector,
+            timer,
+            classForActivate,
+            property
+        ) {
+            this._TIME_SPACE = 100;
 
-    elements.forEach(element => {
-        let innerText = element.innerText;
-        element.innerHTML = '';
+            this._elementSelector = elementSelector;
+            this._timer = timer;
+            this._classForActivate = classForActivate;
+            this._property = property;
+            this._element = document.querySelector(this._elementSelector);
+            this._timeOffset = 0;
 
-        let textContainer = document.createElement('div');
-        textContainer.classList.add('block');
-
-        for (let letter of innerText) {
-            let span = document.createElement('span');
-            span.innerText = letter.trim() === '' ? '\xa0' : letter;
-            span.classList.add('letter');
-            textContainer.appendChild(span);
+            this.prePareText();
         }
 
-        element.appendChild(textContainer);
-        //element.appendChild(textContainer.cloneNode(true));
-    });
+        createElement(letter) {
+            const span = document.createElement(`span`);
+            span.textContent = letter;
+            span.style.transition = `${this._property} ${this._timer}ms ease ${this._timeOffset}ms`;
+            this._timeOffset += 20;
+            return span;
+        }
+
+        prePareText() {
+            if (!this._element) {
+                return;
+            }
+            const text = this._element.textContent.trim().split(` `).filter((latter) => latter !== '');
+
+            const content = text.reduce((fragmentParent, word) => {
+                const wordElement = Array.from(word).reduce((fragment, latter) => {
+                    fragment.appendChild(this.createElement(latter));
+                    return fragment;
+                }, document.createDocumentFragment());
+                const wordContainer = document.createElement(`span`);
+                wordContainer.classList.add(`cta__word`);
+                wordContainer.appendChild(wordElement);
+                fragmentParent.appendChild(wordContainer);
+                return fragmentParent;
+            }, document.createDocumentFragment());
+
+            this._element.innerHTML = ``;
+            this._element.appendChild(content);
+        }
+
+        runAnimation() {
+            if (!this._element) {
+                return;
+            }
+            this._element.classList.add(this._classForActivate);
+        }
+
+        destroyAnimation() {
+            this._element.classList.remove(this._classForActivate);
+        }
+    }
+
+    const animationTopScreenTextLine = new AccentTypographyBuild(`.cta__title`, 500, `active`, `transform`);
+    setTimeout(() => {
+        animationTopScreenTextLine.runAnimation();
+    }, 500);
 
     setTimeout(() => {
-        elements.forEach(element => {
-            element.classList.add('play');
-        })
+        animationTopScreenTextLine.destroyAnimation();
     }, 6444);
-
-    setTimeout(() => {
-        elements.forEach(element => {
-            element.classList.remove('play');
-        })
-    }, 600);
 
     if (ctaTitleItem === 'Ещё сомневаешься?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
         ctaDescriptionsWrap.innerHTML = 'Просто '
         ctaLinksWrap.innerHTML = 'напиши!';
+        ctaLinksWrap.setAttribute('data-type', ctaLinksDecoration);
     }
 
     if (ctaTitleItem === 'Не нашел нужную вакансию?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
         ctaDescriptionsWrap.innerHTML = 'Все равно '
         ctaLinksWrap.innerHTML = 'пиши!';
+        ctaLinksWrap.setAttribute('data-type', ctaLinksDecoration);
     }
 
     if (ctaTitleItem === 'Не хватает опыта?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
         ctaDescriptionsWrap.innerHTML = 'Все равно '
         ctaLinksWrap.innerHTML = 'пиши!';
+        ctaLinksWrap.setAttribute('data-type', ctaLinksDecoration);
     }
 
     if (ctaTitleItem === 'Живешь в другом городе?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
         ctaDescriptionsWrap.innerHTML = 'Все равно '
         ctaLinksWrap.innerHTML = 'напиши!';
+        ctaLinksWrap.setAttribute('data-type', ctaLinksDecoration);
     }
 
     if (ctaTitleItem === 'Остались вопросы?') {
         ctaBlock.setAttribute('data-type', 'firstLine');
         ctaDescriptionsWrap.innerHTML = ''
         ctaLinksWrap.innerHTML = 'Напиши нам!';
+        ctaLinksWrap.setAttribute('data-type', 'firstLine');
     }
 
     if (ctaTitleItem === 'Хочешь увидеть офис и будущих коллег?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
         ctaDescriptionsWrap.innerHTML = 'Действуй - '
         ctaLinksWrap.innerHTML = 'пиши!';
+        ctaLinksWrap.setAttribute('data-type', ctaLinksDecoration);
     }
 
     if (ctaTitleItem === 'Хочешь пообщаться?') {
         ctaBlock.setAttribute('data-type', 'firstLine');
         ctaDescriptionsWrap.innerHTML = 'Просто '
         ctaLinksWrap.innerHTML = 'напиши нам!';
+        ctaLinksWrap.setAttribute('data-type', 'firstLine');
     }
 
     if (ctaTitleItem === 'Хочешь узнать больше?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
         ctaDescriptionsWrap.innerHTML = 'Скорее '
         ctaLinksWrap.innerHTML = 'пиши!';
+        ctaLinksWrap.setAttribute('data-type', ctaLinksDecoration);
     }
 
     if (ctaTitleItem === 'Не из IT, но хочешь в команду?') {
         ctaBlock.setAttribute('data-type', 'firstLine');
         ctaDescriptionsWrap.innerHTML = ''
         ctaLinksWrap.innerHTML = 'Напиши нам!';
+        ctaLinksWrap.setAttribute('data-type', 'firstLine');
     }
 
-    let descriptions = document.querySelectorAll('.cta__description');
-    let links = document.querySelectorAll('.cta__link');
-
-    descriptions.forEach(element => {
-        let innerText2 = element.innerText;
-        element.innerHTML = '';
-
-        let textContainer2 = document.createElement('div');
-        textContainer2.classList.add('block');
-
-        for (let letter of innerText2) {
-            let span2 = document.createElement('span');
-            span2.innerText = letter.trim() === '' ? '\xa0' : letter;
-            span2.classList.add('letter2');
-            textContainer2.appendChild(span2);
-        }
-
-        element.appendChild(textContainer2);
-        //element.appendChild(textContainer.cloneNode(true));
-    });
+    const animationTopScreenTextTitle = new AccentTypographyBuild(`.cta__description`, 400, `active`, `transform`);
+    setTimeout(() => {
+        animationTopScreenTextTitle.runAnimation();
+    }, 1000);
 
     setTimeout(() => {
-        descriptions.forEach(element => {
-            element.classList.add('play');
-        })
-    }, 6000);
+        animationTopScreenTextTitle.destroyAnimation();
+    }, 7000);
+
+    const animationTopScreenTextLink = new AccentTypographyBuild(`.cta__link`, 400, `active`, `transform`);
+    setTimeout(() => {
+        animationTopScreenTextLink.runAnimation();
+    }, 1000);
 
     setTimeout(() => {
-        descriptions.forEach(element => {
-            element.classList.remove('play');
-        })
-    }, 1100);
+        animationTopScreenTextLink.destroyAnimation();
+    }, 7000);
 
-    links.forEach(element => {
-        let innerText3 = element.innerText;
-        element.innerHTML = '';
-
-        let textContainer3 = document.createElement('div');
-        textContainer3.classList.add('block');
-
-        for (let letter of innerText3) {
-            let span3 = document.createElement('span');
-            span3.innerText = letter.trim() === '' ? '\xa0' : letter;
-            span3.classList.add('letter3');
-            textContainer3.appendChild(span3);
-        }
-
-        element.appendChild(textContainer3);
-        //element.appendChild(textContainer.cloneNode(true));
-    });
+    const svgCont = document.querySelector('.cta__underline--desktop');
 
     setTimeout(() => {
-        links.forEach(element => {
-            element.classList.add('play');
-        })
-    }, 6000);
+        svgCont.classList.add('visible');
+    }, 1300);
 
     setTimeout(() => {
-        links.forEach(element => {
-            element.classList.remove('play');
-        })
-    }, 1100);
+        svgCont.classList.remove('visible');
+    }, 6900);
 }
 
 reloadText();

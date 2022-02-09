@@ -78,23 +78,47 @@ const swiper = new Swiper('.swiper-benefits-container', {
     slidesPerView: '1',
     variableWidth: true,
     spaceBetween: 0,
-    grabCursor: true,
     speed: 1000,
+    mousewheel: {
+        eventsTarget: '.benefits',
+        releaseOnEdges: true,
+        thresholdDelta: 10,
+    },
+
     effect: "creative",
     creativeEffect: {
         prev: {
             opacity: '0',
             shadow: false,
-            translate: ["-10%", 0, -1],
+            translate: [0, 0, -1],
         },
         next: {
             opacity: '0',
-            translate: ["10%", 0, 0],
+            translate: [0, 0, 0],
         },
-    },
+    }
 });
 
-swiper.on('slideChange', () => {
-    var slidePrev = swiper.activeIndex;
-    console.log(slidePrev);
+swiper.on('beforeInit', function () {
+    var currEl = document.querySelector('.swiper-slide-active');
+    var dataCurr = currEl.getAttribute("data-value");
+    var sliderNav = document.querySelector('.benefits__list');
+
+    sliderNav.setAttribute("data-value", dataCurr);
 });
+
+swiper.on('slideChangeTransitionStart', function () {
+    var currEl = document.querySelector('.swiper-slide-active');
+    var dataCurr = currEl.getAttribute("data-value");
+    var sliderNav = document.querySelector('.benefits__list');
+
+    sliderNav.setAttribute("data-value", dataCurr);
+});
+
+// swiper.on('slideChangeTransitionEnd', function () {
+//     var currEl = document.querySelector('.swiper-slide-active');
+//     var dataCurr = currEl.getAttribute("data-value");
+//     var sliderNav = document.querySelector('.benefits__list');
+//
+//     sliderNav.setAttribute("data-value", dataCurr);
+// });

@@ -35,73 +35,68 @@ function changeText() {
     }
 };
 
+var jobItem = document.querySelector('.job');
 var jobs = document.getElementsByClassName('job__name');
 var elNodes = document.querySelectorAll(".job__name");
 
 for (var i = 0; i < jobs.length; i++) {
     var elem = jobs[i];
-    elem.addEventListener("click", function() {
-        event.preventDefault();
-        this.classList.toggle("active");
-    });
+    elem.addEventListener("click", changeActiveClass);
 }
 
-$('.js-popup-opener').on('click', function() {
-    const popupId = $(this).attr('data-modal');
-    $(popupId).toggleClass('active');
-});
+function changeActiveClass(e) {
+    event.preventDefault();
 
-$('.js-popup-wrap').on('click', function(event) {
-    if (!$(event.target).closest('.js-popup-inner').length) {
-        $(this).removeClass('active');
+    for (var i = 0; i < jobs.length; i++) {
+        var elem = jobs[i];
+        elem.classList.remove('active');
     }
-});
-//
-// $('.nav__controls-item--cart').on('click', function() {
-//     $('.nav-cart').toggleClass('cartOpened');
-// });
-//
-// $('.body').on('click', function(event) {
-//     if (!$(event.target).closest('.nav-cart').length && !$(event.target).closest('.nav__controls').length) {
-//         $('.nav-cart').removeClass('cartOpened');
-//     };
-// });
-//
-// var btns = document.getElementsByClassName('s-content__days-btn');
-// var elNodes = document.querySelectorAll(".s-content__days-btn");
-// var daysFilter = document.querySelector('.s-content__filter-list');
-//
-// for (var i = 0; i < btns.length; i++) {
-//     var elem = btns[i];
-//
-//     elem.addEventListener("click", changeActiveClass);
-// }
-//
-// function changeActiveClass(e) {
-//     event.preventDefault();
-//
-//     for (var i = 0; i < btns.length; i++) {
-//         var elem = btns[i];
-//         elem.classList.remove('active');
-//         var daysData = this.getAttribute("data-value");
-//         daysFilter.setAttribute("data-days", daysData);
-//     }
-//
-//     e.target.classList.add('active');
-// }
 
-// var consultForm = document.querySelector('.consult__form');
-// var consultSubmit = document.querySelector('.consult__callback');
-// var consultTitle = document.querySelector('.consult__title');
-// var consultDescription = document.querySelector('.consult__description');
-// var consultAfterSending = document.querySelector('.consult__reaction');
-//
-// if (consultSubmit) {
-//     consultSubmit.addEventListener('click', function() {
-//         event.preventDefault();
-//         consultForm.classList.add('formSent');
-//         consultTitle.innerHTML = "Заявка успешно отправлена";
-//         consultDescription.innerHTML = "В скором времени мы свяжемся с Вами";
-//         consultAfterSending.classList.add('active');
-//     });
-// };
+    e.target.classList.toggle('active');
+    jobItem.scrollIntoView();
+}
+
+var shares = document.getElementsByClassName('job__share');
+var elNodes = document.querySelectorAll(".job__share");
+var shareWrap = document.querySelector('.job__dropdown--mobile');
+
+const breakpoint = window.matchMedia( '(max-width: 767px)' );
+const breakpointChecker = function() {
+
+   if ( breakpoint.matches === true ) {
+       for (var i = 0; i < shares.length; i++) {
+           var elem = shares[i];
+
+           elem.addEventListener("click", function() {
+               event.preventDefault();
+               shareWrap.classList.add("mobileActive");
+               var shareData = elem.getAttribute("data-value");
+               shareWrap.setAttribute("data-value", shareData);
+               body.classList.add("no-scroll")
+           });
+
+           $('.job__dropdown--mobile').on('click', function(event) {
+               if (!$(event.target).closest('.job__dropdown-wrap').length) {
+                   $(this).removeClass('mobileActive');
+                   $('.body').removeClass('no-scroll');
+               }
+           });
+       }
+
+   } else {
+       for (var i = 0; i < shares.length; i++) {
+           var elem = shares[i];
+           body.classList.remove("no-scroll")
+           shareWrap.classList.remove("mobileActive");
+
+           elem.addEventListener("click", function() {
+               event.preventDefault();
+               this.classList.toggle("active");
+               body.classList.remove("no-scroll")
+           });
+       }
+   }
+};
+
+breakpoint.addListener(breakpointChecker);
+breakpointChecker();
