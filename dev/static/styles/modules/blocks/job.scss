@@ -55,28 +55,8 @@
         &-item {
             @include flex-setting(column, center, center);
             width: auto;
-
-            @include gapFallbackTwo(toRem(24));
-        }
-
-        &-btn {
-            width: auto;
-            @include flex-setting(row, center, center);
             background: rgba(65, 100, 238, 0.08);
-            padding: toRem(12) toRem(12);
-            border: none;
-
-            transition: 0.35s $cubic;
-
-            &:active {
-                background: rgba(65, 100, 238, 0.24);
-                transition: 0.35s $cubic;
-
-                .job__filter-nr {
-                    opacity: 0.4;
-                    transition: 0.35s $cubic;
-                }
-            }
+            @include gapFallbackTwo(toRem(24));
 
             &.active {
                 background: $blue;
@@ -97,12 +77,34 @@
             }
         }
 
+        &-btn {
+            width: auto;
+            @include flex-setting(row, center, center);
+            padding: toRem(12) toRem(12);
+            border: none;
+            background-color: transparent;
+            transition: 0.35s $cubic;
+
+
+            // &:active {
+            //     background: rgba(65, 100, 238, 0.24);
+            //     transition: 0.35s $cubic;
+            //
+            //     .job__filter-nr {
+            //         opacity: 0.4;
+            //         transition: 0.35s $cubic;
+            //     }
+            // }
+        }
+
         &-name {
             @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
             margin-right: toRem(4);
+            pointer-events: none;
         }
 
         &-nr {
+            pointer-events: none;
             @include font-setting($primary-font, toRem(14), toRem(22), 350, $dark);
             opacity: 0.24;
 
@@ -115,6 +117,13 @@
         width: 100%;
 
         @include flex-setting(column, flex-start, center);
+
+        &[data-type="0"] {
+            .job__item {
+                display: flex;
+            }
+        }
+
     }
 
     &__item {
@@ -125,9 +134,14 @@
         padding: toRem(13) toRem(8);
 
         border-bottom: 1px solid rgba(20, 0, 75, 0.24);
+        display: none;
 
         &:last-of-type {
             border-bottom: none;
+        }
+
+        &.active {
+            display: flex;
         }
     }
 

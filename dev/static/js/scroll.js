@@ -47,7 +47,7 @@ function animateScroll(coords, offset) {
             howBlock.classList.add('loaded');
         }
 
-        if (collision4 < visibleHeight) {
+        if (collision4 < 500) {
             beneBlock.classList.add('loaded');
             //console.log(collision4);
         }

@@ -52,7 +52,7 @@ function changeActiveClass(e) {
         elem.classList.remove('active');
     }
 
-    e.target.classList.toggle('active');
+    e.target.classList.add('active');
     jobItem.scrollIntoView();
 }
 

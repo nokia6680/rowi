@@ -79,10 +79,13 @@ const swiper = new Swiper('.swiper-benefits-container', {
     variableWidth: true,
     spaceBetween: 0,
     speed: 1000,
+
+    preventInteractionOnTransition: true,
     mousewheel: {
         eventsTarget: '.benefits',
         releaseOnEdges: true,
-        thresholdDelta: 10,
+        thresholdDelta: 1,
+        sensitivity: 0,
     },
 
     effect: "creative",
@@ -122,3 +125,44 @@ swiper.on('slideChangeTransitionStart', function () {
 //
 //     sliderNav.setAttribute("data-value", dataCurr);
 // });
+
+var touch = {};
+
+window.onload = function () {
+    "use strict";
+    document.body.addEventListener("wheel", touchHandler);
+    document.body.addEventListener("wheel", touchHandler);
+};
+
+function touchHandler(e) {
+    "use strict";
+
+    var el = e.target;
+
+    if (el.parentNode.id === "animation") {
+        if (e.type === "touchstart") {
+            touch.startX = e.changedTouches[0].screenX;
+            touch.startY = e.changedTouches[0].screenY;
+        } else {
+            touch.endX = e.changedTouches[0].screenX;
+            touch.endY = e.changedTouches[0].screenY;
+
+            touch.lenX = Math.abs(touch.endX - touch.startX);
+            touch.lenY = Math.abs(touch.endY - touch.startY);
+
+            if (touch.lenY < 20) {
+                // disable scroll
+                document.body.style.overflowY = "hidden";
+
+                // do swipe related stuff
+                swipe(el.parentNode);
+            } else {
+                // enable scroll if swipe was not intended
+                document.body.style.overflowY = "scroll";
+            }
+        }
+    } else {
+        // keep scroll enabled if touch is outside the image slider
+        document.body.style.overflowY = "scroll";
+    }
+}

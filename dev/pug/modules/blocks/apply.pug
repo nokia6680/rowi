@@ -5,13 +5,14 @@ section.apply#apply-form
         ul.form__list
             li.form__item
                 label(for="phone-mail").form__label
-                input(type="text" name="contact" id="phone-mail" placeholder="Телефон или электронная почта*" required).form__input
-                span.form__error.form__error--mail Это поле нужно обязательно заполнить
+                input(type="tel" name="contact" id="phone-mail" placeholder="Телефон или электронная почта*" required).form__input
+                span.form__error.form__error--mail
             li.form__item.form__item--upload
-                .form__drop
+                .form__drop#formDrop
                     input(type="file" name="cv-file" id="file-input" accept=".pdf, .doc, docx").form__file
                     label(for="file-input").form__label Есть резюме? Кидай!
                     span.form__rules PDF или Microsoft Word
+                    span.form__error.form__error--file Ссылка нужна в формате https//:доменное имя/...
                 .form__link
                     label(for="url").form__label
                     input(type="url" name="url" id="url" placeholder="Можно вставить ссылку").form__input

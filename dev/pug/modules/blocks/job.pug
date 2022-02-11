@@ -5,24 +5,24 @@ section.job#jobs
         h3.job__filter-title Категории
 
         ul.job__filter-list#filterList
-            li.job__filter-item
-                button(type="button" onclick="filterSelection('development')").job__filter-btn.active
+            li(data-type="1").job__filter-item
+                button(type="button").job__filter-btn
                     span.job__filter-name Разработка
                     span.job__filter-nr (11)
-            li.job__filter-item
-                button(type="button" onclick="filterSelection('analysis')").job__filter-btn
+            li(data-type="2").job__filter-item
+                button(type="button").job__filter-btn
                     span.job__filter-name Аналитика
                     span.job__filter-nr (6)
-            li.job__filter-item
-                button(type="button" onclick="filterSelection('design')").job__filter-btn
+            li(data-type="3").job__filter-item
+                button(type="button").job__filter-btn
                     span.job__filter-name Дизайн
                     span.job__filter-nr (4)
-            li.job__filter-item
-                button(type="button" onclick="filterSelection('testing')").job__filter-btn
+            li(data-type="4").job__filter-item
+                button(type="button").job__filter-btn
                     span.job__filter-name Тестирование
                     span.job__filter-nr (3)
-    ul.job__list
-        li.job__item.development.active
+    ul(data-type="0").job__list
+        li(data-item="1").job__item
             h3.job__name FullStack разработчик
             .job__body
                 ul.job__content
@@ -70,7 +70,7 @@ section.job#jobs
                                     button(type="button" data-value="wa").job__dropdown-btn WhatsApp
                             .job__dropdown-bottom
                                 button(type="button").job__dropdown-copy Скопировать ссылку
-        li.job__item.analysis
+        li(data-item="1").job__item
             h3.job__name Продуктовый аналитик
             .job__body
                 ul.job__content
@@ -118,7 +118,7 @@ section.job#jobs
                                     button(type="button" data-value="wa").job__dropdown-btn WhatsApp
                             .job__dropdown-bottom
                                 button(type="button").job__dropdown-copy Скопировать ссылку
-        li.job__item.design
+        li(data-item="2").job__item
             h3.job__name Продуктовый дизайнер
             .job__body
                 ul.job__content
@@ -166,7 +166,7 @@ section.job#jobs
                                     button(type="button" data-value="wa").job__dropdown-btn WhatsApp
                             .job__dropdown-bottom
                                 button(type="button").job__dropdown-copy Скопировать ссылку
-        li.job__item.testing
+        li(data-item="2").job__item
             h3.job__name Тестировщик
             .job__body
                 ul.job__content
