@@ -60,7 +60,8 @@ window.onload = function() {
     eleHeader = document.getElementById(idOfHeader);
     document.addEventListener('scroll', onScroll, false);
 
-    // if (currentScrollY = 0) {
-    //     eleHeader.classList.remove(classes.pinned);
-    // }
+    var intro = document.getElementById("intro");
+    setTimeout(function() {
+        return intro.classList.add('loaded');
+    }, 1000);
 }

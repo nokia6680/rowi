@@ -15,9 +15,11 @@
     &-round-mb {
         position: absolute;
         filter: blur(45px);
+        -webkit-filter: blur(45px);
         pointer-events: none;
         z-index: -1;
-
+        backface-visibility: hidden;
+        will-change: transform;
         top: 50%;
         left: 5vw;
     }
@@ -34,14 +36,17 @@
         }
 
         .intro__arrow {
+            will-change: transform;
             animation: fadeInStatic 0s linear forwards 0.8888s;
 
             .intro-arrow-body {
-                animation: dash $transition-duration $cubic forwards 0.8888s;
+                will-change: transform;
+                animation: dash $transition-duration $cubic forwards 1s;
             }
 
             .intro-arrow-top {
-                animation: dash $transition-duration $cubic forwards calc(0.6666s + 0.8888s);
+                will-change: transform;
+                animation: dash $transition-duration $cubic forwards calc(0.6666s + 1s);
             }
         }
 
@@ -112,10 +117,12 @@
 
         .intro-arrow-top {
             animation: undash 0.35s $cubic forwards;
+            shape-rendering: geometricPrecision;
         }
 
         .intro-arrow-body {
             animation: undash 0.35s $cubic backwards 0.35s;
+            shape-rendering: geometricPrecision;
         }
     }
 
@@ -224,9 +231,12 @@
         }
 
         &-round-tb {
+            will-change: transform;
             display: block;
             position: absolute;
             filter: blur(90px);
+            -webkit-filter: blur(90px);
+            backface-visibility: hidden;
             z-index: -1;
 
             top: 40%;
@@ -539,6 +549,7 @@
             span {
                 font-size: toRem(48);
                 line-height: toRem(86);
+                white-space: nowrap;
             }
         }
 

@@ -54,7 +54,9 @@
     &-round-mb {
         position: absolute;
         filter: blur(30px);
-
+        -webkit-filter: blur(30px);
+        backface-visibility: hidden;
+        will-change: transform;
         z-index: 0;
     }
 
@@ -135,7 +137,9 @@
             display: block;
             position: absolute;
             filter: blur(70px);
-
+            -webkit-filter: blur(70px);
+            backface-visibility: hidden;
+            will-change: transform;
             z-index: 0;
         }
 
