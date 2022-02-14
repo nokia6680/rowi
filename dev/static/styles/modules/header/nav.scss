@@ -17,12 +17,12 @@
 
     z-index: 2;
 
-    transition: max-height 0.4s $cubic 0.55s;
+    transition: max-height 0.8888s $cubic 0.8888s;
 
     &.opened {
         height: calc(100vh - 58px);
         max-height: 100vh;
-        transition: max-height 0.55s $cubic;
+        transition: max-height 0.8888s $cubic;
         padding-bottom: toRem(26);
 
         .nav__item {
@@ -59,7 +59,7 @@
 
         padding: toRem(12) 0;
         margin-bottom: toRem(32);
-;
+
         opacity: 0;
         transition: opacity 0.6s $cubic;
 

@@ -327,6 +327,10 @@
         svg {
             position: absolute;
             bottom: 0;
+
+            path {
+                animation: dash 0.3333s $cubic forwards;
+            }
         }
 
         &.disabled {
@@ -830,6 +834,33 @@
 
         &__apply {
             margin-right: toRem(84);
+
+            svg {
+                path {
+                    animation: none;
+                }
+
+                .answer-body {
+                    animation: undash 0.3333s $cubic backwards 0.3333s;
+                }
+
+                .answer-top {
+                    animation: undash 0.3333s $cubic backwards;
+                }
+            }
+
+            &:hover,
+            &:active {
+                svg {
+                    .answer-body {
+                        animation: dash 0.3333s $cubic forwards;
+                    }
+
+                    .answer-top {
+                        animation: dash 0.3333s $cubic forwards 0.3333s;
+                    }
+                }
+            }
         }
 
         &__dropdown {

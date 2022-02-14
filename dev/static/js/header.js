@@ -61,7 +61,8 @@ window.onload = function() {
     document.addEventListener('scroll', onScroll, false);
 
     var intro = document.getElementById("intro");
+
     setTimeout(function() {
         return intro.classList.add('loaded');
-    }, 1000);
+    }, 500);
 }

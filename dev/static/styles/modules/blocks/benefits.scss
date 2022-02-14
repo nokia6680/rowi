@@ -205,18 +205,6 @@
     }
 
     &__frame {
-        overflow: hidden;
-
-        &:hover,
-        &:active {
-            .benefits__frame-image {
-                will-change: transform;
-                transform: scale(1.16);
-                transition: 0.35s $cubic;
-                transform-origin: center;
-            }
-        }
-
         &-image {
             will-change: transform;
             transition: 0.35s $cubic;
@@ -244,6 +232,8 @@
 
         border: none;
         cursor: pointer;
+
+        display: none;
 
         &::before {
             position: absolute;
@@ -643,12 +633,14 @@
 
         &__item {
             padding-left: 0;
+            cursor: pointer;
 
             &::before {
                 width: toRem(66);
                 height: toRem(24);
                 left: toRem(-74);
                 opacity: 0;
+                z-index: -2;
             }
 
             &:first-of-type {
@@ -679,6 +671,7 @@
             top: toRem(126);
             left: 0;
             right: 0;
+            pointer-events: none;
 
             max-width: toRem(1220);
 
@@ -737,6 +730,20 @@
                     transform: translate(-50%, -50%) scale(1.16);
                     transition: 0.35s $cubic;
 
+                }
+            }
+        }
+
+        &__frame {
+            overflow: hidden;
+
+            &:hover,
+            &:active {
+                .benefits__frame-image {
+                    will-change: transform;
+                    transform: scale(1.06);
+                    transition: 0.35s $cubic;
+                    transform-origin: center;
                 }
             }
         }

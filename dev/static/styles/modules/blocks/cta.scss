@@ -118,7 +118,8 @@
                 }
 
                 & ~ .cta__underline--mobile {
-                    display: block;
+                    opacity: 1;
+                    transition: 0s linear 0.5s;
                 }
             }
         }
@@ -160,7 +161,7 @@
         left: 50%;
         transform: translateX(-50%);
 
-        display: none;
+        opacity: 0;
 
         &--tablet,
         &--desktop {
@@ -221,7 +222,8 @@
                     }
 
                     & ~ .cta__underline--tablet {
-                        display: block;
+                        opacity: 1;
+                        transition: 0s linear 0.5s;
                     }
                 }
             }
@@ -252,13 +254,15 @@
         }
 
         &__underline {
+            opacity: 0;
             bottom: toRem(-24);
+
             &--mobile {
                 display: none;
             }
 
             &--tablet {
-                display: none;
+                display: block;
             }
         }
     }
@@ -377,6 +381,7 @@
         &__underline {
             animation: fadeOutStatic 0s $cubic forwards;
             visibility: hidden;
+            opacity: 1;
 
             svg {
                 pointer-events: none;

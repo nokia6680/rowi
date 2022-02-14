@@ -81,17 +81,6 @@
         @include flex-setting(column, center, center);
 
         opacity: 0;
-        overflow: hidden;
-
-        &:hover,
-        &:active {
-            .apply__frame-image {
-                will-change: transform;
-                transform: scale(1.16);
-                transition: 0.35s $cubic;
-                transform-origin: center;
-            }
-        }
 
         &-image {
             will-change: transform;
@@ -247,6 +236,18 @@
         }
 
         &__frame {
+            overflow: hidden;
+
+            &:hover,
+            &:active {
+                .apply__frame-image {
+                    will-change: transform;
+                    transform: scale(1.06);
+                    transition: 0.35s $cubic;
+                    transform-origin: center;
+                }
+            }
+            
             &:first-of-type {
                 width: toRem(336);
                 height: toRem(218);

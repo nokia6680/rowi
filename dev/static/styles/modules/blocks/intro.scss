@@ -134,17 +134,6 @@
         margin-bottom: toRem(40);
         z-index: 1;
         opacity: 0;
-        overflow: hidden;
-
-        &:hover,
-        &:active {
-            .intro__frame-image {
-                will-change: transform;
-                transform: scale(1.16);
-                transition: 0.35s $cubic;
-                transform-origin: center;
-            }
-        }
 
         &-image {
             width: 100%;
@@ -520,6 +509,18 @@
         }
 
         &__frame {
+            overflow: hidden;
+
+            &:hover,
+            &:active {
+                .intro__frame-image {
+                    will-change: transform;
+                    transform: scale(1.06);
+                    transition: 0.35s $cubic;
+                    transform-origin: center;
+                }
+            }
+            
             &--first {
                 margin-left: toRem(0);
                 margin-bottom: toRem(16);

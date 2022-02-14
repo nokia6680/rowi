@@ -86,18 +86,6 @@
 
         padding-bottom: 58.309037900874635%;
 
-        overflow: hidden;
-
-        &:hover,
-        &:active {
-            .stack__frame-image {
-                will-change: transform;
-                transform: scale(1.16);
-                transition: 0.35s $cubic;
-                transform-origin: center;
-            }
-        }
-
         &-image {
             width: 100%;
             height: 100%;
@@ -209,6 +197,18 @@
             margin-top: toRem(24);
             grid-area: photo;
             padding-bottom: 121.50537634408602%;
+
+            overflow: hidden;
+
+            &:hover,
+            &:active {
+                .stack__frame-image {
+                    will-change: transform;
+                    transform: scale(1.06);
+                    transition: 0.35s $cubic;
+                    transform-origin: center;
+                }
+            }
         }
     }
 }

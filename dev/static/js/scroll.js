@@ -75,5 +75,7 @@ function animateScroll(coords, offset) {
 
 window.addEventListener('scroll', function() {
     var windowHeight = window.innerHeight;
-    animateScroll(windowHeight);
+    setTimeout(function() {
+        animateScroll(windowHeight);
+    }, 500);
 });

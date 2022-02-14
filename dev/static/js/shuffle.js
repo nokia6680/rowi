@@ -27,7 +27,7 @@ function reloadText() {
 
     ctaTitleWrap.innerHTML = ctaTitleItem;
 
-    setTimeout(reloadText, 7500);
+    setTimeout(reloadText, 5000);
     ctaWrapper.classList.add('loaded');
 
     setTimeout(function() {
@@ -102,7 +102,7 @@ function reloadText() {
 
     setTimeout(() => {
         animationTopScreenTextLine.destroyAnimation();
-    }, 6444);
+    }, 4888);
 
     if (ctaTitleItem === 'Ещё сомневаешься?') {
         ctaBlock.setAttribute('data-type', ctaLinksDecoration);
@@ -174,7 +174,7 @@ function reloadText() {
 
     setTimeout(() => {
         animationTopScreenTextTitle.destroyAnimation();
-    }, 7000);
+    }, 4500);
 
     const animationTopScreenTextLink = new AccentTypographyBuild(`.cta__link`, 400, `active`, `transform`);
     setTimeout(() => {
@@ -183,7 +183,7 @@ function reloadText() {
 
     setTimeout(() => {
         animationTopScreenTextLink.destroyAnimation();
-    }, 7000);
+    }, 4500);
 
     const svgCont = document.querySelector('.cta__underline--desktop');
 
@@ -193,7 +193,7 @@ function reloadText() {
 
     setTimeout(() => {
         svgCont.classList.remove('visible');
-    }, 6900);
+    }, 4700);
 }
 
 reloadText();
