@@ -150,6 +150,7 @@
 
     &__images {
         width: 100%;
+        max-height: toRem(394);
         opacity: 0;
     }
 
@@ -333,6 +334,10 @@
             }
         }
 
+        &__images {
+            max-height: toRem(416);
+        }
+
         &__slide {
             height: toRem(416);
 
@@ -509,6 +514,7 @@
         &__images {
             grid-area: images;
             max-width: toRem(454);
+            max-height: toRem(660);
         }
 
         &__slide {
@@ -668,6 +674,8 @@
 
         &__images {
             position: absolute;
+            height: 100%;
+            max-height: toRem(546);
             top: toRem(126);
             left: 0;
             right: 0;
