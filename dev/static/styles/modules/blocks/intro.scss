@@ -20,8 +20,7 @@
         z-index: -1;
         backface-visibility: hidden;
         will-change: transform;
-        top: 50%;
-        left: 5vw;
+        animation: moveX 3.05s $cubic 0s infinite alternate, moveY 3.4s $cubic 0s infinite alternate;
     }
 
     &.loaded {
@@ -31,52 +30,52 @@
                 animation: fadeInTop $transition-duration $cubic forwards;
             }
             span:nth-of-type(2) {
-                animation: fadeInTop $transition-duration $cubic forwards 0.2222s;
-            }
-        }
-
-        .intro__arrow {
-            will-change: transform;
-            animation: fadeInStatic 0s linear forwards 0.8888s;
-
-            .intro-arrow-body {
-                will-change: transform;
-                animation: dash $transition-duration $cubic forwards 1s;
-            }
-
-            .intro-arrow-top {
-                will-change: transform;
-                animation: dash $transition-duration $cubic forwards calc(0.6666s + 1s);
+                animation: fadeInTop $transition-duration $cubic forwards;
             }
         }
 
         .intro__subtitle-wrap {
             span:first-of-type {
-                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 0.8888s);
+                animation: fadeInLeft $transition-duration $cubic forwards 0.3333s;
             }
 
             span:nth-of-type(2) {
-                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1s);
+                animation: fadeInLeft $transition-duration $cubic forwards 0.4444s;
             }
 
             span:nth-of-type(3) {
-                animation: fadeInLeft $transition-duration $cubic forwards calc(0.6666s + 1.2222s);
+                animation: fadeInLeft $transition-duration $cubic forwards 0.5555s;
+            }
+        }
+
+        .intro__arrow {
+            will-change: transform;
+            animation: fadeInStatic 0s linear forwards 0.7777s;
+
+            .intro-arrow-body {
+                will-change: transform;
+                animation: dash $transition-duration $cubic forwards 0.8888s;
+            }
+
+            .intro-arrow-top {
+                will-change: transform;
+                animation: dash $transition-duration $cubic forwards calc(0.8888s + 0.5s);
             }
         }
 
         .intro__frame {
             &:first-of-type {
-                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 0.8888s);
+                animation: fadeInTop $transition-duration $cubic forwards calc(0.8888s + 0.8888s);
             }
         }
 
         .intro__lines {
-            animation: fadeInStatic 0s linear forwards calc(0.6666s + 0.6666s + 0.8888s);
+            animation: fadeInStatic 0s linear forwards calc(0.5s + 0.5s + 0.8888s);
 
             .intro-line-1,
             .intro-line-2,
             .intro-line-3 {
-                animation: dashReverse 0.12s $cubic forwards calc(0.6666s + 0.6666s + 0.8888s);
+                animation: dashReverse 0.12s $cubic forwards calc(0.5s + 0.6666s + 0.8888s);
             }
         }
     }
@@ -211,7 +210,7 @@
 
         &.loaded {
             .intro__jobs {
-                animation: fadeInTop $transition-duration $cubic forwards calc(0.6666s + 2s);
+                animation: fadeInTop $transition-duration $cubic forwards calc(0.5s + 0.6666s + 0.8888s);
             }
         }
 
@@ -228,8 +227,7 @@
             backface-visibility: hidden;
             z-index: -1;
 
-            top: 40%;
-            left: 10vw;
+            animation: moveXt 3.05s $cubic 0s infinite alternate, moveYt 3.4s $cubic 0s infinite alternate;
         }
 
         &__title {
@@ -405,14 +403,9 @@
         &.loaded {
             .intro__frame {
                 &:nth-of-type(2) {
-                    animation: fadeInBottom $transition-duration $cubic forwards calc(0.6666s + 1.2222s);
+                    animation: fadeInBottom $transition-duration $cubic forwards calc(0.8888s + 0.8888s);
                 }
             }
-        }
-
-        .gradient-ball {
-            top: 0;
-            left: 0;
         }
 
         &__title {
@@ -501,6 +494,16 @@
             }
         }
 
+        &-round-tb {
+            animation: none;
+        }
+        
+        .gradient-ball {
+            top: 0;
+            left: 0;
+        }
+
+
         &__arrow {
             &--tablet {
                 bottom: toRem(-140);
@@ -520,7 +523,7 @@
                     transform-origin: center;
                 }
             }
-            
+
             &--first {
                 margin-left: toRem(0);
                 margin-bottom: toRem(16);
@@ -574,6 +577,60 @@
         &__jobs {
             margin-top: toRem(-56);
             margin-right: 0;
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .intro {
+        grid-template-columns: toRem(840) toRem(840);
+        grid-column-gap: toRem(24);
+        grid-template-areas:
+            'title photo-1'
+            'photo-2 subt'
+            '... link'
+        ;
+
+        --wrapWidth: calc(100% - 1704px);
+        padding: toRem(114) calc((var(--wrapWidth) / 2)) toRem(40) calc((var(--wrapWidth) / 2));
+        margin-bottom: toRem(100);
+
+        &__title {
+            max-width: toRem(840);
+            margin-bottom: 0;
+            margin-top: toRem(24);
+        }
+
+        &__arrow {
+            &--tablet {
+                bottom: toRem(-140);
+                left: toRem(183);
+            }
+        }
+
+        &__frame {
+            &--first {
+                margin-left: toRem(0);
+                width: toRem(390);
+                height: toRem(332);
+            }
+
+            &--second {
+                width: toRem(262);
+                height: toRem(368);
+                justify-self: center;
+                margin-right: toRem(0);
+                margin-top: toRem(-64);
+            }
+        }
+
+        &__subtitle {
+            max-width: toRem(840);
+        }
+
+        &__jobs {
+            margin-top: toRem(0);
+            margin-right: toRem(144)
         }
     }
 }

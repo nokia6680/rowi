@@ -20,19 +20,19 @@
         }
 
         .apply__arrow {
-            animation: fadeInStatic 0s linear forwards 1.3333s;
+            animation: fadeInStatic 0s linear forwards 1s;
 
             .apply-arrow-body {
-                animation: dash 0.6666s $cubic forwards 1.3333s;
+                animation: dash 0.6666s $cubic forwards 1s;
             }
 
             .apply-arrow-top {
-                animation: dash 0.6666s $cubic forwards 1.9999s;
+                animation: dash 0.6666s $cubic forwards 1.5s;
             }
         }
 
         .apply__frame--second {
-            animation: fadeInBottom150 $transition-duration forwards 2.2222s;
+            animation: fadeInBottom150 $transition-duration forwards 1.5s;
         }
     }
 
@@ -247,7 +247,7 @@
                     transform-origin: center;
                 }
             }
-            
+
             &:first-of-type {
                 width: toRem(336);
                 height: toRem(218);
@@ -255,6 +255,54 @@
 
             &:last-of-type {
                 margin-top: toRem(-26);
+            }
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .apply {
+        --wrapWidth: calc(100% - 1704px);
+
+        grid-template-columns: 1fr 32.3943661971831%;
+        grid-column-gap: toRem(168);
+        grid-row-gap: 4rem;
+
+        padding-bottom: 0;
+        margin-bottom: toRem(100);
+
+        &__title {
+            font-size: toRem(48);
+            line-height: toRem(86);
+        }
+
+        &__images {
+            margin-top: toRem(-142);
+            max-width: 100%;
+        }
+
+        &__arrow {
+            left: toRem(116);
+            bottom: toRem(214);
+        }
+
+        &__frame {
+            &:first-of-type {
+                width: toRem(520);
+                height: toRem(336);
+            }
+
+            &:last-of-type {
+                width: toRem(264);
+                height: toRem(368);
+                margin-top: toRem(-40);
+            }
+
+            &--second {
+                width: toRem(264);
+                height: toRem(368);
+                margin-top: toRem(-40);
+                align-self: flex-end;
             }
         }
     }

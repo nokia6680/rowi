@@ -13,47 +13,47 @@
         }
 
         .about-overline {
-            animation: dash $transition-duration $cubic forwards 0.3333s;
+            animation: dash $transition-duration $cubic forwards 0.1111s;
         }
 
         //2
         .about__title-span--second {
-            animation: fadeInBottom30 $transition-duration forwards 0.6666s;
+            animation: fadeInBottom30 $transition-duration forwards;
         }
 
         //3
         .about__subtitle {
-            animation: fadeInBottom30 $transition-duration forwards 1.3333s;
+            animation: fadeInBottom30 $transition-duration forwards 0.5s;
         }
 
         //4
         .about__player {
-            animation: fadeInBottom30 $transition-duration forwards 1.6666s;
+            animation: fadeInBottom30 $transition-duration forwards 1s;
         }
 
         .about__play {
-            animation: fadeInStatic 0s linear forwards 1.9999s;
+            animation: fadeInStatic 0s linear forwards 1s;
         }
 
         .about__show {
-            animation: fadeInBottom30 $transition-duration forwards 2.2222s;
+            animation: fadeInBottom30 $transition-duration forwards 1s;
         }
 
         //5
         .about__item:first-of-type {
-            animation: fadeInBottom30 $transition-duration forwards 2.5555s;
+            animation: fadeInBottom30 $transition-duration forwards 1s;
         }
 
         .about__item:nth-of-type(2) {
-            animation: fadeInBottom30 $transition-duration forwards 2.8888s;
+            animation: fadeInBottom30 $transition-duration forwards 1.1111s;
         }
 
         .about__item:nth-of-type(3) {
-            animation: fadeInBottom30 $transition-duration forwards 3.1111s;
+            animation: fadeInBottom30 $transition-duration forwards 1.2222s;
         }
 
         .about__item:last-of-type {
-            animation: fadeInBottom30 $transition-duration forwards 3.4444s;
+            animation: fadeInBottom30 $transition-duration forwards 1.3333s;
         }
     }
 
@@ -478,6 +478,43 @@
                 span {
                     display: inline-flex;
                     max-width: 50%;
+                }
+            }
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .about {
+        --wrapWidth: calc(100% - 1704px);
+        margin-bottom: toRem(100);
+
+        &__subtitle {
+            margin-bottom: toRem(80);
+            max-width: toRem(840);
+        }
+
+        &__player {
+            width: toRem(840);
+            height: toRem(474);
+        }
+
+        &__show {
+            margin-right: toRem(435);
+            margin-bottom: toRem(90);
+        }
+
+        &__list {
+            grid-template-columns: repeat(4, 366px);
+        }
+
+        &__item {
+            max-width: toRem(366);
+
+            &:nth-of-type(3) {
+                span {
+                    display: inline-flex;
+                    max-width: 70%;
                 }
             }
         }

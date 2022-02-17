@@ -415,11 +415,45 @@
                     transform: translate(-50%, -50%) scale(1.16);
                     transition: 0.35s $cubic;
                 }
-                
+
                 &::after {
                     top: toRem(16);
                     transition: 0.35s $cubic;
                 }
+            }
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .footer {
+        --wrapWidth: calc(100% - 1704px);
+
+        &__wrapper {
+            grid-template-areas:
+                'logo ... join'
+                '... list ...'
+                'legal legal legal'
+            ;
+            grid-template-columns: 14.67136150234742% 1fr 19.71830985915493%;
+            grid-column-gap: toRem(40);
+        }
+
+        &__contacts {
+            margin-bottom: toRem(24);
+        }
+
+        &__title {
+            font-size: toRem(18);
+            line-height: toRem(28);
+            opacity: 1;
+            white-space: nowrap;
+        }
+
+        &__item {
+            &:first-of-type {
+                max-width: toRem(320);
+                margin-right: toRem(112)
             }
         }
     }

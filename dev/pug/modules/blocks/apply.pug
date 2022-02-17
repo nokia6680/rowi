@@ -5,21 +5,21 @@ section.apply#apply-form
         ul.form__list
             li.form__item
                 label(for="phone-mail").form__label
-                input(type="tel" name="contact" id="phone-mail" placeholder="Телефон или электронная почта*" required).form__input
-                span.form__error.form__error--mail
+                input(type="tel" name="contact" id="phone-mail" placeholder="Телефон или электронная почта*" required).form__input.form__input--info
+                span.form__error.form__error--mail Это поле нужно обязательно заполнить
             li.form__item.form__item--upload
                 .form__drop#formDrop
                     input(type="file" name="cv-file" id="file-input" accept=".pdf, .doc, .docx").form__file
                     label(for="file-input").form__label Есть резюме? Кидай!
                     span.form__rules PDF или Microsoft Word
-                    span.form__error.form__error--file Ссылка нужна в формате https//:доменное имя/...
+                    span.form__error.form__error--file Можно прикреплять файлы в форматах: .pdf , .doc или .docx
                 .form__link
                     label(for="url").form__label
-                    input(type="url" name="url" id="url" placeholder="Можно вставить ссылку").form__input
+                    input(type="url" name="url" id="url" placeholder="Можно вставить ссылку").form__input.form__input--link
+                    span.form__error.form__error--link Ссылка нужна в формате https//:доменное имя/...
                 .form__upload
                     span.form__upload-name#filename
                     button(type="reset").form__upload-delete
-                span.form__error.form__error--drop
 
         button(type="submit").form__submit
             span Отправить
@@ -30,6 +30,8 @@ section.apply#apply-form
                 path(d="M143.143 1.22754C137.06 1.71169 115.327 2.29042 88.2002 2.75879C61.0478 3.2276 28.9716 3.41504 0.814453 4.75879C13.8859 5.72754 35.1859 6.50879 67.4144 7.00879C101.143 7.41504 125.357 9.63379 132.729 10.7588" stroke="#4164EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
     .apply__images
         picture.apply__frame.apply__frame--first
+            source(media="(min-width: 1920px)" srcset="static/images/content/apply-1-dt.webp" type="image/webp")
+            source(media="(min-width: 1920px)" srcset="static/images/content/apply-1-dt.jpg")
             source(media="(min-width: 1440px)" srcset="static/images/content/apply-1-lg.webp" type="image/webp")
             source(media="(min-width: 1440px)" srcset="static/images/content/apply-1-lg.jpg")
             source(media="(min-width: 1024px)" srcset="static/images/content/apply-1-md.webp" type="image/webp")
@@ -49,5 +51,7 @@ section.apply#apply-form
             svg(width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg")
                 path(class="apply-arrow-top" d="M2.1434 1.36328C2.46645 3.70443 3.2741 5.3513 5.39012 6.48689C3.34948 7.57942 1.7988 9.23706 1.0127 11.4652" stroke="#14004B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
         picture.apply__frame.apply__frame--second
+            source(media="(min-width: 1920px)" srcset="static/images/content/apply-2-dt.webp" type="image/webp")
+            source(media="(min-width: 1920px)" srcset="static/images/content/apply-2-dt.jpg")
             source(srcset="static/images/content/apply-2.webp" type="image/webp")
             img(src="static/images/content/apply-2.jpg" alt="Работай с нами").apply__frame-image

@@ -2,16 +2,22 @@ var menu = ['Современные офисы в Москве и Сарато
 const swiper = new Swiper('.swiper-benefits-container', {
     slidesPerView: '1',
     variableWidth: true,
+    draggable: true,
+    // direction: 'vertical',
+    // autoHeight: true,
     spaceBetween: 0,
-    speed: 1000,
-
-    preventInteractionOnTransition: true,
-    mousewheel: {
-        eventsTarget: '.benefits',
-        releaseOnEdges: true,
-        thresholdDelta: 1,
-        sensitivity: 0,
+    loop: true,
+    speed: 1500,
+    autoplay: {
+        delay: 6000,
     },
+    // preventInteractionOnTransition: true,
+    // mousewheel: {
+    //     eventsTarget: '.benefits',
+    //     releaseOnEdges: true,
+    //     thresholdDelta: 1,
+    //     sensitivity: 0,
+    // },
 
     effect: "creative",
     creativeEffect: {
@@ -38,12 +44,15 @@ const swiper = new Swiper('.swiper-benefits-container', {
     }
 });
 
+swiper.disable();
+
 swiper.on('beforeInit', function () {
     var currEl = document.querySelector('.swiper-slide-active');
     var dataCurr = currEl.getAttribute("data-value");
     var sliderNav = document.querySelector('.benefits__list');
 
     sliderNav.setAttribute("data-value", dataCurr);
+
 });
 
 swiper.on('slideChangeTransitionStart', function () {

@@ -725,3 +725,56 @@
         }
     }
 }
+
+@include min-screen(1920px) {
+    .numbers {
+        --wrapWidth: calc(100% - 1704px);
+
+        &__title {
+            max-width: 100%;
+            margin-bottom: toRem(100);
+        }
+
+        &__list {
+            height: toRem(420);
+        }
+
+        &__item {
+            max-width: toRem(408);
+
+            &:nth-of-type(2) {
+                left: toRem(432);
+                bottom: 0;
+            }
+
+            &:nth-of-type(3) {
+                right: toRem(432);
+            }
+
+            &:last-of-type {
+                right: 0;
+                bottom: 0;
+            }
+
+            &--first {
+                .numbers__arrow {
+                    bottom: toRem(-240);
+                    right: toRem(-67);
+                }
+            }
+
+            &--second {
+                .numbers__arrow {
+                    right: toRem(-43);
+                }
+            }
+
+            &--third {
+                .numbers__arrow {
+                    bottom: toRem(-240);
+                    right: toRem(-140);
+                }
+            }
+        }
+    }
+}

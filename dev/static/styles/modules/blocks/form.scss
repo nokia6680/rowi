@@ -33,9 +33,24 @@
         padding: toRem(11) toRem(8);
         margin-bottom: toRem(4);
 
-        &.invalid {
-            .form__error {
-                display: inline-flex;
+        &:invalid {
+            border-color: $red;
+            transition: $transition-duration $cubic;
+        }
+
+        &--info {
+            &:invalid {
+                & ~ .form__error--mail {
+                    display: inline-flex;
+                }
+            }
+        }
+
+        &--link {
+            &:invalid {
+                & ~ .form__error--link {
+                    display: inline-flex;
+                }
             }
         }
     }
@@ -198,7 +213,11 @@
         &__error {
             font-size: toRem(14);
             line-height: toRem(22);
-            bottom: toRem(-26);
+
+            &--file {
+                order: 2;
+                margin-top: 0.5rem;
+            }
         }
 
         &__drop {
@@ -223,13 +242,13 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                @include font-setting($primary-font, toRem(24), toRem(37), 350, rgba(20, 0, 75, 1));
+                @include font-setting($primary-font, toRem(24), toRem(37), 350, rgba(20, 0, 75, 0.4));
                 opacity: 1;
                 transition: 0.35s $cubic;
                 padding: toRem(48) 0 toRem(78) 0;
                 margin-bottom: 0;
                 position: relative;
-
+                order: 1;
                 top: auto;
                 right: auto;
                 background: rgba(20, 0, 75, 0.02);
@@ -249,6 +268,23 @@
                     & + .form__rules {
                         color: rgba(65, 100, 238, 1);
                         transition: 0.35s $cubic;
+                    }
+                }
+
+                &.invalid {
+                    color: $red;
+                    border-color: #ED3636;
+                    background: rgba(237, 54, 54, 0.02);
+                    transition: $transition-duration $cubic;
+
+                    & + .form__rules {
+                        color: $red;
+                        opacity: 0.4;
+                        transition: $transition-duration $cubic;
+                    }
+
+                    & ~ .form__error--file {
+                        display: inline-flex;
                     }
                 }
             }
@@ -273,7 +309,7 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: toRem(48);
+            bottom: toRem(60);
 
             pointer-events: none;
         }

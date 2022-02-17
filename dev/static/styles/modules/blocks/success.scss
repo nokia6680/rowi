@@ -188,3 +188,13 @@
         }
     }
 }
+
+@include min-screen(1920px) {
+    .success {
+        --wrapWidth: calc(100% - 840px);
+        height: 100vh;
+        padding: toRem(264) calc((var(--wrapWidth) / 2)) toRem(120) calc((var(--wrapWidth) / 2));
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}

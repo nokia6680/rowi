@@ -6,16 +6,17 @@
 
     position: relative;
 
-    .cta-bg-round-mb {
+    &-bg-round-mb {
         position: absolute;
         filter: blur(40px);
         -webkit-filter: blur(45px);
         backface-visibility: hidden;
         will-change: transform;
-        z-index: 0;
+        z-index: -1;
+        animation: moveX 3.05s $cubic 0s infinite alternate, moveY 3.4s $cubic 0s infinite alternate;
     }
 
-    .cta-bg-round-tb {
+    &-bg-round-tb {
         display: none;
     }
 
@@ -178,11 +179,11 @@
     .cta {
         z-index: 0;
 
-        .cta-bg-round-mb {
+        &-bg-round-mb {
             display: none;
         }
 
-        .cta-bg-round-tb {
+        &-bg-round-tb {
             will-change: transform;
             display: block;
             position: absolute;
@@ -190,7 +191,8 @@
             -webkit-filter: blur(90px);
             backface-visibility: hidden;
 
-            z-index: 0;
+            z-index: -1;
+            animation: moveXt 3.05s $cubic 0s infinite alternate, moveYt 3.4s $cubic 0s infinite alternate;
         }
 
         &__title {
@@ -276,6 +278,10 @@
             top: auto;
             left: auto;
             transform: none;
+        }
+
+        &-bg-round-tb {
+            animation: none;
         }
 
         .gradient-ball {

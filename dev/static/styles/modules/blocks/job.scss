@@ -882,3 +882,20 @@
         }
     }
 }
+
+@include min-screen(1920px) {
+    .job {
+        --wrapWidth: calc(100% - 1704px);
+
+        grid-template-columns: 32.3943661971831% 66.19718309859155%;
+        grid-row-gap: toRem(24);
+
+        &__filter {
+            padding-top: toRem(40);
+        }
+        
+        &__apply {
+            margin-right: toRem(80);
+        }
+    }
+}

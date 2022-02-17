@@ -5,32 +5,23 @@
 
     padding: toRem(2) toRem(16);
 
-    position: fixed;
+    position: absolute;
 
     top: 0;
     left: 0;
     right: 0;
 
     z-index: 10;
+    background: transparent;
+    transition: background 0.222s $cubic 0.8888s;
 
-    background-color: transparent;
-    transition: 0.8888s $cubic 1.5s;
+    &.hidden {
+        overflow: hidden;
+    }
 
     &.opened {
-        background-color: $white;
-        transition: 0.05s $cubic;
-    }
-
-    &.header-pin {
-        transform: translateY(0);
-        transition: 0.35s $cubic;
-        background-color: $white;
-        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
-    }
-
-    &.header-unpin {
-        transform: translateY(toRem(-58));
-        transition: 0.35s $cubic;
+        background: $white;
+        transition: background 0.05s $cubic;
     }
 
     &__logo {
@@ -115,16 +106,21 @@
     .header {
         padding: toRem(19) toRem(40);
         margin-bottom: toRem(40);
+        opacity: 0;
 
-        &.header-pin {
-            transform: translateY(0);
-        }
-
-        &.header-unpin {
-            transform: translateY(toRem(-98));
-        }
+        animation: fadeInTop98 0.3333s $cubic forwards 0.111s;
 
         &__logo {
+            width: toRem(172);
+            height: toRem(42);
+        }
+
+        &__frame {
+            width: toRem(172);
+            height: toRem(42);
+        }
+
+        &__link {
             width: toRem(172);
             height: toRem(42);
         }
@@ -216,6 +212,7 @@
     .header {
         --wrapWidth: calc(100% - 1220px);
         padding: toRem(15) calc((var(--wrapWidth) / 2));
+        transition: none;
 
         &__apply {
             display: inline-flex;
@@ -253,5 +250,11 @@
         &__toggle {
             display: none;
         }
+    }
+}
+
+@include min-screen(1920px) {
+    .header {
+        --wrapWidth: calc(100% - 1704px);
     }
 }

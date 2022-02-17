@@ -192,3 +192,12 @@
         }
     }
 }
+
+@include min-screen(1920px) {
+    .error {
+        --wrapWidth: calc(100% - 840px);
+        padding: toRem(264) calc((var(--wrapWidth) / 2)) toRem(120) calc((var(--wrapWidth) / 2));
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}

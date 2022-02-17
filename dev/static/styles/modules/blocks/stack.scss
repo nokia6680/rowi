@@ -212,3 +212,21 @@
         }
     }
 }
+
+@include min-screen(1920px) {
+    .stack {
+        --wrapWidth: calc(100% - 1704px);
+
+        grid-template-columns: 1fr toRem(551);
+        grid-row-gap: toRem(96);
+
+        &__list {
+            grid-row-gap: toRem(96);
+        }
+
+        &__frame {
+            margin-top: toRem(-74);
+            padding-bottom: 121.96007259528132%;
+        }
+    }
+}

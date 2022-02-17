@@ -18,30 +18,30 @@
             }
 
             .freedom__arrow {
-                animation: fadeInStatic 0s linear forwards 0.3333s;
+                animation: fadeInStatic 0s linear forwards;
             }
 
             .free-arrow-body {
-                animation: dash $transition-duration forwards 0.6666s;
+                animation: dash $transition-duration forwards;
             }
 
             .free-arrow-top {
-                animation: dash $transition-duration forwards 1.33334s;
+                animation: dash $transition-duration forwards 0.5s;
             }
 
             &--second {
-                animation: fadeInBottom30 $transition-duration forwards 2s;
+                animation: fadeInBottom30 $transition-duration forwards 1s;
             }
 
             &--third {
-                animation: fadeInBottom30 $transition-duration forwards 2.3333s;
+                animation: fadeInBottom30 $transition-duration forwards 1.5s;
             }
 
             .freedom__lines {
-                animation: fadeInStatic 0s linear forwards 3s;
+                animation: fadeInStatic 0s linear forwards 1.5s;
 
                 .free-iroques {
-                    animation: dash $transition-duration forwards 3s;
+                    animation: dash $transition-duration forwards 1.5s;
                 }
             }
         }
@@ -53,11 +53,12 @@
 
     &-round-mb {
         position: absolute;
-        filter: blur(30px);
-        -webkit-filter: blur(30px);
+        filter: blur(45px);
+        -webkit-filter: blur(45px);
         backface-visibility: hidden;
         will-change: transform;
-        z-index: 0;
+        z-index: -1;
+        animation: moveX 3.05s $cubic 0s infinite alternate, moveY 3.4s $cubic 0s infinite alternate;
     }
 
     &__title {
@@ -140,7 +141,8 @@
             -webkit-filter: blur(70px);
             backface-visibility: hidden;
             will-change: transform;
-            z-index: 0;
+            z-index: -1;
+            animation: moveXt 3.05s $cubic 0s infinite alternate, moveYt 3.4s $cubic 0s infinite alternate;
         }
 
         &-round-mb {
@@ -227,6 +229,10 @@
         padding: 0 calc((var(--wrapWidth) / 2));
         margin-bottom: toRem(100);
 
+        &-round-tb {
+            animation: none;
+        }
+
         .gradient-ball {
             top: 0;
             left: 0;
@@ -249,6 +255,10 @@
             bottom: toRem(-176);
             right: auto;
             left: toRem(60);
+
+            svg:last-of-type {
+                bottom: 0.15rem;
+            }
 
             &--tablet {
                 display: none;
@@ -273,6 +283,20 @@
             &--desktop {
                 display: flex;
             }
+        }
+    }
+}
+
+@include min-screen(1920px) {
+    .freedom {
+        --wrapWidth: calc(100% - 1704px);
+
+        &__arrow {
+            left: toRem(300);
+        }
+
+        &__lines {
+            right: toRem(19);
         }
     }
 }
