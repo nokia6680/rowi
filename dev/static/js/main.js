@@ -26,6 +26,7 @@ if (menuOpener) {
      });
 };
 
+
 var upperItem = document.getElementsByClassName('nav__link');
 var elNodes = document.querySelectorAll(".nav__link");
 
@@ -47,6 +48,26 @@ function changeText() {
         x.innerHTML = "Навигация";
     }
 };
+
+var jobItem = document.querySelector('.job');
+var jobs = document.getElementsByClassName('job__name');
+var elNodes = document.querySelectorAll(".job__name");
+
+for (var i = 0; i < jobs.length; i++) {
+  var elem = jobs[i];
+  elem.addEventListener("click", changeActiveClass);
+}
+
+function changeActiveClass(e) {
+  event.preventDefault();
+
+  for (var i = 0; i < jobs.length; i++) {
+    var elem = jobs[i];
+    elem.classList.remove('active');
+  }
+
+  e.target.classList.add('active');
+}
 
 var shares = document.getElementsByClassName('job__share');
 var elNodes = document.querySelectorAll(".job__share");

@@ -33,13 +33,11 @@
         padding: toRem(11) toRem(8);
         margin-bottom: toRem(4);
 
-        &:invalid {
-            border-color: $red;
-            transition: $transition-duration $cubic;
-        }
-
         &--info {
-            &:invalid {
+            &.invalid {
+                border-color: $red;
+                transition: $transition-duration $cubic;
+
                 & ~ .form__error--mail {
                     display: inline-flex;
                 }
@@ -47,7 +45,9 @@
         }
 
         &--link {
-            &:invalid {
+            &.invalid {
+                border-color: $red;
+                transition: $transition-duration $cubic;
                 & ~ .form__error--link {
                     display: inline-flex;
                 }
@@ -175,6 +175,7 @@
         cursor: pointer;
         padding: 0;
         margin-left: toRem(14);
+        margin-bottom: toRem(25);
 
         span {
             @include font-setting($primary-font, toRem(14), toRem(22), 500, $blue);
@@ -184,6 +185,23 @@
 
         &-underline-tb {
             display: none;
+        }
+    }
+
+    &__agree {
+        display: inline;
+        @include font-setting($primary-font, toRem(12), toRem(19), 400, rgba(20, 0, 75, 0.4));
+        text-align: left;
+
+        a {
+            color: rgba(20, 0, 75, 0.4);
+            text-decoration: none;
+            transition: 0.35s $cubic;
+
+            &:active {
+                color: rgba(20, 0, 75, 1);
+                transition: 0.35s $cubic;
+            }
         }
     }
 }
@@ -338,6 +356,7 @@
 
         &__submit {
             margin-left: 0;
+            margin-bottom: 0;
 
             span {
                 font-size: toRem(24);
@@ -358,6 +377,32 @@
                 }
             }
         }
+
+        &__agree {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: toRem(14);
+            line-height: toRem(22);
+            max-width: toRem(378);
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+@include min-screen(1024) {
+    .form {
+        &__agree {
+            display: block;
+            right: auto;
+            bottom: toRem(-42);
+            left: 0;
+            min-width: toRem(644);
+            max-width: 100%;
+        }
     }
 }
 
@@ -371,6 +416,18 @@
             &:hover {
                 path {
                     animation: dash 0.35s $cubic forwards;
+                }
+            }
+        }
+
+        &__agree {
+            bottom: toRem(-60);
+
+            a {
+                &:hover,
+                &:focus {
+                    color: rgba(20, 0, 75, 1);
+                    transition: 0.35s $cubic;
                 }
             }
         }

@@ -410,6 +410,10 @@
             @include flex-setting(column, center, center);
         }
 
+        a {
+            width: 100%;
+        }
+
         &-btn {
             width: 100%;
             @include font-setting($primary-font, toRem(12), toRem(19), 350, $dark);
@@ -893,7 +897,7 @@
         &__filter {
             padding-top: toRem(40);
         }
-        
+
         &__apply {
             margin-right: toRem(80);
         }

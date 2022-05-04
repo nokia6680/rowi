@@ -21,10 +21,8 @@ section.about#about
     p.about__subtitle Сделать быстрее и проще для клиента — наш подход к&nbsp;созданию продукта
         
     .about__player
-        video(poster="static/images/content/about-poster.jpg").about__video
-            source(src="static/videos/about-video.mp4" type="video/mp4")
-            source(src="static/videos/about-video.ogv" type="video/ogg")
-            source(src="static/videos/about-video.webm" type="video/webm")
+        .about__player-frame#aboutVideo
+        img(src="static/images/content/about-poster.jpg" alt="").about__player-poster
         button(type="button").about__play
         
     a(href="https://www.rowi.com" target="_blank").about__show Посмотреть 

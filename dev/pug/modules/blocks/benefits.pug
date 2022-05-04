@@ -14,54 +14,59 @@ section.benefits#benefits
             .swiper-wrapper
                 .benefits__slide.benefits__slide--first.swiper-slide(data-value="1")
                     .benefits__player
-                        video(poster="static/images/content/benefits-poster.jpg").benefits__video
-                            source(src="static/videos/benefits-video.mp4" type="video/mp4")
-                            source(src="static/videos/benefits-video.ogv" type="video/ogg")
-                            source(src="static/videos/benefits-video.webm" type="video/webm")
+                        picture.benefits__frame
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-0-dt.webp" type="image/webp")
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-0-dt.png")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-0-lg.webp" type="image/webp")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-0-lg.png")
+                            source(srcset="static/images/content/benefits-0.webp" type="image/webp")
+                            img(src="static/images/content/benefits-0.png" alt="Современные офисы в Москве и Саратове").benefits__frame-image
                         button(type="button").benefits__play
-                            
-                    picture.benefits__frame
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-1-dt.webp" type="image/webp")
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-1-dt.jpg")
-                        source(srcset="static/images/content/benefits-1.webp" type="image/webp")
-                        img(src="static/images/content/benefits-1.jpg" alt="Современные офисы в Москве и Саратове").benefits__frame-image
+                    .benefits__pic
+                        picture.benefits__frame
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-1-dt.webp" type="image/webp")
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-1-dt.jpg")
+                            source(srcset="static/images/content/benefits-1.webp" type="image/webp")
+                            img(src="static/images/content/benefits-1.jpg" alt="Современные офисы в Москве и Саратове").benefits__frame-image
                         
                 .benefits__slide.benefits__slide--second.swiper-slide(data-value="2")
-                    picture.benefits__frame
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-2-dt.webp" type="image/webp")
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-2-dt.jpg")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
-                        source(srcset="static/images/content/benefits-2.webp" type="image/webp")
-                        img(src="static/images/content/benefits-2.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
-                    picture.benefits__frame
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-3-dt.webp" type="image/webp")
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-3-dt.jpg")
-                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-3-lg.webp" type="image/webp")
-                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-3-lg.jpg")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-3-tb.webp" type="image/webp")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-3-tb.jpg")
-                        source(srcset="static/images/content/benefits-3.webp" type="image/webp")
-                        img(src="static/images/content/benefits-3.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
+                    .benefits__pic
+                        picture.benefits__frame
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-2-dt.webp" type="image/webp")
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-2-dt.jpg")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.webp" type="image/webp")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-2-lg.jpg")
+                            source(srcset="static/images/content/benefits-2.webp" type="image/webp")
+                            img(src="static/images/content/benefits-2.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
+                    .benefits__pic
+                        picture.benefits__frame
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-3-dt.webp" type="image/webp")
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-3-dt.jpg")
+                            source(media="(min-width: 1440px)" srcset="static/images/content/benefits-3-lg.webp" type="image/webp")
+                            source(media="(min-width: 1440px)" srcset="static/images/content/benefits-3-lg.jpg")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-3-tb.webp" type="image/webp")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-3-tb.jpg")
+                            source(srcset="static/images/content/benefits-3.webp" type="image/webp")
+                            img(src="static/images/content/benefits-3.jpg" alt="Гибридный график или удаленка. Распределенные команды").benefits__frame-image
                 
                 .benefits__slide.benefits__slide--third.swiper-slide(data-value="3")
-                    picture.benefits__frame
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-4-dt.webp" type="image/webp")
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-4-dt.jpg")
-                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.webp" type="image/webp")
-                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.jpg")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-md.webp" type="image/webp")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-md.jpg")
-                        source(srcset="static/images/content/benefits-4.webp" type="image/webp")
-                        img(src="static/images/content/benefits-4.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image
-                    picture.benefits__frame
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-5-dt.webp" type="image/webp")
-                        source(media="(min-width: 1920px)" srcset="static/images/content/benefits-5-dt.jpg")
-                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-5-lg.webp" type="image/webp")
-                        source(media="(min-width: 1440px)" srcset="static/images/content/benefits-5-lg.jpg")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-5-tb.webp" type="image/webp")
-                        source(media="(min-width: 768px)" srcset="static/images/content/benefits-5-tb.jpg")
-                        source(srcset="static/images/content/benefits-5.webp" type="image/webp")
-                        img(src="static/images/content/benefits-5.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image
+                    .benefits__pic
+                        picture.benefits__frame
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-4-dt.webp" type="image/webp")
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-4-dt.jpg")
+                            source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.webp" type="image/webp")
+                            source(media="(min-width: 1440px)" srcset="static/images/content/benefits-4-lg.jpg")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-md.webp" type="image/webp")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-4-md.jpg")
+                            source(srcset="static/images/content/benefits-4.webp" type="image/webp")
+                            img(src="static/images/content/benefits-4.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image
+                    .benefits__pic
+                        picture.benefits__frame
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-5-dt.webp" type="image/webp")
+                            source(media="(min-width: 1920px)" srcset="static/images/content/benefits-5-dt.jpg")
+                            source(media="(min-width: 1440px)" srcset="static/images/content/benefits-5-lg.webp" type="image/webp")
+                            source(media="(min-width: 1440px)" srcset="static/images/content/benefits-5-lg.jpg")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-5-tb.webp" type="image/webp")
+                            source(media="(min-width: 768px)" srcset="static/images/content/benefits-5-tb.jpg")
+                            source(srcset="static/images/content/benefits-5.webp" type="image/webp")
+                            img(src="static/images/content/benefits-5.jpg" alt="Открытая среда без бюрократии и сложных процессов").benefits__frame-image

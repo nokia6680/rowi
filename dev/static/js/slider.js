@@ -10,14 +10,8 @@ const swiper = new Swiper('.swiper-benefits-container', {
     speed: 1500,
     autoplay: {
         delay: 6000,
+        disableOnInteraction: false,
     },
-    // preventInteractionOnTransition: true,
-    // mousewheel: {
-    //     eventsTarget: '.benefits',
-    //     releaseOnEdges: true,
-    //     thresholdDelta: 1,
-    //     sensitivity: 0,
-    // },
 
     effect: "creative",
     creativeEffect: {

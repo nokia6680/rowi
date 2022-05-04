@@ -35,6 +35,13 @@ html(lang="ru-RU")
             include ../modules/blocks/apply
         include ../modules/footer/footer
         
+        .popup-video
+            .popup-video__wrapper
+                button(type="button").popup-video__closer Закрыть
+                
+                .popup-video__player
+                    .popup-video__content#benVideo
+                        
         .job__dropdown.job__dropdown--mobile
             .job__dropdown-wrap
                 ul.job__dropdown-list
@@ -65,5 +72,5 @@ html(lang="ru-RU")
         script(src="static/js/scroll.js")
         script(src="static/js/video.js")
         script(src="static/js/benefits.js")
-        script(src="static/js/validate.js")
+        //script(src="static/js/validate.js")
         block script

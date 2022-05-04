@@ -1,89 +1,79 @@
-var videoBtn = document.querySelector('.about__play');
-var video = document.querySelector('.about__video');
 
-if (videoBtn) {
-    videoBtn.addEventListener('click', function() {
-        video.play();
-        video.controls = true;
-        videoBtn.classList.add('playState');
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player1;
+var player2;
+
+function onYouTubeIframeAPIReady() {
+    player1 = new YT.Player('aboutVideo', {
+        videoId: 'R5IjcsMNMNo',
+    });
+
+    player2 = new YT.Player('benVideo', {
+        videoId: 'uzWPDQOCV3o',
     });
 }
 
-//
+var body = document.querySelector('.body');
+
+var videoBtn = document.querySelector('.about__play');
+var videoFrame = document.getElementById('aboutVideo');
+var videoPoster = document.querySelector('.about__player-poster');
+
+if (videoBtn) {
+    videoBtn.addEventListener('click', function() {
+        videoBtn.classList.add('playState');
+        videoFrame.classList.add('active');
+        videoPoster.classList.add('hidden');
+        player1.playVideo();
+    });
+};
+
 $(function() {
     $(window).scroll(function() {
         if ($(this).scrollTop() >= 50) {
-            video.pause();
-            video.controls = false;
-            videoBtn.classList.remove('playState');
+            player1.pauseVideo();
+
         } else {
-            video.pause();
-            video.controls = false;
-            videoBtn.classList.remove('playState');
+            player1.pauseVideo();
+
         }
     });
 });
-//
-// if (videoClose) {
-//   videoClose.addEventListener('click', function () {
-//     videoOverlay.classList.remove('active');
-//     body.classList.remove('no-scroll');
-//   });
-// }
-//
-// function playTrailer() {
-//   document.getElementById("myVideo").load();
-// } // Expand and close
-//
-//
-// var aboutBtn = document.querySelector('.intro__more');
-// var aboutWrapper = document.querySelector('.intro__about');
-//
-// if (aboutBtn) {
-//   aboutBtn.addEventListener('click', function () {
-//     event.preventDefault();
-//     aboutWrapper.classList.toggle('active');
-//     this.textContent = this.textContent === 'Читать далее' ? 'Скрыть' : 'Читать далее';
-//   });
-// } // Pause and play
-//
-//
-// var video = document.getElementById("myVideo");
-// var videoControl = document.getElementById("pauseBtn");
-//
-// function videoPause() {
-//   if (video.paused) {
-//     video.play();
-//     videoControl.classList.remove('paused');
-//     videoControl.innerHTML = "Пауза";
-//   } else {
-//     video.pause();
-//     videoControl.classList.add('paused');
-//     videoControl.innerHTML = "Включить";
-//   }
-// } // video responsive loading
-//
-//
-// function desktopVideo(x) {
-//   if (x.matches) {
-//     video.pause();
-//     video.load();
-//     video.muted = false;
-//     video.controls = true;
-//     video.autoplay = false;
-//   } else {
-//     video.pause();
-//     video.load();
-//     video.muted = true;
-//     video.controls = false;
-//     video.autoplay = true;
-//   }
-// }
-//
-// $(function () {
-//   $('#heading').addClass('active');
-//   $('#intro').addClass('active');
-// });
-// var x = window.matchMedia("(max-width: 719px)");
-// desktopVideo(x);
-// x.addListener(desktopVideo);
+
+var benePlay = document.querySelector('.benefits__play');
+var beneWrap = document.querySelector('.popup-video');
+var beneVideo = document.getElementById('benVideo');
+var beneCloser = document.querySelector('.popup-video__closer');
+
+if (benePlay) {
+    benePlay.addEventListener('click', function() {
+        beneWrap.classList.add('active');
+        player2.playVideo();
+        swiper.autoplay.stop()
+        body.classList.add('no-scroll');
+    });
+};
+
+if (beneCloser) {
+    beneCloser.addEventListener('click', function() {
+        beneWrap.classList.remove('active');
+        player2.stopVideo();
+        swiper.autoplay.start()
+        body.classList.remove('no-scroll');
+    });
+};
+
+beneWrap.addEventListener("click", function(event) {
+    // If user clicks inside the element, do nothing
+    if (event.target.closest(".popup-video__player")) return;
+
+    // If user clicks outside the element, hide it!
+    beneWrap.classList.remove('active');
+    player2.stopVideo();
+    swiper.autoplay.start()
+    body.classList.remove('no-scroll');
+});

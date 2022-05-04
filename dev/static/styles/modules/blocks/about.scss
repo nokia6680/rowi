@@ -6,6 +6,7 @@
     padding: toRem(24) toRem(16);
     margin-bottom: toRem(24);
 
+
     &.loaded {
         //1
         .about__title-span--first {
@@ -110,18 +111,35 @@
         padding-bottom: 63.55685131195335%;
         margin-bottom: toRem(24);
         opacity: 0;
-    }
 
-    &__video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        object-fit: cover;
+        &-poster {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            object-fit: cover;
 
-        width: 100%;
-        height: 100%;
+            width: 100%;
+            height: 100%;
+
+            &.hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &-frame {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            object-fit: cover;
+
+            width: 100%;
+            height: 100%;
+        }
     }
 
     &__play {

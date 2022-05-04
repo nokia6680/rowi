@@ -173,6 +173,30 @@
     }
 }
 
+@keyframes fadeInLeftArrowD86 {
+    0% {
+        opacity: 0;
+        transform: translate(-74px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeOutLeftArrowD86 {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-74px, 0);
+    }
+}
+
 
 @keyframes fadeInRight {
     0% {
