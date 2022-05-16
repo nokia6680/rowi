@@ -1,6 +1,8 @@
 var menu = ['Современные офисы в Москве и Саратове', 'Гибридный график или удаленка. Распределенные команды', 'Открытая среда без бюрократии и сложных процессов']
 const swiper = new Swiper('.swiper-benefits-container', {
     slidesPerView: '1',
+    direction: 'vertical',
+    autoHeight: true,
     variableWidth: true,
     draggable: true,
     // direction: 'vertical',
