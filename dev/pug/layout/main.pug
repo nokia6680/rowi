@@ -40,8 +40,10 @@ html(lang="ru-RU")
                 button(type="button").popup-video__closer Закрыть
                 
                 .popup-video__player
-                    .popup-video__content#benVideo
-                        
+                    video.popup-video__content#benVideo
+                        source(src="static/videos/benefits-video.mp4" type="video/mp4")
+                        source(src="static/videos/benefits-video.webm" type="video/webm")
+                    button(type="button").popup-video__play
         .job__dropdown.job__dropdown--mobile
             .job__dropdown-wrap
                 ul.job__dropdown-list

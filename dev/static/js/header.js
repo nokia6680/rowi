@@ -1,4 +1,4 @@
-window.onload = function() {
+
     var intro = document.getElementById("intro");
     var header = document.querySelector('.header');
     var stackBlock = document.getElementById("stack");
@@ -19,7 +19,7 @@ window.onload = function() {
             }, 3000);
         }
     }
-}
+
 
 window.addEventListener("resize", function() {
     var header = document.querySelector('.header');
