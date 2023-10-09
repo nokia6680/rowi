@@ -1,5 +1,5 @@
-const fileUploader = document.getElementById('file-input');
-const dropZone = document.getElementById('formDrop');
+const fileUploader = document.querySelector('#file-input');
+const dropZone = document.querySelector('#formDrop');
 const filewrap = document.querySelector('.form__upload');
 const filename = document.getElementById('filename');
 const removeBtn = document.querySelector('.form__upload-delete');

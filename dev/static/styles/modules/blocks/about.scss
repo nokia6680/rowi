@@ -27,6 +27,10 @@
             animation: fadeInBottom30 $transition-duration forwards 0.5s;
         }
 
+        .about__notes {
+            animation: fadeInBottom30 $transition-duration forwards 0.7s;;
+        }
+
         //4
         .about__player {
             animation: fadeInBottom30 $transition-duration forwards 1s;
@@ -95,6 +99,7 @@
     }
 
     &__subtitle {
+        align-self: center;
         @include font-setting($primary-font, toRem(18), toRem(28), 350, $dark);
         text-align: left;
         margin-bottom: toRem(24);
@@ -102,6 +107,14 @@
         max-width: toRem(280);
 
         opacity: 0;
+    }
+
+    &__notes {
+        opacity: 0;
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+        gap: toRem(22);
+        margin-bottom: toRem(24);
     }
 
     &__player {
@@ -287,12 +300,18 @@
         }
 
         &__subtitle {
-            align-self: flex-end;
             font-size: toRem(24);
             line-height: toRem(38);
-            margin-bottom: toRem(40);
+            margin-bottom: toRem(32);
             max-width: toRem(548);
         }
+
+        &__notes {
+            align-self: center;
+            max-width: toRem(548);
+            margin-bottom: toRem(40);
+        }
+
 
         &__player {
             padding-bottom: 63.66279069767442%;
@@ -388,8 +407,14 @@
         }
 
         &__subtitle {
+            align-self: flex-end;
+        }
+
+        &__notes {
+            align-self: flex-end;
             margin-bottom: toRem(80);
         }
+
 
         &__player {
             width: toRem(854);
@@ -449,8 +474,14 @@
         }
 
         &__subtitle {
-            margin-bottom: toRem(100);
+            margin-bottom: toRem(34);
             max-width: toRem(714);
+        }
+
+        &__notes {
+            max-width: toRem(704);
+            margin-right: toRem(10);
+            margin-bottom: toRem(74);
         }
 
         &__player {
@@ -507,8 +538,12 @@
         margin-bottom: toRem(100);
 
         &__subtitle {
-            margin-bottom: toRem(80);
             max-width: toRem(840);
+        }
+
+        &__notes {
+            max-width: toRem(840);
+            margin-right: 0;
         }
 
         &__player {

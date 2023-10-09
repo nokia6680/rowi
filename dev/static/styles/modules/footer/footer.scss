@@ -102,18 +102,49 @@
         width: 100%;
 
         @include flex-setting(column, flex-start, flex-start);
+        margin-bottom: toRem(16);
     }
     //book
     &__link {
         @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
         text-decoration: none;
         transition: 0.35s $cubic;
-
-        margin-bottom: toRem(16);
-
         &:active {
             color: $white;
             transition: 0.35s $cubic;
+        }
+    }
+
+    &__data {
+        @include flex-setting(column, flex-start, flex-start);
+        width: 100%;
+
+        &-list {
+            @include flex-setting(row, flex-start, center);
+            width: auto;
+            max-width: toRem(246);
+            gap: 0 toRem(4);
+            flex-wrap: wrap;
+        }
+
+        &-item {
+            @include flex-setting(row, flex-start, center);
+            width: auto;
+
+            span {
+                @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
+            }
+        }
+
+        &-inn {
+            @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
+            letter-spacing: 0.01em;
+        }
+
+        &-link {
+            @include font-setting($primary-font, toRem(12), toRem(19), 350, rgba(255, 255, 255, 0.64));
+            text-decoration: none;
+            letter-spacing: 0.01em;
         }
     }
 
@@ -185,33 +216,18 @@
 
 @include min-screen(768px) {
     .footer {
+        position: relative;
         padding: toRem(72) toRem(40) toRem(40) toRem(40);
         background: radial-gradient(132.97% 818.95% at 2.29% 100%, rgba(246, 180, 198, 0.8) 0%, rgba(205, 164, 207, 0.8) 15.7%, rgba(96, 121, 234, 0.8) 33.53%, rgba(70, 136, 219, 0.8) 49.06%, rgba(31, 180, 180, 0.8) 66.53%, rgba(164, 213, 213, 0.8) 90.42%, rgba(0, 170, 170, 0) 100%);
 
-        &__wrapper {
-            display: grid;
-            grid-template-areas:
-                'logo join ...'
-                'list list list'
-                'legal legal legal'
-            ;
-
-            grid-template-columns: 1fr 28.34302325581395% 1fr;
-            grid-row-gap: toRem(61);
-            justify-content: space-between;
-            align-items: start;
-        }
-
         &__logo {
-            grid-area: logo;
             width: toRem(172);
             height: toRem(42);
-            margin-bottom: 0;
+            margin-bottom: toRem(61);
         }
 
         &__contacts {
-            grid-area: list;
-            margin-bottom: 0;
+            margin-bottom: toRem(39);
         }
 
         &__title {
@@ -249,7 +265,12 @@
         }
 
         &__join {
-            grid-area: join;
+            position: absolute;
+            top: toRem(72);
+            left: 51%;
+            transform: translateX(-50%);
+            max-width: toRem(195);
+            text-align: center;
             margin-bottom: toRem(0);
 
             .footer__title {
@@ -266,14 +287,22 @@
         }
 
         &__rules {
-            grid-area: legal;
-            flex-direction: row-reverse;
-            justify-content: space-between;
-            align-items: center;
+            position: absolute;
+            bottom: toRem(40);
+            right: toRem(40);
+            margin-bottom: 0;
         }
 
         &__link {
             margin-bottom: 0;
+            white-space: nowrap;
+            align-self: end;
+        }
+
+        &__data {
+            &-list {
+                max-width: 100%;
+            }
         }
 
         &__top {
@@ -305,11 +334,6 @@
         padding-left: toRem(80);
         padding-right: toRem(80);
 
-        &__wrapper {
-            grid-template-columns: 1fr 35.76388888888889% 1fr;
-            align-items: center;
-        }
-
         &__list {
             flex-direction: row;
             justify-content: flex-start;
@@ -323,17 +347,34 @@
         }
 
         &__join {
+            max-width: 100%;
             @include flex-setting(column, center, center);
         }
 
         &__link {
-            font-size: toRem(16);
-            line-height: toRem(23);
+            font-size: toRem(14);
+            line-height: toRem(21);
         }
 
         &__copyright {
-            font-size: toRem(16);
-            line-height: toRem(23);
+            font-size: toRem(14);
+            line-height: toRem(22);
+        }
+
+        &__data-link,
+        &__data-inn {
+            font-size: toRem(14) !important;
+            line-height: toRem(22) !important;
+        }
+
+        &__rules {
+            right: toRem(80);
+        }
+
+        &__data-link {
+            &:active {
+                text-decoration: underline;
+            }
         }
 
         &__top {
@@ -349,19 +390,12 @@
         padding-left: calc((var(--wrapWidth) / 2));
         padding-right: calc((var(--wrapWidth) / 2));
 
-        &__wrapper {
-            grid-template-areas:
-                'logo join'
-                'list ...'
-                'legal legal'
-            ;
-            grid-template-columns: 62.29508196721311% 1fr;
-            grid-column-gap: toRem(124);
-            grid-row-gap: toRem(40);
+        &__logo {
+            margin-bottom: toRem(40);
         }
 
         &__contacts {
-            margin-bottom: toRem(64);
+            margin-bottom: toRem(42);
         }
 
         &__title {
@@ -379,6 +413,12 @@
         }
 
         &__join {
+            left: auto;
+            top: toRem(47);
+            right: calc((var(--wrapWidth) / 2));
+            transform: none;
+            width: auto;
+
             &__title,
             &-link {
                 font-size: toRem(18);
@@ -405,6 +445,26 @@
             line-height: toRem(22);
         }
 
+        &__data {
+            &-item:nth-of-type(2) {
+                .footer__data-link {
+                    text-decoration: underline;
+                }
+            }
+            &-link {
+                transition: 0.3s $cubic;
+                &:hover {
+                    color: $white;
+                    transition: 0.3s $cubic;
+                }
+            }
+        }
+
+        &__rules {
+            width: auto;
+            right: calc((var(--wrapWidth) / 2));
+        }
+
         &__top {
             top: 50%;
             transform: translateY(-50%);
@@ -429,18 +489,8 @@
     .footer {
         --wrapWidth: calc(100% - 1704px);
 
-        &__wrapper {
-            grid-template-areas:
-                'logo ... join'
-                '... list ...'
-                'legal legal legal'
-            ;
-            grid-template-columns: 14.67136150234742% 1fr 19.71830985915493%;
-            grid-column-gap: toRem(40);
-        }
-
         &__contacts {
-            margin-bottom: toRem(24);
+            margin-bottom: toRem(42);
         }
 
         &__title {
